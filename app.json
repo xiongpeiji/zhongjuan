@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/xinde/xinde",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/experiencedis/experiencedis"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "众捐",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fafafa"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#D7263D",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-active.png"
+      },
+      {
+        "pagePath": "pages/xinde/xinde",
+        "text": "心得",
+        "iconPath": "images/xinde.png",
+        "selectedIconPath": "images/xinde-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/xiaoxi.png",
+        "selectedIconPath": "images/xiaoxi-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wode-active.png"
+      }
+    ]
+  }
+}

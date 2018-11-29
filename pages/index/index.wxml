@@ -1,0 +1,132 @@
+<!--index.wxml-->
+<view class="container">
+
+<!--banner-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="375" height="300"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!--sort-->
+  <view class='index_sort'>
+    <view class='sort_left'>
+      <span>求捐信息</span><image src='/images/sort.png'></image>
+    </view>
+    <view class='sort_right'>
+      智能排序<image src='/images/sort_arr.png'></image>
+    </view>
+  </view>
+  <!--list-->
+  <view class='index_list'>
+    <view class='list_tit_box'>
+      <view class='list_title'>俺们村的希望</view>
+      <view class='list_v'>
+        <image src='/images/shenqingqiyerenzheng.png'></image>
+        <span>希望小学</span>
+      </view>
+      <view class='list_time'>09：25</view>
+    </view>
+
+    <view class='list_img'>
+      <image src='/images/img_big2.jpg'></image>
+      <view class='list_img_title'>
+        <h4>暖暖冬季，爱心传递</h4>
+        <p>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望社会爱心人士能够伸出援助之手...</p>
+      </view>
+    </view>
+
+    <view class='joins'>
+      <view class='left_user_icon'>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/index_gengduo@2x.png'></image>
+      </view>
+      <view class='jions_num'>6人已加入</view>
+      <view class='slider_bar'>
+        <view class='bar_bg'>
+          <span class='Percentage' style='width:90%;'></span>
+        </view>
+        <view class='Completion'>完成度90%</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='index_list'>
+    <view class='list_tit_box'>
+      <view class='list_title'>俺们村的希望</view>
+      <view class='list_v'>
+        <image src='/images/shenqingqiyerenzheng.png'></image>
+        <span>希望小学</span>
+      </view>
+      <view class='list_time'>09：25</view>
+    </view>
+
+    <view class='list_img'>
+      <image src='/images/img_big1_03.jpg'></image>
+      <view class='list_img_title'>
+        <h4>暖暖冬季，爱心传递</h4>
+        <p>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望社会爱心人士能够伸出援助之手...</p>
+      </view>
+    </view>
+
+    <view class='joins'>
+      <view class='left_user_icon'>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/index_gengduo@2x.png'></image>
+      </view>
+      <view class='jions_num'>6人已加入</view>
+      <view class='slider_bar'>
+        <view class='bar_bg'>
+          <span class='Percentage' style='width:90%;'></span>
+        </view>
+        <view class='Completion'>完成度90%</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='index_list'>
+    <view class='list_tit_box'>
+      <view class='list_title'>俺们村的希望</view>
+      <view class='list_v'>
+        <image src='/images/shenqingqiyerenzheng.png'></image>
+        <span>希望小学</span>
+      </view>
+      <view class='list_time'>09：25</view>
+    </view>
+
+    <view class='list_img'>
+      <image src='/images/img_big2.jpg'></image>
+      <view class='list_img_title'>
+        <h4>暖暖冬季，爱心传递</h4>
+        <p>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望社会爱心人士能够伸出援助之手...</p>
+      </view>
+    </view>
+
+    <view class='joins'>
+      <view class='left_user_icon'>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/index_gengduo@2x.png'></image>
+      </view>
+      <view class='jions_num'>6人已加入</view>
+      <view class='slider_bar'>
+        <view class='bar_bg'>
+          <span class='Percentage' style='width:90%;'></span>
+        </view>
+        <view class='Completion'>完成度90%</view>
+      </view>
+    </view>
+  </view>
+
+  
+
+</view>

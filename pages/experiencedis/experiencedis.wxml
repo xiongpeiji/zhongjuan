@@ -1,0 +1,13 @@
+<!--pages/experiencedis/experiencedis.wxml-->
+<view class="container">
+  <view class='promotion-img'>
+    <swiper autoplay="true" bindchange="swiper">
+      <block wx:for="{{xindedetails.goods_gallery_urls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+  </view>
+</view>

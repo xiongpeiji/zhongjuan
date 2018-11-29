@@ -1,0 +1,14 @@
+/**app.wxss**/
+.container {
+  min-height: 100%;
+  display: block;
+  overflow: hidden;
+  background: #fafafa;
+  position: relative;
+}
+page{
+  height: 100%;
+}
+image {
+  display: block;
+}
