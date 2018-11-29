@@ -36,6 +36,7 @@
         "iconPath": "images/xiaoxi.png",
         "selectedIconPath": "images/xiaoxi-active.png"
       },
+	  
       {
         "pagePath": "pages/my/my",
         "text": "我的",
