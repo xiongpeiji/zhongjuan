@@ -47,7 +47,10 @@
               </view>
             </view>
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">昨天19：30</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+              <span class="send_num">4条回复</span>
+            </view>
           </view>
         </view>
 
@@ -68,7 +71,10 @@
               </view>
             </view>
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">昨天19：30</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+              <span class="send_num">4条回复</span>
+            </view>
           </view>
         </view>
 
@@ -89,7 +95,10 @@
               </view>
             </view>
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">昨天19：30</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+              <span class="send_num">4条回复</span>
+            </view>
           </view>
         </view>
       </view>

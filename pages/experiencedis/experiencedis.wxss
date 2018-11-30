@@ -150,8 +150,22 @@ swiper, swiper image {
 }
 .comment_time{
   font-size: 24rpx;
+  height: 38rpx;
   color:#999999;
-  line-height: 24rpx;
+  line-height: 38rpx;
+}
+.comment_time .send_time{
+  float: left;
+}
+.comment_time .send_num{
+  float: left;
+  padding:0 20rpx;
+  border-radius: 19rpx;
+  background: #EFEFEF;
+  font-size: 24rpx;
+  line-height: 38rpx;
+  color:#FD693E;
+  margin-left: 20rpx;
 }
 .input_box{
   padding:20rpx;
@@ -175,6 +189,6 @@ swiper, swiper image {
   padding:10rpx 40rpx;
   box-sizing: border-box;
   background: #F3F3F3;
-  border-radius: 27rpx;
+  border-radius: 6rpx;
   font-size: 24rpx;
 }
