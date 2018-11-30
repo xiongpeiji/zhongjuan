@@ -2,13 +2,16 @@
 <view class="container">
 
 <!--banner-->
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="375" height="300"/>
-    </swiper-item>
-  </block>
-</swiper>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" 
+  indicator-color="{{indicatorcolor}}" 
+   indicator-active-color="{{indicatoractivecolor}}" 
+   interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="375" height="300"/>
+      </swiper-item>
+    </block>
+  </swiper>
 <!--sort-->
   <view class='index_sort'>
     <view class='sort_left'>

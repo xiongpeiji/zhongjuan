@@ -2,13 +2,11 @@
 swiper, swiper image {
   height: 520rpx;
 }
-
 .promotion-img {
   width: 100%;
   font-size: 0;
   position: relative;
   overflow: hidden;
-  margin-bottom: 45rpx;
 }
 .promotion-img .current {
   position: absolute;
@@ -30,4 +28,153 @@ swiper, swiper image {
   display: block;
   width: 100%;
   height: 520rpx;
+}
+.xindeDetais_text{
+  padding:45rpx 20rpx 95rpx;
+  background: #fff;
+}
+.xindeDetial_tit{
+  overflow: hidden;
+  height: 36rpx;
+  line-height: 36rpx;
+  margin-bottom: 25rpx;
+}
+.xindeDetial_tit h2{
+  font-size: 36rpx;
+  font-weight: bold;
+  float: left;
+}
+.xindeDetial_tit span{
+  font-size: 24rpx;
+  color:#888888;
+  float: right;
+}
+.artact_user{
+  display: block;
+  height:54rpx;
+  line-height: 54rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.artact_user image{
+  width: 54rpx;
+  height: 54rpx;
+  float: left;
+}
+.artact_user span{
+  line-height: 54rpx;
+  float: left;
+  font-size: 24rpx;
+  color:24px;
+  margin-left: 15rpx;
+}
+.xindeDetais_text .artacle_wrap{
+  padding-bottom: 60rpx;
+}
+.xindeDetais_text .text_details{
+  display: block;
+  font-size: 28rpx;
+  color: #333333;
+  text-indent: 2em;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.comment_title{
+  padding:10rpx 0 20rpx;
+  font-size: 28rpx;
+  color:#666666;
+  line-height: 28rpx;
+  background: #fafafa;
+}
+.comment_container{
+  padding-top:24rpx;
+}
+.conment_list{
+  padding-left: 75rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.con_user_icon{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.comment_text{
+  padding-bottom: 15rpx;
+  border-bottom:1px solid #DFDFDF;
+}
+.comment_name{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding:10rpx 0;
+}
+.comment_name .left_name{
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color:#333333;
+  float: left;
+}
+.comment_action{
+  float: right;
+  height: 40rpx;
+  overflow: hidden;
+}
+.zan_num{
+  height: 40rpx;
+  padding-left: 45rpx;
+  position: relative;
+  float: left;
+}
+.zan_num+.zan_num{
+  margin-left: 35rpx;
+}
+.zan_num image{
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  left: 0;
+  top:1rpx;
+}
+.zan_num span{
+  font-size: 22rpx;
+  color:#929292;
+  line-height: 22rpx;
+}
+.comment_dis{
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color:#333333;
+  margin-bottom: 15rpx;
+}
+.comment_time{
+  font-size: 24rpx;
+  color:#999999;
+  line-height: 24rpx;
+}
+.input_box{
+  padding:20rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 95rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.input_box .section_input{
+  border-radius: 20rpx;
+  float: left;
+  width: 339rpx;
+  height: 54rpx;
+}
+.input_box .section_input input{
+  width:100%;
+  height: 54rpx;
+  padding:10rpx 40rpx;
+  box-sizing: border-box;
+  background: #F3F3F3;
+  border-radius: 27rpx;
+  font-size: 24rpx;
 }

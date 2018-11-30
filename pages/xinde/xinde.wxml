@@ -9,7 +9,7 @@
         <span class='xinde_time'>09：45</span>
       </view>
       <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
+      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
       <view class='article_img'>
         <image src='/images/art_img1.jpg'></image>
         <image src='/images/art_img2.jpg'></image>
@@ -38,7 +38,7 @@
         <span class='xinde_time'>09：45</span>
       </view>
       <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
+      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
       <view class='article_img'>
         <image src='/images/art_img1.jpg'></image>
         <image src='/images/art_img2.jpg'></image>
@@ -67,7 +67,7 @@
         <span class='xinde_time'>09：45</span>
       </view>
       <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
+      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
       <view class='article_img'>
         <image src='/images/art_img1.jpg'></image>
         <image src='/images/art_img2.jpg'></image>

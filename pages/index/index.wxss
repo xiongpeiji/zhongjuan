@@ -1,4 +1,7 @@
 /**index.wxss**/
+swiper, swiper image {
+  height: 308rpx;
+}
 .slide-image{
   display: block;
   width:750rpx;

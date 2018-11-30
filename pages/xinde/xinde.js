@@ -16,7 +16,11 @@ Page({
       title: '心得'
     });
   },
-
+  showDetail(e){
+    wx.navigateTo({
+      url: '../experiencedis/experiencedis'
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
