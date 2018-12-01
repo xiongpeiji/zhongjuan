@@ -5,7 +5,8 @@
     "pages/xinde/xinde",
     "pages/message/message",
     "pages/my/my",
-    "pages/experiencedis/experiencedis"
+    "pages/experiencedis/experiencedis",
+    "pages/comment/comment"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,7 +37,6 @@
         "iconPath": "images/xiaoxi.png",
         "selectedIconPath": "images/xiaoxi-active.png"
       },
-      
       {
         "pagePath": "pages/my/my",
         "text": "我的",

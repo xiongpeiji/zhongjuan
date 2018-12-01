@@ -40,7 +40,7 @@
                   <image src="/images/dianzan.png"></image>
                   <span>87</span>
                 </view>
-                <view class="zan_num">
+                <view class="zan_num" bindtap="goCommentList">
                   <image src="/images/msg_num.png"></image>
                   <span>87</span>
                 </view>
@@ -49,7 +49,7 @@
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
             <view class="comment_time">
               <span class="send_time">昨天19：30</span>
-              <span class="send_num">4条回复</span>
+              <span class="send_num" bindtap="goCommentList">4条回复</span>
             </view>
           </view>
         </view>
@@ -64,7 +64,7 @@
                   <image src="/images/dianzan.png"></image>
                   <span>87</span>
                 </view>
-                <view class="zan_num">
+                <view class="zan_num" bindtap="goCommentList">
                   <image src="/images/msg_num.png"></image>
                   <span>87</span>
                 </view>
@@ -73,7 +73,7 @@
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
             <view class="comment_time">
               <span class="send_time">昨天19：30</span>
-              <span class="send_num">4条回复</span>
+              <span class="send_num" bindtap="goCommentList">4条回复</span>
             </view>
           </view>
         </view>
@@ -88,7 +88,7 @@
                   <image src="/images/dianzan.png"></image>
                   <span>87</span>
                 </view>
-                <view class="zan_num">
+                <view class="zan_num" bindtap="goCommentList">
                   <image src="/images/msg_num.png"></image>
                   <span>87</span>
                 </view>
@@ -97,7 +97,7 @@
             <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
             <view class="comment_time">
               <span class="send_time">昨天19：30</span>
-              <span class="send_num">4条回复</span>
+              <span class="send_num" bindtap="goCommentList">4条回复</span>
             </view>
           </view>
         </view>
@@ -112,10 +112,6 @@
     <view class="comment_action">
       <view class="zan_num">
         <image src="/images/dianzan.png"></image>
-        <span>87</span>
-      </view>
-      <view class="zan_num">
-        <image src="/images/msg_num.png"></image>
         <span>87</span>
       </view>
       <view class="zan_num">

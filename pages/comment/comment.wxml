@@ -1,0 +1,153 @@
+<!--pages/comment/comment.wxml-->
+<view class="container">
+    <!--评论区-->
+    <view class="comment_wrap">
+      <view class="comment_container">
+        <!--评论列表-->
+        <view class="conment_list conment_list_first">
+          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+                <view class="zan_num">
+                  <image src="/images/msg_num.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_01.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <span class="send_time">昨天19：30</span>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!--输入区-->
+    <view class="conment_input_box">
+        <view class="section_input">
+            <input placeholder="回复Amani..."/>
+        </view>
+        <button type="default" size="mini" plain="{{true}}" hover-class="other-button-hover"> 发送 </button>
+    </view>
+</view>

@@ -20,7 +20,7 @@
           <image src="/images/dianzan.png"></image>
           <span>875</span>
         </view>
-        <view class="fabulous">
+        <view class="fabulous" bindtap="showDetail">
           <image src="/images/msg_num.png"></image>
           <span>875</span>
         </view>
@@ -49,7 +49,7 @@
           <image src="/images/dianzan.png"></image>
           <span>875</span>
         </view>
-        <view class="fabulous">
+        <view class="fabulous" bindtap="showDetail">
           <image src="/images/msg_num.png"></image>
           <span>875</span>
         </view>
@@ -78,7 +78,7 @@
           <image src="/images/dianzan.png"></image>
           <span>875</span>
         </view>
-        <view class="fabulous">
+        <view class="fabulous" bindtap="showDetail">
           <image src="/images/msg_num.png"></image>
           <span>875</span>
         </view>

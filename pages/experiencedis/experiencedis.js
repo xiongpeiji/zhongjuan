@@ -25,11 +25,19 @@ Page({
     });
     this.getDetail();
   },
+  //获取详情信息
   getDetail(){
       this.setData({
         swiper_all: this.data.xindedetails.goods_gallery_urls.length
       })
   },
+  //跳转到评论列表
+  goCommentList(e){
+    wx.navigateTo({
+      url: '../comment/comment'
+    });
+  },
+
   swiper(e) {
     var current = e.detail.current;
     this.setData({
