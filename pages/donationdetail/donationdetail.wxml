@@ -1,0 +1,92 @@
+<!--pages/donationdetail/donationdetail.wxml-->
+<!--pages/experiencedis/experiencedis.wxml-->
+<view class="container">
+  <view class='promotion-img'>
+    <swiper autoplay="true" bindchange="swiper">
+      <block wx:for="{{xindedetails.goods_gallery_urls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+  </view>
+
+  <view class="xindeDetais_text">
+    <view class="xindeDetial_tit">
+      <h2>暖暖冬季，爱心传递</h2>
+      <view class="jigou">
+        <image src='/images/shenqingqiyerenzheng.png'></image>
+        <span>希望小学</span>
+      </view>
+      <span>09：45</span>
+    </view>
+    <view class="artact_user">
+      <span class="small_title">俺们村的希望</span>
+    </view>
+    <view class="artacle_wrap">
+      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
+      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
+    </view>
+    <!--机构详细信息-->
+    <view class="jigouDetail_btn" hover-class="jigouActive">
+        机构详细信息<image src="/images/renzheng_jinru@2x.png"></image>
+    </view>
+    <!--评论区-->
+    <view class="comment_wrap">
+      <view class="comment_title"> 评论86</view>
+      <!--回复输入框-->
+      <view class="send_input">
+          <image src="/images/user_icon_02.png"></image>
+          <view class="section_input">
+            <input placeholder="说点什么吧，让大家认识你" confirm-type="send" focus="{{focus}}"/>
+          </view>
+      </view>
+      <view class="comment_container">
+        <!--评论列表-->
+        <view class="conment_list">
+          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">Amani</span>
+            </view>
+            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_time">
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="/images/dianzan.png"></image>
+                  <span>87</span>
+                </view>
+                <view class="zan_num" bindtap="goCommentList">
+                  <image src="/images/msg_num.png"></image>
+                  <span>87</span>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+  <!--评论输入-->
+  <view class="input_box_fixed">
+    <view class="share_cont" hover-class="share_active" bindtap="commentFn">
+        <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
+        <view class="img_tit_text">评论263</view>
+    </view>
+    <view class="share_cont" hover-class="share_active">
+        <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
+        <view class="img_tit_text">邀请好友</view>
+    </view>
+    <view class="share_cont" hover-class="share_active">
+        <view class="img_box"><image src="/images/share@2x.png"></image></view>
+        <view class="img_tit_text">分享</view>
+    </view>
+    <view class="want_give">
+        <image src="/images/Rectangle9@3x.png"></image>
+        <span>我要捐助</span>
+    </view>
+  </view>
+</view>
+

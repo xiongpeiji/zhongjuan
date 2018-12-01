@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -47,7 +47,19 @@
 				{
 					"id": -1,
 					"name": "消息",
-					"pathName": "pages/message/message"
+					"pathName": "pages/message/message",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建心得",
+					"pathName": "pages/createexperience/createexperience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐详情",
+					"pathName": "pages/donationdetail/donationdetail"
 				}
 			]
 		}

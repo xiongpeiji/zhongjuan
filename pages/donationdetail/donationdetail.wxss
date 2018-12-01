@@ -1,0 +1,298 @@
+/* pages/donationdetail/donationdetail.wxss */
+/* pages/experiencedis/experiencedis.wxss */
+swiper, swiper image {
+    height: 520rpx;
+  }
+  .promotion-img {
+    width: 100%;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .promotion-img .current {
+    position: absolute;
+    right: 60rpx;
+    bottom: 30rpx;
+    font-size: 24rpx;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 0rpx 30rpx;
+    height: 42rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+  }
+  .promotion-img .current span{
+    font-size: 30rpx;
+  }
+  
+  .promotion-img image {
+    display: block;
+    width: 100%;
+    height: 520rpx;
+  }
+  .xindeDetais_text{
+    padding:45rpx 20rpx 95rpx;
+    background: #fff;
+  }
+  .xindeDetial_tit{
+    overflow: hidden;
+    height: 36rpx;
+    line-height: 36rpx;
+    margin-bottom: 25rpx;
+  }
+  .xindeDetial_tit h2{
+    font-size: 36rpx;
+    font-weight: bold;
+    float: left;
+  }
+  .xindeDetial_tit span{
+    font-size: 24rpx;
+    color:#888888;
+    float: right;
+  }
+  .xindeDetial_tit .jigou{
+    float: left;
+    padding:0 18rpx;
+    background:#E4572E;
+    line-height:34rpx;
+    font-size:20rpx;
+    color:#fff;
+    margin-left:20rpx;
+    margin-top:5rpx;
+    border-radius:18rpx;
+
+  }
+  .xindeDetial_tit .jigou image{
+    width:20rpx;
+    height:16rpx;
+    float:left;
+    vertical-align:middle;
+    margin-top:10rpx;
+    margin-right:10rpx;    
+  }
+  .xindeDetial_tit .jigou span{
+      color:#fff;
+  }
+  .artact_user{
+    display: block;
+    height:54rpx;
+    line-height: 54rpx;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+  }
+  .artact_user image{
+    width: 54rpx;
+    height: 54rpx;
+    float: left;
+  }
+  .artact_user span{
+    line-height: 54rpx;
+    float: left;
+    font-size: 24rpx;
+    color:24px;
+    margin-left: 15rpx;
+  }
+  .artact_user .small_title{
+      font-size: 24rpx;
+      color:#999999;
+  }
+  .xindeDetais_text .artacle_wrap{
+    padding-bottom: 60rpx;
+  }
+  .xindeDetais_text .text_details{
+    display: block;
+    font-size: 28rpx;
+    color: #333333;
+    text-indent: 2em;
+    line-height: 40rpx;
+    margin-bottom: 10rpx;
+  }
+  .comment_title{
+    padding:10rpx 0 20rpx;
+    font-size: 28rpx;
+    color:#666666;
+    line-height: 28rpx;
+  }
+  .comment_container{
+    padding-top:24rpx;
+  }
+  .conment_list{
+    padding-left: 75rpx;
+    position: relative;
+    margin-bottom: 20rpx;
+  }
+  .con_user_icon{
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 0;
+    top:0;
+  }
+  .comment_text{
+    padding-bottom: 15rpx;
+    border-bottom:1px solid #DFDFDF;
+  }
+  .comment_name{
+    height: 40rpx;
+    line-height: 40rpx;
+    padding:10rpx 0;
+  }
+  .comment_name .left_name{
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color:#333333;
+    float: left;
+  }
+  .comment_action{
+    float: right;
+    height: 40rpx;
+    overflow: hidden;
+  }
+  .zan_num{
+    height: 40rpx;
+    padding-left: 45rpx;
+    position: relative;
+    float: left;
+  }
+  .zan_num+.zan_num{
+    margin-left: 35rpx;
+  }
+  .zan_num image{
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    left: 0;
+    top:1rpx;
+  }
+  .zan_num span{
+    font-size: 22rpx;
+    color:#929292;
+    line-height: 22rpx;
+  }
+  .comment_dis{
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color:#333333;
+    margin-bottom: 15rpx;
+  }
+  .comment_time{
+    font-size: 24rpx;
+    height: 38rpx;
+    color:#999999;
+    line-height: 38rpx;
+  }
+  .comment_time .send_time{
+    float: left;
+  }
+  .comment_time .send_num{
+    float: left;
+    padding:0 20rpx;
+    border-radius: 19rpx;
+    background: #EFEFEF;
+    font-size: 24rpx;
+    line-height: 38rpx;
+    color:#FD693E;
+    margin-left: 20rpx;
+  }
+  .jigouDetail_btn{
+      font-size: 28rpx;
+      height: 92rpx;
+      line-height: 92rpx;
+      padding-left: 30rpx;
+      border-top:6rpx solid #fafafa;
+      border-bottom:6rpx solid #fafafa;
+  }
+.jigouDetail_btn image{
+    float: right;
+    width: 18rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+    margin-top: 30rpx;
+}
+.jigouActive{
+    background: #fafafa;
+}
+.send_input{
+    width:100%;
+    height: 78rpx;
+    padding-left: 76rpx;
+    position: relative;
+}
+.send_input image{
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 0;
+    top: 10rpx;
+}
+.section_input{
+    float: left;
+    width:590rpx;
+    height: 78rpx;
+    box-sizing: border-box;
+    border:1px solid #C8C8C8;
+    border-radius: 5rpx;
+    background: #fbfbfb;
+}
+.section_input input{
+    padding:12rpx 20rpx;
+    font-size: 26rpx;
+    color:#999999;
+}
+.input_box_fixed{
+    width:100%;
+    height: 100rpx;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding-top:12rpx;
+    background: #fff;
+    z-index: 999;
+}
+.share_cont{
+    float: left;
+    width:150rpx;
+}
+.share_cont .img_box{
+    font-size: 0;
+    text-align: center;
+}
+.share_cont .img_box image{
+    display: inline-block;
+    width: 48rpx;
+    height: 48rpx;
+}
+.share_cont .img_tit_text{
+    font-size: 22rpx;
+    color:#666666;
+    text-align: center;
+}
+.share_active{
+    background: #fafafa;
+}
+.want_give{
+    float: left;
+    position: relative;
+    width:217rpx;
+    height: 78rpx;
+}
+.want_give image{
+    width:217rpx;
+    height: 78rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.want_give span{
+    display: block;
+    width:100%;
+    height: 100%;
+    font-size: 32rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 78rpx;
+    position: relative;
+    z-index: 1;
+}

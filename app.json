@@ -6,7 +6,10 @@
     "pages/message/message",
     "pages/my/my",
     "pages/experiencedis/experiencedis",
-    "pages/comment/comment"
+    "pages/comment/comment",
+    "pages/createexperience/createexperience",
+    "pages/donationdetail/donationdetail",
+    "pages/wanttodonate/wanttodonate"
   ],
   "window": {
     "backgroundTextStyle": "light",

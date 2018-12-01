@@ -78,3 +78,21 @@
     text-align: center;
     border-radius: 50%;
 }
+.no_message{
+    text-align: center;
+    font-size: 0;
+    padding:100rpx;
+    background: #fafafa;
+}
+.no_msg_img{
+    text-align: center;
+}
+.no_msg_img image{
+    display: inline-block;
+    width:86rpx;
+    height: 70rpx;
+}
+.no_message .no_msg_text{
+    font-size: 26rpx;
+    color:#747474;
+}

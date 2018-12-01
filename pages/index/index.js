@@ -12,5 +12,11 @@ Page({
     duration: 1000,
     indicatorcolor:'rgba(238,238,238,.6)',
     indicatoractivecolor:'#fff'
+  },
+  //求捐详情页面
+  qiujuanDetail(e){
+    wx.navigateTo({
+      url: '../donationdetail/donationdetail'
+    });
   }
 })

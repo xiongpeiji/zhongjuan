@@ -1,6 +1,12 @@
 <!--pages/message/message.wxml-->
 <view class="container">
     <view class="message_content">
+        <view class="no_message" hidden="true">
+            <view class="no_msg_img">
+                <image src="/images/iconfontxiaoxi@2x.png"></image>
+            </view>
+            <view class="no_msg_text">还没有新消息哦</view>
+        </view>
         <view class="msg_list">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>

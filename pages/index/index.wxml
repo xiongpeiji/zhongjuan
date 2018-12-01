@@ -31,15 +31,13 @@
       </view>
       <view class='list_time'>09：25</view>
     </view>
-
-    <view class='list_img'>
+    <view class='list_img' bindtap="qiujuanDetail">
       <image src='/images/img_big2.jpg'></image>
       <view class='list_img_title'>
         <h4>暖暖冬季，爱心传递</h4>
         <p>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望社会爱心人士能够伸出援助之手...</p>
       </view>
     </view>
-
     <view class='joins'>
       <view class='left_user_icon'>
         <image src='/images/user_icon_01.png'></image>
@@ -68,7 +66,7 @@
       <view class='list_time'>09：25</view>
     </view>
 
-    <view class='list_img'>
+    <view class='list_img' bindtap="qiujuanDetail">
       <image src='/images/img_big1_03.jpg'></image>
       <view class='list_img_title'>
         <h4>暖暖冬季，爱心传递</h4>
@@ -104,7 +102,7 @@
       <view class='list_time'>09：25</view>
     </view>
 
-    <view class='list_img'>
+    <view class='list_img' bindtap="qiujuanDetail">
       <image src='/images/img_big2.jpg'></image>
       <view class='list_img_title'>
         <h4>暖暖冬季，爱心传递</h4>
