@@ -17,6 +17,7 @@
   width: 70rpx;
   height: 70rpx;
   float: left;
+  border-radius: 50%;
 }
 .xinde_title .user_callname{
   float: left;

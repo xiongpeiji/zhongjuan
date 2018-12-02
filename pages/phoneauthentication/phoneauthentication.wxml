@@ -1,0 +1,28 @@
+<!--pages/phoneauthentication/phoneauthentication.wxml-->
+<view class="container auth_container">
+    <view class="auth_cont">
+        <view class="top_img">
+            <image src="/images/PathCopy@2x.png"></image>
+        </view>
+        <view class="program_content">
+            <view class="program_title">
+                众捐
+            </view>
+            <view class="program_text">为了保证信息安全，请验证您的手机号</view>
+            <view class="phone_number_box">
+                <input class="input_numbers" type="number" placeholder="请输入您的手机号" />
+            </view>
+            <view class="phone_number_box">
+                <view class="verification_box">
+                    <input class="input_numbers" type="number" placeholder="请输入验证码" />
+                </view>
+                <view class="send_button">
+                    <button class="send_code" bindtap="setDisabled" plain="{{true}}">立即获取</button>
+                </view>
+            </view>
+            <view class="phone_number_box">
+                <button class="send_data_btn">验证</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,5 +1,4 @@
-<!--pages/donationdetail/donationdetail.wxml-->
-<!--pages/experiencedis/experiencedis.wxml-->
+<!--求捐详情-->
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">
@@ -15,10 +14,6 @@
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
       <h2>暖暖冬季，爱心传递</h2>
-      <view class="jigou">
-        <image src='/images/shenqingqiyerenzheng.png'></image>
-        <span>希望小学</span>
-      </view>
       <span>09：45</span>
     </view>
     <view class="artact_user">
@@ -29,9 +24,127 @@
       <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
     </view>
     <!--机构详细信息-->
-    <view class="jigouDetail_btn" hover-class="jigouActive">
-        机构详细信息<image src="/images/renzheng_jinru@2x.png"></image>
+    <view class='joins'>
+      <view class='left_user_icon' bindtap="showUser">
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/user_icon_01.png'></image>
+        <image src='/images/user_icon_02.png'></image>
+        <image src='/images/index_gengduo@2x.png'></image>
+      </view>
+      <view class='jions_num'>6人已加入</view>
+      <view class='slider_bar'>
+        <view class='bar_bg'>
+          <span class='Percentage' style='width:90%;'></span>
+        </view>
+        <view class='Completion'>完成度90%</view>
+      </view>
+
+      <!--头像列表-->
+      <view class="user_photos" hidden="{{usersShow}}">
+        <view class="user_photo_list">
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+          <view class="user_photo_name">
+            <view class="user_icons">
+              <image src='/images/user_icon_01.png'></image>
+            </view>
+            <view class="user_names">小仙女</view>
+          </view>
+        </view>
+        <view class="hidden_user" bindtap="hideUsers">
+          <image src="/images/up_arr.png"></image>收起
+        </view>
+      </view>
     </view>
+    <view class="jigou_titles">发布机构</view>
+    <view class="jigouDetail_btn">
+        <span class="jigou_name">俺们村的希望</span>
+        <view class="jigou">
+          <image src='/images/shenqingqiyerenzheng.png'></image>
+          <span>希望小学</span>
+        </view>
+    </view>
+    <view class="jigou_titles">求捐物资</view>
+    <!--物资详情-->
+    <view class="wuzi_details">
+      <view class="wuzi_list">
+        <image src="/images/yifu_xuanzhong.png"></image>
+        <span class="wuzi_name">服装100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+      <view class="wuzi_list">
+        <image src="/images/qianbi_xuanzhong.png"></image>
+        <span class="wuzi_name">学习用品100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+      <view class="wuzi_list">
+        <image src="/images/shangpin_xuanzhong.png"></image>
+        <span class="wuzi_name">服装100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+    </view>
+
+
+
     <!--评论区-->
     <view class="comment_wrap">
       <view class="comment_title"> 评论86</view>

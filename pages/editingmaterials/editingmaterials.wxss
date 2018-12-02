@@ -1,0 +1,118 @@
+/* pages/editingmaterials/editingmaterials.wxss */
+.public_input_box{
+    height: 116rpx;
+    position: relative;
+    background: #fff;
+    margin-bottom: 2px;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.public_input_box .title_box{
+    display: block;
+    float: left;
+    line-height: 76rpx;
+    font-size: 28rpx;
+    color:#333333;
+}
+.public_input_box .right_icon{
+    display: block;
+    float: right;
+    height: 76rpx;
+    width: 76rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.public_input_box .right_icon image{
+    width: 76rpx;
+    height: 76rpx;
+}
+.right_nick_name{
+    float: right;
+    font-size: 28rpx;
+    color:#666666;
+    line-height: 76rpx;
+}
+.public_hove{
+    background: #fafafa;
+}
+
+
+/*mask*/
+.drawer_screen { 
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    background: #000; 
+    opacity: 0.6; 
+    overflow: hidden; 
+   } 
+     
+   /*content*/
+   .drawer_box { 
+    width: 540rpx; 
+    overflow: hidden; 
+    position: fixed; 
+    top: 20%; 
+    left: 50%; 
+    z-index: 1001; 
+    background: #fff; 
+    margin-left: -270rpx;
+    border-radius: 20rpx; 
+   } 
+     
+   .drawer_title{
+    border-bottom: 1px solid #E5E5E5;
+    padding:30rpx; 
+    text-align: center; 
+    font-size: 32rpx;
+    color:#333;
+    position: relative;
+    margin-bottom: 20rpx;
+   } 
+   .drawer_title image{
+       display: inline-block;
+       width: 30rpx;
+       height: 30rpx;
+       position: absolute;
+       right: 30rpx;
+       top:30rpx;
+   }
+   .drawer_content { 
+    height: 90rpx; 
+    line-height: 90rpx;
+    box-sizing: border-box;
+    padding-left: 60rpx;
+    margin-bottom: 30rpx;
+   } 
+     
+   .btn_ok{ 
+    padding: 10rpx; 
+    text-align: center; 
+    color: #fff;
+    border-radius: 0;
+    display: block;
+    background: #E4572E;
+   } 
+     
+
+   .title { 
+     font-size: 28rpx;
+     color:#666666;
+     float: left;
+     padding-right: 20rpx;
+   } 
+     
+   .input_base { 
+     border: 1px solid #E5E5E5;
+     box-sizing: border-box;
+     height: 90rpx;
+     padding:20rpx;
+     float: left;
+     font-size: 28rpx;
+     color:#333333;
+     line-height: 28rpx;
+     border-radius: 6rpx;
+   } 

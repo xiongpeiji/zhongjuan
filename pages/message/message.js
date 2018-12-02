@@ -16,7 +16,12 @@ Page({
       title: '消息'
     });
   },
-
+  //消息详情
+  msgDetails(e){
+    wx.navigateTo({
+      url: '../messageDetail/messageDetail'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

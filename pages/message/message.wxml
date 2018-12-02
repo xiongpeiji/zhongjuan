@@ -7,7 +7,7 @@
             </view>
             <view class="no_msg_text">还没有新消息哦</view>
         </view>
-        <view class="msg_list">
+        <view class="msg_list" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>
                 <view class="msg_title">
@@ -18,7 +18,7 @@
                 <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
             </view>
         </view>
-        <view class="msg_list">
+        <view class="msg_list" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>
                 <view class="msg_title">
@@ -29,7 +29,7 @@
                 <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
             </view>
         </view>
-        <view class="msg_list">
+        <view class="msg_list" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>
                 <view class="msg_title">
@@ -40,7 +40,7 @@
                 <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
             </view>
         </view>
-        <view class="msg_list">
+        <view class="msg_list" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>
                 <view class="msg_title">
@@ -51,7 +51,7 @@
                 <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
             </view>
         </view>
-        <view class="msg_list">
+        <view class="msg_list" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="/images/pic_kuaidi.png"></image>
                 <view class="msg_title">

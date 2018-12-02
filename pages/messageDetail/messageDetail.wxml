@@ -1,0 +1,57 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+<view class="container">
+    <view class="message_cont">
+        <view class="detail_title">运输中</view>
+        <view class="detail_content">
+            <view class="express_title">
+                <image src="/images/pic_kuaidi.png"></image>韵达快递
+            </view>
+            <view class="express_Order">
+                快递单号：686868686868686868686
+            </view>
+        </view>
+        <view class="detail_title">运输详情</view>
+        <view class="detail_content">
+            <view class="express_step">
+                <view class="step_text express_success">
+                    <em></em>
+                    爱心物资已签收
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达正在派送
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+                <view class="step_text">
+                    <em></em>
+                    爱心物资到达深圳中转站
+                </view>
+
+                <!--已完成-->
+                <view class="express_over">
+                    <view class="over_image"><image src="/images/yunshuche@2x.png"></image></view>
+                    <view class="over_text">爱心被签收了哦</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

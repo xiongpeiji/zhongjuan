@@ -50,19 +50,34 @@ swiper, swiper image {
     color:#888888;
     float: right;
   }
-  .xindeDetial_tit .jigou{
+  .jigou_titles{
+    font-size: 34rpx;
+    color:#343434;
+    margin-bottom: 50rpx;
+    line-height: 34rpx;
+  }
+  .jigouDetail_btn {
+    height: 34rpx;
+    line-height: 34rpx;
+    margin-bottom: 40rpx;
+  }
+  .jigouDetail_btn .jigou_name{
     float: left;
+    font-size: 26rpx;
+    color:#646464;
+  }
+  .jigouDetail_btn .jigou{
+    float: right;
     padding:0 18rpx;
     background:#E4572E;
     line-height:34rpx;
     font-size:20rpx;
     color:#fff;
     margin-left:20rpx;
-    margin-top:5rpx;
     border-radius:18rpx;
 
   }
-  .xindeDetial_tit .jigou image{
+  .jigouDetail_btn .jigou image{
     width:20rpx;
     height:16rpx;
     float:left;
@@ -70,9 +85,11 @@ swiper, swiper image {
     margin-top:10rpx;
     margin-right:10rpx;    
   }
-  .xindeDetial_tit .jigou span{
+  .jigouDetail_btn .jigou span{
       color:#fff;
   }
+
+
   .artact_user{
     display: block;
     height:54rpx;
@@ -127,6 +144,7 @@ swiper, swiper image {
     position: absolute;
     left: 0;
     top:0;
+    border-radius: 50%;
   }
   .comment_text{
     padding-bottom: 15rpx;
@@ -194,23 +212,12 @@ swiper, swiper image {
     color:#FD693E;
     margin-left: 20rpx;
   }
-  .jigouDetail_btn{
-      font-size: 28rpx;
-      height: 92rpx;
-      line-height: 92rpx;
-      padding-left: 30rpx;
-      border-top:6rpx solid #fafafa;
-      border-bottom:6rpx solid #fafafa;
-  }
 .jigouDetail_btn image{
     float: right;
     width: 18rpx;
     height: 30rpx;
     margin-right: 20rpx;
     margin-top: 30rpx;
-}
-.jigouActive{
-    background: #fafafa;
 }
 .send_input{
     width:100%;
@@ -224,6 +231,7 @@ swiper, swiper image {
     position: absolute;
     left: 0;
     top: 10rpx;
+    border-radius: 50%;
 }
 .section_input{
     float: left;
@@ -295,4 +303,133 @@ swiper, swiper image {
     line-height: 78rpx;
     position: relative;
     z-index: 1;
+}
+.joins{
+  height: 52rpx;
+  position: relative;
+  line-height: 52rpx;
+  margin-bottom: 60rpx;
+}
+.left_user_icon{
+  float: left;
+  height: 52rpx;
+}
+.left_user_icon image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: -15rpx;
+  float: left;
+  border-radius: 50%;
+}
+.jions_num{
+  float: left;
+  color: #929292;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  margin-left: 70rpx;
+}
+.slider_bar{
+  float: right;
+  position: relative;
+}
+.slider_bar .bar_bg{
+  width: 126rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background: #E6E6E6;
+  overflow: hidden;
+  font-size: 0;
+}
+.slider_bar .bar_bg .Percentage{
+  display: block;
+  height: 100%;
+  background: #E4572E;
+  border-radius: 7rpx;
+}
+.slider_bar .Completion{
+  position: absolute;
+  width: 100%;
+  bottom: -50rpx;
+  left: 0;
+  font-size: 24rpx;
+  color:#E4572E;
+}
+.wuzi_details{
+  margin-bottom: 60rpx;
+  padding-left: 25rpx;
+}
+.wuzi_details .wuzi_list{
+  padding-left: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+.wuzi_list image{
+  width:50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 0;
+  top:1rpx;
+}
+.wuzi_list .wuzi_name{
+  font-size: 26rpx;
+  color:#353535;
+  float: left;
+} 
+.wuzi_list .juan_nums{
+  font-size: 26rpx;
+  float: right;
+  color:#9f9f9f;
+}
+.wuzi_list .juan_nums span{
+  color:#353535;
+  margin:0 5rpx;
+}
+.user_photos{
+  width: 680rpx;
+  position: absolute;
+  left: 0;
+  top: 70rpx;
+  box-shadow: 0rpx 0rpx 10rpx 1rpx #dcdcdc;
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 15rpx 15rpx 0;
+  box-sizing: border-box;
+  z-index: 99;
+}
+.user_photo_list{
+  overflow: hidden;
+  border-bottom: 1px solid #d9d9d9;
+}
+.user_photo_list .user_photo_name{
+  text-align: center;
+  float: left;
+  padding:0 5rpx;
+  margin-right: 20rpx;
+  margin-bottom: 15rpx;
+}
+.user_icons{
+  text-align: center;
+}
+.user_icons image{
+  display: inline-block;
+  width:50rpx;
+  height: 50rpx;
+}
+.user_photo_name .user_names{
+  font-size: 20rpx;
+  color:#6a6a6a;
+  line-height: 24rpx;
+}
+.hidden_user{
+  text-align: center;
+  font-size: 20rpx;
+  color:#a6a6a6;
+}
+.hidden_user image{
+  display: inline-block;
+  width: 22rpx;
+  height: 14rpx;
+  margin-right: 10rpx;
 }

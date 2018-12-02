@@ -134,6 +134,7 @@ swiper, swiper image {
   height: 52rpx;
   margin-right: -15rpx;
   float: left;
+  border-radius: 50%;
 }
 .jions_num{
   float: left;

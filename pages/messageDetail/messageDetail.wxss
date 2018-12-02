@@ -1,0 +1,94 @@
+/* pages/messageDetail/messageDetail.wxss */
+.message_cont{
+    padding:20rpx 35rpx;
+}
+.detail_title{
+    margin-bottom: 40rpx;
+    font-size: 28rpx;
+}
+.detail_content{
+    padding:20rpx 25rpx;
+    background: #fff;
+    box-shadow: 0rpx 0rpx 10rpx 1rpx #eaeaea;
+    border-radius: 10rpx;
+    margin-bottom: 30rpx;
+}
+.express_title{
+    padding-left: 75rpx;
+    height:50rpx;
+    position: relative;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color:#181818;
+    margin-bottom: 30rpx;
+}
+.express_title image{
+    display: block;
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 50rpx;
+    height: 50rpx;
+}
+.express_Order{
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color:#181818;
+}
+.express_step{
+    padding:20rpx 20rpx 90rpx 0;
+    border-left: 1px solid #d8d8d8;
+    margin-left: 20rpx;
+    position: relative;
+}
+.step_text{
+    font-size: 24rpx;
+    line-height: 30rpx;
+    height: 30rpx;
+    margin-bottom: 40rpx;
+    padding-left: 30rpx;
+    color:#7a7a7a;
+    position: relative;
+}
+.step_text em{
+    display: block;
+    width: 15rpx;
+    height: 15rpx;
+    background: #d8d8d8;
+    border-radius: 50%;
+    position: absolute;
+    top:8rpx;
+    left: -7rpx;
+}
+.express_success{
+    color: #0e0e0e;
+}
+.express_success em{
+    width: 26rpx;
+    height: 26rpx;
+    background: #e86539;
+    left: -13rpx;
+    top: 2rpx;
+}
+.express_over{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    width: 160rpx;
+    padding:20rpx 0;
+}
+.express_over .over_image{
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 20rpx;
+}
+.express_over .over_image image{
+    display: inline-block;
+    width: 73rpx;
+    height: 59rpx;
+}
+.over_text{
+    font-size: 20rpx;
+    color:#222222;
+}

@@ -9,7 +9,10 @@
     "pages/comment/comment",
     "pages/createexperience/createexperience",
     "pages/donationdetail/donationdetail",
-    "pages/wanttodonate/wanttodonate"
+    "pages/wanttodonate/wanttodonate",
+    "pages/messageDetail/messageDetail",
+    "pages/phoneauthentication/phoneauthentication",
+    "pages/editingmaterials/editingmaterials"
   ],
   "window": {
     "backgroundTextStyle": "light",

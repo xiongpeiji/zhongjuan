@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    focus:false,
+    focus:false,//是否获得焦点
+    usersShow:true,//是否显示用户列表
     current: 1,
     swiper_all: 0,
     xindedetails: {
@@ -19,11 +20,29 @@ Page({
       ]
     },
   },
+  //显示捐赠用户列表
+  showUser(e){
+    this.setData({
+      usersShow:false
+    })
+  },
+  //隐藏用户头像
+  hideUsers(e){
+    this.setData({
+      usersShow:true
+    })
+  },
   //评论获取焦点
   commentFn(e){
     this.setData({
       focus:true
     })
+  },
+  //进入列表页
+  goCommentList(e){
+    wx.navigateTo({
+      url: '../comment/comment'
+    });
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {

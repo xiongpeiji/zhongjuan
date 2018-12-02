@@ -100,6 +100,7 @@ swiper, swiper image {
   position: absolute;
   left: 0;
   top:0;
+  border-radius: 50%;
 }
 .comment_text{
   padding-bottom: 15rpx;
@@ -180,7 +181,7 @@ swiper, swiper image {
 .input_box .section_input{
   border-radius: 20rpx;
   float: left;
-  width: 339rpx;
+  width: 495rpx;
   height: 54rpx;
 }
 .input_box .section_input input{
@@ -191,4 +192,5 @@ swiper, swiper image {
   background: #F3F3F3;
   border-radius: 6rpx;
   font-size: 24rpx;
+  line-height: 34rpx;
 }

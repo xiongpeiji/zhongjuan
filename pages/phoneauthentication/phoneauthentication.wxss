@@ -1,0 +1,78 @@
+/* 手机认证*/
+.auth_container{
+    background: #fff;
+}
+.top_img{
+    width: 100%;
+    height: 168rpx;
+    font-size: 0;
+}
+.top_img image{
+    display: block;
+    width: 750rpx;
+    height: 168rpx;
+}
+.program_content{
+    padding:78rpx 70rpx 0;
+    box-sizing: border-box;
+}
+.program_title{
+    display: block;
+    width: 167rpx;
+    height: 167rpx;
+    margin: auto;
+    border-radius: 27rpx;
+    box-shadow: 0 4px 6px 0 #E9E4E4;
+    text-align: center;
+    line-height: 167rpx;
+    font-size: 36rpx;
+    color:#030303;
+    margin-bottom: 30rpx;
+}
+.program_text{
+    font-size: 24rpx;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 80rpx;
+}
+.phone_number_box{
+    margin-bottom: 50rpx;
+    height: 80rpx;
+    overflow: hidden;
+}
+.phone_number_box .input_numbers{
+    font-size: 28rpx;
+    color: #999999;
+    padding:20rpx 0 20rpx 80rpx;
+    height: 80rpx;
+    line-height: 40rpx;
+    box-sizing: border-box;
+    border-radius: 40rpx;
+    border: 1px solid #E5E5E5;
+}
+.verification_box{
+    float: left;
+    width: 360rpx;
+}
+.send_button{
+    float: right; 
+    width: 224rpx;
+}
+.send_button .send_code{
+    border: 1px solid #E4572E;
+    border-radius: 40rpx;
+    height: 80rpx;
+    box-sizing: border-box;
+    line-height: 78rpx;
+    font-size: 28rpx;
+    color: #E4572E;
+}
+.phone_number_box .send_data_btn{
+    background: #E4572E;
+    border-radius: 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    color:#fff;
+}
