@@ -12,7 +12,8 @@
     "pages/wanttodonate/wanttodonate",
     "pages/messageDetail/messageDetail",
     "pages/phoneauthentication/phoneauthentication",
-    "pages/editingmaterials/editingmaterials"
+    "pages/editingmaterials/editingmaterials",
+    "pages/experiencelist/experiencelist"
   ],
   "window": {
     "backgroundTextStyle": "light",

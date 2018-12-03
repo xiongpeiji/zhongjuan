@@ -1,1 +1,86 @@
 /* pages/my/my.wxss */
+.my_top{
+    padding:25rpx 20rpx;
+    background: #df4334;
+    height: 145rpx;
+    box-sizing: border-box;
+}
+.my_top .user_icon{
+    float: left;
+    height: 90rpx;
+    line-height: 90rpx;
+    overflow: hidden;
+}
+.my_top .user_icon image{
+    float: left;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+}
+.my_top .user_icon .user_name{
+    font-size: 32rpx;
+    font-weight: bold;
+    color:#fff;
+    float: left;
+    margin-left: 25rpx;
+}
+.editUserInfo{
+    float: right;
+    width: 50rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 0;
+    padding:0 10rpx;
+    text-align: center;
+}
+.editUserInfo image{
+    display: inline-block;
+    width: 16rpx;
+    height: 27rpx;
+    vertical-align: middle;
+}
+.my_menu_list{
+    position: relative;
+    height: 98rpx;
+    padding:28rpx 25rpx 28rpx 40rpx;
+    background: #fff;
+    line-height: 42rpx;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+}
+.left_text{
+    float: left;
+    font-size: 30rpx;
+    color:#333333;
+}
+.right_btn{
+    float: right;
+    overflow: hidden;
+}
+.no_auth{
+    font-size: 24rpx;
+    color:#999999;
+    display: inline-block;
+}
+.no_auth image{
+    display: inline-block;
+    width: 4rpx;
+    height: 21rpx;
+    margin-right: 20rpx;
+}
+.right_icons{
+    height:25rpx;
+    width:15rpx;
+    margin-left:20rpx;
+    margin-top:15rpx;
+    float:right;
+}
+.pass_auth image{
+    width: 18rpx;
+}
+.pass_auth{
+    color:#df4334;
+}
+.public_hover{
+    background: #fafafa;
+}

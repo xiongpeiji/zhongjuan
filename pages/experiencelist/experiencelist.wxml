@@ -1,0 +1,56 @@
+<!--心得列表-->
+<view class="container">
+    <view class="xinde_list_con">
+        <view class="xinde_lists states_waiting">
+            <view class="list_data">
+                <b></b>
+                <view class="list_day">03</view>
+                <view class="list_month">十二月</view>
+            </view>
+            <view class="list_discription">
+                <view class="list_title">捐助希望小学的感受</view>
+                <view class="list_dis_text">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在......</view>
+                <view class="data_times">
+                    <label class="time_box">19：20</label>
+                    <icon class="states_icon" type="waiting" size="18"/>
+                    <label class="list_state">审核中</label>
+                </view>
+            </view>
+        </view>
+
+        <view class="xinde_lists states_success">
+            <view class="list_data">
+                <b></b>
+                <view class="list_day">03</view>
+                <view class="list_month">十二月</view>
+            </view>
+            <view class="list_discription">
+                <view class="list_title">捐助希望小学的感受</view>
+                <view class="list_dis_text">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在......</view>
+                <view class="data_times">
+                    <label class="time_box">19：20</label>
+                    <icon class="states_icon" type="success" size="18"/>
+                    <label class="list_state">审核成功</label>
+                </view>
+            </view>
+        </view>
+
+        <view class="xinde_lists states_warn">
+            <view class="list_data">
+                <b></b>
+                <view class="list_day">03</view>
+                <view class="list_month">十二月</view>
+            </view>
+            <view class="list_discription">
+                <view class="list_title">捐助希望小学的感受</view>
+                <view class="list_dis_text">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在......</view>
+                <view class="data_times">
+                    <label class="time_box">19：20</label>
+                    <icon class="states_icon" type="warn" size="18"/>
+                    <label class="list_state">审核失败</label>
+                    <view class="re_edit" hover-class="edit_hover">重新编辑</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,2 +1,45 @@
 <!--pages/my/my.wxml-->
-<button bindtap="editUserInfo">编辑</button>
+<view class="container">
+    <view class="my_top">
+        <view class="user_icon">
+            <image class="user_wechat_icon" src="/images/user_icon_02.png"></image>
+            <label class="user_name">萝卜是程序员</label>
+        </view>
+        <span class="editUserInfo" bindtap="editUserInfo">
+            <image src="/images/icon_fanhui.png"></image>
+        </span>
+    </view>
+    <view class="my_menu_list" hover-class="public_hover" bindtap="phoneAuth">
+        <label class="left_text">手机认证</label>
+        <view class="right_btn">
+            <label class="no_auth"><image src="/images/web__weirenzheng.png"></image>未认证</label>
+            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        </view>
+    </view>
+    <view class="my_menu_list" hover-class="public_hover">
+        <label class="left_text">机构认证</label>
+        <view class="right_btn">
+            <label class="no_auth pass_auth"><image src="/images/icon_yirenzheng.png"></image>已认证</label>
+            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        </view>
+    </view>
+    <view class="my_menu_list" hover-class="public_hover">
+        <label class="left_text">求捐信息管理</label>
+        <view class="right_btn">
+            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        </view>
+    </view>
+    <view class="my_menu_list" hover-class="public_hover">
+        <label class="left_text">我的捐赠</label>
+        <view class="right_btn">
+            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        </view>
+    </view>
+    <view class="my_menu_list" hover-class="public_hover" bindtap="xindeList">
+        <label class="left_text">我的心得</label>
+        <view class="right_btn">
+            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        </view>
+    </view>
+</view>
+
