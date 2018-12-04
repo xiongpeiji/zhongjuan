@@ -1,4 +1,4 @@
-/* pages/createexperience/createexperience.wxss */
+/* pages/editseekinginformation/editseekinginformation.wxss */
 .creat_xinde_con{
     height: 100rpx;
     padding: 30rpx 20rpx;
@@ -84,4 +84,59 @@
 }
 .padding_bottom{
     padding-bottom: 100rpx;
+}
+.my_menu_list{
+    position: relative;
+    height: 98rpx;
+    padding:28rpx 25rpx 28rpx 40rpx;
+    background: #fff;
+    line-height: 42rpx;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+}
+.left_text{
+    float: left;
+    font-size: 30rpx;
+    color:#333333;
+}
+.right_btn{
+    float: right;
+    overflow: hidden;
+}
+.right_icons{
+    height:25rpx;
+    width:15rpx;
+    margin-left:20rpx;
+    margin-top:15rpx;
+    float:right;
+}
+.no_auth{
+    font-size: 24rpx;
+    color:#999999;
+    display: inline-block;
+}
+.public_hover{
+    background: #fafafa;
+}
+.information_list{
+    padding: 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+.list_Goods{
+    height: 40rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    margin-bottom: 20rpx;
+}
+.list_Goods label{
+    font-size: 28rpx;
+    color:#666666;
+    line-height: 40rpx;
+}
+.list_Goods .float_left{
+    float: left;
+}
+.list_Goods .float_right{
+    float: right;
 }

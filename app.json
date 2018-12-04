@@ -13,7 +13,8 @@
     "pages/messageDetail/messageDetail",
     "pages/phoneauthentication/phoneauthentication",
     "pages/editingmaterials/editingmaterials",
-    "pages/experiencelist/experiencelist"
+    "pages/experiencelist/experiencelist",
+    "pages/editseekinginformation/editseekinginformation"
   ],
   "window": {
     "backgroundTextStyle": "light",

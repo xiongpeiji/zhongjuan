@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -90,6 +90,30 @@
 					"id": -1,
 					"name": "心得列表",
 					"pathName": "pages/experiencelist/experiencelist",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "编辑资料",
+					"pathName": "pages/editingmaterials/editingmaterials",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建心得",
+					"pathName": "pages/createexperience/createexperience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑求捐信息",
+					"pathName": "pages/editseekinginformation/editseekinginformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要捐助",
+					"pathName": "pages/wanttodonate/wanttodonate",
 					"query": ""
 				}
 			]

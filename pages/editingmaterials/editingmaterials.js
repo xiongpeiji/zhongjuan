@@ -8,7 +8,6 @@ Page({
     images: '/images/user_icon_01.png',
     nick_name:'大箩贝先生',
     showModalStatus: false,
-    nameLength:9
   },
 
   /**

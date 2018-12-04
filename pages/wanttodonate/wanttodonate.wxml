@@ -1,2 +1,6 @@
-<!--pages/wanttodonate/wanttodonate.wxml-->
-<text>pages/wanttodonate/wanttodonate.wxml</text>
+<!--我要捐助-->
+<view class="container">
+    <view class="padding_bottom">
+        我要捐助
+    </view>
+</view>

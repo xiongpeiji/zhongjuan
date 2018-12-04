@@ -1,0 +1,51 @@
+<!--编辑求捐信息-->
+<view class="container">
+    <view class="padding_bottom">
+        <view class="creat_xinde_con">
+            <label class="xinde_title">标题</label>
+            <view class="title_input_box">
+                <input  value="" type="text" placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
+            </view>
+        </view>
+        <view class="textArea_box">
+            <textarea  auto-height placeholder="请输入文章正文，不得超过10000字" maxlength="10000" />
+        </view>
+        <view class="imgupload_box">
+            <view class="imguptile">
+                插入图片<label>最多9张</label>
+            </view>
+                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
+            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">求捐物资类型及数量</label>
+            <view class="right_btn">
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="information_list">
+            <view class="list_Goods">
+                <label class="float_left">服装</label>
+                <label class="float_right">100件</label>
+            </view>
+            <view class="list_Goods">
+                <label class="float_left">生活用品</label>
+                <label class="float_right">100件</label>
+            </view>
+            <view class="list_Goods">
+                <label class="float_left">学习用品</label>
+                <label class="float_right">100件</label>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">活动结束时间</label>
+            <view class="right_btn">
+                <label class="no_auth">请选择结束时间</label>
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+    </view>
+    
+
+    <view hover-class="fixed_bottom_btn" class="bottom_btn">发布</view>
+</view>

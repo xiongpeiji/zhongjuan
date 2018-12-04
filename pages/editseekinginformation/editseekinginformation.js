@@ -1,4 +1,4 @@
-// pages/createexperience/createexperience.js
+// pages/editseekinginformation/editseekinginformation.js
 Page({
 
   /**
@@ -27,20 +27,21 @@ Page({
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '编辑求捐信息'
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.setNavigationBarTitle({
-      title: '创建心得'
-    });
+
   },
 
   /**
