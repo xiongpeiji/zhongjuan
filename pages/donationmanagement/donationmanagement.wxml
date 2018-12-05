@@ -1,0 +1,82 @@
+<!--捐赠管理-->
+<view class="container">
+    <view class="dona_infos">
+        <view class="dona_left_cont">
+            <image class="dona_img" src="/images/user_icon_02.png"></image>
+            <view class="dona_user_info">
+                <label class="dona_name">萝卜是程序员</label>
+                <label class="dona_phone_num">
+                    13509297435
+                    <icon class="phone_satus" type="success" color="#fff" size="{{12}}"/>
+                </label>
+            </view>
+        </view>
+        <view class="dona_right_con">
+            <label class="dona_name">13</label>
+            <label class="dona_phone_num">
+                我的捐助
+            </label>
+        </view>
+    </view>
+
+    <view class="dona_list">
+        <view class="dona_ul">
+
+            <view class="dona_lis ings">
+                <em></em>
+                <view class="dona_box">
+                    <view class="dona_title">
+                        <view class="boxs">
+                            <label class="dona_times">2018.11.20</label>
+                            <label class="dona_tit_text">暖暖冬季，爱心传递给每一位小天使</label>
+                        </view>
+                        <view class="dona_num_box">
+                            <label class="num_title">捐助物资：</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                        </view>
+                    </view>
+                    <view class="look_dona" bindtap="expressDetail">运输中</view>
+                </view>
+            </view>
+
+            <view class="dona_lis">
+                <em></em>
+                <view class="dona_box">
+                    <view class="dona_title">
+                        <view class="boxs">
+                            <label class="dona_times">2018.11.20</label>
+                            <label class="dona_tit_text">暖暖冬季，爱心传递给每一位小天使</label>
+                        </view>
+                        <view class="dona_num_box">
+                            <label class="num_title">捐助物资：</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                            <label class="dona_num_lis">毛衣X2</label>
+                        </view>
+                    </view>
+                    <view class="look_dona">已签收</view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+
+    <!--没有消息-->
+    <view class="no_messages">
+        <image src="/images/no_dona.jpg"></image>
+        <view class="no_msg_text">还没有捐助过其他机构耶！</view>
+        <view class="go_lists" hover-class="public_hover" bindtap="goHome">去看看</view>
+    </view>
+</view>

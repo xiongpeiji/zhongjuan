@@ -11,7 +11,7 @@
             <label class="left_text">机构地址</label>
             <view class="right_btn">
                 <label class="no_auth">请输入机构地址</label>
-                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+                <image class="right_icons" src="/images/dingwei@2x.png"></image>
             </view>
         </view>
         <view class="my_menu_list" hover-class="public_hover">
@@ -43,7 +43,7 @@
 
         <view class="imgupload_box">
             <view class="imguptile">
-                人像验证<label>请上传联络人照片</label>
+                人像验证 <label>请上传联络人照片</label>
             </view>
             <view class="user_photos_box">
                 <image class="user_photo_bg" src="/images/user_photo_bg.jpg"></image>
@@ -52,7 +52,7 @@
 
         <view class="imgupload_box">
             <view class="imguptile">
-                身份验证<label>请上传联络人身份证正反面照片</label>
+                身份验证 <label>请上传联络人身份证正反面照片</label>
             </view>
             <view class="user_photos_box">
                 <image class="user_card_bg" src="/images/pic_shenzheng.png"></image>
@@ -63,7 +63,7 @@
 
         <view class="imgupload_box">
             <view class="imguptile">
-                机构认证<label>请上传机构相关证件照片</label>
+                机构认证 <label>请上传机构相关证件照片</label>
             </view>
                 <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
             <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>

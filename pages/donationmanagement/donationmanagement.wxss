@@ -1,0 +1,175 @@
+/* pages/donationmanagement/donationmanagement.wxss */
+.dona_infos{
+    height: 200rpx;
+    padding:60rpx 70rpx 55rpx 20rpx;
+    background: #df4334;
+    box-sizing: border-box;
+}
+.dona_left_cont{
+    height: 90rpx;
+    padding-left: 110rpx;
+    position: relative;
+    float: left;
+}
+.dona_img{
+    width: 90rpx;
+    height: 90rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+}
+.dona_name{
+    display: block;
+    font-size: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    color:#fff;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+.dona_phone_num{
+    display: block;
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 24rpx;
+    color:#fff;
+}
+.phone_satus{
+    color:#fff;
+}
+.dona_right_con{
+    float: right;
+}
+.dona_right_con .dona_name{
+    text-align: center;
+}
+.dona_list{
+    display: block;
+    padding:0 30rpx 0 60rpx;
+    width: 100%;
+    box-sizing: border-box;    
+}
+.dona_ul{
+    width: 100%;
+    border-left: 1px solid #D2D2D2;
+    padding-top: 20rpx;
+    padding-left: 60rpx;
+    box-sizing: border-box;
+}
+.dona_box{
+    background: #FFFFFF;
+    box-shadow: 0 4rpx 6rpx 0 rgba(218,218,218,0.50);
+    border-radius: 10rpx;
+}
+.dona_title{
+    padding:15rpx 15rpx 20rpx 30rpx;
+    position: relative;
+    border-bottom: 1px solid #D9D9D9;
+}
+.dona_times{
+    display: block;
+    font-size: 30rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    color:#666666;
+}
+.dona_tit_text{
+    font-size: 32rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    color:#444444;
+    font-weight: bold;
+    
+}
+.boxs{
+    margin-bottom: 15rpx;
+}
+.dona_num_box{
+    position: relative;
+    padding-left: 130rpx;
+    overflow: hidden;
+    display: block;
+}
+.num_title{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 36rpx;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color:#999;
+}
+.dona_num_lis{
+    margin-right: 10rpx;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    height: 36rpx;
+    color:#999;
+    float: left;
+}
+.look_dona{
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color:#999;
+}
+.dona_lis{
+    margin-bottom: 60rpx;
+    position: relative;
+}
+.dona_lis em{
+    display: block;
+    width: 16rpx;
+    height: 16rpx;
+    background: #D8D8D8;
+    border-radius: 50%;
+    position: absolute;
+    left: -68rpx;
+    top: 50rpx;
+}
+.dona_lis.ings em{
+    display: block;
+    width: 28rpx;
+    height: 28rpx;
+    background: #df4334;
+    border-radius: 50%;
+    position: absolute;
+    left: -74rpx;
+    top: 50rpx;
+}
+.dona_lis.ings .look_dona{
+    color:#4F9AFE;
+}
+.no_messages{
+    padding:100rpx;
+}
+.no_messages image{
+    display: block;
+    width: 192rpx;
+    height: 104rpx;
+    margin:auto;
+    margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+    text-align: center;
+    font-size: 26rpx;
+    color: #747474;
+    margin-bottom: 50rpx;
+}
+.no_messages .go_lists{
+    width: 258rpx;
+    height: 68rpx;
+    border:1px solid #D7273D;
+    border-radius: 35rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #D82A3C;
+    margin: auto;
+}
+.public_hover{
+    background: #f1f1f1;
+}

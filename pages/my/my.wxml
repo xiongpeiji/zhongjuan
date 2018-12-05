@@ -29,7 +29,7 @@
             <image class="right_icons" src="/images/renzheng_jinru.png"></image>
         </view>
     </view>
-    <view class="my_menu_list" hover-class="public_hover">
+    <view class="my_menu_list" hover-class="public_hover" bindtap="myDona">
         <label class="left_text">我的捐赠</label>
         <view class="right_btn">
             <image class="right_icons" src="/images/renzheng_jinru.png"></image>

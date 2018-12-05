@@ -15,7 +15,8 @@
         "pages/editingmaterials/editingmaterials",
         "pages/experiencelist/experiencelist",
         "pages/editseekinginformation/editseekinginformation",
-        "pages/institutionalaccreditation/institutionalaccreditation"
+        "pages/institutionalaccreditation/institutionalaccreditation",
+        "pages/donationmanagement/donationmanagement"
     ],
     "window": {
         "backgroundTextStyle": "light",

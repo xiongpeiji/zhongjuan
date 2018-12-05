@@ -33,7 +33,26 @@ App({
       }
     })
   },
+  init() {
+    var that = this;
+    wx.request({
+      url: this.globalData.base,
+      data: {
+        source: "mini_program"
+      },
+      success(res) {
+        var data = res.data.data;
+        that.globalData.initData = data;
+        console.log(res)
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    base: "http://api.qibu131.cn",
+    initData: {}
   }
 })

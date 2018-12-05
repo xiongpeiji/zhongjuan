@@ -6,7 +6,7 @@
     line-height: 40rpx;
     background: #fff;
     margin-top: 1px;
-    margin-bottom: 12rpx;
+    margin-bottom: 2rpx;
 }
 .padding_bottom{
     padding-bottom: 100rpx;
