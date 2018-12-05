@@ -1,4 +1,4 @@
-<!--pages/phoneauthentication/phoneauthentication.wxml-->
+<!--手机认证-->
 <view class="container auth_container">
     <view class="auth_cont">
         <view class="top_img">

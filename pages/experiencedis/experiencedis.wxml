@@ -1,4 +1,4 @@
-<!--pages/experiencedis/experiencedis.wxml-->
+<!--心得详情-->
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">

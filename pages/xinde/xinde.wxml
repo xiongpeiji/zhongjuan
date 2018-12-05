@@ -1,4 +1,4 @@
-<!--pages/xinde/xinde.wxml-->
+<!--心得-->
 <view class='container'>
   <view class='xinde'>
     <!--list-->

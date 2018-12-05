@@ -1,4 +1,4 @@
-<!--pages/my/my.wxml-->
+<!--我的-->
 <view class="container">
     <view class="my_top">
         <view class="user_icon">

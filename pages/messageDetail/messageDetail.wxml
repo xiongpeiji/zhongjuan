@@ -1,4 +1,4 @@
-<!--pages/messageDetail/messageDetail.wxml-->
+<!--消息详情-->
 <view class="container">
     <view class="message_cont">
         <view class="detail_title">运输中</view>

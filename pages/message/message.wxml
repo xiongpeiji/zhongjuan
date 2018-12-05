@@ -1,4 +1,4 @@
-<!--pages/message/message.wxml-->
+<!--消息-->
 <view class="container">
     <view class="message_content">
         <view class="no_message" hidden="true">

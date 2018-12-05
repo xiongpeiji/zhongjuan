@@ -1,4 +1,4 @@
-<!--pages/comment/comment.wxml-->
+<!--评论列表-->
 <view class="container">
     <!--评论区-->
     <view class="comment_wrap">
