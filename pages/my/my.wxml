@@ -16,7 +16,7 @@
             <image class="right_icons" src="/images/renzheng_jinru.png"></image>
         </view>
     </view>
-    <view class="my_menu_list" hover-class="public_hover">
+    <view class="my_menu_list" hover-class="public_hover" bindtap="jigouAuth">
         <label class="left_text">机构认证</label>
         <view class="right_btn">
             <label class="no_auth pass_auth"><image src="/images/icon_yirenzheng.png"></image>已认证</label>

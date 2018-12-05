@@ -1,4 +1,4 @@
-/* pages/wanttodonate/wanttodonate.wxss */
+/* pages/institutionalaccreditation/institutionalaccreditation.wxss */
 .creat_xinde_con{
     height: 100rpx;
     padding: 30rpx 25rpx 30rpx 40rpx;
@@ -57,28 +57,6 @@
     margin-top:15rpx;
     float:right;
 }
-.information_list{
-    padding: 20rpx 20rpx 20rpx 40rpx;
-    box-sizing: border-box;
-    background: #fff;
-}
-.list_Goods{
-    height: 40rpx;
-    line-height: 40rpx;
-    overflow: hidden;
-    margin-bottom: 20rpx;
-}
-.list_Goods label{
-    font-size: 28rpx;
-    color:#666666;
-    line-height: 40rpx;
-}
-.list_Goods .float_left{
-    float: left;
-}
-.list_Goods .float_right{
-    float: right;
-}
 .imgupload_box{
     padding: 25rpx;
     background: #fff;
@@ -114,4 +92,22 @@
 }
 .fixed_bottom_btn{
     background: #D7263D;
+}
+.no_auth{
+    font-size: 24rpx;
+    color:#999999;
+    display: inline-block;
+}
+.user_photo_bg{
+    width: 155rpx;
+    height: 190rpx;
+}
+.user_photos_box{
+    overflow: hidden;
+}
+.user_photos_box .user_card_bg{
+    width: 280rpx;
+    height: 190rpx;
+    float: left;
+    margin-right: 20rpx;
 }

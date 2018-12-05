@@ -30,91 +30,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
-					"name": "心得详情",
-					"pathName": "pages/experiencedis/experiencedis",
+					"name": "我想捐助",
+					"pathName": "pages/wanttodonate/wanttodonate",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "评论",
-					"pathName": "pages/comment/comment",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "消息",
-					"pathName": "pages/message/message",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "创建心得",
-					"pathName": "pages/createexperience/createexperience",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "求捐详情",
-					"pathName": "pages/donationdetail/donationdetail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "消息详情",
-					"pathName": "pages/messageDetail/messageDetail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "手机认证",
-					"pathName": "pages/phoneauthentication/phoneauthentication",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "编辑资料",
-					"pathName": "pages/editingmaterials/editingmaterials",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的",
-					"pathName": "pages/my/my",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "心得列表",
-					"pathName": "pages/experiencelist/experiencelist",
-					"query": ""
-				},
-				{
-					"id": 10,
-					"name": "编辑资料",
-					"pathName": "pages/editingmaterials/editingmaterials",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "创建心得",
-					"pathName": "pages/createexperience/createexperience",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "编辑求捐信息",
+					"name": "编辑求捐",
 					"pathName": "pages/editseekinginformation/editseekinginformation",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "我要捐助",
-					"pathName": "pages/wanttodonate/wanttodonate",
-					"query": ""
+					"name": "机构认证",
+					"pathName": "pages/institutionalaccreditation/institutionalaccreditation"
 				}
 			]
 		}

@@ -1,6 +1,54 @@
 <!--我要捐助-->
 <view class="container">
     <view class="padding_bottom">
-        我要捐助
+        <view class="creat_xinde_con">
+            <label class="xinde_title">联系方式</label>
+            <view class="title_input_box">
+                <input value="" type="number" placeholder="请输入您的电话号码" maxlength="11"/>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">物资类型及数量</label>
+            <view class="right_btn">
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="information_list">
+            <view class="list_Goods">
+                <label class="float_left">服装</label>
+                <label class="float_right">100件</label>
+            </view>
+            <view class="list_Goods">
+                <label class="float_left">生活用品</label>
+                <label class="float_right">100件</label>
+            </view>
+            <view class="list_Goods">
+                <label class="float_left">学习用品</label>
+                <label class="float_right">100件</label>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">快递公司</label>
+            <view class="right_btn">
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="creat_xinde_con">
+            <label class="xinde_title">快递单号</label>
+            <view class="title_input_box">
+                <input value="" type="number" placeholder="请输入您的快递单号" maxlength="30"/>
+            </view>
+        </view>
+        <view class="imgupload_box">
+            <view class="imguptile">
+                插入图片<label>请上传相关照片（快递单 物资等）</label>
+            </view>
+                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
+            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
     </view>
+
+
+    <view hover-class="fixed_bottom_btn" class="bottom_btn">提交</view>
+
 </view>

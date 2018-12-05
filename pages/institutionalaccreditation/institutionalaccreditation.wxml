@@ -1,0 +1,78 @@
+<!--机构认证-->
+<view class="container">
+    <view class="padding_bottom">
+        <view class="creat_xinde_con">
+            <label class="xinde_title">机构名称</label>
+            <view class="title_input_box">
+                <input value="" type="text" placeholder="请输入机构名称" maxlength="11"/>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">机构地址</label>
+            <view class="right_btn">
+                <label class="no_auth">请输入机构地址</label>
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">机构类型</label>
+            <view class="right_btn">
+                <label class="no_auth">请选择机构类型</label>
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="creat_xinde_con">
+            <label class="xinde_title">联络人</label>
+            <view class="title_input_box">
+                <input value="" type="text" placeholder="请输入联络人姓名" maxlength="11"/>
+            </view>
+        </view>
+        <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">性别</label>
+            <view class="right_btn">
+                <label class="no_auth">请选择性别</label>
+                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+            </view>
+        </view>
+        <view class="creat_xinde_con">
+            <label class="xinde_title">联系方式</label>
+            <view class="title_input_box">
+                <input value="" type="number" placeholder="请输入您的联系方式" maxlength="11"/>
+            </view>
+        </view>
+
+        <view class="imgupload_box">
+            <view class="imguptile">
+                人像验证<label>请上传联络人照片</label>
+            </view>
+            <view class="user_photos_box">
+                <image class="user_photo_bg" src="/images/user_photo_bg.jpg"></image>
+            </view>
+        </view>
+
+        <view class="imgupload_box">
+            <view class="imguptile">
+                身份验证<label>请上传联络人身份证正反面照片</label>
+            </view>
+            <view class="user_photos_box">
+                <image class="user_card_bg" src="/images/pic_shenzheng.png"></image>
+                <image class="user_card_bg" src="/images/pic_shenfan.png"></image>
+            </view>
+        </view>
+
+
+        <view class="imgupload_box">
+            <view class="imguptile">
+                机构认证<label>请上传机构相关证件照片</label>
+            </view>
+                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
+            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
+    </view>
+
+
+    <view hover-class="fixed_bottom_btn" class="bottom_btn">提交</view>
+
+</view>
+
+
