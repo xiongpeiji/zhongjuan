@@ -198,7 +198,7 @@
     </view>
     <view class="want_give">
         <image src="/images/Rectangle9@3x.png"></image>
-        <span>我要捐助</span>
+        <span bindtap="wantTodo">我要捐助</span>
     </view>
   </view>
 </view>

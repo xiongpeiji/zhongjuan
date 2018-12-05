@@ -44,6 +44,12 @@ Page({
       url: '../comment/comment'
     });
   },
+  //我要捐助
+  wantTodo(e){
+    wx.navigateTo({
+      url: '../wanttodonate/wanttodonate'
+    });
+  },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
     wx.setNavigationBarTitle({

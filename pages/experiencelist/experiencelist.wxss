@@ -2,7 +2,7 @@
 .xinde_list_con{
     width: 100%;
     display: block;
-    padding:55rpx 35rpx 0 25rpx;
+    padding:30rpx 35rpx 0 25rpx;
     box-sizing: border-box;
 }
 .xinde_lists{
@@ -115,4 +115,54 @@
 }
 .edit_hover{
     background: #dd3f35;
+}
+.no_messages{
+    padding:100rpx;
+}
+.no_messages image{
+    display: block;
+    width: 192rpx;
+    height: 104rpx;
+    margin:auto;
+    margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+    text-align: center;
+    font-size: 26rpx;
+    color: #747474;
+    margin-bottom: 50rpx;
+}
+.no_messages .go_lists{
+    width: 258rpx;
+    height: 68rpx;
+    border:1px solid #D7273D;
+    border-radius: 35rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #D82A3C;
+    margin: auto;
+}
+.public_hover{
+    background: #f1f1f1;
+}
+.xinde_numbers{
+    height: 40rpx;
+    line-height: 40rpx;
+    position: relative;
+    margin-bottom: 30rpx;
+    font-size: 26rpx;
+}
+.xinde_numbers .go_push{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 150rpx;
+    height: 40rpx;
+    border:1px solid #D7273D;
+    border-radius: 20rpx;
+    line-height: 38rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #D82A3C;
 }

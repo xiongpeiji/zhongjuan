@@ -1,6 +1,9 @@
 <!--心得列表-->
 <view class="container">
     <view class="xinde_list_con">
+        <view class="xinde_numbers">
+            我已发布了3条心得 <button class="go_push" bindtap="toPush">去发布</button>
+        </view>
         <view class="xinde_lists states_waiting">
             <view class="list_data">
                 <b></b>
@@ -48,9 +51,16 @@
                     <label class="time_box">19：20</label>
                     <icon class="states_icon" type="warn" size="18"/>
                     <label class="list_state">审核失败</label>
-                    <view class="re_edit" hover-class="edit_hover">重新编辑</view>
+                    <view class="re_edit" hover-class="edit_hover" bindtap="toPush">重新编辑</view>
                 </view>
             </view>
         </view>
+    </view>
+
+    <!--没有消息-->
+    <view class="no_messages">
+        <image src="/images/no_dona.jpg"></image>
+        <view class="no_msg_text">还没有发布过心得耶！</view>
+        <view class="go_lists" hover-class="public_hover" bindtap="toPush">去发布</view>
     </view>
 </view>

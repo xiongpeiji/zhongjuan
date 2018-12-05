@@ -16,7 +16,12 @@ Page({
       title: '心得列表'
     });
   },
-
+  //没有心得去发布按钮
+  toPush(e){
+    wx.navigateTo({
+      url: '../createexperience/createexperience'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
