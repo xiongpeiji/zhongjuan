@@ -4,9 +4,9 @@ const base = app.globalData.base;
 Page({
   data: {
     imgUrls: [
-      '/images/banner.jpg',
-      '/images/banner.jpg',
-      '/images/banner.jpg',
+      // '/images/banner.jpg',
+      // '/images/banner.jpg',
+      // '/images/banner.jpg',
     ],
     indicatorDots: true,
     autoplay: true,
@@ -54,9 +54,9 @@ Page({
         var data = res.data.data;
         console.log(res)
         if (data.advert) {
-          // that.setData({
-          //   imgUrls: data.advert
-          // });
+          that.setData({
+            imgUrls: data.advert
+          });
         }
         //http://api.qibu131.cn/Index/index?token=123456
       },

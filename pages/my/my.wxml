@@ -23,7 +23,7 @@
             <image class="right_icons" src="/images/renzheng_jinru.png"></image>
         </view>
     </view>
-    <view class="my_menu_list" hover-class="public_hover">
+    <view class="my_menu_list" hover-class="public_hover" bindtap="helpMsgDetal">
         <label class="left_text">求捐信息管理</label>
         <view class="right_btn">
             <image class="right_icons" src="/images/renzheng_jinru.png"></image>

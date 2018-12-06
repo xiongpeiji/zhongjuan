@@ -1,0 +1,87 @@
+<!--我的机构认证-->
+<view class="container">
+    <view class="dona_infos">
+        <view class="dona_left_cont">
+            <view class="dona_user_info">
+                <view class="dona_name">
+                    <label class="help_title">
+                        深圳市腾讯游戏爱心捐助站
+                    </label>
+                    <view class="right_type">
+                        <image src="/images/yirenzheng@2x.png"></image>
+                        <label>行政村</label>
+                    </view>
+                </view>
+                <view class="help_sm_tit">
+                    <image src="/images/renzheng_local@2x.png"></image>
+                    <label class="address_text">广东省深圳市高新区腾讯科技大厦225</label>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="my_organ_cont">
+        <view class="my_org_infos">
+            <view class="user_name_text">
+                <label class="names">联络人</label>
+                <view class="eidt_right">
+                    <image src="/images/qianbi.png"></image>
+                    <label class="edit_text">编辑</label>
+                </view>
+            </view>
+            <view class="user_photo_imgbox">
+                <image class="user_up_img" src="/images/user_photo_img.jpg"></image>
+                <view class="name_s">
+                    <label>张雅琪</label>
+                    <label>女</label>
+                </view>
+                <view class="name_s">
+                    <label>15819027345<icon class="phone_satus" type="success" color="#E65E34" size="{{12}}"/></label>
+                    <image class="call_icon" src="/images/emidianhua1@2.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                机构证明资料<label>共5张</label>
+            </view>
+            <view class="photos_box">
+                <image class="imgs_01" src="/images/info_01.jpg"></image>
+                <image class="imgs_02" src="/images/info_02.jpg"></image>
+                <image class="imgs_02" src="/images/info_03.jpg"></image>
+                <image class="imgs_02" src="/images/info_04.jpg"></image>
+                <image class="imgs_02" src="/images/info_05.jpg"></image>
+            </view>
+        </view>
+        <view class="my_send_box">
+            <view class="my_help_tit">
+                我已经发布了 <label >3</label> 条求捐信息
+                <view class="add_msg">
+                    <image src="/images/add_icon.png"></image>
+                    发布
+                </view>
+            </view>
+            <view class="my_send_content">
+                <view class="my_sned_ul">
+                    <view class="my_help_lis my_help_first">
+                        <em></em>
+                        <label class="my_help_times">2018.11.20</label>
+                        <view class="my_help_dis">将爱心传递给每一位老人</view>
+                    </view>
+
+                    <view class="my_help_lis">
+                        <em></em>
+                        <label class="my_help_times">2018.11.20</label>
+                        <view class="my_help_dis">将爱心传递给每一位老人</view>
+                    </view>
+
+                    <view class="my_help_lis">
+                        <em></em>
+                        <label class="my_help_times">2018.11.20</label>
+                        <view class="my_help_dis">将爱心传递给每一位老人</view>
+                    </view>
+                </view>
+            </view>
+            <image class="share_btn" src="/images/share_btn.png"></image>
+        </view>
+    </view>
+</view>
