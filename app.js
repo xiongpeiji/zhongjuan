@@ -52,7 +52,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    base: "http://api.qibu131.cn",
+    base: "https://api.qibu131.cn/",
     initData: {}
   }
 })
