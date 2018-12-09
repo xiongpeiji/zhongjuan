@@ -1,11 +1,13 @@
 // pages/message/message.js
+const app = getApp();
+const base = app.globalData.base;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    messageList:{}
   },
 
   /**
@@ -22,11 +24,29 @@ Page({
       url: '../messageDetail/messageDetail'
     })
   },
+  //获取消息列表
+  getMessageList(e){
+    var that = this;
+    wx.request({
+      url: base + '/SystemInfo/index?token=123456&page=1',
+      success(res) {
+        var data = res.data.data;
+        var msg = res.data.msg
+        console.log(msg);
+        that.setData({
+          messageList:msg
+        })
+      },
+      fail(err) {
+        console.log(err)
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getMessageList();
   },
 
   /**

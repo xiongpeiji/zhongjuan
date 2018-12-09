@@ -2,7 +2,7 @@
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">
-      <block wx:for="{{xindedetails.goods_gallery_urls}}">
+      <block wx:for="{{xindedetails.image}}" wx:key="{{item.index}}">
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
@@ -13,15 +13,14 @@
 
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
-      <h2>暖暖冬季，爱心传递</h2>
-      <span>09：45</span>
+      <h2>{{xindedetails.title}}</h2>
+      <span>{{xindedetails.end_time}}</span>
     </view>
     <view class="artact_user">
-      <span class="small_title">俺们村的希望</span>
+      <span class="small_title">{{xindedetails.name}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
-      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
+      <p class="text_details">{{xindedetails.content}}</p>
     </view>
     <!--机构详细信息-->
     <view class='joins'>
@@ -32,71 +31,17 @@
         <image src='/images/user_icon_02.png'></image>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num'>6人已加入</view>
+      <view class='jions_num'>{{xindedetails.comment_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
-          <span class='Percentage' style='width:90%;'></span>
+          <span class='Percentage' style='width:{{}};'></span>
         </view>
-        <view class='Completion'>完成度90%</view>
+        <view class='Completion'>完成度{{}}</view>
       </view>
 
       <!--头像列表-->
       <view class="user_photos" hidden="{{usersShow}}">
         <view class="user_photo_list">
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
-          <view class="user_photo_name">
-            <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
-            </view>
-            <view class="user_names">小仙女</view>
-          </view>
           <view class="user_photo_name">
             <view class="user_icons">
               <image src='/images/user_icon_01.png'></image>
@@ -111,10 +56,10 @@
     </view>
     <view class="jigou_titles">发布机构</view>
     <view class="jigouDetail_btn">
-        <span class="jigou_name">俺们村的希望</span>
+        <span class="jigou_name">{{xindedetails.name}}</span>
         <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
-          <span>希望小学</span>
+          <span>{{xindedetails.type_name}}</span>
         </view>
     </view>
     <view class="jigou_titles">求捐物资</view>
@@ -147,7 +92,7 @@
 
     <!--评论区-->
     <view class="comment_wrap">
-      <view class="comment_title"> 评论86</view>
+      <view class="comment_title"> 评论{{xindedetails.comment_num}}</view>
       <!--回复输入框-->
       <view class="send_input">
           <image src="/images/user_icon_02.png"></image>
@@ -168,11 +113,11 @@
               <view class="comment_action">
                 <view class="zan_num">
                   <image src="/images/dianzan.png"></image>
-                  <span>87</span>
+                  <span>{{xindedetails.up_num}}</span>
                 </view>
                 <view class="zan_num" bindtap="goCommentList">
                   <image src="/images/msg_num.png"></image>
-                  <span>87</span>
+                  <span>{{xindedetails.comment_num}}</span>
                 </view>
               </view>
             </view>
@@ -186,13 +131,13 @@
   <view class="input_box_fixed">
     <view class="share_cont" hover-class="share_active" bindtap="commentFn">
         <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
-        <view class="img_tit_text">评论263</view>
+        <view class="img_tit_text">评论{{xindedetails.comment_num}}</view>
     </view>
     <view class="share_cont" hover-class="share_active">
         <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
         <view class="img_tit_text">邀请好友</view>
     </view>
-    <view class="share_cont" hover-class="share_active">
+    <view class="share_cont" hover-class="share_active" bindtap="donationShare">
         <view class="img_box"><image src="/images/share@2x.png"></image></view>
         <view class="img_tit_text">分享</view>
     </view>

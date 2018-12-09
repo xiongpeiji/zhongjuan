@@ -1,11 +1,13 @@
 // pages/xinde/xinde.js
+const app = getApp();
+const base = app.globalData.base;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    xindeList:{}
   },
 
   /**
@@ -21,11 +23,30 @@ Page({
       url: '../experiencedis/experiencedis'
     });
   },
+  //获取心得列表
+  getXinDeList(e){
+    var that = this;
+    wx.request({
+      url: base + '/Index/experience?page=1',
+      success(res) {
+        var data = res.data.data;
+        if (data) {
+          console.log(data);
+          that.setData({
+            xindeList:data
+          })
+        }
+      },
+      fail(err) {
+        console.log(err)
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.getXinDeList();
   },
 
   /**

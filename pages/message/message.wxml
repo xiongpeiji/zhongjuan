@@ -7,59 +7,15 @@
             </view>
             <view class="no_msg_text">还没有新消息哦</view>
         </view>
-        <view class="msg_list" bindtap="msgDetails">
+        <view class="msg_list" wx:for="{{messageList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="msgDetails">
             <view class="msg_discription">
-                <image class="msg_img" src="/images/pic_kuaidi.png"></image>
+                <image class="msg_img" src="{{item.icon}}"></image>
                 <view class="msg_title">
-                    <span class="sys_title">中通快递</span>
+                    <span class="sys_title">{{}}</span>
                     <span class="msg_type">系统</span>
-                    <span class="msg_time">09：45</span>
+                    <span class="msg_time">{{item.add_time}}</span>
                 </view>
-                <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
-            </view>
-        </view>
-        <view class="msg_list" bindtap="msgDetails">
-            <view class="msg_discription">
-                <image class="msg_img" src="/images/pic_kuaidi.png"></image>
-                <view class="msg_title">
-                    <span class="sys_title">中通快递</span>
-                    <span class="msg_type">系统</span>
-                    <span class="msg_time">09：45</span>
-                </view>
-                <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
-            </view>
-        </view>
-        <view class="msg_list" bindtap="msgDetails">
-            <view class="msg_discription">
-                <image class="msg_img" src="/images/pic_kuaidi.png"></image>
-                <view class="msg_title">
-                    <span class="sys_title">中通快递</span>
-                    <span class="msg_type">系统</span>
-                    <span class="msg_time">09：45</span>
-                </view>
-                <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
-            </view>
-        </view>
-        <view class="msg_list" bindtap="msgDetails">
-            <view class="msg_discription">
-                <image class="msg_img" src="/images/pic_kuaidi.png"></image>
-                <view class="msg_title">
-                    <span class="sys_title">中通快递</span>
-                    <span class="msg_type">系统</span>
-                    <span class="msg_time">09：45</span>
-                </view>
-                <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
-            </view>
-        </view>
-        <view class="msg_list" bindtap="msgDetails">
-            <view class="msg_discription">
-                <image class="msg_img" src="/images/pic_kuaidi.png"></image>
-                <view class="msg_title">
-                    <span class="sys_title">中通快递</span>
-                    <span class="msg_type">系统</span>
-                    <span class="msg_time">09：45</span>
-                </view>
-                <p class="msg_texts">您的爱心物资订单已发往目的地，点击请...<span>1</span></p>
+                <p class="msg_texts">{{item.title}}<span>1</span></p>
             </view>
         </view>
     </view>
