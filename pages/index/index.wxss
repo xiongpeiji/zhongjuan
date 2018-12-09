@@ -212,14 +212,14 @@ swiper, swiper image {
   overflow-y: auto;
 }
 .chose_box view{
-  height: 28rpx;
   line-height: 28rpx;
   font-size: 28rpx;
   color: #333333;
   padding:25rpx;
+  margin: 4rpx 0;
 }
 .active_this{
-  color:#D7263D;
+  color:#D7263D !important;
 }
 
 .hide{
@@ -231,4 +231,10 @@ swiper, swiper image {
 }
 .punlic_hov{
   background: #fafafa;
+}
+.chose_box .type{
+  display: none;
+}
+.chose_box .active_cont{
+  display: block;
 }

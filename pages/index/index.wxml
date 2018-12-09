@@ -1,24 +1,22 @@
 <!--index.wxml-->
 <view class="container">
-
-<!--banner-->
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" 
-  indicator-color="{{indicatorcolor}}" 
-   indicator-active-color="{{indicatoractivecolor}}" 
-   interval="{{interval}}" duration="{{duration}}">
+  <!--banner-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="{{id}}">
       <swiper-item>
-        <image src="{{item.img_url}}" class="slide-image" width="375" height="300"/>
+        <image src="{{item.img_url}}" class="slide-image" width="375" height="300" />
       </swiper-item>
     </block>
   </swiper>
-<!--sort-->
+  <!--sort-->
   <view class='index_sort'>
     <view class='sort_left'>
-      <span>求捐信息</span><image src='/images/sort.png'></image>
+      <span>求捐信息</span>
+      <image src='/images/sort.png'></image>
     </view>
     <view class='sort_right' bindtap="toggle">
-      智能排序<image src='/images/sort_arr.png'></image>
+      智能排序
+      <image src='/images/sort_arr.png'></image>
     </view>
   </view>
   <!--list-->
@@ -57,19 +55,23 @@
   <view class="{{first_click?'marking':'hide'}}" bindtap="hideArea"></view>
   <view class="{{first_click?'area_box':'hide'}}">
     <view class="area_title">
-      <view class="area_pos active_this">
-        区域
-      </view>
-      <view class="area_pos">
-        类型
-      </view>
+      <block wx:for='{{arrList}}' key="*this">
+        <view class="area_pos {{item.active ? 'active_this': ''}}" data-index='{{index}}' bindtap='changeArea'>
+          {{item.title}}
+        </view>
+      </block>
     </view>
     <view class="chose_box">
-      <view hover-class="punlic_hov">包头</view>
-      <view hover-class="punlic_hov">大连</view>
-      <view hover-class="punlic_hov">佛山</view>
-      <view hover-class="punlic_hov">桂林</view>
-      <view hover-class="punlic_hov">河南</view>
+      <block wx:for='{{arrList}}'>
+        <view class="type {{item.active ? 'active_cont': ''}}">
+          <block wx:for="{{item.info}}" key="*this" wx:for-item="val" wx:for-index='cindex'>
+            <view data-index="{{index}}" data-cindex='{{cindex}}' bindtap='changeDetail' hover-class="punlic_hov" data-id='{{val.id}}' class='{{val.active? "active_this": ""}}'>
+            {{id}}
+              {{val.name}}
+            </view>
+          </block>
+        </view>
+      </block>
     </view>
   </view>
 

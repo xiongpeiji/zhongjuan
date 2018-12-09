@@ -10,6 +10,18 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'login',
+          data: {
+            code: res.code
+          },
+          method: 'post',
+          success: res => {
+            let token = '123456';
+            wx.setStorageSync('token', token)
+            // dengl chengg 
+          }
+        })
       }
     })
     // 获取用户信息

@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    xindeList:{}
+    xindeList:{},
+    pageNum:1,
   },
 
   /**
@@ -27,7 +28,10 @@ Page({
   getXinDeList(e){
     var that = this;
     wx.request({
-      url: base + '/Index/experience?page=1',
+      url: base + '/Index/experience',
+      data: {
+        page: this.data.pageNum
+      },
       success(res) {
         var data = res.data.data;
         if (data) {
@@ -81,7 +85,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    this.setData({
+      pageNum: ++this.data.pageNum
+    })
+    this.getXinDeList();
   },
 
   /**
