@@ -2,92 +2,38 @@
 <view class='container'>
   <view class='xinde'>
     <!--list-->
-    <view class='xinde_list'>
+    <view class='xinde_list' wx:for="{{xindeList}}" wx:key="{{id}}">
       <view class='xinde_title'>
-        <image src='/images/user_icon_01.png'></image>
-        <span class='user_callname'>萝卜是程序员</span>
-        <span class='xinde_time'>09：45</span>
+        <image src='{{item.avatar}}'></image>
+        <span class='user_callname'>{{item.username}}</span>
+        <span class='xinde_time'>{{item.add_time}}</span>
       </view>
-      <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
+      <h2 class="article_title">{{item.title}}</h2>
+      <p class="article_dis" data-id="{{item.id}}" bindtap="showDetail">{{item.content}}<span>查看全部</span></p>
       <view class='article_img'>
-        <image src='/images/art_img1.jpg'></image>
-        <image src='/images/art_img2.jpg'></image>
-        <image src='/images/art_img3.jpg'></image>
+        <image wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
       </view>
       <view class="article_share">
         <view class="fabulous">
           <image src="/images/dianzan.png"></image>
-          <span>875</span>
+          <span>{{item.up_num}}</span>
         </view>
         <view class="fabulous" bindtap="showDetail">
           <image src="/images/msg_num.png"></image>
-          <span>875</span>
+          <span>{{item.comment_num}}</span>
         </view>
         <view class="fabulous share_btn">
           <image src="/images/fenxiang.png"></image>
-          <span>875</span>
+          <span>{{item.share_num}}</span>
         </view>
       </view>
     </view>
-
-    <view class='xinde_list'>
-      <view class='xinde_title'>
-        <image src='/images/user_icon_01.png'></image>
-        <span class='user_callname'>萝卜是程序员</span>
-        <span class='xinde_time'>09：45</span>
-      </view>
-      <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
-      <view class='article_img'>
-        <image src='/images/art_img1.jpg'></image>
-        <image src='/images/art_img2.jpg'></image>
-        <image src='/images/art_img3.jpg'></image>
-      </view>
-      <view class="article_share">
-        <view class="fabulous">
-          <image src="/images/dianzan.png"></image>
-          <span>875</span>
-        </view>
-        <view class="fabulous" bindtap="showDetail">
-          <image src="/images/msg_num.png"></image>
-          <span>875</span>
-        </view>
-        <view class="fabulous share_btn">
-          <image src="/images/fenxiang.png"></image>
-          <span>875</span>
-        </view>
-      </view>
+    <!--list end-->
+    <!--没有消息-->
+    <view class="no_messages" hidden="{{xindeList.length!='0'}}">
+      <image src="/images/no_dona.jpg"></image>
+      <view class="no_msg_text">暂无心得数据！</view>
+      <view class="go_lists" hover-class="public_hover">去发布</view>
     </view>
-
-    <view class='xinde_list'>
-      <view class='xinde_title'>
-        <image src='/images/user_icon_01.png'></image>
-        <span class='user_callname'>萝卜是程序员</span>
-        <span class='xinde_time'>09：45</span>
-      </view>
-      <h2 class="article_title">捐助希望小学的感受</h2>
-      <p class="article_dis" bindtap="showDetail">希望小学是我参加社会捐助团队第一个捐助的机构，看到孩子们拿到暖和的衣服鞋子，文具和作业本时露出的笑脸，让我觉得他们真是宛如天使一般的存在，这么可爱的孩子应该有个美好的童年......<span>查看全部</span></p>
-      <view class='article_img'>
-        <image src='/images/art_img1.jpg'></image>
-        <image src='/images/art_img2.jpg'></image>
-        <image src='/images/art_img3.jpg'></image>
-      </view>
-      <view class="article_share">
-        <view class="fabulous">
-          <image src="/images/dianzan.png"></image>
-          <span>875</span>
-        </view>
-        <view class="fabulous" bindtap="showDetail">
-          <image src="/images/msg_num.png"></image>
-          <span>875</span>
-        </view>
-        <view class="fabulous share_btn">
-          <image src="/images/fenxiang.png"></image>
-          <span>875</span>
-        </view>
-      </view>
-    </view>
-    <!--list end--> 
   </view>
 </view>

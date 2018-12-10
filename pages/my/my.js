@@ -52,6 +52,12 @@ Page({
       url: '../donormanagement/donormanagement'
     })
   },
+  //授权登录
+  onGotUserInfo(e){
+    console.log(e.detail.errMsg)
+    console.log(e.detail.userInfo)
+    console.log(e.detail.rawData)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

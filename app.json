@@ -25,7 +25,9 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "众捐",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#fafafa"
+    "backgroundColor": "#fafafa",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 20
   },
   "tabBar": {
     "color": "#999999",

@@ -18,6 +18,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得'
     });
+    this.getXinDeList();
   },
   showDetail(e){
     wx.navigateTo({
@@ -28,17 +29,21 @@ Page({
   getXinDeList(e){
     var that = this;
     wx.request({
-      url: base + '/Index/experience',
+      url: base + 'Index/experience',
       data: {
         page: this.data.pageNum
       },
       success(res) {
-        var data = res.data.data;
+        var data = res.data.msg;
         if (data) {
           console.log(data);
           that.setData({
             xindeList:data
           })
+          if (that.onpdrefresh) {
+            that.onpdrefresh = false;
+            wx.stopPullDownRefresh();
+          }
         }
       },
       fail(err) {
@@ -50,7 +55,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getXinDeList();
+    //this.getXinDeList();
   },
 
   /**
@@ -77,16 +82,19 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh() {
+    this.onpdrefresh = true;
+    this.getXinDeList();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var pageNum = this.data.pageNum;
+    pageNum += 1;
     this.setData({
-      pageNum: ++this.data.pageNum
+      page: pageNum
     })
     this.getXinDeList();
   },

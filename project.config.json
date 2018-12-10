@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -140,6 +140,11 @@
 					"name": "我的机构认证页面",
 					"pathName": "pages/myorganization/myorganization",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "心得",
+					"pathName": "pages/xinde/xinde"
 				}
 			]
 		}

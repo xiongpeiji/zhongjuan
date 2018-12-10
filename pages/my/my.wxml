@@ -4,6 +4,7 @@
         <view class="user_icon">
             <image class="user_wechat_icon" src="/images/user_icon_02.png"></image>
             <label class="user_name">萝卜是程序员</label>
+            <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
         </view>
         <span class="editUserInfo" bindtap="editUserInfo">
             <image src="/images/icon_fanhui.png"></image>

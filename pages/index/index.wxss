@@ -238,3 +238,19 @@ swiper, swiper image {
 .chose_box .active_cont{
   display: block;
 }
+.no_messages {
+  padding:100rpx;
+}
+.no_messages image{
+  display: block;
+  width: 192rpx;
+  height: 104rpx;
+  margin:auto;
+  margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+  text-align: center;
+  font-size: 26rpx;
+  color: #747474;
+  margin-bottom: 50rpx;
+}

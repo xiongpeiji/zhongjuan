@@ -11,15 +11,33 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'login',
+          url: 'https://api.qibu131.cn/Public/getOpenId',
           data: {
             code: res.code
           },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
           method: 'post',
           success: res => {
-            let token = '123456';
-            wx.setStorageSync('token', token)
-            // dengl chengg 
+            wx.setStorageSync('openId',res.data.data.open_id);
+            let openId = wx.getStorageSync('openId');
+            if (openId) {
+              let that = this;
+              wx.getUserInfo({
+                success: function (res) {
+                  console.log(res)
+                },
+                fail: function () {
+                  // fail
+                  console.log("获取失败！")
+                },
+                complete: function () {
+                  // complete
+                  console.log("获取用户信息完成！")
+                }
+              })
+            }
           }
         })
       }

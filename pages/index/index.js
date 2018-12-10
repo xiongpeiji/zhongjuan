@@ -97,17 +97,8 @@ Page({
         var data = res.data.data;
         let arrList = [];
         let scity = data.city;
-        // if (scity[0]) {
-        //   scity[0].active = true;
-        // }
         let stype = data.type;
-        // if (stype[0]) {
-        //   stype[0].active = true;
-        // }
         let smaterial = data.material;
-        // if (smaterial[0]) {
-        //   smaterial[0].active = true;
-        // }
         let area = {
           title: '区域',
           info: scity,
