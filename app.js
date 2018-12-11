@@ -21,7 +21,6 @@ App({
           method: 'post',
           success: res => {
             wx.setStorageSync('openId',res.data.data.open_id);
-            wx.setStorageSync('token','123456');
             let openId = wx.getStorageSync('openId');
             if (openId) {
               let that = this;

@@ -1,11 +1,15 @@
 // pages/my/my.js
+const app = getApp();
+const base = app.globalData.base;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    isLogin:false,
+    avatarUrl:'',
+    nickName:''
   },
 
   /**
@@ -54,9 +58,41 @@ Page({
   },
   //授权登录
   onGotUserInfo(e){
-    console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
+    let _errMsg_ = e.detail.errMsg;
+    let _userInfo_ = e.detail.userInfo;
+    let _rawData_ = e.detail.rawData;
+    
+    if(_userInfo_){
+      this.setData({
+        isLogin:true,
+        nickName:_userInfo_.nickName,
+        avatarUrl:_userInfo_.avatarUrl,
+      });
+      this.login();
+    }
+  },
+  login(e){
+    let that = this;
+    let _openId_ = wx.getStorageSync("openId")
+    wx.request({
+      url: 'https://api.qibu131.cn/Public/login',
+      data: {
+        open_id: _openId_,
+        username:that.data.nickName,
+        avatar:that.data.avatarUrl
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      success:res=>{
+        console.log(res)
+        wx.getStorageSync("token",res.data.data.token)
+      },
+      fail:err=>{
+        console.log(err)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -71,7 +71,6 @@
         <view class="type {{item.active ? 'active_cont': ''}}">
           <block wx:for="{{item.info}}" key="*this" wx:for-item="val" wx:for-index='cindex'>
             <view data-index="{{index}}" data-cindex='{{cindex}}' bindtap='changeDetail' hover-class="punlic_hov" data-id='{{val.id}}' class='{{val.active? "active_this": ""}}'>
-            {{id}}
               {{val.name}}
             </view>
           </block>

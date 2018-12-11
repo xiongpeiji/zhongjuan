@@ -2,11 +2,11 @@
 <view class="container">
     <view class="my_top">
         <view class="user_icon">
-            <image class="user_wechat_icon" src="/images/user_icon_02.png"></image>
-            <label class="user_name">萝卜是程序员</label>
-            <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
+            <image class="user_wechat_icon" hidden="{{!isLogin}}" src="{{avatarUrl}}"></image>
+            <label class="user_name" hidden="{{!isLogin}}" >{{nickName}}</label>
+            <button class="user_login_btn" size="mini" hidden="{{isLogin}}"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
         </view>
-        <span class="editUserInfo" bindtap="editUserInfo">
+        <span class="editUserInfo" bindtap="editUserInfo" hidden="{{!isLogin}}">
             <image src="/images/icon_fanhui.png"></image>
         </span>
     </view>
