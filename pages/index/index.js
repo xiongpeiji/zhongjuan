@@ -25,7 +25,7 @@ Page({
     console.log(e);
     let token = wx.getStorageSync('token')
     wx.navigateTo({
-      url: '../donationdetail/donationdetail?token=' + token + 'id=' + id
+      url: '../donationdetail/donationdetail?token=' + token + '&id=' + id
     });
   },
   //下拉加载

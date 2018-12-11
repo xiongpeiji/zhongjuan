@@ -20,7 +20,7 @@
     </view>
   </view>
   <!--list-->
-  <view class='index_list' wx:for="{{qiujuanList}}" wx:key="{{id}}">
+  <view class='index_list' wx:for="{{qiujuanList}}" key="*this">
     <view class='list_tit_box'>
       <view class='list_title'>{{item.title}}</view>
       <view class='list_v'>

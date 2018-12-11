@@ -45,11 +45,11 @@ Page({
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
-    this.id = options.id;//获取求捐详情id
-    this.token = options.token;
+    this.data.id = options.id;//获取求捐详情id
+    
     console.log(options);
     this.setData({
-      id:options.id,
+      id:this.data.id,
     });
     wx.setNavigationBarTitle({
       title: '求捐详情'
@@ -59,8 +59,10 @@ Page({
   //获取详情信息
   getDetail() {
     var that = this;
+    console.log(that.data.id);
+    let token = wx.getStorageSync('token')
     wx.request({
-      url: base + '/Donation/detail?token=123456&id=' + that.data.id,
+      url: base + '/Donation/detail?token='+token+'&id=' + that.data.id,
       success(res) {
         var data = res.data.data;
         if (data) {
@@ -68,9 +70,12 @@ Page({
           that.setData({
             xindedetails: data,
           })
-          that.setData({
-            swiper_all: that.data.xindedetails.image.length
-          })
+          if(data!=''){
+            that.setData({
+              swiper_all: that.data.xindedetails.image.length
+            })
+          }
+          
         }
       },
       fail(err) {
