@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -10,7 +10,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
-	"appid": "wx5722a55d0e8cbda3",
+	"appid": "wxaa31789e58d234c5",
 	"projectname": "zhongjuan",
 	"isGameTourist": false,
 	"condition": {
