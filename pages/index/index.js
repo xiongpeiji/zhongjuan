@@ -23,7 +23,13 @@ Page({
   qiujuanDetail(e) {
     var id = e.currentTarget.dataset.id;
     console.log(e);
-    let token = wx.getStorageSync('token')
+    let token = wx.getStorageSync('token');
+    if(!token){
+      wx.showModal({
+        title: '请登录后查看！'
+      })
+      return;
+    }
     wx.navigateTo({
       url: '../donationdetail/donationdetail?token=' + token + '&id=' + id
     });
@@ -54,7 +60,7 @@ Page({
       first_click: false,
     });
   },
-  onLoad: function(options) {
+  onLoad(options) {
     var token = wx.getStorageSync('token');
     if (token) {
       this.token = token;
@@ -82,7 +88,7 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide() {
     this.setData({
       state: false,
       first_click: false,

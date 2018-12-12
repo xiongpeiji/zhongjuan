@@ -25,28 +25,27 @@
     <!--机构详细信息-->
     <view class='joins'>
       <view class='left_user_icon' bindtap="showUser">
-        <image src='/images/user_icon_01.png'></image>
-        <image src='/images/user_icon_02.png'></image>
-        <image src='/images/user_icon_01.png'></image>
-        <image src='/images/user_icon_02.png'></image>
+        <block wx:for="{{xindedetails.user_data}}" wx:key="{{index}}">
+          <image src='{{item.avatar}}'></image>
+        </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
       <view class='jions_num'>{{xindedetails.comment_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
-          <span class='Percentage' style='width:{{}};'></span>
+          <span class='Percentage' style='width:{{xindedetails.rate}};'></span>
         </view>
-        <view class='Completion'>完成度{{}}</view>
+        <view class='Completion'>完成度{{xindedetails.rate}}</view>
       </view>
 
       <!--头像列表-->
       <view class="user_photos" hidden="{{usersShow}}">
         <view class="user_photo_list">
-          <view class="user_photo_name">
+          <view class="user_photo_name"  wx:for="{{xindedetails.user_data}}" wx:key="{{index}}">
             <view class="user_icons">
-              <image src='/images/user_icon_01.png'></image>
+              <image src='{{item.avatar}}'></image>
             </view>
-            <view class="user_names">小仙女</view>
+            <view class="user_names">{{item.username}}</view>
           </view>
         </view>
         <view class="hidden_user" bindtap="hideUsers">
@@ -65,25 +64,11 @@
     <view class="jigou_titles">求捐物资</view>
     <!--物资详情-->
     <view class="wuzi_details">
-      <view class="wuzi_list">
-        <image src="/images/yifu_xuanzhong.png"></image>
-        <span class="wuzi_name">服装100件</span>
+      <view class="wuzi_list" wx:for="{{xindedetails.material_data}}" wx:key="{{index}}">
+        <image src="{{item.icon}}"></image>
+        <span class="wuzi_name">{{item.name + item.num}}件</span>
         <view class="juan_nums">
-          已捐<span>40</span>件
-        </view>
-      </view>
-      <view class="wuzi_list">
-        <image src="/images/qianbi_xuanzhong.png"></image>
-        <span class="wuzi_name">学习用品100件</span>
-        <view class="juan_nums">
-          已捐<span>40</span>件
-        </view>
-      </view>
-      <view class="wuzi_list">
-        <image src="/images/shangpin_xuanzhong.png"></image>
-        <span class="wuzi_name">服装100件</span>
-        <view class="juan_nums">
-          已捐<span>40</span>件
+          已捐<span>{{item.after_num}}</span>件
         </view>
       </view>
     </view>

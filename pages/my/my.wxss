@@ -84,3 +84,14 @@
 .public_hover{
     background: #fafafa;
 }
+.no_login{
+    width: 90rpx;
+    height: 90rpx;
+    background: #fff;
+    border-radius: 50%;
+    float:left;
+}
+.user_login_btn{
+    margin-top: 15rpx;
+    margin-left: 15rpx;
+}

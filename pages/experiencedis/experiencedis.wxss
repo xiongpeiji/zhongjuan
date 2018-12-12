@@ -60,6 +60,7 @@ swiper, swiper image {
   width: 54rpx;
   height: 54rpx;
   float: left;
+  border-radius: 50%;
 }
 .artact_user span{
   line-height: 54rpx;

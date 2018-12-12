@@ -1,14 +1,17 @@
 <!--我的-->
 <view class="container">
     <view class="my_top">
-        <view class="user_icon">
-            <image class="user_wechat_icon" hidden="{{!isLogin}}" src="{{avatarUrl}}"></image>
-            <label class="user_name" hidden="{{!isLogin}}" >{{nickName}}</label>
-            <button class="user_login_btn" size="mini" hidden="{{isLogin}}"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
+        <view class="user_icon" hidden="{{!isLogin}}">
+            <image class="user_wechat_icon" src="{{avatarUrl}}"></image>
+            <label class="user_name">{{nickName}}</label>
         </view>
-        <span class="editUserInfo" bindtap="editUserInfo" hidden="{{!isLogin}}">
+        <view class="user_icon" hidden="{{isLogin}}">
+            <view class="no_login"></view>
+            <button class="user_login_btn" size="mini"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
+        </view>
+        <view class="editUserInfo" bindtap="editUserInfo" hidden="{{!isLogin}}">
             <image src="/images/icon_fanhui.png"></image>
-        </span>
+        </view>
     </view>
     <view class="my_menu_list" hover-class="public_hover" bindtap="phoneAuth">
         <label class="left_text">手机认证</label>

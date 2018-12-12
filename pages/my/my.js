@@ -87,7 +87,7 @@ Page({
       method: 'post',
       success:res=>{
         console.log(res)
-        wx.getStorageSync("token",res.data.data.token)
+        wx.setStorageSync("token",res.data.data.token)
       },
       fail:err=>{
         console.log(err)

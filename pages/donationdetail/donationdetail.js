@@ -94,8 +94,9 @@ Page({
   //https://api.qibu131.cn/Donation/donationShare
   donationShare(e){
     var that = this;
+    let token = wx.getStorageSync("token");
     wx.request({
-      url: base + '/Donation/donationShare?token=123456&id=' + that.data.id,
+      url: base + '/Donation/donationShare?token='+token+'&id=' + that.data.id,
       success(res) {
         var data = res.data.data;
         if (data) {

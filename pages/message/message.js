@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    messageList:{}
+    messageList:{},
+    pageNum:1
   },
 
   /**
@@ -17,6 +18,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '消息'
     });
+    this.getMessageList();
   },
   //消息详情
   msgDetails(e){
@@ -27,8 +29,19 @@ Page({
   //获取消息列表
   getMessageList(e){
     var that = this;
+    let token = wx.getStorageSync("token");
+    if(!token){
+      wx.showModal({
+        title: '请登录后查看！'
+      })
+      return;
+    }
     wx.request({
-      url: base + '/SystemInfo/index?token=123456&page=1',
+      url: base + 'SystemInfo/index',
+      data: {
+        token:token,
+        page: this.data.pageNum
+      },
       success(res) {
         var data = res.data.data;
         var msg = res.data.msg
@@ -46,7 +59,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getMessageList();
+    
   },
 
   /**
@@ -81,7 +94,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    var pageNum = this.data.pageNum;
+    pageNum += 1;
+    this.setData({
+      page: pageNum
+    })
+    this.getMessageList();
   },
 
   /**

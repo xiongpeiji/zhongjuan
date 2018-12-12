@@ -21,8 +21,10 @@ Page({
     this.getXinDeList();
   },
   showDetail(e){
+    var id = e.currentTarget.dataset.id;
+    let token = wx.getStorageSync('token');
     wx.navigateTo({
-      url: '../experiencedis/experiencedis'
+      url: '../experiencedis/experiencedis?token='+token+'&id='+id
     });
   },
   //获取心得列表

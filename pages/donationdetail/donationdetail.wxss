@@ -411,11 +411,13 @@ swiper, swiper image {
 }
 .user_icons{
   text-align: center;
+  font-size: 0;
 }
 .user_icons image{
   display: inline-block;
   width:50rpx;
   height: 50rpx;
+  border-radius: 50%;
 }
 .user_photo_name .user_names{
   font-size: 20rpx;

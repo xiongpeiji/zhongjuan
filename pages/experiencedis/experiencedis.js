@@ -1,4 +1,6 @@
 // pages/experiencedis/experiencedis.js
+const app = getApp();
+const base = app.globalData.base;
 Page({
 
   /**
@@ -7,29 +9,38 @@ Page({
   data: {
     current: 1,
     swiper_all: 0,
-    xindedetails: {
-      goods_gallery_urls:[
-        '/images/img_big1_03.jpg',
-        '/images/img_big2.jpg',
-        '/images/img_big1_03.jpg',
-        '/images/img_big2.jpg',
-        '/images/img_big1_03.jpg',
-        '/images/img_big2.jpg',
-      ]
-    },
+    id:'',
+    xindedetails: {},
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
+    this.data.id = options.id;//获取求捐详情id
     wx.setNavigationBarTitle({
       title: '心得详情'
     });
     this.getDetail();
   },
   //获取详情信息
-  getDetail(){
-      this.setData({
-        swiper_all: this.data.xindedetails.goods_gallery_urls.length
-      })
+  getDetail(id){
+      let that = this;
+      let token = wx.getStorageSync("token");
+      wx.request({
+        url: base + 'Experience/detail',
+        data: {
+          token:token,
+          id:that.data.id
+        },
+        success(res) {
+          var data = res.data.data;
+          that.setData({
+            xindedetails:data,
+            swiper_all: data.image.length
+          })
+        },
+        fail(err) {
+          console.log(err)
+        }
+      });
   },
   //跳转到评论列表
   goCommentList(e){

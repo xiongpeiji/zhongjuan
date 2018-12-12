@@ -2,7 +2,7 @@
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">
-      <block wx:for="{{xindedetails.goods_gallery_urls}}">
+      <block wx:for="{{xindedetails.image}}" wx:key="{{index}}">
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
@@ -13,17 +13,15 @@
 
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
-      <h2>收到希望小学的感谢信</h2>
-      <span>今天09：45</span>
+      <h2>{{xindedetails.title}}</h2>
+      <span>{{xindedetails.add_time}}</span>
     </view>
     <view class="artact_user">
-      <image src="/images/user_icon_01.png"></image>
-      <span>萝卜是程序员</span>
+      <image src="{{xindedetails.avatar}}"></image>
+      <span>{{xindedetails.username}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
-      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
-      <p class="text_details">今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助之手，帮助这些小可爱们暖暖得过冬！</p>
+      <p class="text_details">{{xindedetails.content}}</p>
     </view>
     <!--评论区-->
     <view class="comment_wrap">

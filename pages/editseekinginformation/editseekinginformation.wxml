@@ -14,7 +14,7 @@
             <view class="imguptile">
                 插入图片<label>最多9张</label>
             </view>
-                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
+                <image class="img_bg" wx:for="{{images}}"  wx:key="{{index}}" src="{{item}}"></image>
             <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
         <view class="my_menu_list" hover-class="public_hover">

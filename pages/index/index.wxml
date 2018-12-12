@@ -20,7 +20,7 @@
     </view>
   </view>
   <!--list-->
-  <view class='index_list' wx:for="{{qiujuanList}}" key="*this">
+  <view class='index_list' wx:for="{{qiujuanList}}" wx:key="{{index}}">
     <view class='list_tit_box'>
       <view class='list_title'>{{item.title}}</view>
       <view class='list_v'>
@@ -38,7 +38,7 @@
     </view>
     <view class='joins'>
       <view class='left_user_icon'>
-        <block wx:for="{{item.user_data}}" wx:key="{{id}}">
+        <block wx:for="{{item.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}'></image>
         </block>
       </view>
@@ -60,16 +60,16 @@
   <view class="{{first_click?'marking':'hide'}}" bindtap="hideArea"></view>
   <view class="{{first_click?'area_box':'hide'}}">
     <view class="area_title">
-      <block wx:for='{{arrList}}' key="*this">
+      <block wx:for='{{arrList}}' wx:key="{{index}}">
         <view class="area_pos {{item.active ? 'active_this': ''}}" data-index='{{index}}' bindtap='changeArea'>
           {{item.title}}
         </view>
       </block>
     </view>
     <view class="chose_box">
-      <block wx:for='{{arrList}}'>
+      <block wx:for='{{arrList}}' wx:key="{{index}}">
         <view class="type {{item.active ? 'active_cont': ''}}">
-          <block wx:for="{{item.info}}" key="*this" wx:for-item="val" wx:for-index='cindex'>
+          <block wx:for="{{item.info}}" wx:key="{{index}}" wx:for-item="val" wx:for-index='cindex'>
             <view data-index="{{index}}" data-cindex='{{cindex}}' bindtap='changeDetail' hover-class="punlic_hov" data-id='{{val.id}}' class='{{val.active? "active_this": ""}}'>
               {{val.name}}
             </view>
