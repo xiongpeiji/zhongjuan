@@ -131,7 +131,7 @@ Page({
       },
       method: 'post',
       header: {
-        'content-type': 'application/x-www-form-urlencode'
+        'content-type': 'application/x-www-form-urlencoded'
       },
       success(res) {
         var code = res.data.code;
