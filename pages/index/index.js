@@ -1,6 +1,7 @@
 //index.js
 const app = getApp();
-const base = app.globalData.base;
+const app_data = app.globalData;
+let http = require("../../utils/http.js")
 Page({
   data: {
     imgUrls: [], //banner图片
@@ -22,16 +23,16 @@ Page({
   //求捐详情页面
   qiujuanDetail(e) {
     var id = e.currentTarget.dataset.id;
-    console.log(e);
-    let token = wx.getStorageSync('token');
-    if(!token){
-      wx.showModal({
-        title: '请登录后查看！'
-      })
-      return;
+    if (!app_data.token){
+      app.modal({content: '请登录后再查看！',confirmText: '立即登录'}).then((res) => {
+          if(res.confirm){
+            app.redirectLogin();
+          }
+      });
+      return false;
     }
     wx.navigateTo({
-      url: '../donationdetail/donationdetail?token=' + token + '&id=' + id
+      url: '../donationdetail/donationdetail?token=' + app_data.token + '&id=' + id
     });
   },
   //下拉加载
@@ -61,29 +62,8 @@ Page({
     });
   },
   onLoad(options) {
-    var token = wx.getStorageSync('token');
-    if (token) {
-      this.token = token;
-    }
-    this.invite_code = options.invite_code;
-    if (this.invite_code) {
-      wx.setStorage({
-        key: 'invite_code',
-        data: this.invite_code
-      })
-    }
-    var userInfo = wx.getStorageSync('userInfo');
-    if (userInfo) {
-      this.userInfo = userInfo;
-      var level = userInfo.level;
-      if (level) {
-        this.setData({
-          level: userInfo.level
-        })
-      }
-    }
-    //初始化
-    this.init();
+    this.setInit();
+    this.getHomeData();
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -95,72 +75,57 @@ Page({
     });
   },
 
-  init() {
-    var that = this;
-    wx.request({
-      url: base + 'Index/index',
-      success(res) {
-        var data = res.data.data;
-        let arrList = [];
-        let scity = data.city;
-        let stype = data.type;
-        let smaterial = data.material;
+  setInit: function () {
+    let arrList = [];
+    let url = app_data.base + 'Index/index';
+    http.Get({ url: url }).then((res) => {
+      let init_data = res.data;
+      if (init_data.advert_time) {
+        this.setData({
+          interval: init_data.advert_time
+        });
         let area = {
           title: '区域',
-          info: scity,
+          info: init_data.city,
           active: true
         };
         let type = {
           title: '类型',
-          info: stype
+          info: init_data.type
         };
         let material = {
           title: '物资',
-          info: smaterial
+          info: init_data.material
         };
         arrList.push(area);
         arrList.push(type);
         arrList.push(material);
-
-        if (data.advert) {
-          that.setData({
-            imgUrls: data.advert,
-            arrList: arrList
-          });
-        }
-      },
-      fail(err) {
-        console.log(err)
-      }
-    });
-    //获取求捐信息列表
-    this.getHomeData();
-  },
-
-  getHomeData() {
-    wx.request({
-      url: base + 'Index/donation',
-      data: {
-        page: this.data.pageNum,
-        type_id: this.data.type_id,
-        city_id: this.data.city_id,
-        material_id: this.data.material_id
-      },
-      success: res =>{
-        var data = res.data.data;
-        console.log(res, '求捐信息')
-        if (data) {
+        this.setData({
+          arrList: arrList
+        });
+        if (init_data.advert) {
           this.setData({
-            qiujuanList: data
+            imgUrls: init_data.advert
           });
         }
-      },
-      fail(err) {
-        console.log(err)
       }
     })
   },
 
+  getHomeData() {
+    let url = app_data.base + 'Index/donation';
+    let data = {
+        page: this.data.pageNum,
+        type_id: this.data.type_id,
+        city_id: this.data.city_id,
+        material_id: this.data.material_id
+    };
+    http.Get({ url: url, params: data}).then((res)=>{
+      this.setData({
+        qiujuanList: res.data
+      });
+    });
+  },
   changeArea(e) {
     let index = e.currentTarget.dataset.index,
       arrList = this.data.arrList;
@@ -217,20 +182,4 @@ Page({
       })
     }
   },
-
-  getData() {
-    let token = wx.getStorageInfoSync('token')
-
-    wx.request({
-      url: '...',
-      data: {},
-      methods: 'post',
-      header: {
-        Authorization: token
-      },
-      success: res => {
-
-      }
-    })
-  }
 })
