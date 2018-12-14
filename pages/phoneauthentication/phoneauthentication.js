@@ -13,6 +13,7 @@ Page({
     currentTime:60,
     timeText: '立即获取',
     fun_id:2,
+    disabled:false
   },
   
   /**
@@ -22,15 +23,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '手机认证'
     });
-    this.mobileInputEvent()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
-  },
   mobileInputEvent(e){
       this.setData({
         mobile:e.detail.value
@@ -98,7 +95,8 @@ Page({
         disabled:false
       })
       wx.showToast({
-        title: '号码格式错误'
+        title: '号码格式错误',
+        icon: 'none',
       })
     }
   },
@@ -111,13 +109,15 @@ Page({
     var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
     if (!myreg.test(mobile)){
       wx.showToast({
-        title: '手机格式错误'
+        title: '手机格式错误',
+        icon:'none',
       });
       return;
     }
     if (!reg.test(code)) {
       wx.showToast({
-        title: '验证码错误'
+        title: '验证码错误',
+        icon: 'none',
       });
       return;
     }
@@ -134,48 +134,13 @@ Page({
       },
       success(res) {
         var code = res.data.code;
-        wx.showToast({
-          title: code
-        })
+        if(code == 'success'){
+          app.redirectLogin();
+        }
       }
     })
   },
   
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
   /**
    * 用户点击右上角分享
    */

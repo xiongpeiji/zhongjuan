@@ -4,21 +4,21 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">标题</label>
             <view class="title_input_box">
-                <input  value="" type="text" placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
+                <input type="text" bindinput='setTitle' placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
             </view>
         </view>
         <view class="textArea_box">
-            <textarea  auto-height placeholder="请输入文章正文，不得超过10000字" maxlength="10000" />
+            <textarea auto-height placeholder="请输入文章正文，不得超过10000字" bindinput='setContent' maxlength="10000" />
         </view>
         <view class="imgupload_box">
             <view class="imguptile">
                 插入图片<label>最多9张</label>
             </view>
                 <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
-            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+            <image class="img_bg" bindtap="uploadImg" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
     
 
-    <view hover-class="fixed_bottom_btn" class="bottom_btn">发布心得</view>
+    <view hover-class="fixed_bottom_btn" class="bottom_btn" bindtap='sendData'>发布心得</view>
 </view>

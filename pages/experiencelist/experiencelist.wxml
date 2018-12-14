@@ -1,6 +1,6 @@
 <!--心得列表-->
 <view class="container">
-    <view class="xinde_list_con">
+    <view class="xinde_list_con" hidden='{{count == 0}}'>
         <view class="xinde_numbers">
             我已发布了3条心得 <button class="go_push" bindtap="toPush">去发布</button>
         </view>
@@ -58,7 +58,7 @@
     </view>
 
     <!--没有消息-->
-    <view class="no_messages">
+    <view class="no_messages" hidden='{{count != 0}}'>
         <image src="/images/no_dona.jpg"></image>
         <view class="no_msg_text">还没有发布过心得耶！</view>
         <view class="go_lists" hover-class="public_hover" bindtap="toPush">去发布</view>
