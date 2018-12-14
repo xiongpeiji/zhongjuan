@@ -49,7 +49,8 @@ Page({
   },
 
   //没有心得去发布按钮
-  toPush(id){
+  toPush(e){
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../createexperience/createexperience'
     })
