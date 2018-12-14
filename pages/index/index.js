@@ -22,8 +22,9 @@ Page({
   },
   //求捐详情页面
   qiujuanDetail(e) {
-    var id = e.currentTarget.dataset.id;
-    if (!app_data.token){
+    let id = e.currentTarget.dataset.id;
+    let token = wx.getStorageSync('token')
+    if (!token){
       app.modal({content: '请登录后再查看！',confirmText: '立即登录'}).then((res) => {
           if(res.confirm){
             app.redirectLogin();
@@ -32,7 +33,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url: '../donationdetail/donationdetail?token=' + app_data.token + '&id=' + id
+      url: '../donationdetail/donationdetail?token=' + token + '&id=' + id
     });
   },
   //下拉加载
