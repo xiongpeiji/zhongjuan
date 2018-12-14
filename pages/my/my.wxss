@@ -1,97 +1,199 @@
 /* pages/my/my.wxss */
-.my_top{
-    padding:25rpx 20rpx;
-    background: #df4334;
-    height: 145rpx;
+
+page {
+    width: 100%;
+    background: #f2f2f2;
+}
+
+.container {
+    position: relative;
+}
+
+.show-background {
+    background-color: #df4334;
+    width: 100%;
+    height: 250rpx;
+    position: absolute;
+    top: 0;
+}
+
+.content {
+    width: 92%;
+    margin-top: 60rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.user-info {
+    width: 100%;
     box-sizing: border-box;
-}
-.my_top .user_icon{
-    float: left;
-    height: 90rpx;
-    line-height: 90rpx;
+    background: #fff;
+    padding: 0 40rpx;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 15rpx;
+    height: 180rpx;
 }
-.my_top .user_icon image{
-    float: left;
-    width: 90rpx;
-    height: 90rpx;
+
+.user-cont {
+    width: 100%;
+    position: relative;
+    margin: 30rpx 0;
+}
+
+.user-phone {
+    width: 140rpx;
+    height: 140rpx;
+    background: #eee;
     border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
 }
-.my_top .user_icon .user_name{
-    font-size: 32rpx;
-    font-weight: bold;
-    color:#fff;
-    float: left;
-    margin-left: 25rpx;
+
+.user-phone image {
+    width: 100%;
+    height: 100%;
 }
-.editUserInfo{
-    float: right;
-    width: 50rpx;
-    height: 90rpx;
-    line-height: 90rpx;
+
+.user-text {
     font-size: 0;
-    padding:0 10rpx;
+    text-align: center;
+    position: absolute;
+    left: 180rpx;
+}
+
+.user-text .user-name {
+    font-size: 34rpx;
+    line-height: 34rpx;
+    color: #313131;
+    display: block;
+    margin: 20rpx;
+}
+
+.user-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #000;
+    position: static;
+    margin-top: 180rpx;
+}
+
+.user-detail .item {
+    margin: auto 20rpx;
+}
+
+.user-detail .item .detail-info {
+    margin-top: 20rpx;
     text-align: center;
 }
-.editUserInfo image{
-    display: inline-block;
-    width: 16rpx;
-    height: 27rpx;
-    vertical-align: middle;
-}
-.my_menu_list{
-    position: relative;
-    height: 98rpx;
-    padding:28rpx 25rpx 28rpx 40rpx;
-    background: #fff;
-    line-height: 42rpx;
-    box-sizing: border-box;
-    margin-bottom: 2px;
-}
-.left_text{
-    float: left;
-    font-size: 30rpx;
-    color:#333333;
-}
-.right_btn{
-    float: right;
-    overflow: hidden;
-}
-.no_auth{
+
+.user-text .user-name.login {
     font-size: 24rpx;
-    color:#999999;
-    display: inline-block;
+    padding: 4rpx 28rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #313131;
+    background-color: #fff;
+    margin: 0 40rpx;
 }
-.no_auth image{
-    display: inline-block;
-    width: 4rpx;
-    height: 21rpx;
-    margin-right: 20rpx;
+
+.v-er {
+    display: block;
+    width: 180rpx;
+    margin: 15rpx auto 50rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    color: #000;
 }
-.right_icons{
-    height:25rpx;
-    width:15rpx;
-    margin-left:20rpx;
-    margin-top:15rpx;
-    float:right;
+
+.v-er .v_url {
+    display: block;
+    height: 38rpx;
+    line-height: 38rpx;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #000;
 }
-.pass_auth image{
-    width: 18rpx;
+
+.menu {
+    border-radius: 15rpx;
+    padding: 10rpx;
+    background-color: #fff;
+    width: 100%;
+    margin-top: 30rpx;
 }
-.pass_auth{
-    color:#df4334;
-}
-.public_hover{
-    background: #fafafa;
-}
-.no_login{
-    width: 90rpx;
-    height: 90rpx;
+
+.us-link-lis {
+    width: 100%;
+    height: 86rpx;
     background: #fff;
-    border-radius: 50%;
-    float:left;
+    overflow: hidden;
+    position: relative;
+    line-height: 86rpx;
 }
-.user_login_btn{
-    margin-top: 15rpx;
-    margin-left: 15rpx;
+
+.nav-icon {
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 17rpx;
+    margin-right: 30rpx;
+}
+
+.tit-text-us {
+    font-size: 28rpx;
+    color: #141414;
+    display: block;
+    float: left;
+}
+
+.right-icon {
+    display: block;
+    width: 32rpx;
+    height: 32rpx;
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 27rpx;
+}
+
+.shar-text-tips {
+    font-size: 22rpx;
+    color: #ff1849;
+    display: block;
+    float: right;
+}
+
+.row-mb {
+    margin-bottom: 10rpx;
+}
+
+.versions {
+    text-align: center;
+    font-size: 22rpx;
+    padding-top: 44rpx;
+    display: block;
+    width: 100%;
+    color: #b2b2b2;
+}
+
+.us-link-lis button {
+    border: 0;
+    border-color: transparent;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    line-height: 86rpx;
+    width: 100%;
+    position: absolute;
+    left: -40rpx;
+    top: 0;
+    text-align: left;
+    text-indent: 148rpx;
 }

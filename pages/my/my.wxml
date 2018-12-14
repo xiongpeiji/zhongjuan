@@ -1,49 +1,73 @@
-<!--我的-->
+<!--pages/my/my.wxml-->
 <view class="container">
-    <view class="my_top">
-        <view class="user_icon" hidden="{{!isLogin}}">
-            <image class="user_wechat_icon" src="{{avatarUrl}}"></image>
-            <label class="user_name">{{nickName}}</label>
+    <view class="show-background"></view>
+    <view class='content'>
+        <view class="user-info">
+            <view class='user-cont' hidden="{{isLogin}}">
+                <view class='user-phone'>
+                    <image src='{{avatar}}'></image>
+                </view>
+                <view class='user-text'>
+                    <text class='user-name'>{{username}}</text>
+                    <view class='v-er'>
+                        <text class="v_url">{{mobile}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='user-cont' hidden="{{!isLogin}}">
+                <view class='user-phone'>
+                    <image src=""></image>
+                </view>
+                <view class='user-text'>
+                    <text class='user-name'>未登录</text>
+                    <button class="user-name login" bindtap='userLogin' open-type='getUserInfo'>点击登录</button>
+                </view>
+				<view class='user-detail'>
+				</view>
+            </view>
         </view>
-        <view class="user_icon" hidden="{{isLogin}}">
-            <view class="no_login"></view>
-            <button class="user_login_btn" size="mini"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击登录</button>
-        </view>
-        <view class="editUserInfo" bindtap="editUserInfo" hidden="{{!isLogin}}">
-            <image src="/images/icon_fanhui.png"></image>
-        </view>
-    </view>
-    <view class="my_menu_list" hover-class="public_hover" bindtap="phoneAuth">
-        <label class="left_text">手机认证</label>
-        <view class="right_btn">
-            <label class="no_auth"><image src="/images/web__weirenzheng.png"></image>未认证</label>
-            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-        </view>
-    </view>
-    <view class="my_menu_list" hover-class="public_hover" bindtap="jigouAuth">
-        <label class="left_text">机构认证</label>
-        <view class="right_btn">
-            <label class="no_auth pass_auth"><image src="/images/icon_yirenzheng.png"></image>已认证</label>
-            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-        </view>
-    </view>
-    <view class="my_menu_list" hover-class="public_hover" bindtap="helpMsgDetal">
-        <label class="left_text">求捐信息管理</label>
-        <view class="right_btn">
-            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-        </view>
-    </view>
-    <view class="my_menu_list" hover-class="public_hover" bindtap="myDona">
-        <label class="left_text">我的捐赠</label>
-        <view class="right_btn">
-            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-        </view>
-    </view>
-    <view class="my_menu_list" hover-class="public_hover" bindtap="xindeList">
-        <label class="left_text">我的心得</label>
-        <view class="right_btn">
-            <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        <view class='menu'>
+            <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
+                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+                <text class='tit-text-us'>手机认证</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
+                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+                <text class='tit-text-us'>机构认证</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
+                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+                <text class='tit-text-us'>求捐信息管理</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
+                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+                <text class='tit-text-us'>我的捐赠</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+             <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
+                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+                <text class='tit-text-us'>我的心得</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+            <view class='us-link-lis'>
+                <image class='nav-icon' src='../../images/user_icon/us-icon03.png'></image>
+                <button open-type='share' plain="true" class='tit-text-us'>分享小程序</button>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+
+            <view class='us-link-lis row-mb'>
+                <image class='nav-icon' src='../../images/user_icon/us-icon04.png'></image>
+                <button open-type='contact' plain="true" session-from="hello world" class='tit-text-us'>客服中心</button>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+			<view class='us-link-lis row-mb' hidden="{{isLogin}}">
+                <image class='nav-icon' src='../../images/user_icon/us-icon08.png'></image>
+                <button plain="true" bindtap='goSetting' class='tit-text-us'>设置</button>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
         </view>
     </view>
 </view>
-
