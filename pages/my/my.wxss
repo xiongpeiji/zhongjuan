@@ -12,18 +12,18 @@ page {
 .show-background {
     background-color: #df4334;
     width: 100%;
-    height: 300rpx;
+    height: 230rpx;
     position: absolute;
     top: 0;
 }
 
 .content {
     width: 92%;
-    margin-top: 60rpx;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
+    padding-top:60rpx;
 }
 
 .user-info {
