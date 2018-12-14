@@ -175,6 +175,7 @@
     height: 260rpx;
     width: 100%;
     overflow: auto;
+    margin-bottom: 80rpx;
 }
 .chose_list{
     height: 100%;
@@ -219,4 +220,13 @@
     font-size: 24rpx;
     color:#999;
     height: 100%;
+}
+.chose_box button[type=default]{
+    border:none !important;
+    background: #F2F2F2;
+    outline: none;
+    color:#E4572E;
+}
+.hide{
+    display: none;
 }

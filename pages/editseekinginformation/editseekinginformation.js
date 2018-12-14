@@ -6,7 +6,8 @@ Page({
    */
   data: {
     images:null,
-    len:9
+    len:9,
+    first_click: false,
   },
   //添加图片
   modifyPhoto(e){
@@ -27,7 +28,20 @@ Page({
       }
     })
   },
-
+  //打开选择面板
+  addGoods(e){
+    var that = this;
+    that.setData({
+      first_click:true,
+    })
+  },
+  //隐藏选择面板
+  hideMasxing(e){
+    var that = this;
+    that.setData({
+      first_click:false,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
