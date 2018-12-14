@@ -29,9 +29,13 @@ Page({
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
-        http.Post({url:url,params:params,loading:obj.refresh}).then((res)=>{
+        let data = {url:url,params:params}
+        if (obj && obj.refresh) {
+          data.loading = obj.refresh
+        }
+        http.Post(data).then((res)=>{
             if(res.code == 'success'){
-              if(obj.refresh == true){
+              if(data.refresh == true){
                 wx.stopPullDownRefresh();
               }
               this.setData({

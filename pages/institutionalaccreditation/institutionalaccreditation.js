@@ -105,7 +105,7 @@ Page({
       liaison_tel:value.mobile,//联络人电话
       id_card_just:this.data.cardOne,//身份证正面【上传图像返回地址】
       id_card_just:this.data.cardTwo,//身份证反面【上传图像返回地址】
-      prove_info:'',//机构证明资料【上传图像返回地址组成json格式】
+      prove_info:this.data.prove_info,//机构证明资料【上传图像返回地址组成json格式】
     };
     http.Post({url:url,params:params}).then((res)=>{
         if(res.code == 'success'){
