@@ -1,16 +1,16 @@
 <!--编辑资料-->
 <view class="container">
-    <view class="public_input_box" data-id="{{1}}" hover-class="public_hove" bindtap="modifyPhoto">
+    <view class="public_input_box" data-id="{{1}}" hover-class="public_hove" bindtap="updateAvatar">
         <span class="title_box">头像</span>
         <span class="right_icon">
-            <image src="{{images}}"></image>
+            <image src="{{avatar}}"></image>
         </span>
     </view>
 
     <view class="public_input_box" data-id="{{2}}" hover-class="public_hove" bindtap="modifyinfo">
         <span class="title_box">昵称</span>
         <span class="right_nick_name">
-            {{nick_name}}
+            {{username}}
         </span>
     </view>
     <!--mask-->

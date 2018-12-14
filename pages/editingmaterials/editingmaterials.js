@@ -1,12 +1,15 @@
 // pages/editingmaterials/editingmaterials.js
+const app = getApp();
+const app_data = app.globalData;
+const http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    images: '/images/user_icon_01.png',
-    nick_name:'大箩贝先生',
+    avatar: null,
+    username:null,
     showModalStatus: false,
   },
 
@@ -17,7 +20,17 @@ Page({
     wx.setNavigationBarTitle({
       title: '编辑资料'
     });
+    this.setUserInfo();
   },
+
+  setUserInfo(){
+    let user_info = wx.getStorageSync('user_info');
+    this.setData({
+      avatar:user_info.avatar,
+      username:user_info.username
+    })
+  },
+
   //修改昵称提交
   submitDataName(e) {
     var name = e.detail.value.rName
@@ -54,20 +67,17 @@ Page({
   },
   
   //修改头像
-  modifyPhoto(e){
-    var that = this;
-    wx.chooseImage({
-      count:1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: res=> {
-        const tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
-        that.setData({
-          images:tempFilePaths
-        })
-      }
-    })
+  updateAvatar(e){
+    let url = app_data.base +'/Public/uploadImg?type=user_avatar';
+    http.Select({count:3}).then((res)=>{
+      return res.map((path,index)=>{
+        let num = index+1;
+        http.Upload({count:3,url:url,path:path,num:num});
+      });
+    }).then((res)=>{
+        console.log(res);
+    });
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

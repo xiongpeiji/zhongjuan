@@ -166,14 +166,14 @@ page {
     display: block;
     float: right;
     margin-right:20rpx;
-    color:#141414;
+    color:#df4334;
 }
 .status-pass{
     font-size: 28rpx;
     display: block;
     float: right;
     margin-right:20rpx;
-    color: #df4334;
+    color: #5FB878;
 }
 
 .right-icon {
