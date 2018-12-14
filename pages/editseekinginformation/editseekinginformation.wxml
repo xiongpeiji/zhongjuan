@@ -53,6 +53,7 @@
         <view class="title_pos">可多选</view>
         <view class="auto_chose_box">
             <view class="chose_list" style="width:{{1072-90}}rpx;">
+            
                 <view class="chose_x_auto">
                     <view class="set_number">
                         <image src="/images/yifu_xuanzhong.png"></image>
@@ -63,35 +64,6 @@
                     <text>服装</text>
                 </view>
 
-                <view class="chose_x_auto">
-                    <view class="set_number">
-                        <image src="/images/yifu_xuanzhong.png"></image>
-                        <view class="num_input">
-                            <input  value="" type="number" placeholder="请输入数量" maxlength="5"/>
-                        </view>
-                    </view>
-                    <text>服装</text>
-                </view>
-
-                <view class="chose_x_auto">
-                    <view class="set_number">
-                        <image src="/images/yifu_xuanzhong.png"></image>
-                        <view class="num_input">
-                            <input  value="" type="number" placeholder="请输入数量" maxlength="5"/>
-                        </view>
-                    </view>
-                    <text>服装</text>
-                </view>
-
-                <view class="chose_x_auto">
-                    <view class="set_number">
-                        <image src="/images/yifu_xuanzhong.png"></image>
-                        <view class="num_input">
-                            <input  value="" type="number" placeholder="请输入数量" maxlength="5"/>
-                        </view>
-                    </view>
-                    <text>服装</text>
-                </view>
             </view>
         </view>
         <button class="push-btn" type="default" size="default" disabled="{{disabled}}">
