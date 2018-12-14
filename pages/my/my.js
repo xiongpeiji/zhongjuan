@@ -22,15 +22,18 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     });
-    this.checkUser();
+    this.checkUser({ refresh: false });
   },
-  checkUser() {
+  checkUser(obj) {
     let token = wx.getStorageSync('token');
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
-        http.Post({url:url,params:params}).then((res)=>{
+        http.Post({url:url,params:params,loading:obj.refresh}).then((res)=>{
             if(res.code == 'success'){
+              if(obj.refresh == true){
+                wx.stopPullDownRefresh();
+              }
               this.setData({
                 isLogin:true,
                 username:res.data.username,
@@ -75,7 +78,6 @@ Page({
     wx.navigateTo({
       url: '../donationmanagement/donationmanagement'
     })
-    this.checkUser();
   },
   //求捐信息管理
   helpMsgDetal(e) {
@@ -144,7 +146,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.checkUser({refresh:true});
   },
 
   /**

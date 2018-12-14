@@ -22,7 +22,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '手机认证'
     });
-    this.mobileInputEvent()
   },
 
   /**
