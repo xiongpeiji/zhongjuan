@@ -7,9 +7,9 @@ App({
     is_login: false,
     user_info: null,
     token: null,
+    mobile_status:0,
+    institution_status:0,
     base: "https://api.qibu131.cn/",
-    util: util,
-    http: http
   },
   onLaunch: function (options) {
     this.setUserInfo(options);
@@ -27,6 +27,8 @@ App({
     if (user_info) {
       this.globalData.user_info = user_info
       this.globalData.is_login = true
+      this.globalData.institution_status = user_info.institution_status
+      this.globalData.mobile_status = user_info.mobile_status
     }
   },
   wxLogin() {
@@ -36,6 +38,11 @@ App({
           this.wxCodeGetOpenId(res.code)
         }
       })
+    }else{
+      let user_info = wx.getStorageSync('user_info')
+      if(!user_info){
+        this.getUserInfo();
+      }
     }
   },
   wxCodeGetOpenId(code) {
@@ -45,25 +52,31 @@ App({
       if(res.code == 'success'){
         wx.setStorageSync('open_id', res.data.open_id);
         this.globalData.open_id = res.data.open_id;
+        this.getUserInfo();
       }
     })
   },
   getUserInfo() {
-    let token = wx.getStorageSync('token')
-    let url = this.globalData.base + 'User/index'
-    let data = { token: token }
+    let open_id = wx.getStorageSync('open_id')
+    let url = this.globalData.base + 'Public/getUserInfo'
+    let data = { open_id: open_id }
     http.Post({ url: url, params: data }).then((res) => {
-      if (res.code == 'not_login') {
-        return false
+      if(res.code == 'success'){
+        wx.setStorageSync('user_info', res.data);
+        wx.setStorageSync('token', res.data.token);
+        this.globalData.token = res.data.token;
+        this.globalData.user_info = res.data;
+        this.globalData.mobile_status = res.data.mobile_status;
+        this.globalData.institution_status = res.data.institution_status;
+        this.globalData.is_login = true;
       }
-      wx.setStorageSync('user_info', res.data);
-      this.globalData.user_info = res.data;
+     
     })
   },
   modal(obj){
     return new Promise((resolve, reject) => {
       wx.showModal({
-        title: obj.title ? obj.title : '提示',
+        title: obj.title ? obj.title : '提示ʾ',
         content: obj.content ? obj.content : '哈哈',
         showCancel: true,
         cancelText: obj.cancelText ? obj.cancelText : '取消',
