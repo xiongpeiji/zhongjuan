@@ -41,6 +41,9 @@
     box-sizing: border-box;
     margin-bottom: 2px;
 }
+.my_menu_list picker{
+    display: block;
+}
 .left_text{
     float: left;
     font-size: 30rpx;
@@ -110,4 +113,7 @@
     height: 190rpx;
     float: left;
     margin-right: 20rpx;
+}
+.card-infos{
+    display: inline-block;
 }

@@ -1,43 +1,70 @@
 <!--机构认证-->
 <view class="container">
+    <form bindsubmit='submitDataInfo'>
     <view class="padding_bottom">
         <view class="creat_xinde_con">
             <label class="xinde_title">机构名称</label>
             <view class="title_input_box">
-                <input value="" type="text" placeholder="请输入机构名称" maxlength="11"/>
+                <input value="" name="name"  type="text" placeholder="请输入机构名称" maxlength="11"/>
             </view>
         </view>
-        <view class="my_menu_list" hover-class="public_hover">
+        <picker mode="selector" bindchange="bindTypeChange" range-key='name' range="{{type}}">
+            <view class="my_menu_list" hover-class="public_hover">
+                <label class="left_text">机构类型</label>
+                <view class="right_btn">
+                    <view class="no_auth" hidden="{{curType.id}}">请选择机构类型</view>
+                    <label class="no_auth">{{curType.name}}</label>
+                    <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+                </view>
+            </view>
+        </picker>
+        <picker mode="selector" bindchange="bindCityChange" range-key='name' range="{{city}}">
+            <view class="my_menu_list" hover-class="public_hover">
+            <label class="left_text">机构区域</label>
+                <view class="right_btn">
+                    <view class="no_auth" hidden="{{curCity.id}}">请选择机构区域</view>
+                    <label class="no_auth">{{curCity.name}}</label>
+                    <image class="right_icons" src="/images/dingwei@2x.png"></image>
+                </view>
+            </view>
+        </picker>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            <view class="my_menu_list" hover-class="public_hover">
             <label class="left_text">机构地址</label>
-            <view class="right_btn">
-                <label class="no_auth">请输入机构地址</label>
-                <image class="right_icons" src="/images/dingwei@2x.png"></image>
+                <view class="right_btn">
+                    <view class="no_auth" hidden="{{region[0]}}">请选择机构地址</view>
+                    <label class="no_auth">{{region[0]}} {{region[1]}} {{region[2]}}</label>
+                    <image class="right_icons" src="/images/dingwei@2x.png"></image>
+                </view>
+            </view>
+        </picker>
+        <view class="creat_xinde_con">
+            <label class="xinde_title">详细地址</label>
+            <view class="title_input_box">
+                <input name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
             </view>
         </view>
-        <view class="my_menu_list" hover-class="public_hover">
-            <label class="left_text">机构类型</label>
-            <view class="right_btn">
-                <label class="no_auth">请选择机构类型</label>
-                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-            </view>
-        </view>
+        
         <view class="creat_xinde_con">
             <label class="xinde_title">联络人</label>
             <view class="title_input_box">
-                <input value="" type="text" placeholder="请输入联络人姓名" maxlength="11"/>
+                <input name='userName' type="text" placeholder="请输入联络人姓名" maxlength="11"/>
             </view>
         </view>
+        <picker mode="selector" bindchange="bindSexChange" range-key='name' range="{{sex}}">
         <view class="my_menu_list" hover-class="public_hover">
             <label class="left_text">性别</label>
             <view class="right_btn">
-                <label class="no_auth">请选择性别</label>
+                <view class="no_auth" hidden="{{curSex.id}}">请选择性别</view>
+                <label class="no_auth">{{curSex.name}}</label>
                 <image class="right_icons" src="/images/renzheng_jinru.png"></image>
             </view>
         </view>
+        </picker>
         <view class="creat_xinde_con">
             <label class="xinde_title">联系方式</label>
             <view class="title_input_box">
-                <input value="" type="number" placeholder="请输入您的联系方式" maxlength="11"/>
+                <input name='mobile' type="number" placeholder="请输入您的联系方式" maxlength="11"/>
             </view>
         </view>
 
@@ -45,8 +72,9 @@
             <view class="imguptile">
                 人像验证 <label>请上传联络人照片</label>
             </view>
-            <view class="user_photos_box">
-                <image class="user_photo_bg" src="/images/user_photo_bg.jpg"></image>
+            <view class="user_photos_box" bindtap='uploadHuman'>
+                <image class="user_photo_bg" hidden="{{!institution}}" src="{{institution}}"></image>
+                <image class="user_photo_bg" hidden="{{institution}}" src="/images/user_photo_bg.jpg"></image>
             </view>
         </view>
 
@@ -55,8 +83,14 @@
                 身份验证 <label>请上传联络人身份证正反面照片</label>
             </view>
             <view class="user_photos_box">
-                <image class="user_card_bg" src="/images/pic_shenzheng.png"></image>
-                <image class="user_card_bg" src="/images/pic_shenfan.png"></image>
+                <view bindtap="uploadCardOne" class="card-infos">
+                    <image class="user_card_bg" hidden="{{!cardOne}}" src="{{cardOne}}"></image>            
+                    <image class="user_card_bg" hidden="{{cardOne}}" src="/images/pic_shenzheng.png"></image>
+                </view>
+                <view bindtap="uploadCardTwo" class="card-infos">
+                    <image class="user_card_bg" hidden="{{!cardTwo}}" src="{{cardTwo}}"></image>                
+                    <image class="user_card_bg" hidden="{{cardTwo}}" src="/images/pic_shenfan.png"></image>
+                </view>
             </view>
         </view>
 
@@ -65,14 +99,12 @@
             <view class="imguptile">
                 机构认证 <label>请上传机构相关证件照片</label>
             </view>
-                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
-            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+            <image class="img_bg" wx:for="{{prove_info}}"  wx:key="index" src="{{item}}"></image>
+            <image class="img_bg" bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
-
-
-    <view hover-class="fixed_bottom_btn" class="bottom_btn">提交</view>
-
+        <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">提交</button>
+    </form>
 </view>
 
 
