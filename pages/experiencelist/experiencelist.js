@@ -49,9 +49,9 @@ Page({
   },
 
   //没有心得去发布按钮
-  toPush(e){
+  toPush(id){
     wx.navigateTo({
-      url: '../createexperience/createexperience'
+      url: '../createexperience/createexperience?id='+id
     })
   },
 
