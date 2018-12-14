@@ -48,8 +48,69 @@ Page({
     })
   },
 
-  sendData(e){
-    console.log(e);
+  setTitle(e){
+    this.setData({
+      title:e.detail.value
+    })
+  },
+
+  setContent(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+
+  uploadImg(){
+    let user_avatar = this.data.avatar;
+    let url = app_data.base + 'Public/uploadImg?type=experience';
+    http.Select({ count: 9-this.data.images.length }).then((res) => {
+      return Promise.all(res.map((path, index) => {
+        let num = index + 1;
+        return http.Upload({ count: 9 - this.data.images.length, url: url, path: path, num: num });
+      }));
+    }).then((res) => {
+      if (res.length > 0) {
+          let images = this.data.images;
+          images = images.concat(res);
+          this.setData({
+            images:images
+          })
+      }
+    })
+  },
+
+  sendData(){
+    let url = app_data.base +'Experience/saveExperience'
+    let title = this.data.title;
+    let content = this.data.content;
+    let images = this.data.images;
+    if(!title){
+      app.alert({title:'请输入心得标题！'})
+      return
+    }
+    if (!content) {
+      app.alert({ title: '请输入心得内容！' })
+      return
+    }
+    console.log(images.length);
+    if (images.length < 3 || images.length > 9) {
+      app.alert({ title: '请上传3-9张心得图片！' })
+      return
+    }
+    let params = {
+      token:app_data.token,
+      title:title,
+      content:content,
+      imgs: images,
+    }
+    http.Post({url:url,params:params}).then((res)=>{
+      if(res.code == 'success'){
+        app.alert({title:res.msg,time:2000});
+        setTimeout(wx.navigateTo({
+          url: '/pages/experiencelist/experiencelist',
+        }),2000);
+      }
+    })
   },
 
   /**
