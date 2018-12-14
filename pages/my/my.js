@@ -39,6 +39,7 @@ Page({
                 institution_status:res.data.institution_status,
                 mobile_status:res.data.mobile_status,
               });
+              wx.setStorageSync('user_info', res.data);
               app_data.mobile_status = res.data.mobile_status;
               app_data.institution_status = res.institution_status;
             }

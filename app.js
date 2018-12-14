@@ -93,6 +93,14 @@ App({
       });
     });
   },
+  alert(obj){
+    wx.showToast({
+      title: obj.title ? obj.title : 'ok',
+      icon: 'none',
+      duration: obj.time ? obj.time : 1000,
+      mask: true
+    })
+  },
   redirectLogin() {
     wx.switchTab({
       url: '/pages/my/my',

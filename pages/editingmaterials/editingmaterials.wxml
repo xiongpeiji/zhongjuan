@@ -22,7 +22,7 @@
         <view class="drawer_title">修改昵称<image bindtap="closeWindow" src="/images/quxiaocopy2@2x.png"></image></view> 
         <view class="drawer_content"> 
             <label class="title">昵称:</label> 
-            <input class="input_base" name="rName" maxlength="{{nameLength}}" auto-focus="{{true}}" value="{{nick_name}}"></input> 
+            <input class="input_base" name="rName" auto-focus="{{true}}" value="{{username}}"></input> 
         </view> 
         <button class="btn_ok" size="default" form-type="submit">确定</button>
     </form> 

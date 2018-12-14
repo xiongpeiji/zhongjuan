@@ -106,7 +106,6 @@ function UPLOAD(obj) {
         title: '正在上传',
       })
     }
-   
     wx.uploadFile({
       url: obj.url,
       filePath: obj.path,
@@ -116,10 +115,11 @@ function UPLOAD(obj) {
         if (res.statusCode == 200) {
           let data = JSON.parse(res.data);
           if (data.code == 'success') {
-            resolve(data.data.img_url);
+            resolve(data.data[0]);
           }else{
-            wx.showLoading({
-              title: '第' + obj.num + '张图片'+data.msg,
+            wx.showToast({
+              icon: 'none',
+              title: '第' + obj.num + '张图片' + data.msg,
             })
             reject(data);
           }

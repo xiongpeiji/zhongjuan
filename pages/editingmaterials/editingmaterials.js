@@ -35,26 +35,25 @@ Page({
   submitDataName(e) {
     var name = e.detail.value.rName
     if(name){
-      this.setData({
-        showModalStatus:true,
-        nick_name:name
+      let url = app_data.base +'User/updateUsername';
+      let token = app_data.token;
+      let params = {username:name,token:token};
+      http.Post({url:url,params:params}).then((res)=>{
+          if(res.code == 'success'){
+            this.setData({
+              showModalStatus: false,
+              username: name
+            })
+            app.alert({title:res.msg});
+            app.getUserInfo();
+          }
       });
-      this.setData({
-        showModalStatus:false
-      })
     }else{
-      wx.showToast({
-          title: '昵称不能为空',
-          icon:'none',
-          duration: 1000,
-          mask:true
-      })
+      app.alert({ title: '昵称不能为空' });
     }
-    
   },
   //修改详情
   modifyinfo(e){
-    console.log(e)
     this.setData({
       showModalStatus:true
     })
@@ -68,16 +67,31 @@ Page({
   
   //修改头像
   updateAvatar(e){
-    let url = app_data.base +'/Public/uploadImg?type=user_avatar';
-    http.Select({count:3}).then((res)=>{
-      return res.map((path,index)=>{
+    let user_avatar = this.data.avatar;
+    let url = app_data.base +'Public/uploadImg?type=user_avatar';
+    http.Select({count:1}).then((res)=>{
+      return Promise.all(res.map((path, index) => {
         let num = index+1;
-        http.Upload({count:3,url:url,path:path,num:num});
-      });
+        user_avatar = path;
+        return http.Upload({count:1,url:url,path:path,num:num});
+      }));
     }).then((res)=>{
-        console.log(res);
-    });
-    
+        if(res[0]){
+          let url = app_data.base + 'User/updateAvatar';
+          let params = {token:app_data.token,avatar:res[0]};
+          return http.Post({url:url,params:params});
+        }else{
+          return {code:'fail'}
+        }
+    }).then((res)=>{
+        if(res.code == 'success'){
+            app.getUserInfo();
+            app.alert(res.msg);
+            this.setData({
+              avatar: user_avatar
+            })
+        }
+    });   
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
