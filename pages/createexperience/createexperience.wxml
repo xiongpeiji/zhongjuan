@@ -4,11 +4,11 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">标题</label>
             <view class="title_input_box">
-                <input type="text" bindinput='setTitle' placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
+                <input type="text" bindinput='setTitle' value='{{title}}' placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
             </view>
         </view>
         <view class="textArea_box">
-            <textarea auto-height placeholder="请输入文章正文，不得超过10000字" bindinput='setContent' maxlength="10000" />
+            <textarea auto-height placeholder="请输入文章正文，不得超过10000字" bindinput='setContent'maxlength="10000" value='{{content}}' />
         </view>
         <view class="imgupload_box">
             <view class="imguptile">
