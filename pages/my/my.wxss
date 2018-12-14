@@ -12,7 +12,7 @@ page {
 .show-background {
     background-color: #df4334;
     width: 100%;
-    height: 250rpx;
+    height: 300rpx;
     position: absolute;
     top: 0;
 }
@@ -23,6 +23,7 @@ page {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: auto;
 }
 
 .user-info {
@@ -35,13 +36,14 @@ page {
     justify-content: center;
     position: relative;
     border-radius: 15rpx;
-    height: 180rpx;
+    height: 200rpx;
 }
 
 .user-cont {
     width: 100%;
     position: relative;
     margin: 30rpx 0;
+    height: 140rpx;
 }
 
 .user-phone {
@@ -125,6 +127,7 @@ page {
     background-color: #fff;
     width: 100%;
     margin-top: 30rpx;
+    position:relative;
 }
 
 .us-link-lis {

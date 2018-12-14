@@ -140,3 +140,39 @@
 .list_Goods .float_right{
     float: right;
 }
+
+.maxing{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .6;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;    
+}
+.chose_box{
+    width: 100%;
+    padding:40rpx 24rpx 50rpx;
+    height: 590rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+}
+.chose_box .title_pos{
+    font-size: 28rpx;
+    color: #999999;
+    line-height: 40rpx;
+    margin-bottom: 40rpx;
+}
+.auto_chose_box{
+    height: 260rpx;
+    width: 100%;
+    overflow: hidden;
+}

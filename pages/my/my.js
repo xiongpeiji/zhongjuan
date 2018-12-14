@@ -1,7 +1,7 @@
 // pages/my/my.js
 const app = getApp();
 const app_data = app.globalData;
-const http = require("/utils/http.js")
+const http = require("../../utils/http.js")
 Page({
 
   /**

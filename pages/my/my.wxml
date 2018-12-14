@@ -10,7 +10,7 @@
                 <view class='user-text'>
                     <text class='user-name'>{{username}}</text>
                     <view class='v-er'>
-                        <text class="v_url">{{mobile}}</text>
+                        <text class="v_url">{{username}}</text>
                     </view>
                 </view>
             </view>
@@ -27,28 +27,28 @@
             </view>
         </view>
         <view class='menu'>
-            <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
-                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+            <view class='us-link-lis' hidden="{{isLogin}}" bindtap="phoneAuth">
+                <image class='nav-icon' src='../../images/user_icon/uc_icon_01.png'></image>
                 <text class='tit-text-us'>手机认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
-                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="jigouAuth">
+                <image class='nav-icon' src='../../images/user_icon/uc_icon_02.png'></image>
                 <text class='tit-text-us'>机构认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
-                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="helpMsgDetal">
+                <image class='nav-icon' src='../../images/user_icon/uc_icon_03.png'></image>
                 <text class='tit-text-us'>求捐信息管理</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
-                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="myDona">
+                <image class='nav-icon' src='../../images/user_icon/uc_icon_04.png'></image>
                 <text class='tit-text-us'>我的捐赠</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-             <view class='us-link-lis' hidden="{{isLogin}}" bindtap="gotoIncome">
-                <image class='nav-icon' src='../../images/user_icon/us-icon01.png'></image>
+             <view class='us-link-lis' hidden="{{isLogin}}" bindtap="xindeList">
+                <image class='nav-icon' src='../../images/user_icon/uc_icon_05.png'></image>
                 <text class='tit-text-us'>我的心得</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
@@ -65,7 +65,7 @@
             </view>
 			<view class='us-link-lis row-mb' hidden="{{isLogin}}">
                 <image class='nav-icon' src='../../images/user_icon/us-icon08.png'></image>
-                <button plain="true" bindtap='goSetting' class='tit-text-us'>设置</button>
+                <button plain="true" bindtap='editUserInfo' class='tit-text-us'>设置</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
         </view>

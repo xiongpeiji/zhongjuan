@@ -45,7 +45,16 @@
             </view>
         </view>
     </view>
-    
 
     <view hover-class="fixed_bottom_btn" class="bottom_btn">发布</view>
+    <!--选择面板-->
+    <view class="maxing"></view>
+    <view class="chose_box">
+        <view class="title_pos">可多选</view>
+        <view class="auto_chose_box">
+            <view class="chose_list">
+                33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333334
+            </view>
+        </view>
+    </view>
 </view>
