@@ -27,7 +27,7 @@ Page({
   checkUser() {
     let token = wx.getStorageSync('token');
     if(token){
-        let url = app_data.base+'/User/index';
+        let url = app_data.base+'User/index';
         let params = {token:token};
         http.Post({url:url,params:params}).then((res)=>{
             if(res.code == 'success'){
@@ -87,7 +87,7 @@ Page({
     let wx_user_info = e.detail.userInfo;
     if (wx_user_info) {
         let url = app_data.base+'Public/login';
-        let open_id_ = wx.getStorageSync("open_id");
+        let open_id = wx.getStorageSync("open_id");
         let params = {
           open_id:open_id,
           username:wx_user_info.nickName,
@@ -105,6 +105,8 @@ Page({
             });
             app_data.mobile_status = res.data.mobile_status;
             app_data.institution_status = res.institution_status;
+            wx.setStorageSync('user_info', res.data);
+            wx.setStorageSync('token', res.data.token);
           }
       })
     }

@@ -13,6 +13,7 @@ App({
   },
   onLaunch: function (options) {
     this.setUserInfo(options);
+    this.wxLogin();
   },
   setUserInfo(options) {
     let open_id = wx.getStorageSync('open_id')

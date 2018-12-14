@@ -10,7 +10,7 @@
                 <view class='user-text'>
                     <text class='user-name'>{{username}}</text>
                     <view class='v-er'>
-                        <text class="v_url">{{mobile}}</text>
+                        <text class="v_url">{{mobile == '' ? '未验证' : mobile}}</text>
                     </view>
                 </view>
             </view>
@@ -20,7 +20,7 @@
                 </view>
                 <view class='user-text'>
                     <text class='user-name'>未登录</text>
-                    <button class="user-name login" bindtap='userLogin' open-type='getUserInfo'>点击登录</button>
+                    <button class="user-name login" bindgetuserinfo='userLogin' open-type='getUserInfo'>点击登录</button>
                 </view>
 				<view class='user-detail'>
 				</view>
