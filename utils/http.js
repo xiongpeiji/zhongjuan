@@ -16,22 +16,25 @@ function POST(obj) {
         if (obj.loading == true) {
           wx.hideLoading()
         }
-        if (res.data.code != 'success') {
+        if (res.statusCode == 200) {
+          if (res.data.code != 'success') {
+            wx.showToast({
+              icon:'none',
+              title: res.data.msg,
+            })
+          }
+          resolve(res.data)
+        }else{
           wx.showToast({
-            icon:'none',
-            title: res.data.msg,
+            icon: 'none',
+            title: '请求异常！',
           })
         }
-        resolve(res.data)
       },
       fail: (res) => {
         if (obj.loading == true) {
           wx.hideLoading()
         }
-        wx.showToast({
-          icon: 'none',
-          title: res.data.msg,
-        })
         console.log(res)
         reject(res.data)
       }
@@ -54,22 +57,26 @@ function GET(obj) {
         if (obj.loading == true) {
           wx.hideLoading()
         }
-        if (res.data.code != 'success'){
+        if(res.statusCode == 200){
+          if (res.data.code != 'success') {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.msg,
+            })
+          }
+          resolve(res.data)
+        }else{
           wx.showToast({
             icon: 'none',
-            title: res.data.msg,
+            title: '请求异常！',
           })
         }
-        resolve(res.data)
       },
       fail: (res) => {
         if (obj.loading == true) {
           wx.hideLoading()
         }
-        wx.showToast({
-          icon: 'none',
-          title: res.data.msg,
-        })
+        console.log(res)
         reject(res.data)
       }
     })
