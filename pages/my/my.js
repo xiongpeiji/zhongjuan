@@ -35,7 +35,7 @@ Page({
         }
         http.Post(data).then((res)=>{
             if(res.code == 'success'){
-              if(data.refresh == true){
+              if (obj.refresh == true){
                 wx.stopPullDownRefresh();
               }
               this.setData({

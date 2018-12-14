@@ -92,7 +92,6 @@ Page({
       app.alert({ title: '请输入心得内容！' })
       return
     }
-    console.log(images.length);
     if (images.length < 3 || images.length > 9) {
       app.alert({ title: '请上传3-9张心得图片！' })
       return
