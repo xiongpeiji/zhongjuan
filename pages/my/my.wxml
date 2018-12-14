@@ -37,17 +37,17 @@
                 <text class='tit-text-us'>机构认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="helpMsgDetal">
+           <view class='us-link-lis' hidden="{{institution_status < 2}}" bindtap="helpMsgDetal">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_03.png'></image>
                 <text class='tit-text-us'>求捐信息管理</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="myDona">
+           <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="myDona">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_04.png'></image>
                 <text class='tit-text-us'>我的捐赠</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-             <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="xindeList">
+             <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="xindeList">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_05.png'></image>
                 <text class='tit-text-us'>我的心得</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
