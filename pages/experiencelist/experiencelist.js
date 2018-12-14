@@ -51,7 +51,7 @@ Page({
   //没有心得去发布按钮
   toPush(id){
     wx.navigateTo({
-      url: '../createexperience/createexperience?id='+id
+      url: '../createexperience/createexperience'
     })
   },
 
