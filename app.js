@@ -76,7 +76,7 @@ App({
   modal(obj){
     return new Promise((resolve, reject) => {
       wx.showModal({
-        title: obj.title ? obj.title : '提示ʾ',
+        title: obj.title ? obj.title : '提示',
         content: obj.content ? obj.content : '哈哈',
         showCancel: true,
         cancelText: obj.cancelText ? obj.cancelText : '取消',

@@ -10,7 +10,9 @@ Page({
   data: {
     isLogin: false,
     username: '',
-    avatar: ''
+    avatar: '',
+    mobile_status:0,
+    institution_status:0,
   },
 
   /**
@@ -20,6 +22,28 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     });
+    this.checkUser();
+  },
+  checkUser() {
+    let token = wx.getStorageSync('token');
+    if(token){
+        let url = app_data.base+'/User/index';
+        let params = {token:token};
+        http.Post({url:url,params:params}).then((res)=>{
+            if(res.code == 'success'){
+              this.setData({
+                isLogin:true,
+                username:res.data.username,
+                avatar:res.data.avatar,
+                mobile:res.data.mobile,
+                institution_status:res.data.institution_status,
+                mobile_status:res.data.mobile_status,
+              });
+              app_data.mobile_status = res.data.mobile_status;
+              app_data.institution_status = res.institution_status;
+            }
+        });
+    }
   },
   //编辑资料
   editUserInfo(e) {
@@ -58,47 +82,32 @@ Page({
       url: '../donormanagement/donormanagement'
     })
   },
-
-  checkUser(){
-
-  },
   //授权登录
-  onGotUserInfo(e) {
-    let _errMsg_ = e.detail.errMsg;
-    let _userInfo_ = e.detail.userInfo;
-    let _rawData_ = e.detail.rawData;
-
-    if (_userInfo_) {
-      this.setData({
-        isLogin: true,
-        nickName: _userInfo_.nickName,
-        avatarUrl: _userInfo_.avatarUrl,
-      });
-      this.login();
+  userLogin(e) {
+    let wx_user_info = e.detail.userInfo;
+    if (wx_user_info) {
+        let url = app_data.base+'Public/login';
+        let open_id_ = wx.getStorageSync("open_id");
+        let params = {
+          open_id:open_id,
+          username:wx_user_info.nickName,
+          avatar:wx_user_info.avatarUrl,
+        }
+      http.Post({ url: url, params: params, loading: true, message:'正在登录'}).then((res)=>{
+          if(res.code == "success"){
+            this.setData({
+              isLogin: true,
+              username: res.data.username,
+              avatar: res.data.avatar,
+              mobile: res.data.mobile,
+              institution_status: res.data.institution_status,
+              mobile_status: res.data.mobile_status,
+            });
+            app_data.mobile_status = res.data.mobile_status;
+            app_data.institution_status = res.institution_status;
+          }
+      })
     }
-  },
-  login(e) {
-    let that = this;
-    let _openId_ = wx.getStorageSync("openId")
-    wx.request({
-      url: 'https://api.qibu131.cn/Public/login',
-      data: {
-        open_id: _openId_,
-        username: that.data.nickName,
-        avatar: that.data.avatarUrl
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'post',
-      success: res => {
-        console.log(res)
-        wx.setStorageSync("token", res.data.data.token)
-      },
-      fail: err => {
-        console.log(err)
-      }
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

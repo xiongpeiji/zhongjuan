@@ -3,18 +3,18 @@
     <view class="show-background"></view>
     <view class='content'>
         <view class="user-info">
-            <view class='user-cont' hidden="{{isLogin}}">
+            <view class='user-cont' hidden="{{!isLogin}}">
                 <view class='user-phone'>
                     <image src='{{avatar}}'></image>
                 </view>
                 <view class='user-text'>
                     <text class='user-name'>{{username}}</text>
                     <view class='v-er'>
-                        <text class="v_url">{{username}}</text>
+                        <text class="v_url">{{mobile}}</text>
                     </view>
                 </view>
             </view>
-            <view class='user-cont' hidden="{{!isLogin}}">
+            <view class='user-cont' hidden="{{isLogin}}">
                 <view class='user-phone'>
                     <image src=""></image>
                 </view>
@@ -27,27 +27,27 @@
             </view>
         </view>
         <view class='menu'>
-            <view class='us-link-lis' hidden="{{isLogin}}" bindtap="phoneAuth">
+            <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="phoneAuth">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_01.png'></image>
                 <text class='tit-text-us'>手机认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="jigouAuth">
+           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="jigouAuth">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_02.png'></image>
                 <text class='tit-text-us'>机构认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="helpMsgDetal">
+           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="helpMsgDetal">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_03.png'></image>
                 <text class='tit-text-us'>求捐信息管理</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-           <view class='us-link-lis' hidden="{{isLogin}}" bindtap="myDona">
+           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="myDona">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_04.png'></image>
                 <text class='tit-text-us'>我的捐赠</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-             <view class='us-link-lis' hidden="{{isLogin}}" bindtap="xindeList">
+             <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="xindeList">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_05.png'></image>
                 <text class='tit-text-us'>我的心得</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
@@ -63,7 +63,7 @@
                 <button open-type='contact' plain="true" session-from="hello world" class='tit-text-us'>客服中心</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-			<view class='us-link-lis row-mb' hidden="{{isLogin}}">
+			<view class='us-link-lis row-mb' hidden="{{!isLogin}}">
                 <image class='nav-icon' src='../../images/user_icon/us-icon08.png'></image>
                 <button plain="true" bindtap='editUserInfo' class='tit-text-us'>设置</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
