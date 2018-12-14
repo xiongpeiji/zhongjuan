@@ -81,6 +81,9 @@ Page({
     let url = app_data.base + 'Index/index';
     http.Get({ url: url }).then((res) => {
       let init_data = res.data;
+      console.log(init_data.type);
+      wx.setStorageSync('type', init_data.type);
+      wx.setStorageSync('city', init_data.city);
       if (init_data.advert_time) {
         this.setData({
           interval: init_data.advert_time

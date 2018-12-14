@@ -29,9 +29,13 @@ Page({
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
-        http.Post({url:url,params:params,loading:obj.refresh}).then((res)=>{
+        let data = {url:url,params:params}
+        if (obj && obj.refresh) {
+          data.loading = obj.refresh
+        }
+        http.Post(data).then((res)=>{
             if(res.code == 'success'){
-              if(obj.refresh == true){
+              if(data.refresh == true){
                 wx.stopPullDownRefresh();
               }
               this.setData({
@@ -118,28 +122,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.checkUser();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
