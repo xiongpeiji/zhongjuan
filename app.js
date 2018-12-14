@@ -80,7 +80,7 @@ App({
     });
   },
   redirectLogin() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/my/my',
     })
   },
