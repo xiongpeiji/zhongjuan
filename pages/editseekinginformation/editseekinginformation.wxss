@@ -174,5 +174,49 @@
 .auto_chose_box{
     height: 260rpx;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
+}
+.chose_list{
+    height: 100%;
+    overflow: auto;
+}
+.chose_x_auto{
+    width: 178rpx;
+    float: left;
+}
+.chose_x_auto text{
+    font-size: 32rpx;
+    color: #444444;
+    line-height: 44rpx;
+    display:block;
+    text-align: center;
+}
+.chose_list .chose_x_auto+.chose_x_auto{
+    margin-left: 90rpx;
+}
+.set_number{
+    background: #FFFFFF;
+    box-shadow: 0 2rpx 4rpx 0 rgba(237,237,237,0.50);
+    border-radius: 8rpx;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.set_number image{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: auto;
+    margin-bottom: 40rpx;
+}
+.num_input{
+    height: 58rpx;
+    line-height: 58rpx;
+    background: #F4F4F4;
+}
+.num_input input{
+    display: inline-block;
+    width: 120rpx;
+    font-size: 24rpx;
+    color:#999;
+    height: 100%;
 }

@@ -155,6 +155,26 @@ page {
     display: block;
     float: left;
 }
+.status-text{
+    font-size: 28rpx;
+    display: block;
+    float: right;
+    margin-right:20rpx;
+}
+.status-not{
+    font-size: 28rpx;
+    display: block;
+    float: right;
+    margin-right:20rpx;
+    color:#141414;
+}
+.status-pass{
+    font-size: 28rpx;
+    display: block;
+    float: right;
+    margin-right:20rpx;
+    color: #df4334;
+}
 
 .right-icon {
     display: block;
