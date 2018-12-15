@@ -72,11 +72,11 @@ Page({
     http.Select({count:1}).then((res)=>{
       return Promise.all(res.map((path, index) => {
         let num = index+1;
-        user_avatar = path;
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
         if(res[0]){
+          user_avatar = res[0];
           let url = app_data.base + 'User/updateAvatar';
           let params = {token:app_data.token,avatar:res[0]};
           return http.Post({url:url,params:params});
@@ -86,7 +86,7 @@ Page({
     }).then((res)=>{
         if(res.code == 'success'){
             app.getUserInfo();
-            app.alert(res.msg);
+            app.alert({title:res.msg});
             this.setData({
               avatar: user_avatar
             })

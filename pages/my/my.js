@@ -25,13 +25,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     wx.setNavigationBarTitle({
       title: '我的'
     });
     this.checkUser();
   },
-  checkUser(obj) {
+  checkUser() {
     let token = wx.getStorageSync('token');
     if(token){
         let url = app_data.base+'User/index';

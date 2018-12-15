@@ -1,3 +1,4 @@
 {
-  "onReachBottomDistance": 100
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
 }
