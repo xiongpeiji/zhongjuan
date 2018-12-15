@@ -32,6 +32,9 @@ Page({
     }
     http.Get({url:url,params:params,loading:obj.refresh}).then((res)=>{
       if(res.code == 'success'){
+        if (obj.refresh) {
+          wx.stopPullDownRefresh();
+        }
           let list = this.data.list;
           let res_list = res.data;
           if(obj.is_first){
