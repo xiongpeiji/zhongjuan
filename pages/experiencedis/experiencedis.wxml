@@ -2,7 +2,7 @@
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">
-      <block wx:for="{{xindedetails.image}}" wx:key="{{index}}">
+      <block wx:for="{{info.image}}" wx:key="{{index}}">
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
@@ -13,89 +13,41 @@
 
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
-      <h2>{{xindedetails.title}}</h2>
-      <span>{{xindedetails.add_time}}</span>
+      <h2>{{info.title}}</h2>
+      <span>{{info.add_time}}</span>
     </view>
     <view class="artact_user">
-      <image src="{{xindedetails.avatar}}"></image>
-      <span>{{xindedetails.username}}</span>
+      <image src="{{info.avatar}}"></image>
+      <span>{{info.username}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">{{xindedetails.content}}</p>
+      <p class="text_details">{{info.content}}</p>
     </view>
     <!--评论区-->
     <view class="comment_wrap">
-      <view class="comment_title"> 评论86</view>
+      <view class="comment_title"> 评论{{comment_num}}</view>
       <view class="comment_container">
         <!--评论列表-->
-        <view class="conment_list">
-          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
+        <view class="conment_list" wx:for="{{list}}"  wx:key="{{index}}">
+          <image class="con_user_icon" src="{{item.avatar}}"></image>
           <view class="comment_text">
             <view class="comment_name">
-              <span class="left_name">Amani</span>
+              <span class="left_name">{{item.username}}</span>
               <view class="comment_action">
                 <view class="zan_num">
                   <image src="/images/dianzan.png"></image>
-                  <span>87</span>
+                  <span>{{item.comment_up_num}}</span>
                 </view>
-                <view class="zan_num" bindtap="goCommentList">
+                <view class="zan_num" bindtap="goCommentList" data-id="{{item.id}}">
                   <image src="/images/msg_num.png"></image>
-                  <span>87</span>
+                  <span>{{item.comment_num}}</span>
                 </view>
               </view>
             </view>
-            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
+            <view class="comment_dis">{{item.content}}</view>
             <view class="comment_time">
-              <span class="send_time">昨天19：30</span>
-              <span class="send_num" bindtap="goCommentList">4条回复</span>
-            </view>
-          </view>
-        </view>
-
-        <view class="conment_list">
-          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
-          <view class="comment_text">
-            <view class="comment_name">
-              <span class="left_name">Amani</span>
-              <view class="comment_action">
-                <view class="zan_num">
-                  <image src="/images/dianzan.png"></image>
-                  <span>87</span>
-                </view>
-                <view class="zan_num" bindtap="goCommentList">
-                  <image src="/images/msg_num.png"></image>
-                  <span>87</span>
-                </view>
-              </view>
-            </view>
-            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">
-              <span class="send_time">昨天19：30</span>
-              <span class="send_num" bindtap="goCommentList">4条回复</span>
-            </view>
-          </view>
-        </view>
-
-        <view class="conment_list">
-          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
-          <view class="comment_text">
-            <view class="comment_name">
-              <span class="left_name">Amani</span>
-              <view class="comment_action">
-                <view class="zan_num">
-                  <image src="/images/dianzan.png"></image>
-                  <span>87</span>
-                </view>
-                <view class="zan_num" bindtap="goCommentList">
-                  <image src="/images/msg_num.png"></image>
-                  <span>87</span>
-                </view>
-              </view>
-            </view>
-            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">
-              <span class="send_time">昨天19：30</span>
-              <span class="send_num" bindtap="goCommentList">4条回复</span>
+              <span class="send_time">{{item.add_time}}</span>
+              <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>
             </view>
           </view>
         </view>
@@ -105,16 +57,16 @@
   <!--评论输入-->
   <view class="input_box">
     <view class="section_input">
-      <input placeholder="说点什么…" confirm-type="send"/>
+      <input placeholder="说点什么…" bindconfirm="comment" confirm-type="send" value='{{content}}'/>
     </view>
-    <view class="comment_action">
+    <view class="comment_action" bindtap='experienceUp'>
       <view class="zan_num">
-        <image src="/images/dianzan.png"></image>
-        <span>87</span>
+        <image src="{{is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+        <span>{{up_num}}</span>
       </view>
       <view class="zan_num">
         <image src="/images/fenxiang.png"></image>
-        <span>87</span>
+        <span>{{share_num}}</span>
       </view>
     </view>
   </view>

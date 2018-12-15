@@ -11,7 +11,7 @@ Page({
     current: 1,
     swiper_all: 0,
     xindedetails: {},
-    id:''
+    id:0
   },
   //显示捐赠用户列表
   showUser(e) {
@@ -46,8 +46,6 @@ Page({
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
     this.data.id = options.id;//获取求捐详情id
-    
-    console.log(options);
     this.setData({
       id:this.data.id,
     });

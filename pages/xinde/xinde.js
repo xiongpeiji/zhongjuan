@@ -34,7 +34,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url: '../donationdetail/donationdetail?id=' + id
+      url: '../experiencedis/experiencedis?id=' + id
     });
   },
 

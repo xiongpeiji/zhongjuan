@@ -77,9 +77,8 @@
 				},
 				{
 					"id": -1,
-					"name": "求捐管理",
-					"pathName": "pages/donormanagement/donormanagement",
-					"query": ""
+					"name": "心得详情",
+					"pathName": "pages/experiencedis/experiencedis"
 				}
 			]
 		}
