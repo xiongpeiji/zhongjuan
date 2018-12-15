@@ -97,6 +97,7 @@ Page({
       return
     }
     let params = {
+      id:this.data.id,
       token:app_data.token,
       title:title,
       content:content,
