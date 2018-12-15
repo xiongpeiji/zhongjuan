@@ -1,6 +1,7 @@
 // pages/phoneauthentication/phoneauthentication.js
 const app = getApp();
-const base = app.globalData.base;
+const app_data = app.globalData;
+const http = require("../../utils/http.js")
 var interval = null //倒计时函数
 Page({
 
@@ -57,59 +58,37 @@ Page({
     }, 1000)  
   },
   sendPhoneCode(e){
-    var that = this
-    that.setData({
-      disabled:true
-    })
-    let token = wx.getStorageSync('token');
     var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
     var mobile = this.data.mobile;
-    console.log(mobile)
     if (myreg.test(mobile)) {
-      wx.request({
-        url: base + '/User/sendCode',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        method: 'post',
-        data: {
-          mobile: mobile,
-          token:token
-        },
-        success(res) {
-          var code = res.data.code;
-          if (code == 'success') {
-            that.getCode();
-            wx.showToast({
-              title: '验证码已发送'
-            })
-          }else{
-            that.setData({
-              disabled:false
-            })
-          }
+      let url = app_data.base +'User/sendCode';
+      let params = {token:app_data.token,mobile:mobile};
+      http.Post({url:url,params:params}).then((res)=>{
+        if(res.code == 'success'){
+          wx.showToast({
+            title: '验证码已发送'
+          })
+          this.setData({
+            disabled:true
+          })
         }
       })
     } else {
-      that.setData({
-        disabled:false
-      })
       wx.showToast({
-        title: '号码格式错误',
+        title: '手机号码格式错误',
         icon: 'none',
       })
     }
   },
   //验证码提交
   submit(){
-    let token = wx.getStorageSync('token');
     var code = this.data.code;
     var mobile = this.data.mobile;
     var reg = /^[0-9]{4}$/;
     var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
     if (!myreg.test(mobile)){
       wx.showToast({
-        title: '手机格式错误',
+        title: '手机号码格式错误',
         icon:'none',
       });
       return;
@@ -121,22 +100,16 @@ Page({
       });
       return;
     }
-    wx.request({
-      url: base + '/User/updateMobile',
-      data: {
-        token: token,
-        mobile: this.data.mobile,
-        code: this.data.code
-      },
-      method: 'post',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success(res) {
-        var code = res.data.code;
-        if(code == 'success'){
+    let url = app_data.base + 'User/updateMobile';
+    let params = { token: app_data.token, mobile: mobile,code:code};
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        wx.showToast({
+          title: res.msg
+        })
+        setTimeout(() => {
           app.redirectLogin();
-        }
+        }, 600);
       }
     })
   },
