@@ -14,11 +14,14 @@
             <view class="imguptile">
                 插入图片<label>最多9张</label>
             </view>
-                <image class="img_bg" wx:for="{{images}}"  wx:key="index" src="{{item}}"></image>
-            <image class="img_bg" bindtap="uploadImg" src="/images/renzheng_shangchuan@2x.png"></image>
+            <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{images}}"  wx:key="index" >
+                <image class="img_bg" src="{{item}}"></image>
+                <view class="delet-icon">
+                    <image src="/images/delete.png"></image>
+                </view>
+            </view>
+            <image class="img_bg" hidden="{{images.length>=9}}" bindtap="uploadImg" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
-    
-
     <view hover-class="fixed_bottom_btn" class="bottom_btn" bindtap='sendData'>发布心得</view>
 </view>

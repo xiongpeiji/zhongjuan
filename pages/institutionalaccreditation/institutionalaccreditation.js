@@ -21,7 +21,7 @@ Page({
     institution:'',//人像
     cardOne:'',//身份正面
     cardTwo:'',//身份反面
-    prove_info:{},//机构图片
+    prove_info:[],//机构图片
     id:'',
     name:'',//机构名称
     address:"",//详细地址
@@ -234,13 +234,22 @@ Page({
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
-      console.log(res)
+      let images = this.data.prove_info;
+      images = images.concat(res);
       this.setData({
-        prove_info: res
+        prove_info:images
       })
     });
   },
-
+  // 删除图片
+  deleteImg (e) {
+    var imgs = this.data.prove_info;
+    var index = e.currentTarget.dataset.index;
+    imgs.splice(index, 1);
+    this.setData({
+      prove_info: imgs
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

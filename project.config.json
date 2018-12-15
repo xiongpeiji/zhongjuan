@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -60,7 +60,20 @@
 				{
 					"id": -1,
 					"name": "机构认证",
-					"pathName": "pages/institutionalaccreditation/institutionalaccreditation"
+					"pathName": "pages/institutionalaccreditation/institutionalaccreditation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的心得",
+					"pathName": "pages/experiencelist/experiencelist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的心得详情",
+					"pathName": "pages/createexperience/createexperience",
+					"query": ""
 				}
 			]
 		}

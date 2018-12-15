@@ -78,7 +78,15 @@ Page({
       }
     })
   },
-
+  // 删除图片
+  deleteImg (e) {
+    var imgs = this.data.images;
+    var index = e.currentTarget.dataset.index;
+    imgs.splice(index, 1);
+    this.setData({
+      images: imgs
+    });
+  },
   sendData(){
     let url = app_data.base +'Experience/saveExperience'
     let title = this.data.title;

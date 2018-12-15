@@ -99,8 +99,13 @@
             <view class="imguptile">
                 机构认证 <label>请上传机构相关证件照片</label>
             </view>
-            <image class="img_bg" wx:for="{{prove_info}}"  wx:key="index" src="{{item}}"></image>
-            <image class="img_bg" bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+            <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{prove_info}}"  wx:key="index" >
+                <image class="img_bg" src="{{item}}"></image>
+                <view class="delet-icon">
+                    <image src="/images/delete.png"></image>
+                </view>
+            </view>
+            <image class="img_bg" hidden="{{prove_info.length>=5}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
         <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">提交</button>
