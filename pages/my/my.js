@@ -13,6 +13,7 @@ Page({
     avatar: '',
     mobile_status:0,
     institution_status:0,
+    refresh:false,
   },
 
   /**
@@ -22,20 +23,17 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     });
-    this.checkUser({ refresh: false });
+    this.checkUser();
   },
   checkUser(obj) {
     let token = wx.getStorageSync('token');
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
-        let data = {url:url,params:params}
-        if (obj && obj.refresh) {
-          data.loading = obj.refresh
-        }
+        let data = {url:url,params:params,loading:this.data.refresh};
         http.Post(data).then((res)=>{
             if(res.code == 'success'){
-              if (obj.refresh == true){
+              if (this.data.refresh){
                 wx.stopPullDownRefresh();
               }
               this.setData({
@@ -150,7 +148,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.checkUser({refresh:true});
+    this.setData({
+      refresh:true
+    })
+    this.checkUser();
   },
 
   /**
