@@ -2,7 +2,7 @@
 <view class='container'>
   <view class='xinde'>
     <!--list-->
-    <view class='xinde_list' wx:for="{{xindeList}}"  wx:key="{{index}}" data-id="{{item.id}}" bindtap="showDetail">
+    <view class='xinde_list' wx:for="{{list}}"  wx:key="{{index}}" data-id="{{item.id}}" bindtap="showDetail">
       <view class='xinde_title'>
         <image src='{{item.avatar}}'></image>
         <span class='user_callname'>{{item.username}}</span>

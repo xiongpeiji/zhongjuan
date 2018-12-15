@@ -32,9 +32,9 @@ Page({
     }
     http.Get({url:url,params:params,loading:obj.refresh}).then((res)=>{
       if(res.code == 'success'){
-        if (obj.refresh) {
-          wx.stopPullDownRefresh();
-        }
+          if (obj.refresh) {
+            wx.stopPullDownRefresh();
+          }
           let class_name = ['states_waiting', 'states_success','states_warn'];
           let list = this.data.list;
           let res_list = res.data.data;
@@ -69,6 +69,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.setData({
+      page:1
+    });
     this.getData({ refresh: true, is_first: true });
   },
 

@@ -5,7 +5,7 @@ let http = require("../../utils/http.js")
 Page({
   data: {
     imgUrls: [], //banner图片
-    qiujuanList: [], //求捐列表
+    list: {}, //求捐列表
     state: false,
     first_click: false,
     indicatorDots: true,
@@ -15,10 +15,11 @@ Page({
     indicatorcolor: 'rgba(238,238,238,.6)',
     indicatoractivecolor: '#fff',
     arrList: [],
-    pageNum: 1, //页码
+    page: 1, //页码
     type_id: '',
     city_id: '',
-    material_id: ''
+    material_id: '',
+    isLast:false
   },
   //求捐详情页面
   qiujuanDetail(e) {
@@ -64,7 +65,7 @@ Page({
   },
   onLoad(options) {
     this.setInit();
-    this.getHomeData();
+    this.getData({ refresh: false, is_first: true });
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -116,18 +117,31 @@ Page({
     })
   },
 
-  getHomeData() {
+  getData(obj) {
     let url = app_data.base + 'Index/donation';
-    let data = {
-        page: this.data.pageNum,
+    let params = {
+        page: this.data.page,
         type_id: this.data.type_id,
         city_id: this.data.city_id,
         material_id: this.data.material_id
     };
-    http.Get({ url: url, params: data}).then((res)=>{
-      this.setData({
-        qiujuanList: res.data
-      });
+    http.Get({ url: url, params: params,loading:obj.refresh}).then((res)=>{
+      if(res.code == 'success'){
+        if (obj.refresh) {
+          wx.stopPullDownRefresh();
+        }
+        let list = this.data.list;
+        let res_list = res.data;
+        if (obj.is_first) {
+          list = res_list
+        } else {
+          list = list.concat(res_list);
+        }
+        this.setData({
+          list: list,
+          isLast: res_list.length < 10 ? true : false,
+        })
+      }
     });
   },
   changeArea(e) {
@@ -144,7 +158,6 @@ Page({
       })
     }
   },
-
   changeDetail(e) {
     let index = e.currentTarget.dataset.index,
       cindex = e.currentTarget.dataset.cindex,
@@ -184,6 +197,31 @@ Page({
         state: false,
         first_click: false,
       })
+    }
+  },
+  /**
+  * 页面相关事件处理函数--监听用户下拉动作
+  */
+  onPullDownRefresh: function () {
+    this.setData({
+      page:1
+    })
+    this.getData({ refresh: true, is_first: true });
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+    let page = this.data.page;
+    if (this.data.isLast) {
+      app.alert({ title: '暂无更多数据', time: 2000 });
+    } else {
+      page = page + 1;
+      this.setData({
+        page: page
+      })
+      this.getData({ refresh: true, is_first: false });
     }
   },
 })
