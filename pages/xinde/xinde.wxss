@@ -45,6 +45,18 @@
   line-height: 40rpx;
   margin-bottom: 24rpx;
   display: block;
+  max-height: 280rpx;
+  overflow: hidden;
+}
+.xinde_list .article_dis text{
+  display: inline-block;
+  max-height: 240rpx;
+  line-height:40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .xinde_list .article_dis span{
   color:#E4572E;
