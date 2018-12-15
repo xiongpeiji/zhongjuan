@@ -1,21 +1,27 @@
 <!--编辑求捐信息-->
 <view class="container">
+    <form bindsubmit="submitFormData">
     <view class="padding_bottom">
         <view class="creat_xinde_con">
             <label class="xinde_title">标题</label>
             <view class="title_input_box">
-                <input  value="" type="text" placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
+                <input  value="{{title}}" name="title" type="text" placeholder="请输入文章标 题不得超过20字" maxlength="20"/>
             </view>
         </view>
         <view class="textArea_box">
-            <textarea hidden="{{first_click}}"  auto-height placeholder="请输入文章正文，不得超过10000字" maxlength="10000" />
+            <textarea value="{{contentText}}" name="contentText" hidden="{{first_click}}"  auto-height placeholder="请输入文章正文，不得超过10000字" maxlength="10000" />
         </view>
         <view class="imgupload_box">
             <view class="imguptile">
                 插入图片<label>最多9张</label>
             </view>
-                <image class="img_bg" wx:for="{{images}}"  wx:key="{{index}}" src="{{item}}"></image>
-            <image class="img_bg" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+            <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{images}}"  wx:key="index" >
+                <image class="img_bg" src="{{item}}"></image>
+                <view class="delet-icon">
+                    <image src="/images/delete.png"></image>
+                </view>
+            </view>
+            <image class="img_bg" hidden="{{images.length>=9}}" bindtap="modifyPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
         <view class="my_menu_list" hover-class="public_hover" bindtap="addGoods">
             <label class="left_text">求捐物资类型及数量</label>
@@ -24,50 +30,50 @@
             </view>
         </view>
         <view class="information_list">
-            <view class="list_Goods">
-                <label class="float_left">服装</label>
-                <label class="float_right">100件</label>
-            </view>
-            <view class="list_Goods">
-                <label class="float_left">生活用品</label>
-                <label class="float_right">100件</label>
-            </view>
-            <view class="list_Goods">
-                <label class="float_left">学习用品</label>
-                <label class="float_right">100件</label>
+            <view class="list_Goods" wx:for="{{materArr}}" wx:key="index">
+                <image class="material_icon" src="{{item.icon}}"></image>
+                <label class="float_left">{{item.name}}</label>
+                <label class="float_right">{{item.num}}</label>
             </view>
         </view>
-        <view class="my_menu_list" hover-class="public_hover">
-            <label class="left_text">活动结束时间</label>
-            <view class="right_btn">
-                <label class="no_auth">请选择结束时间</label>
-                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        <picker mode="date"  value="{{date}}"  bindchange="bindTimeChange">
+            <view class="my_menu_list" hover-class="public_hover">
+                <label class="left_text">活动结束时间</label>
+                <view class="right_btn">
+                    <label class="no_auth">{{date}}</label>
+                    <view class="no_auth" hidden="{{date}}">请选择活动结束时间</view>
+                    <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+                </view>
             </view>
+        </picker>
         </view>
-    </view>
+        
 
-    <view hover-class="fixed_bottom_btn" class="bottom_btn">发布</view>
+    <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">发布</button>
+    </form>
     <!--选择面板-->
     <view class="{{first_click?'maxing':'hide'}}" bindtap="hideMasxing"></view>
+    <form bindsubmit="submitMaterial">
+    
     <view class="{{first_click?'chose_box':'hide'}}">
         <view class="title_pos">可多选</view>
         <view class="auto_chose_box">
-            <view class="chose_list" style="width:{{1072-90}}rpx;">
+            <view class="chose_list" style="width:{{material.length*268-90}}rpx;">
             
-                <view class="chose_x_auto">
+                <view class="chose_x_auto" wx:for="{{material}}" wx:key="index">
                     <view class="set_number">
-                        <image src="/images/yifu_xuanzhong.png"></image>
+                        <image src="{{item.icon}}"></image>
                         <view class="num_input">
-                            <input  value="" type="number" placeholder="请输入数量" maxlength="5"/>
+                            <input value="" data-name="{{material.name}}" name="{{item.id}}" type="number" placeholder="请输入数量" maxlength="5"/>
                         </view>
                     </view>
-                    <text>服装</text>
+                    <text>{{item.name}}</text>
                 </view>
-
             </view>
         </view>
-        <button class="push-btn" type="default" size="default" disabled="{{disabled}}">
+        <button class="push-btn" form-type="submit" type="default" size="default">
         完成
         </button>
     </view>
+    </form>
 </view>

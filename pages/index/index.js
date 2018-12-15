@@ -83,8 +83,9 @@ Page({
     http.Get({ url: url }).then((res) => {
       let init_data = res.data;
       console.log(init_data.type);
-      wx.setStorageSync('type', init_data.type);
-      wx.setStorageSync('city', init_data.city);
+      wx.setStorageSync('type', init_data.type);//存储机构类型
+      wx.setStorageSync('city', init_data.city);//存储城市名称
+      wx.setStorageSync('material', init_data.material);//存储物品类型
       if (init_data.advert_time) {
         this.setData({
           interval: init_data.advert_time

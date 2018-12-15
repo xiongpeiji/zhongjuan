@@ -5,86 +5,47 @@
             <view class="dona_user_info">
                 <view class="dona_name">
                     <label class="help_title">
-                        深圳市腾讯游戏爱心捐助站
+                        {{institution.name}}
                     </label>
                     <view class="right_type">
                         <image src="/images/yirenzheng@2x.png"></image>
-                        <label>行政村</label>
+                        <label>{{institution.type_name}}</label>
                     </view>
                 </view>
                 <view class="help_sm_tit">
                     <image src="/images/renzheng_local@2x.png"></image>
-                    <label class="address_text">广东省深圳市高新区腾讯科技大厦225</label>
+                    <label class="address_text">{{institution.address}}</label>
                 </view>
             </view>
         </view>
     </view>
-    <view class="help_content">
+    <view class="help_content" hidden="{{count==0}}">
         <view class="help_ul">
             <view class="help_list">
                 <view class="my_help_list" hover-class="public_hover">
-                    我已经发布了13条求捐信息<view class="go_help" bindtap="goCreat">去发布</view>
+                    我已经发布了{{count}}条求捐信息<view class="go_help" data-id="0"  bindtap="goCreat">去发布</view>
                 </view>
-                <view class="help_discription">
+                <view class="help_discription" wx:for="{{list}}" wx:key="index">
                     <em></em>
                     <view class="help_date">
-                        <label>2018.11.20</label>
+                        <label>{{item.add_time}}</label>
                         <view class="help_satus">
-                            <icon class="phone_satus" type="waiting" color="#E65E34" size="{{12}}"/>审核中
+                            <icon class="phone_satus" type="{{item.icon_type}}" size="{{12}}"/>
+                            <span style="color:{{item.color_name}}">{{item.status_name}}</span>
                         </view>
                     </view>
                     <view class="help_sub_title">
-                        <label class="sub_title">爱心传递，融化冬日严寒…  </label>
-                        <view class="edit_repeat" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
-                    </view>
-                </view>
-
-                <view class="help_discription">
-                    <em></em>
-                    <view class="help_date">
-                        <label>2018.11.20</label>
-                        <view class="help_satus">
-                            <icon class="phone_satus" type="cancel" color="#E65E34" size="{{12}}"/>审核失败
-                        </view>
-                    </view>
-                    <view class="help_sub_title">
-                        <label class="sub_title">爱心传递，融化冬日严寒…  </label>
-                        <view class="edit_repeat" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
-                    </view>
-                </view>
-
-                <view class="help_discription">
-                    <em></em>
-                    <view class="help_date">
-                        <label>2018.11.20</label>
-                        <view class="help_satus">
-                            进行中
-                        </view>
-                    </view>
-                    <view class="help_sub_title">
-                        <label class="sub_title">爱心传递，融化冬日严寒…  </label>
-                    </view>
-                </view>
-
-                <view class="help_discription">
-                    <em></em>
-                    <view class="help_date">
-                        <label>2018.11.20</label>
-                        <view class="help_satus">
-                            已结束
-                        </view>
-                    </view>
-                    <view class="help_sub_title">
-                        <label class="sub_title">爱心传递，融化冬日严寒…  </label>
+                        <label class="sub_title">{{item.title}}</label>
+                        <view class="edit_repeat" hidden="{{item.status!=2}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
                     </view>
                 </view>
             </view>
         </view>
     </view>
     <!--没有消息-->
-    <view class="no_messages">
+    <view class="no_messages" hidden="{{count>0}}">
         <image src="/images/no_dona.jpg"></image>
         <view class="no_msg_text">还没有发布过求捐信息耶！</view>
-        <view class="go_lists" hover-class="public_hover" bindtap="goCreat">去发布</view>
+        <view class="go_lists" hover-class="public_hover" data-id="0" bindtap="goCreat">去发布</view>
     </view>
 </view>

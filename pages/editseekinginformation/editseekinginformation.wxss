@@ -139,6 +139,7 @@
 }
 .list_Goods .float_right{
     float: right;
+    padding-right: 20rpx;
 }
 
 .maxing{
@@ -229,4 +230,11 @@
 }
 .hide{
     display: none;
+}
+.material_icon{
+    width: 30rpx;
+    height: 30rpx;
+    float: left;
+    margin-right: 15rpx;
+    margin-top: 6rpx;
 }

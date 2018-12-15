@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -73,6 +73,12 @@
 					"id": -1,
 					"name": "我的心得详情",
 					"pathName": "pages/createexperience/createexperience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐管理",
+					"pathName": "pages/donormanagement/donormanagement",
 					"query": ""
 				}
 			]
