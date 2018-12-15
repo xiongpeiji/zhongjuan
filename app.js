@@ -106,4 +106,7 @@ App({
       url: '/pages/my/my',
     })
   },
+  hideShareMenu() {
+    wx.hideShareMenu();
+  }
 })

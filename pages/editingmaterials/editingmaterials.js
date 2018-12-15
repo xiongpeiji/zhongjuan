@@ -68,7 +68,7 @@ Page({
   //修改头像
   updateAvatar(e){
     let user_avatar = this.data.avatar;
-    let url = app_data.base +'Public/uploadImg?type=user_avatar';
+    let url = app_data.base +'Public/uploadImg?type=user_avatar&is_small=1';
     http.Select({count:1}).then((res)=>{
       return Promise.all(res.map((path, index) => {
         let num = index+1;

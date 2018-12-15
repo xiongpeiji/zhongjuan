@@ -1,13 +1,13 @@
 <!--消息详情-->
 <view class="container">
-    <view class="message_cont">
-        <view class="detail_title">运输中</view>
+    <view class="message_cont" hidden='{{type == 1}}'>
+        <view class="detail_title">{{info.express_info.is_get == 1 ? '已签收' : '运输中'}}</view>
         <view class="detail_content">
             <view class="express_title">
-                <image src="/images/pic_kuaidi.png"></image>韵达快递
+                <image src="{{info.icon}}"></image>{{info.express_info.express_name}}
             </view>
             <view class="express_Order">
-                快递单号：686868686868686868686
+                快递单号：{{info.express_info.express_num}}
             </view>
         </view>
         <view class="detail_title">运输详情</view>
@@ -47,10 +47,21 @@
                 </view>
 
                 <!--已完成-->
-                <view class="express_over">
+                <view class="express_over" hidden='{{info.express_info.is_get == 0}}'>
                     <view class="over_image"><image src="/images/yunshuche@2x.png"></image></view>
                     <view class="over_text">爱心被签收了哦</view>
                 </view>
+            </view>
+        </view>
+    </view>
+    <view class="message_cont" hidden='{{type == 2}}'>
+        <view class="detail_title">系统消息</view>
+        <view class="detail_content">
+            <view class="express_title">
+                <image src="{{info.icon}}"></image>{{info.title}}
+            </view>
+            <view class="express_Order">
+                {{info.content}}
             </view>
         </view>
     </view>

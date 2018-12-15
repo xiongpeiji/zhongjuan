@@ -1,21 +1,21 @@
 <!--消息-->
 <view class="container">
     <view class="message_content">
-        <view class="no_message" hidden="true">
+        <view class="no_message" hidden="{{count > 0}}">
             <view class="no_msg_img">
                 <image src="/images/iconfontxiaoxi@2x.png"></image>
             </view>
             <view class="no_msg_text">还没有新消息哦</view>
         </view>
-        <view class="msg_list" wx:for="{{messageList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="msgDetails">
+        <view class="msg_list" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="msgDetails">
             <view class="msg_discription">
                 <image class="msg_img" src="{{item.icon}}"></image>
                 <view class="msg_title">
-                    <span class="sys_title">{{}}</span>
+                    <span class="sys_title">{{item.title}}</span>
                     <span class="msg_type">系统</span>
                     <span class="msg_time">{{item.add_time}}</span>
                 </view>
-                <p class="msg_texts">{{item.title}}<span>1</span></p>
+                <p class="msg_texts">{{item.content}}<view wx:if="{{item.is_read == 0}}"><span></span></view></p>
             </view>
         </view>
     </view>

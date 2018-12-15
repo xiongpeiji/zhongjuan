@@ -1,11 +1,16 @@
 // pages/messageDetail/messageDetail.js
+const app = getApp();
+const app_data = app.globalData;
+const http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info:{},
+    type:1,
+    id:0,
   },
 
   /**
@@ -15,49 +20,24 @@ Page({
     wx.setNavigationBarTitle({
       title: '消息详情'
     });
+    this.setData({
+      id:options.id
+    });
+    this.getData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
+ getData(){
+   let url = app_data.base +'SystemInfo/detail';
+   let params = {token:app_data.token,id:this.data.id};
+   http.Get({url:url,params:params}).then((res)=>{
+      if(res.code == 'success'){
+        this.setData({
+          info:res.data,
+          type:res.data.express_id > 0 ? 2 : 1
+        });
+      }
+   });
+ },
 
   /**
    * 用户点击右上角分享
