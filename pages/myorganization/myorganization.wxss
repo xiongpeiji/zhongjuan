@@ -167,7 +167,7 @@
     float: left;
     width: 160rpx;
     height: 160rpx;
-    margin-left: 12rpx;
+    margin-left: 10rpx;
     margin-bottom: 8rpx;
 }
 .my_send_box{

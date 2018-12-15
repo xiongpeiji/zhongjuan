@@ -5,16 +5,15 @@
             <view class="dona_user_info">
                 <view class="dona_name">
                     <label class="help_title">
-                        深圳市腾讯游戏爱心捐助站
+                        {{myOrgInfos.name}}
                     </label>
                     <view class="right_type">
-                        <image src="/images/yirenzheng@2x.png"></image>
-                        <label>行政村</label>
+                        <label>{{instStatus[myOrgInfos.status]}}</label>
                     </view>
                 </view>
                 <view class="help_sm_tit">
                     <image src="/images/renzheng_local@2x.png"></image>
-                    <label class="address_text">广东省深圳市高新区腾讯科技大厦225</label>
+                    <label class="address_text">{{myOrgInfos.address}}</label>
                 </view>
             </view>
         </view>
@@ -23,36 +22,36 @@
         <view class="my_org_infos">
             <view class="user_name_text">
                 <label class="names">联络人</label>
-                <view class="eidt_right">
+                <view class="eidt_right" data-id="{{myOrgInfos.id}}" bindtap="repeatEidetInfo" hidden="{{myOrgInfos.status!='3'}}">
                     <image src="/images/qianbi.png"></image>
                     <label class="edit_text">编辑</label>
                 </view>
             </view>
             <view class="user_photo_imgbox">
-                <image class="user_up_img" src="/images/user_photo_img.jpg"></image>
+                <image class="user_up_img" src="{{myOrgInfos.liaison_avatar}}"></image>
                 <view class="name_s">
-                    <label>张雅琪</label>
-                    <label>女</label>
+                    <label>{{myOrgInfos.liaison_person}}</label>
+                    <label>{{myOrgInfos.liaison_sex=='1'?'男':'女'}}</label>
                 </view>
                 <view class="name_s">
-                    <label>15819027345<icon class="phone_satus" type="success" color="#E65E34" size="{{12}}"/></label>
-                    <image class="call_icon" src="/images/emidianhua1@2.png"></image>
+                    <label>{{myOrgInfos.liaison_tel}}<icon class="phone_satus" type="success" color="#E65E34" size="{{12}}"/></label>
+                    <!-- <image class="call_icon" src="/images/emidianhua1@2.png"></image> -->
                 </view>
             </view>
         </view>
         <view class="jigou_photos">
             <view class="infoFail">
-                机构证明资料<label>共5张</label>
+                机构证明资料<label>共{{myOrgInfos.prove_info.length}}张</label>
             </view>
             <view class="photos_box">
-                <image class="imgs_01" src="/images/info_01.jpg"></image>
-                <image class="imgs_02" src="/images/info_02.jpg"></image>
-                <image class="imgs_02" src="/images/info_03.jpg"></image>
-                <image class="imgs_02" src="/images/info_04.jpg"></image>
-                <image class="imgs_02" src="/images/info_05.jpg"></image>
+                <image class="imgs_01" src="{{myOrgInfos.prove_info[0]}}"></image>
+                <image hidden="{{!myOrgInfos.prove_info[1]}}" class="imgs_02" src="{{myOrgInfos.prove_info[1]}}"></image>
+                <image hidden="{{!myOrgInfos.prove_info[2]}}" class="imgs_02" src="{{myOrgInfos.prove_info[2]}}"></image>
+                <image hidden="{{!myOrgInfos.prove_info[3]}}" class="imgs_02" src="{{myOrgInfos.prove_info[3]}}"></image>
+                <image hidden="{{!myOrgInfos.prove_info[4]}}" class="imgs_02" src="{{myOrgInfos.prove_info[4]}}"></image>
             </view>
         </view>
-        <view class="my_send_box">
+        <!-- <view class="my_send_box">
             <view class="my_help_tit">
                 我已经发布了 <label >3</label> 条求捐信息
                 <view class="add_msg">
@@ -82,6 +81,6 @@
                 </view>
             </view>
             <image class="share_btn" src="/images/share_btn.png"></image>
-        </view>
+        </view> -->
     </view>
 </view>

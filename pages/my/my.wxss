@@ -175,7 +175,19 @@ page {
     margin-right:20rpx;
     color: #5FB878;
 }
-
+/* 0:"no-auth",1:"auth-ing",2:"auth-pass",3:"auth-fail" */
+.status-text.no-auth{
+    color:#141414;
+}
+.status-text.auth-ing{
+    color:#FF5722;
+}
+.status-text.auth-pass{
+    color:#5FB878;
+}
+.status-text.auth-fail{
+    color:#f00;
+}
 .right-icon {
     display: block;
     width: 32rpx;

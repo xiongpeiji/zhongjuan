@@ -33,11 +33,11 @@
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
                 <text class="status-text" class='{{mobile == ""?"status-not" : "status-pass"}}'>{{mobile == '' ? '未认证' : '已认证'}}</text>
             </view>
-           <view class='us-link-lis' hidden="{{!isLogin}}" bindtap="jigouAuth">
+           <view class='us-link-lis' hidden="{{!isLogin}}" data-type="{{institution_status}}" bindtap="jigouAuth">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_02.png'></image>
                 <text class='tit-text-us'>机构认证</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
-                <text class="status-text" class='{{mobile == ""?"status-not" : "status-pass"}}'>{{mobile == '' ? '未认证' : '已认证'}}</text>
+                <text class='status-text {{ statusClass[institution_status]}}'>{{instStatus[institution_status]}}</text>
             </view>
            <view class='us-link-lis' hidden="{{institution_status < 2}}" bindtap="helpMsgDetal">
                 <image class='nav-icon' src='../../images/user_icon/uc_icon_03.png'></image>

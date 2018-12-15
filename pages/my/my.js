@@ -14,6 +14,12 @@ Page({
     mobile_status:0,
     institution_status:0,
     refresh:false,
+    instStatus:{ ////0 未认证 1 认证中 2 已认证 3 认证失败 
+      0:"未认证",1:"认证中",2:"已认证",3:"认证失败"
+    },
+    statusClass:{
+      0:"no-auth",1:"auth-ing",2:"auth-pass",3:"auth-fail"
+    }
   },
 
   /**
@@ -71,9 +77,23 @@ Page({
   },
   //机构认证
   jigouAuth(e) {
-    wx.navigateTo({
-      url: '../institutionalaccreditation/institutionalaccreditation'
-    })
+    //0 未认证 1 认证中 2 已认证 3 认证失败 
+    let institutionType = e.currentTarget.dataset.type;
+    switch (Number(institutionType)) {
+      case 0:
+      case 3:
+        wx.navigateTo({
+          url: '../institutionalaccreditation/institutionalaccreditation'
+        })
+        break;
+      case 1:
+      case 2:
+        wx.navigateTo({
+          url: '../myorganization/myorganization'
+        })
+        break;
+    }
+    
   },
   //我的捐赠
   myDona(e) {
