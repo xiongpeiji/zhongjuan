@@ -36,7 +36,8 @@ Page({
           wx.stopPullDownRefresh();
         }
           let list = this.data.list;
-          let res_list = res.data;
+          let res_list = res.data.data;
+          let count = res.data.count;
           if(obj.is_first){
             list = res_list
           }else{
@@ -44,7 +45,7 @@ Page({
           }
           this.setData({
             list: list,
-            count:list.length,
+            count:count,
             isLast: res_list.length < 10 ? true : false,
           })
       }
@@ -70,11 +71,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    var page = this.data.page;
+    let page = this.data.page;
     if (this.data.isLast) {
       app.alert({ title: '暂无更多数据',time:2000});
     } else {
-      let page = this.data.page;
       page = page + 1;
       this.setData({
         page: page
