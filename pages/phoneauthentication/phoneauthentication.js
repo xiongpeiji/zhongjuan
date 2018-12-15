@@ -70,7 +70,8 @@ Page({
           })
           this.setData({
             disabled:true
-          })
+          });
+          this.getCode();
         }
       })
     } else {
@@ -109,7 +110,7 @@ Page({
         })
         setTimeout(() => {
           app.redirectLogin();
-        }, 600);
+        }, 2000);
       }
     })
   },
