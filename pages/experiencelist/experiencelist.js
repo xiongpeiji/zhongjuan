@@ -52,7 +52,7 @@ Page({
   toPush(e){
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../createexperience/createexperience'
+      url: '../createexperience/createexperience?id=' + id
     })
   },
 
