@@ -4,34 +4,35 @@
         <view class="xinde_numbers">
             我已发布了{{count}}条心得 <button class="go_push" bindtap="toPush" data-id="0">去发布</button>
         </view>
-
-        <view class="xinde_lists states_waiting" wx:for="{{list}}" wx:key="{{index}}">
-            <view class="list_data">
-                <b></b>
-                <view class="list_day">{{item.date_day}}</view>
-                <view class="list_month">{{item.date_month}}</view>
-            </view>
-            <view class="list_discription">
-                <view class="list_title">{{item.title}}</view>
-                <view class="list_dis_text">{{item.content}}</view>
-                <view class="data_times">
-                    <label class="time_box">{{item.date_hour}}</label>
-                    <view wx:if="{{item.status==0}}">
-                      <icon class="states_icon" type="waiting" size="18"/>
-                      <label class="list_state">审核中</label>
-                    </view>
-                   <view wx:elif="{{item.status==1}}">
-                      <icon class="states_icon" type="success" size="18"/>
-                      <label class="list_state">审核成功</label>
-                    </view>
-                    <view wx:else>
-                      <icon class="states_icon" type="warn" size="18"/>
-                      <label class="list_state">审核失败</label>
-                      <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}">重新编辑</view>
-                    </view>
-                </view>
-            </view>
-        </view>
+        <block wx:for="{{list}}" wx:key="{{index}}">
+          <view class="xinde_lists {{item.class}}" >
+              <view class="list_data">
+                  <b></b>
+                  <view class="list_day">{{item.date_day}}</view>
+                  <view class="list_month">{{item.date_month}}</view>
+              </view>
+              <view class="list_discription">
+                  <view class="list_title">{{item.title}}</view>
+                  <view class="list_dis_text">{{item.content}}</view>
+                  <view class="data_times">
+                      <label class="time_box">{{item.date_hour}}</label>
+                      <view wx:if="{{item.status==0}}">
+                        <icon class="states_icon" type="waiting" size="18"/>
+                        <label class="list_state">审核中</label>
+                      </view>
+                    <view wx:elif="{{item.status==1}}">
+                        <icon class="states_icon" type="success" size="18"/>
+                        <label class="list_state">审核成功</label>
+                      </view>
+                      <view wx:else>
+                        <icon class="states_icon" type="warn" size="18"/>
+                        <label class="list_state">审核失败</label>
+                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}">重新编辑</view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+        </block>
     </view>
 
     <!--没有消息-->

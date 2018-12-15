@@ -35,8 +35,13 @@ Page({
         if (obj.refresh) {
           wx.stopPullDownRefresh();
         }
+          let class_name = ['states_waiting', 'states_success','states_warn'];
           let list = this.data.list;
           let res_list = res.data.data;
+          res_list.map((item,index)=>{
+            let status = item.status;
+            res_list[index]['class'] = class_name[status];
+          })
           let count = res.data.count;
           if(obj.is_first){
             list = res_list
