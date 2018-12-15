@@ -3,7 +3,6 @@ const app = getApp();
 const app_data = app.globalData;
 const http = require("../../utils/http.js")
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -19,28 +18,83 @@ Page({
     curType: {}, // 当前机构类型
     curCity: {}, // 当前选择的地域
     index:0,
-    institution:'',
-    cardOne:'',
-    cardTwo:'',
-    prove_info:{}
+    institution:'',//人像
+    cardOne:'',//身份正面
+    cardTwo:'',//身份反面
+    prove_info:{},//机构图片
+    id:'',
+    name:'',//机构名称
+    address:"",//详细地址
+    userName:"",//用户名
+    mobile:""//手机
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
+    this.getType();//获取机构类型
+    this.getUserinstitutionDetail();
     wx.setNavigationBarTitle({
       title: '机构认证'
     });
-    this.getType();
   },
+
+  //获取机构认证消息
+  getUserinstitutionDetail(e){
+    let url = app_data.base +'User/institutionDetail';
+    let token = app_data.token;
+    let params = {
+      token:token
+    }
+    http.Post({url:url,params:params}).then(res=>{
+      if(res.code == 'success'){
+        let instituInfo = res.data;
+        let addressInfoArr = instituInfo.address.split("-");
+        let addressInfo = instituInfo.address.split("-")[3];
+        let curCity = {}; 
+        let curType ={};
+        let curSex ={};
+        this.data.city.map(v => { 
+          if (Number(v.id) === Number(instituInfo.city_id)){ 
+            curCity = v; 
+          } 
+        })
+        this.data.type.map(v => { 
+          if (Number(v.id) === Number(instituInfo.type_id)){ 
+            curType = v; 
+          } 
+        })
+        this.data.sex.map(v => { 
+          if (Number(v.id) === Number(instituInfo.liaison_sex)){ 
+            curSex = v; 
+          } 
+        })
+        this.setData({
+          region:addressInfoArr,//设置省市区
+          name:instituInfo.name,//设置机构名称
+          address:addressInfo,//设置详细地址
+          userName:instituInfo.liaison_person,//设置用户姓名
+          mobile:instituInfo.liaison_tel,//设置手机
+          institution:instituInfo.liaison_avatar,//人像面
+          cardOne:instituInfo.id_card_just,//身份证正面
+          cardTwo:instituInfo.id_card_back,//身份证反面
+          prove_info:instituInfo.prove_info,//机构照片
+          curSex:curSex,//设置性别
+          curType:curType, // 当前机构类型
+          curCity:curCity // 当前选择的地域
+        })
+      }
+    })
+  },
+
   //地址选择
   bindRegionChange (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
   },
+
   //类别选择
   bindTypeChange (e) {
   let index  = e.detail.value,
@@ -51,6 +105,7 @@ Page({
         })
       }
   },
+
   //获取类别和区域
   getType(e){
     let type = wx.getStorageSync("type");
@@ -60,6 +115,7 @@ Page({
       city:city
     })
   },
+
   //设置性别
   bindSexChange(e){
     let index = e.detail.value,
@@ -69,7 +125,6 @@ Page({
         curSex:curSex
       })
     }
-
   },
 
   bindCityChange(e) { 
@@ -80,11 +135,7 @@ Page({
         curCity: curCity
       })
     }
-
   },
-
-
-
 
   //提交机构认证资料
   submitDataInfo(e){
@@ -98,7 +149,7 @@ Page({
       type_id:this.data.curType.id,//机构类型ID
       city_id:this.data.curCity.id,//机构区域ID
       name:value.name,//机构名称
-      address:this.data.region[0]+this.data.region[1]+this.data.region[2]+value.address,//机构地址
+      address:this.data.region[0]+'-'+this.data.region[1]+'-'+this.data.region[2]+'-'+value.address,//机构地址
       liaison_person:value.userName,//联络人
       liaison_sex:this.data.curSex.id,//联络人性别 1->男 2->女
       liaison_avatar:this.data.institution,//联络人图像【上传图像返回地址】
@@ -106,15 +157,21 @@ Page({
       id_card_just:this.data.cardOne,//身份证正面【上传图像返回地址】
       id_card_back:this.data.cardTwo,//身份证反面【上传图像返回地址】
       prove_info:this.data.prove_info,//机构证明资料【上传图像返回地址组成json格式】
+
     };
+    console.log(this.data.curType)
     http.Post({url:url,params:params}).then((res)=>{
         if(res.code == 'success'){
-          
           app.alert({title:res.msg});
-          
+          setTimeout(()=>{
+            wx.switchTab({
+              url:"../my/my"
+            })
+          },1000)
         }
     });
   },
+
   //上传人像照片
   uploadHuman() {
     let institution = this.data.institution;
@@ -131,6 +188,7 @@ Page({
       })
     });
   },
+
   //身份证正面
   uploadCardOne() {
     let institution = this.data.institution;
@@ -147,6 +205,7 @@ Page({
       })
     });
   },
+
   //身份反面
   uploadCardTwo() {
     let institution = this.data.institution;
@@ -163,6 +222,7 @@ Page({
       })
     });
   },
+
   //机构认证相关图片上传
   uploadArrPhoto() {
     let institution = this.data.institution;
@@ -180,6 +240,7 @@ Page({
       })
     });
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

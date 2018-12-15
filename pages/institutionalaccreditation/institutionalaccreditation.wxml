@@ -5,7 +5,7 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">机构名称</label>
             <view class="title_input_box">
-                <input value="" name="name"  type="text" placeholder="请输入机构名称" maxlength="11"/>
+                <input value="{{name}}" name="name"  type="text" placeholder="请输入机构名称" maxlength="11"/>
             </view>
         </view>
         <picker mode="selector" bindchange="bindTypeChange" range-key='name' range="{{type}}">
@@ -41,14 +41,14 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">详细地址</label>
             <view class="title_input_box">
-                <input name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
+                <input value="{{address}}" name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
             </view>
         </view>
         
         <view class="creat_xinde_con">
             <label class="xinde_title">联络人</label>
             <view class="title_input_box">
-                <input name='userName' type="text" placeholder="请输入联络人姓名" maxlength="11"/>
+                <input value="{{userName}}" name='userName' type="text" placeholder="请输入联络人姓名" maxlength="11"/>
             </view>
         </view>
         <picker mode="selector" bindchange="bindSexChange" range-key='name' range="{{sex}}">
@@ -64,7 +64,7 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">联系方式</label>
             <view class="title_input_box">
-                <input name='mobile' type="number" placeholder="请输入您的联系方式" maxlength="11"/>
+                <input value="{{mobile}}" name='mobile' type="number" placeholder="请输入您的联系方式" maxlength="11"/>
             </view>
         </view>
 

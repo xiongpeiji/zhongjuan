@@ -24,7 +24,7 @@
                 <label class="names">联络人</label>
                 <view class="eidt_right" data-id="{{myOrgInfos.id}}" bindtap="repeatEidetInfo" hidden="{{myOrgInfos.status!='3'}}">
                     <image src="/images/qianbi.png"></image>
-                    <label class="edit_text">编辑</label>
+                    <label class="edit_text">重新编辑</label>
                 </view>
             </view>
             <view class="user_photo_imgbox">

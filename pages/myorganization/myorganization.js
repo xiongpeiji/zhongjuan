@@ -32,8 +32,6 @@ Page({
     }
     http.Get({url: url, params: params}).then((res)=>{
         if(res.code == 'success'){
-          console.log(res)
-          
           this.setData({
             myOrgInfos:res.data
           });
@@ -42,10 +40,9 @@ Page({
   },
   //重新编辑认证资料
   repeatEidetInfo(e){
-    console.log(e)
-    // wx.navigateTo({
-    //   url: '../institutionalaccreditation/institutionalaccreditation'
-    // })
+    wx.navigateTo({
+      url: '../institutionalaccreditation/institutionalaccreditation'
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
