@@ -31,7 +31,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -78,7 +78,13 @@
 				{
 					"id": -1,
 					"name": "心得详情",
-					"pathName": "pages/experiencedis/experiencedis"
+					"pathName": "pages/experiencedis/experiencedis",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要捐助",
+					"pathName": "pages/wanttodonate/wanttodonate"
 				}
 			]
 		}

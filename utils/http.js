@@ -99,7 +99,7 @@ function UPLOAD(obj) {
   let upload_promise = new Promise(function (resolve, reject) {
     if(obj.count > 1){
       wx.showLoading({
-        title: '第' + obj.num + '张图片正在上传',
+        title: obj.num + '张图片正在上传',
       })
     }else{
       wx.showLoading({

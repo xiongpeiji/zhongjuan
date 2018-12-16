@@ -115,3 +115,106 @@
 .fixed_bottom_btn{
     background: #D7263D;
 }
+
+
+.maxing{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .6;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;    
+}
+.chose_box{
+    width: 100%;
+    padding:40rpx 24rpx 50rpx;
+    height: 590rpx;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+}
+.chose_box .title_pos{
+    font-size: 28rpx;
+    color: #999999;
+    line-height: 40rpx;
+    margin-bottom: 40rpx;
+}
+.auto_chose_box{
+    height: 260rpx;
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 80rpx;
+}
+.chose_list{
+    height: 100%;
+    overflow: auto;
+}
+.chose_x_auto{
+    width: 178rpx;
+    float: left;
+}
+.chose_x_auto text{
+    font-size: 32rpx;
+    color: #444444;
+    line-height: 44rpx;
+    display:block;
+    text-align: center;
+}
+.chose_list .chose_x_auto+.chose_x_auto{
+    margin-left: 90rpx;
+}
+.set_number{
+    background: #FFFFFF;
+    box-shadow: 0 2rpx 4rpx 0 rgba(237,237,237,0.50);
+    border-radius: 8rpx;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+.set_number image{
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: auto;
+    margin-bottom: 40rpx;
+}
+.num_input{
+    height: 58rpx;
+    line-height: 58rpx;
+    background: #F4F4F4;
+}
+.num_input input{
+    display: inline-block;
+    width: 120rpx;
+    font-size: 24rpx;
+    color:#999;
+    height: 100%;
+}
+.chose_box button[type=default]{
+    border:none !important;
+    background: #F2F2F2;
+    outline: none;
+    color:#E4572E;
+}
+.hide{
+    display: none;
+}
+.material_icon{
+    width: 30rpx;
+    height: 30rpx;
+    float: left;
+    margin-right: 15rpx;
+    margin-top: 6rpx;
+}
+.no_auth{
+    font-size: 24rpx;
+    color:#999999;
+    display: inline-block;
+}
