@@ -23,7 +23,7 @@
         <view class="help_ul">
             <view class="help_list">
                 <view class="my_help_list" hover-class="public_hover">
-                    我已经发布了{{count}}条求捐信息<view class="go_help" data-id="0"  bindtap="goCreat">去发布</view>
+                    我已经发布了{{count}}条求捐信息<view class="go_help"  data-id="0"  bindtap="goCreat">去发布</view>
                 </view>
                 <view class="help_discription" wx:for="{{list}}" wx:key="index">
                     <em></em>

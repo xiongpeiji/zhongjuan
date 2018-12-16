@@ -66,6 +66,26 @@ Page({
       first_click:false,
     })
   },
+  //回显求捐信息
+  getDonaData(e){
+    let url = app_data.base+'/Donation/detail';
+    let params = {
+      token:app_data.token,
+      id:this.data.id
+    }
+    http.Get({ url: url, params: params}).then((res)=>{
+      if(res.code == "success"){
+        console.log(res)
+        this.setData({
+          images:res.data.image,
+          title:res.data.title,//文章标题
+          contentText:res.data.content,//文章内容
+          // material:res.data.material_data,
+          date:res.data.end_time
+        })
+      }
+  })
+  },
   //提交信息
   submitFormData(e){
     let value = e.detail.value;
@@ -106,7 +126,6 @@ Page({
     let material = this.data.material;
     material = JSON.stringify(material);
     material = JSON.parse(material);
-    console.log(material)
     for (var index in value) {
       if(value[index]){
         let name = '';
@@ -125,7 +144,15 @@ Page({
         })
       }
     }
-    
+    newObj.forEach((value, index)=>{
+      console.log(value.num)
+      if(value.num<=0){
+        app.alert({
+          title:'物资数量不能0！'
+        })
+        return false;
+      }
+    })
     if(newObj.length>0){
       this.setData({
         materArr:newObj,
@@ -142,9 +169,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
     wx.setNavigationBarTitle({
       title: '编辑求捐信息'
     });
+    this.setData({
+      id:options.id
+    })
+    if(options.id!=0){
+      this.getDonaData();
+    }
     this.getMaterial();//获取衣物类型
   }
 })

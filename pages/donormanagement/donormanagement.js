@@ -13,6 +13,7 @@ Page({
     list:{},
     isLast:false,
     institution:{},
+    stutas:''
   },
 
   /**
@@ -26,6 +27,16 @@ Page({
   },
   //去发布求捐
   goCreat(e){
+    //正在审核
+    if(this.data.stutas==1){
+      app.alert({ title: '机构信息正在认证中，请等待认证通过后再发布！',time:2000});
+      return;
+    }
+    //审核失败，
+    if(this.data.stutas==3){
+      app.alert({ title: '机构信息认证失败，请重新认证通过后再发布！',time:2000});
+      return;
+    }
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../editseekinginformation/editseekinginformation?id='+id
@@ -64,7 +75,8 @@ Page({
             list: list,
             count:count,
             isLast: res_list.length < 10 ? true : false,
-            institution:res.data.institution
+            institution:res.data.institution,
+            stutas:res.data.institution.status
           })
       }
     })

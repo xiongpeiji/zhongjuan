@@ -64,7 +64,7 @@
                     <view class="set_number">
                         <image src="{{item.icon}}"></image>
                         <view class="num_input">
-                            <input value="" data-name="{{material.name}}" name="{{item.id}}" type="number" placeholder="请输入数量" maxlength="5"/>
+                            <input value="{{item.value}}" name="{{item.id}}" type="number" placeholder="请输入数量" maxlength="5"/>
                         </view>
                     </view>
                     <text>{{item.name}}</text>
