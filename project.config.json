@@ -1,0 +1,103 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wxaa31789e58d234c5",
+	"projectname": "zhongjuan",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": -1,
+					"name": "手机认证",
+					"pathName": "pages/phoneauthentication/phoneauthentication",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "创建心得",
+					"pathName": "pages/createexperience/createexperience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑求捐信息",
+					"pathName": "pages/editseekinginformation/editseekinginformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "机构认证",
+					"pathName": "pages/institutionalaccreditation/institutionalaccreditation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的心得",
+					"pathName": "pages/experiencelist/experiencelist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的心得详情",
+					"pathName": "pages/createexperience/createexperience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "心得详情",
+					"pathName": "pages/experiencedis/experiencedis",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要捐助",
+					"pathName": "pages/wanttodonate/wanttodonate",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐详情",
+					"pathName": "pages/donationdetail/donationdetail"
+				}
+			]
+		}
+	}
+}

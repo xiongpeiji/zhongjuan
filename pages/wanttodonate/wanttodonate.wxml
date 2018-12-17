@@ -1,10 +1,11 @@
 <!--我要捐助-->
 <view class="container">
+    <form bindsubmit="submitDonaData">
     <view class="padding_bottom">
         <view class="creat_xinde_con">
             <label class="xinde_title">联系方式</label>
             <view class="title_input_box">
-                <input value="" type="number" placeholder="请输入您的电话号码" maxlength="11"/>
+                <input value="{{mobile}}" disabled="{{true}}" type="number" placeholder="请输入您的电话号码" maxlength="11"/>
             </view>
         </view>
         <view class="my_menu_list" hover-class="public_hover" bindtap="addGoods">
@@ -20,18 +21,20 @@
                 <label class="float_right">{{item.num}}</label>
             </view>
         </view>
-        <view class="my_menu_list" hover-class="public_hover">
-            <label class="left_text">快递公司</label>
-            <view class="right_btn">
-                <label class="no_auth">{{date}}</label>
-                <view class="no_auth" hidden="{{date}}">请选择快递公司</view>
-                <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+        <picker mode="selector" bindchange="bindExpressChange" range-key='name' range="{{express_data}}">
+            <view class="my_menu_list" hover-class="public_hover">
+                <label class="left_text">快递公司</label>
+                <view class="right_btn">
+                    <label class="no_auth">{{curExp.name}}</label>
+                    <view class="no_auth" hidden="{{curExp.id}}">请选择快递公司</view>
+                    <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+                </view>
             </view>
-        </view>
+        </picker>
         <view class="creat_xinde_con">
             <label class="xinde_title">快递单号</label>
             <view class="title_input_box">
-                <input value="" type="number" placeholder="请输入您的快递单号" maxlength="30"/>
+                <input name="express_num" type="number" placeholder="请输入您的快递单号" maxlength="30"/>
             </view>
         </view>
         <view class="imgupload_box">
@@ -47,7 +50,8 @@
             <image class="img_bg" hidden="{{images.length>=5}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
-    <view hover-class="fixed_bottom_btn" class="bottom_btn">提交</view>
+    <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">提交</button>
+    </form>
 
     <!--选择面板-->
     <view class="{{first_click?'maxing':'hide'}}" bindtap="hideMasxing"></view>
@@ -56,20 +60,20 @@
     <view class="{{first_click?'chose_box':'hide'}}">
         <view class="title_pos">可多选</view>
         <view class="auto_chose_box">
-            <view class="chose_list" style="width:{{material.length*268-90}}rpx;">
+            <view class="chose_list" style="width:{{info.length*268-90}}rpx;">
             
-                <view class="chose_x_auto" wx:for="{{material}}" wx:key="index">
+                <view class="chose_x_auto" wx:for="{{info}}" wx:key="index">
                     <view class="set_number">
                         <image src="{{item.icon}}"></image>
                         <view class="num_input">
-                            <input value="{{item.value}}" name="{{item.id}}" type="number" placeholder="请输入数量" maxlength="5"/>
+                            <input name="{{item.id}}" type="number" placeholder="最多{{item.num-item.after_num}}" maxlength="5"/>
                         </view>
                     </view>
                     <text>{{item.name}}</text>
                 </view>
             </view>
         </view>
-        <button class="push-btn" form-type="submit" type="default" size="default">
+        <button class="push-btn" form-type="submit">
         完成
         </button>
     </view>

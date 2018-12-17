@@ -24,7 +24,7 @@ Page({
   onLoad(options) {
     this.data.id = options.id;//获取求捐详情id
     wx.setNavigationBarTitle({
-      title: '求捐详情详情'
+      title: '求捐详情'
     });
     app.checkLogin();
     this.getDetail();
@@ -41,7 +41,8 @@ Page({
           swiper_all: res.data.image.length,
           up_num: res.data.up_num,
           share_num: res.data.share_num,
-          comment_num: res.data.comment_num
+          comment_num: res.data.comment_num,
+          id:res.data.id
         })
       }
     });
@@ -122,7 +123,23 @@ Page({
       current: current + 1
     })
   },
-
+  //我想想捐助
+  wantTodo(e){
+    let mobile_status = app_data.mobile_status;
+    if(mobile_status!=1){
+      app.alert({title:'请先进行手机认证！',time:2000});
+      setTimeout(()=>{
+        wx.navigateTo({
+          url: '../phoneauthentication/phoneauthentication',
+        })
+      },2000);
+      return;
+    }
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../wanttodonate/wanttodonate?id=' + id
+    });
+  },
   //显示捐赠用户列表
   showUser(e) {
     this.setData({

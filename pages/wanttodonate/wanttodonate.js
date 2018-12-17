@@ -9,17 +9,25 @@ Page({
    */
   data: {
     first_click:false,
-    images:[]
+    images:[],
+    id:0,
+    info:[],
+    material:[],
+    after_material:[],
+    mobile:'',
+    express_data:[],//快递信息
+    curExp:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.id = options.id;
     wx.setNavigationBarTitle({
       title: '我要捐助'
     });
-    this.getMaterial();//获取衣物类型
+    this.getData();
   },
   //打开选择面板
   addGoods(e){
@@ -35,15 +43,63 @@ Page({
       first_click:false,
     })
   },
-  //获取类别和区域
-  getMaterial(e){
-    let material = wx.getStorageSync("material");
-    this.setData({
-      material:material,
-    })
+  //选择快递公司
+  bindExpressChange(e){
+    let index = e.detail.value,
+    curExp = this.data.express_data[index];
+    if(curExp){
+      this.setData({
+        curExp:curExp
+      })
+    }
+  },
+  //获取我要求捐信息
+  getData(e){
+    let url = app_data.base + 'Donation/getDonationMaterial';
+    let params = { id: this.data.id, token: app_data.token };
+    http.Get({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        console.log(res.data.material_data);
+        let curExp ={};
+        this.data.express_data.map(v => { 
+          if (Number(v.id) === Number(res.data.express_data.id)){ 
+            curExp = v; 
+          } 
+        })
+        this.setData({
+          info: res.data.material_data,
+          mobile:app_data.mobile,
+          express_data:res.data.express_data,
+          curExp:curExp // 当前选择的地域
+        })
+      }
+    });
+  },
+  //提交我要捐助消息 Donation/saveUserDonation
+  submitDonaData(e){
+    console.log(e)
+    let url = app_data.base + 'Donation/saveUserDonation';
+    let express_num = e.detail.value.express_num;
+    let strMater = JSON.stringify(this.data.materArr);
+    let params = {
+      token:app_data.token,
+      mobile: app_data.mobile, //手机号码
+      material:strMater,//捐助物品
+      express_num:express_num,//快递单号
+      express_id:this.data.curExp.id,//快递id
+      imgs:this.data.images, //图片
+    };
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        console.log(res.data)
+        this.setData({
+          info: res.data
+        })
+      }
+    });
   },
     //相关图片上传
-    uploadArrPhoto() {
+  uploadArrPhoto() {
       let user_avatar = this.data.avatar;
       let url = app_data.base + 'Public/uploadImg?type=user_donation';
       http.Select({ count: 9-this.data.images.length }).then((res) => {
@@ -60,12 +116,12 @@ Page({
             })
         }
       })
-    },
+  },
   //提交物资选择数据
   submitMaterial(e){
     let value = e.detail.value;
     let newObj=[];
-    let material = this.data.material;
+    let material = this.data.info;
     material = JSON.stringify(material);
     material = JSON.parse(material);
     for (var index in value) {
@@ -86,15 +142,6 @@ Page({
         })
       }
     }
-    newObj.forEach((value, index)=>{
-      console.log(value.num)
-      if(value.num<=0){
-        app.alert({
-          title:'物资数量不能0！'
-        })
-        return false;
-      }
-    })
     if(newObj.length>0){
       this.setData({
         materArr:newObj,
@@ -116,6 +163,7 @@ Page({
         images: imgs
       });
     },
+  //进入页面
   /**
   * 用户点击右上角分享
   */

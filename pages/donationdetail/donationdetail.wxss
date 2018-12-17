@@ -259,6 +259,12 @@ swiper, swiper image {
     background: #fff;
     z-index: 999;
 }
+.input_box_fixed button{
+  background: none!important;
+}
+.input_box_fixed button::after{
+  border: none;
+}
 .share_cont{
     float: left;
     width:150rpx;
@@ -276,6 +282,7 @@ swiper, swiper image {
     font-size: 22rpx;
     color:#666666;
     text-align: center;
+    line-height:30rpx;
 }
 .share_active{
     background: #fafafa;
