@@ -4,12 +4,16 @@ const http = require("/utils/http.js")
 App({
   globalData: {
     open_id :null,
-    is_login: false,
     user_info: null,
     token: null,
-    mobile_status:0,
-    institution_status:0,
+    mobile_status:null,
+    mobile:null,
     base: "https://api.qibu131.cn/",
+    share: {
+      title: '折翼天使的救助站',
+      path: '/pages/index/index',
+      imgUrl: '/images/share_img/1.png'
+    }
   },
   onLaunch: function (options) {
     this.setUserInfo(options);
@@ -27,8 +31,8 @@ App({
     }
     if (user_info) {
       this.globalData.user_info = user_info
+      this.globalData.mobile = mobile
       this.globalData.is_login = true
-      this.globalData.institution_status = user_info.institution_status
       this.globalData.mobile_status = user_info.mobile_status
     }
   },
@@ -67,9 +71,8 @@ App({
         wx.setStorageSync('token', res.data.token);
         this.globalData.token = res.data.token;
         this.globalData.user_info = res.data;
+        this.globalData.mobile = res.data.mobile;
         this.globalData.mobile_status = res.data.mobile_status;
-        this.globalData.institution_status = res.data.institution_status;
-        this.globalData.is_login = true;
       }
      
     })
@@ -108,5 +111,5 @@ App({
   },
   hideShareMenu() {
     wx.hideShareMenu();
-  }
+  },
 })
