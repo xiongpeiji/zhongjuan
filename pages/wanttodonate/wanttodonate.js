@@ -45,11 +45,11 @@ Page({
     //相关图片上传
     uploadArrPhoto() {
       let user_avatar = this.data.avatar;
-      let url = app_data.base + 'Public/uploadImg?type=experience';
-      http.Select({ count: 5-this.data.images.length }).then((res) => {
+      let url = app_data.base + 'Public/uploadImg?type=user_donation';
+      http.Select({ count: 9-this.data.images.length }).then((res) => {
         return Promise.all(res.map((path, index) => {
           let num = index + 1;
-          return http.Upload({ count: 5- this.data.images.length, url: url, path: path, num: num });
+          return http.Upload({ count: 9- this.data.images.length, url: url, path: path, num: num });
         }));
       }).then((res) => {
         if (res.length > 0) {
