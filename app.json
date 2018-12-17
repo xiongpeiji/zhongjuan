@@ -7,6 +7,7 @@
     "pages/my/my",
     "pages/experiencedis/experiencedis",
     "pages/comment/comment",
+    "pages/experiencecomment/experiencecomment",
     "pages/createexperience/createexperience",
     "pages/donationdetail/donationdetail",
     "pages/wanttodonate/wanttodonate",

@@ -45,25 +45,7 @@ Page({
       }
     });
   },
-
-  comment(e){
-    let content = e.detail.value;
-    if(!content){
-      app.alert({title:'请输入评论内容！'});
-      return;
-    }
-    let url = app_data.base + '/Comment/addExperienceComment'
-    let params = { token: app_data.token, experience_id: this.data.id,content:content };
-    http.Post({ url: url, params: params }).then((res) => {
-      if (res.code == 'success') {
-          this.getData({refresh:false,is_first:true});
-          let comment_num = +this.data.comment_num + 1;
-          this.setData({ content: '', comment_num: comment_num});
-      }
-    })
-  },
-
-  experienceUp(e){
+  experienceUp(e) {
     if (this.data.is_up > 0) {
       app.alert({ title: '您已经点过赞了！' });
       return;
@@ -73,13 +55,29 @@ Page({
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         let up_num = +this.data.up_num + 1;
-        this.setData({up_num: up_num,is_up:1 });
+        this.setData({ up_num: up_num, is_up: 1 });
       }
     })
   },
 
   commentUp(e){
-
+    let comment_id = e.currentTarget.dataset.id;
+    let is_up = e.currentTarget.dataset.val;
+    let index = e.currentTarget.dataset.index;
+    if (is_up > 0) {
+      app.alert({ title: '您已经点过赞了！' });
+      return;
+    }
+    let url = app_data.base + '/Comment/experienceCommentUp'
+    let params = { token: app_data.token, id: comment_id };
+    http.Get({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        let list = this.data.list;
+        list[index].is_up = is_up == 0 ? 1 : 0;
+        list[index].comment_up_num = +list[index].comment_up_num+1;
+        this.setData({list:list});
+      }
+    })
   },
 
   getData(obj) {
@@ -108,10 +106,28 @@ Page({
       }
     })
   },
+
+  comment(e) {
+    let content = e.detail.value;
+    if (!content) {
+      app.alert({ title: '请输入评论内容！' });
+      return;
+    }
+    let url = app_data.base + '/Comment/addExperienceComment'
+    let params = { token: app_data.token, experience_id: this.data.id, content: content };
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        this.getData({ refresh: false, is_first: true });
+        let comment_num = +this.data.comment_num + 1;
+        this.setData({ content: '', comment_num: comment_num });
+      }
+    })
+  },
   //跳转到评论列表
   goCommentList(e){
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../comment/comment'
+      url: '../experiencecomment/experiencecomment?id='+id
     });
   },
 

@@ -28,14 +28,14 @@
       <view class="comment_title"> 评论{{comment_num}}</view>
       <view class="comment_container">
         <!--评论列表-->
-        <view class="conment_list" wx:for="{{list}}"  wx:key="{{index}}">
+        <view class="conment_list" wx:for="{{list}}"  wx:key="index">
           <image class="con_user_icon" src="{{item.avatar}}"></image>
           <view class="comment_text">
             <view class="comment_name">
               <span class="left_name">{{item.username}}</span>
               <view class="comment_action">
-                <view class="zan_num">
-                  <image src="/images/dianzan.png"></image>
+                <view class="zan_num" bindtap="commentUp" data-id="{{item.id}}" data-index="{{index}}" data-val="{{item.is_up}}">
+                  <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
                   <span>{{item.comment_up_num}}</span>
                 </view>
                 <view class="zan_num" bindtap="goCommentList" data-id="{{item.id}}">
