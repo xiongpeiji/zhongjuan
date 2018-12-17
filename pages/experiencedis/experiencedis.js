@@ -25,6 +25,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得详情'
     });
+    app.checkLogin();
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
   },
@@ -153,9 +154,15 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
-   */
+    * 用户点击右上角分享
+    */
   onShareAppMessage: function () {
-    return app_data.share;
+    let share_img = this.data.info.image;
+    let num = new Date().getSeconds() % share_img.length;
+    let img = share_img[num];
+    return {
+      title: this.data.info.title,
+      imageUrl: img
+    }
   }
 })

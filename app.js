@@ -9,7 +9,7 @@ App({
     mobile_status:null,
     mobile:null,
     base: "https://api.51aizj.com/",
-    share_img: ['/images/share_img/1.jpg','/images/share_img/1.jpg'],
+    share_img: ['/images/share_img/1.jpg','/images/share_img/2.jpg'],
     share: {}
   },
   onLaunch: function (options) {
@@ -112,7 +112,7 @@ App({
   },
   setShare(){
     let share_img = this.globalData.share_img;
-    let num = Math.floor(Math.random() * (share_img.length));
+    let num = new Date().getSeconds() % share_img.length;
     let img = share_img[num];
     this.globalData.share = {
         title: '折翼天使的救助站',
@@ -120,4 +120,13 @@ App({
         imageUrl: img
     }
   },
+  //检测没有登录则跳转至我的页面
+  checkLogin(){
+    let open_id = wx.getStorageSync('token');
+    if(!open_id){
+      wx.switchTab({
+        url: '/pages/my/my',
+      })
+    }
+  }
 })
