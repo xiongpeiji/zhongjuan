@@ -51,7 +51,7 @@
     <!--输入区-->
     <view class="conment_input_box">
         <view class="section_input">
-            <input placeholder="回复{{info.username}}..." bindconfirm="comment" bindblur='setContent' confirm-type="send" value='{{content}}'/>
+            <input placeholder="回复{{info.username}}..." bindconfirm="comment" bindinput='setContent' confirm-type="send" value='{{content}}'/>
         </view>
         <button type="default" size="mini" plain="{{true}}" bindtap='comment' hover-class="other-button-hover"> 发送 </button>
     </view>

@@ -28,7 +28,7 @@ Page({
   },
 
   setUserInfo(){
-     let user_info = app_data.user_info;
+    let user_info = app_data.user_info;
     this.setData({
       username: user_info.username,
       avatar: user_info.avatar,
@@ -77,13 +77,6 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
   * 页面相关事件处理函数--监听用户下拉动作
   */
   onPullDownRefresh: function () {
@@ -113,6 +106,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return app_data.share;
   }
 })

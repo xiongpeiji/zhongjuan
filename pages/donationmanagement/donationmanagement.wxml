@@ -21,7 +21,7 @@
 
     <view class="dona_list" hidden='{{count ==  0}}'>
         <view class="dona_ul">
-        <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+        <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
           <view class="dona_lis {{index == 0 ? 'ings' : ''}}">
                 <em></em>
                 <view class="dona_box">
@@ -32,7 +32,7 @@
                         </view>
                         <view class="dona_num_box">
                             <label class="num_title">捐助物资：</label>
-                            <view wx:for="{{item.material_data}}" wx:for-index="i" wx:for-item="row">
+                            <view wx:for="{{item.material_data}}" wx:key="index" wx:for-item="row">
                               <label class="dona_num_lis">{{row.material_name}}X{{row.num}}</label>
                             </view>
                         </view>

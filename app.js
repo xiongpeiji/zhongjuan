@@ -8,16 +8,14 @@ App({
     token: null,
     mobile_status:null,
     mobile:null,
-    base: "https://api.qibu131.cn/",
-    share: {
-      title: '折翼天使的救助站',
-      path: '/pages/index/index',
-      imgUrl: '/images/share_img/1.png'
-    }
+    base: "https://api.51aizj.com/",
+    share_img: ['/images/share_img/1.jpg','/images/share_img/1.jpg'],
+    share: {}
   },
   onLaunch: function (options) {
     this.setUserInfo(options);
     this.wxLogin();
+    this.setShare();
   },
   setUserInfo(options) {
     let open_id = wx.getStorageSync('open_id')
@@ -31,7 +29,7 @@ App({
     }
     if (user_info) {
       this.globalData.user_info = user_info
-      this.globalData.mobile = mobile
+      this.globalData.mobile = user_info.mobile
       this.globalData.is_login = true
       this.globalData.mobile_status = user_info.mobile_status
     }
@@ -111,5 +109,15 @@ App({
   },
   hideShareMenu() {
     wx.hideShareMenu();
+  },
+  setShare(){
+    let share_img = this.globalData.share_img;
+    let num = Math.floor(Math.random() * (share_img.length));
+    let img = share_img[num];
+    this.globalData.share = {
+        title: '折翼天使的救助站',
+        path: '/pages/index/index',
+        imageUrl: img
+    }
   },
 })
