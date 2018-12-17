@@ -12,9 +12,9 @@ Page({
     first_click: false,
     title:"",//文章标题
     contentText:"",//文章内容
-    material:{},
-    materArr:[],
+    material:[],
     sendStatus:false,
+    after_material:[],
     date:'',
     id:0
   },
@@ -75,23 +75,53 @@ Page({
     }
     http.Get({ url: url, params: params}).then((res)=>{
       if(res.code == "success"){
-        console.log(res)
+        this.setAfterMaterial(res.data.material_data);
         this.setData({
           images:res.data.image,
           title:res.data.title,//文章标题
           contentText:res.data.content,//文章内容
-          // material:res.data.material_data,
           date:res.data.end_time
         })
       }
-  })
+    })
+  },
+
+  setAfterMaterial(after_material){
+    let material_cache = wx.getStorageSync("material");
+    material_cache = JSON.stringify(material_cache);
+    material_cache = JSON.parse(material_cache);
+    let new_after_material = []; 
+    let material = [];
+    material_cache.map(r => {
+      let temp_num = '';
+      after_material.map(v => {
+        if(r.id == v.material_id){
+          new_after_material.push({
+            material_id: r.id,
+            name: r.name,
+            num: v.num,
+            icon: r.icon
+          });
+          temp_num = v.num;
+        }
+      });
+      material.push({
+        material_id: r.id,
+        name: r.name,
+        num: temp_num,
+        icon: r.icon
+      });
+    });
+    this.setData({
+      after_material:new_after_material,
+      material:material
+    })  
   },
   //提交信息
   submitFormData(e){
     let value = e.detail.value;
     let url = app_data.base+'Donation/saveDonation';
-    let strMater = JSON.stringify(this.data.materArr);
-
+    let strMater = JSON.stringify(this.data.after_material);
     let params = {
       token:app_data.token,
       id:this.data.id,
@@ -114,7 +144,18 @@ Page({
   },
   //获取类别和区域
   getMaterial(e){
-    let material = wx.getStorageSync("material");
+    let material_cache = wx.getStorageSync("material");
+    material_cache = JSON.stringify(material_cache);
+    material_cache = JSON.parse(material_cache);
+    let material = [];
+    material_cache.map(v => {
+      material.push({
+        material_id: v.id,
+        name: v.name,
+        num: '',
+        icon: v.icon
+      });
+    })
     this.setData({
       material:material,
     })
@@ -122,40 +163,26 @@ Page({
   //提交物资选择数据
   submitMaterial(e){
     let value = e.detail.value;
-    let newObj=[];
     let material = this.data.material;
-    material = JSON.stringify(material);
-    material = JSON.parse(material);
+    let after_material = [];
+    let select_status = false;
     for (var index in value) {
-      if(value[index]){
-        let name = '';
-        let icon = '';
-        material.map(v => { 
-          if (Number(v.id) === Number(index)){ 
-            name = v.name;
-            icon = v.icon;
-          } 
-        })
-        newObj.push({
-          material_id:index,
-          name:name,
-          num:value[index],
-          icon:icon
+      if(value[index] > 0){
+        material.map( v => {
+          if(v.material_id == index){
+            after_material.push({
+              material_id: v.material_id,
+              name: v.name,
+              num: value[index],
+              icon: v.icon
+            });
+          }
         })
       }
     }
-    newObj.forEach((value, index)=>{
-      console.log(value.num)
-      if(value.num<=0){
-        app.alert({
-          title:'物资数量不能0！'
-        })
-        return false;
-      }
-    })
-    if(newObj.length>0){
+    if (after_material.length>0){
       this.setData({
-        materArr:newObj,
+        after_material: after_material,
         first_click:false
       })
     }else{
@@ -163,7 +190,6 @@ Page({
         title:'物资数量不能为空！'
       })
     }
-    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -176,9 +202,11 @@ Page({
     this.setData({
       id:options.id
     })
-    if(options.id!=0){
+    if(options.id > 0){
       this.getDonaData();
+    }else{
+      this.getMaterial();//获取衣物类型
     }
-    this.getMaterial();//获取衣物类型
+   
   }
 })
