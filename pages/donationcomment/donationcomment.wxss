@@ -1,0 +1,130 @@
+/* pages/comment/comment.wxss */
+.comment_wrap{
+    padding-bottom: 95rpx;
+}
+  .conment_list{
+    position: relative;
+    margin-bottom: 20rpx;
+    padding:0 60rpx 0 95rpx;
+  }
+.conment_list_first{
+    background: #fff;
+    margin-bottom: 60rpx;
+    padding-top:24rpx;
+}
+  .con_user_icon{
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    left: 20rpx;
+    top:0;
+    border-radius: 50%;
+  }
+  .conment_list_first .con_user_icon{
+      position: absolute;
+      top:24rpx;
+  }
+  .comment_text{
+    padding-bottom: 15rpx;
+    border-bottom:1px solid #DFDFDF;
+  }
+  .conment_list_first .comment_text{
+    border-bottom:none;
+  }
+  .comment_name{
+    height: 40rpx;
+    line-height: 40rpx;
+    padding:10rpx 0;
+  }
+  .comment_name .left_name{
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color:#333333;
+    float: left;
+  }
+  .comment_action{
+    float: right;
+    height: 40rpx;
+    overflow: hidden;
+  }
+  .zan_num{
+    height: 40rpx;
+    padding-left: 45rpx;
+    position: relative;
+    float: left;
+  }
+  .zan_num+.zan_num{
+    margin-left: 35rpx;
+  }
+  .zan_num image{
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    left: 0;
+    top:1rpx;
+  }
+    
+  .zan_num span{
+    font-size: 22rpx;
+    color:#929292;
+    line-height: 22rpx;
+  }
+  .comment_dis{
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color:#333333;
+    margin-bottom: 15rpx;
+  }
+  .comment_time{
+    font-size: 24rpx;
+    height: 38rpx;
+    color:#999999;
+    line-height: 38rpx;
+  }
+  .comment_time .send_time{
+    float: left;
+  }
+  .comment_time .send_num{
+    float: left;
+    padding:0 20rpx;
+    border-radius: 19rpx;
+    background: #EFEFEF;
+    font-size: 24rpx;
+    line-height: 38rpx;
+    color:#FD693E;
+    margin-left: 20rpx;
+  }
+  .conment_input_box{
+    padding:20rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 95rpx;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .conment_input_box .section_input{
+    border-radius: 20rpx;
+    float: left;
+    width: 560rpx;
+    height: 54rpx;
+  }
+  .conment_input_box .section_input input{
+    width:100%;
+    height: 54rpx;
+    padding:5rpx 40rpx;
+    line-height: 34rpx;
+    box-sizing: border-box;
+    background: #F3F3F3;
+    border-radius: 6rpx;
+    font-size: 24rpx;
+  }
+  .conment_input_box button[plain]{
+      border:none;
+      color:#E4572E;
+      margin-left: 20rpx;
+  }
+  .conment_input_box .other-button-hover{
+      background: #F3F3F3;
+  }

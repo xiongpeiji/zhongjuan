@@ -2,7 +2,7 @@
 <view class="container">
   <view class='promotion-img'>
     <swiper autoplay="true" bindchange="swiper">
-      <block wx:for="{{xindedetails.image}}" wx:key="{{item.index}}">
+      <block wx:for="{{info.image}}" wx:key="{{item.index}}">
         <swiper-item>
           <image src="{{item}}" class="slide-image" />
         </swiper-item>
@@ -13,35 +13,35 @@
 
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
-      <h2>{{xindedetails.title}}</h2>
-      <span>{{xindedetails.end_time}}</span>
+      <h2>{{info.title}}</h2>
+      <span>{{info.end_time}}</span>
     </view>
     <view class="artact_user">
-      <span class="small_title">{{xindedetails.name}}</span>
+      <span class="small_title">{{info.name}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">{{xindedetails.content}}</p>
+      <p class="text_details">{{info.content}}</p>
     </view>
     <!--机构详细信息-->
     <view class='joins'>
       <view class='left_user_icon' bindtap="showUser">
-        <block wx:for="{{xindedetails.user_data}}" wx:key="{{index}}">
+        <block wx:for="{{info.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}'></image>
         </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num'>{{xindedetails.comment_num}}人已加入</view>
+      <view class='jions_num'>{{info.user_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
-          <span class='Percentage' style='width:{{xindedetails.rate}};'></span>
+          <span class='Percentage' style='width:{{info.rate}};'></span>
         </view>
-        <view class='Completion'>完成度{{xindedetails.rate}}</view>
+        <view class='Completion'>完成度{{info.rate}}</view>
       </view>
 
       <!--头像列表-->
       <view class="user_photos" hidden="{{usersShow}}">
         <view class="user_photo_list">
-          <view class="user_photo_name"  wx:for="{{xindedetails.user_data}}" wx:key="{{index}}">
+          <view class="user_photo_name"  wx:for="{{info.user_data}}" wx:key="{{index}}">
             <view class="user_icons">
               <image src='{{item.avatar}}'></image>
             </view>
@@ -55,20 +55,20 @@
     </view>
     <view class="jigou_titles">发布机构</view>
     <view class="jigouDetail_btn">
-        <span class="jigou_name">{{xindedetails.name}}</span>
+        <span class="jigou_name">{{info.name}}</span>
         <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
-          <span>{{xindedetails.type_name}}</span>
+          <span>{{info.type_name}}</span>
         </view>
     </view>
     <view class="jigou_titles">求捐物资</view>
     <!--物资详情-->
     <view class="wuzi_details">
-      <view class="wuzi_list" wx:for="{{xindedetails.material_data}}" wx:key="{{index}}">
+      <view class="wuzi_list" wx:for="{{info.material_data}}" wx:key="{{index}}">
         <image src="{{item.icon}}"></image>
-        <span class="wuzi_name">{{item.name + item.num}}件</span>
+        <span class="wuzi_name">{{item.name}}-{{item.num}}</span>
         <view class="juan_nums">
-          已捐<span>{{item.after_num}}</span>件
+          已捐<span>{{item.after_num}}</span>
         </view>
       </view>
     </view>
@@ -77,38 +77,39 @@
 
     <!--评论区-->
     <view class="comment_wrap">
-      <view class="comment_title"> 评论{{xindedetails.comment_num}}</view>
+      <view class="comment_title"> 评论{{comment_num}}</view>
       <!--回复输入框-->
       <view class="send_input">
           <image src="/images/user_icon_02.png"></image>
           <view class="section_input">
-            <input placeholder="说点什么吧，让大家认识你" confirm-type="send" focus="{{focus}}"/>
+            <input placeholder="说点什么吧，让大家认识你" bindconfirm="comment"  confirm-type="send" value='{{content}}' focus="{{focus}}"/>
           </view>
       </view>
-      <view class="comment_container">
+           <view class="comment_container">
         <!--评论列表-->
-        <view class="conment_list">
-          <image class="con_user_icon" src="/images/user_icon_02.png"></image>
+        <view class="conment_list" wx:for="{{list}}"  wx:key="index">
+          <image class="con_user_icon" src="{{item.avatar}}"></image>
           <view class="comment_text">
             <view class="comment_name">
-              <span class="left_name">Amani</span>
-            </view>
-            <view class="comment_dis">这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀！</view>
-            <view class="comment_time">
+              <span class="left_name">{{item.username}}</span>
               <view class="comment_action">
-                <view class="zan_num">
-                  <image src="/images/dianzan.png"></image>
-                  <span>{{xindedetails.up_num}}</span>
+                <view class="zan_num" bindtap="commentUp" data-id="{{item.id}}" data-index="{{index}}" data-val="{{item.is_up}}">
+                  <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+                  <span>{{item.comment_up_num}}</span>
                 </view>
-                <view class="zan_num" bindtap="goCommentList">
+                <view class="zan_num" bindtap="goCommentList" data-id="{{item.id}}">
                   <image src="/images/msg_num.png"></image>
-                  <span>{{xindedetails.comment_num}}</span>
+                  <span>{{item.comment_num}}</span>
                 </view>
               </view>
             </view>
+            <view class="comment_dis">{{item.content}}</view>
+            <view class="comment_time">
+              <span class="send_time">{{item.add_time}}</span>
+              <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>
+            </view>
           </view>
         </view>
-        
       </view>
     </view>
   </view>
@@ -116,13 +117,13 @@
   <view class="input_box_fixed">
     <view class="share_cont" hover-class="share_active" bindtap="commentFn">
         <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
-        <view class="img_tit_text">评论{{xindedetails.comment_num}}</view>
+        <view class="img_tit_text">评论{{comment_num}}</view>
     </view>
-    <view class="share_cont" hover-class="share_active">
+    <view class="share_cont" hover-class="share_active" open-type="share">
         <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
         <view class="img_tit_text">邀请好友</view>
     </view>
-    <view class="share_cont" hover-class="share_active" bindtap="donationShare">
+    <view class="share_cont" hover-class="share_active" open-type="share">
         <view class="img_box"><image src="/images/share@2x.png"></image></view>
         <view class="img_tit_text">分享</view>
     </view>

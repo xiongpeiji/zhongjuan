@@ -72,14 +72,19 @@ Page({
     })
   },
 
+  setContent(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+
   comment(e) {
-    let content = e.detail.value;
-    if (!content) {
+    if (!this.data.content) {
       app.alert({ title: '请输入回复内容！' });
       return;
     }
     let url = app_data.base + '/Comment/addExperienceReplayComment'
-    let params = { token: app_data.token, experience_comment_id: this.data.id, content: content };
+    let params = { token: app_data.token, experience_comment_id: this.data.id, content: this.data.content };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         this.getData({ refresh: false, is_first: true });

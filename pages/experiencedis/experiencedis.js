@@ -59,7 +59,6 @@ Page({
       }
     })
   },
-
   commentUp(e){
     let comment_id = e.currentTarget.dataset.id;
     let is_up = e.currentTarget.dataset.val;
@@ -79,7 +78,6 @@ Page({
       }
     })
   },
-
   getData(obj) {
     let url = app_data.base + 'Comment/experienceComment';
     let params = {
