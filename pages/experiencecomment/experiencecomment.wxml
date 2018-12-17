@@ -1,0 +1,58 @@
+<!--评论列表-->
+<view class="container">
+    <!--评论区-->
+    <view class="comment_wrap">
+      <view class="comment_container">
+        <!--评论列表-->
+        <view class="conment_list conment_list_first">
+          <image class="con_user_icon" src="{{info.avatar}}"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">{{info.username}}</span>
+              <view class="comment_action">
+                <view class="zan_num">
+                  <image src="{{info.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+                  <span>{{up_num}}</span>
+                </view>
+                <view class="zan_num">
+                  <image src="/images/msg_num.png"></image>
+                  <span>{{comment_num}}</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">{{info.content}}</view>
+            <view class="comment_time">
+              <span class="send_time">{{info.add_time}}</span>
+            </view>
+          </view>
+        </view>
+
+        <view class="conment_list" wx:for="{{list}}" wx:key="index">
+          <image class="con_user_icon" src="{{item.avatar}}"></image>
+          <view class="comment_text">
+            <view class="comment_name">
+              <span class="left_name">{{item.username}}</span>
+              <view class="comment_action">
+                <view class="zan_num" bindtap="commentUp" data-id="{{item.id}}" data-index="{{index}}" data-val="{{item.is_up}}">
+                  <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+                  <span>{{item.up_num}}</span>
+                </view>
+              </view>
+            </view>
+            <view class="comment_dis">{{item.content}}</view>
+            <view class="comment_time">
+              <span class="send_time">{{item.add_time}}</span>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!--输入区-->
+    <view class="conment_input_box">
+        <view class="section_input">
+            <input placeholder="回复{{info.username}}..." bindconfirm="comment" confirm-type="send" value='{{content}}'/>
+        </view>
+        <button type="default" size="mini" plain="{{true}}" bindtap='comment' hover-class="other-button-hover"> 发送 </button>
+    </view>
+</view>
