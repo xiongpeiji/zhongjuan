@@ -111,9 +111,18 @@ Page({
     http.Post({url:url,params:params}).then((res)=>{
       if(res.code == 'success'){
         app.alert({title:res.msg,time:2000});
-        setTimeout(wx.navigateTo({
-          url: '/pages/experiencelist/experiencelist',
-        }),2000);
+        setTimeout(()=>{
+          wx.navigateTo({
+            url: '/pages/experiencelist/experiencelist',
+          })
+          this.setData({
+            id: 0,
+            images: [],
+            title: '',
+            content: '',
+          });
+        },2000);
+        
       }
     })
   },

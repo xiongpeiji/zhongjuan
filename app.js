@@ -101,6 +101,28 @@ App({
       mask: true
     })
   },
+  setTabBarMsg(){
+    let token = this.globalData.token;
+    if(token){
+      let url = this.globalData.base + 'SystemInfo/getSystemInfoCount'
+      let data = { token: token }
+      http.Get({ url: url, params: data }).then((res) => {
+        if (res.code == 'success') {
+          let numbers = res.data.count;
+          if (numbers>0){
+            wx.setTabBarBadge({
+              index: 2,
+              text: numbers
+            })
+          }else{
+            wx.removeTabBarBadge({
+              index: 2
+            })
+          }
+        }
+      })
+    }
+  },
   redirectLogin() {
     wx.switchTab({
       url: '/pages/my/my',

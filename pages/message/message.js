@@ -22,6 +22,7 @@ Page({
       title: '消息'
     });
     this.getData({ refresh: false, is_first: true });
+    app.setTabBarMsg()
   },
   //消息详情
   msgDetails(e){
@@ -69,6 +70,7 @@ Page({
       page: 1
     })
     this.getData({ refresh: true, is_first: true });
+    app.setTabBarMsg()
   },
 
   /**

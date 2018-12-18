@@ -30,6 +30,7 @@ Page({
       title: '我的'
     });
     this.checkUser();
+    app.setTabBarMsg()
   },
   checkUser() {
     let token = wx.getStorageSync('token');

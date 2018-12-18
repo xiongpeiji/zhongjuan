@@ -51,6 +51,11 @@
     font-weight: bold;
     line-height: 45rpx;
     margin-bottom: 14rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 .list_dis_text{
     font-size: 28rpx;

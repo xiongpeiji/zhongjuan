@@ -137,6 +137,12 @@ Page({
             wx.navigateTo({
               url: '../donormanagement/donormanagement'
             })
+            this.setData({
+              images: [],
+              title: "",//文章标题
+              contentText: "",//文章内容
+              date: '',
+            })
           },1000)
         }
     })

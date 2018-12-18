@@ -109,6 +109,11 @@ swiper, swiper image {
   display: block;
   margin-bottom: 10rpx;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .list_img_title p{
   font-size: 26rpx;

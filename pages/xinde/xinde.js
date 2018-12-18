@@ -70,6 +70,7 @@ Page({
       page:1,
     })
     this.getData({ refresh: true, is_first: true });
+    app.setTabBarMsg()
   },
 
   /**
@@ -87,7 +88,10 @@ Page({
       this.getData({ refresh: true, is_first: false });
     }
   },
-
+  //获取未读消息条数
+  onShow(){
+    app.setTabBarMsg()
+  },
 
   /**
   * 用户点击右上角分享
