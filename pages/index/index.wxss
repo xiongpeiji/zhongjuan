@@ -61,6 +61,12 @@ swiper, swiper image {
   color:#333;
   margin-bottom: 22rpx;
   float: left;
+  max-width:390rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .index_list .list_tit_box .list_v{
   padding:0 18rpx;
@@ -133,11 +139,14 @@ swiper, swiper image {
 .left_user_icon{
   float: left;
   height: 52rpx;
+  padding-left:15rpx;
+  max-width:180rpx;
+  overflow: hidden;
 }
 .left_user_icon image{
   width: 52rpx;
   height: 52rpx;
-  margin-right: -15rpx;
+  margin-left: -15rpx;
   float: left;
   border-radius: 50%;
 }

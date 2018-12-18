@@ -38,6 +38,11 @@
   font-weight: bold;
   line-height: 50rpx;
   margin-bottom: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .xinde_list .article_dis{
   font-size: 28rpx;

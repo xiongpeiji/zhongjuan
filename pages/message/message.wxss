@@ -33,6 +33,12 @@
     line-height: 32rpx;
     color:#030303;
     float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width:390rpx;
 }
 .msg_title .msg_type{
     float: left;
