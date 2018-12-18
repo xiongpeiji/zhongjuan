@@ -13,7 +13,6 @@ Page({
     avatar: '',
     mobile_status:0,
     institution_status:0,
-    refresh:false,
     instStatus:{ ////0 未认证 1 认证中 2 已认证 3 认证失败 
       0:"未认证",1:"认证中",2:"已认证",3:"认证失败"
     },
@@ -37,12 +36,9 @@ Page({
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
-        let data = {url:url,params:params,loading:this.data.refresh};
+        let data = {url:url,params:params};
         http.Post(data).then((res)=>{
             if(res.code == 'success'){
-              if (this.data.refresh){
-                wx.stopPullDownRefresh();
-              }
               this.setData({
                 isLogin:true,
                 username:res.data.username,
@@ -151,22 +147,6 @@ Page({
         }, 1000);
       }
     })
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    app.setTabBarMsg()
-    if(this.data.isLogin == true){
-      this.setData({
-        refresh: true
-      })
-      this.checkUser();
-    }else{
-      wx.stopPullDownRefresh();
-    }
-    
   },
 
 
