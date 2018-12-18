@@ -34,11 +34,10 @@ Page({
   getData(obj){
     let token = wx.getStorageSync("token");
     if(!token){
-      app.modal({ content: '请登录后再查看！', confirmText: '立即登录' }).then((res) => {
-        if (res.confirm) {
-          app.redirectLogin();
-        }
-      });
+      app.alert({ title: '请登录后再查看！', time: 2000 });
+      setTimeout(() => {
+        app.redirectLogin();
+      }, 2000);
       return;
     }
     let url = app_data.base +'SystemInfo/index'

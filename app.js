@@ -64,7 +64,7 @@ App({
     let url = this.globalData.base + 'Public/getUserInfo'
     let data = { open_id: open_id }
     http.Post({ url: url, params: data }).then((res) => {
-      if(res.code == 'success'){
+      if(res.code == 'success' && res.data.length > 0){
         wx.setStorageSync('user_info', res.data);
         wx.setStorageSync('token', res.data.token);
         this.globalData.token = res.data.token;
