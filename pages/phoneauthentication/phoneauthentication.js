@@ -63,6 +63,7 @@ Page({
     if (myreg.test(mobile)) {
       let url = app_data.base +'User/sendCode';
       let params = {token:app_data.token,mobile:mobile};
+      console.log(params);
       http.Post({url:url,params:params}).then((res)=>{
         if(res.code == 'success'){
           wx.showToast({

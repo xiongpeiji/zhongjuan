@@ -72,7 +72,6 @@ App({
         this.globalData.mobile = res.data.mobile;
         this.globalData.mobile_status = res.data.mobile_status;
       }
-     
     })
   },
   modal(obj){

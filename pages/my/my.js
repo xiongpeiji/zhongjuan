@@ -107,42 +107,71 @@ Page({
   },
   //授权登录
   userLogin(e) {
+    let _this = this;
     let wx_user_info = e.detail.userInfo;
-    if (wx_user_info) {
-        let url = app_data.base+'Public/login';
-        let open_id = wx.getStorageSync("open_id");
-        let params = {
-          open_id:open_id,
-          username:wx_user_info.nickName,
-          avatar:wx_user_info.avatarUrl,
+    let open_id = wx.getStorageSync("open_id");
+    if(!open_id){
+      wx.login({
+        success: (res) => {
+          let url = _this.globalData.base + 'Public/getOpenId'
+          let data = { code: res.code }
+          http.Post({ url: url, params: data }).then((res) => {
+            if (res.code == 'success') {
+              wx.setStorageSync('open_id', res.data.open_id);
+              let login_data = {
+                open_id: res.data.open_id,
+                username: wx_user_info.nickName,
+                avatar: wx_user_info.avatarUrl,
+              }
+              _this.login(login_data);
+            }
+          })
         }
-      http.Post({ url: url, params: params, loading: true, message:'正在登录'}).then((res)=>{
-          if(res.code == "success"){
-            wx.setStorageSync('token', res.data.token);
-            this.setData({
-              isLogin: true,
-              username: res.data.username,
-              avatar: res.data.avatar,
-              mobile: res.data.mobile,
-              institution_status: res.data.institution_status,
-              mobile_status: res.data.mobile_status,
-            });
-            setTimeout(()=>{
-              app.getUserInfo();
-            },1000);
-          }
       })
+    }else{
+        let login_data = {
+          open_id: open_id,
+          username: wx_user_info.nickName,
+          avatar: wx_user_info.avatarUrl,
+        }
+      this.login(login_data);
     }
+  },
+
+  login(login_data){
+    let open_id = wx.getStorageSync("open_id");
+    let url = app_data.base + 'Public/login';
+    http.Post({ url: url, params: login_data, loading: true, message: '正在登录' }).then((res) => {
+      if (res.code == "success") {
+        wx.setStorageSync('token', res.data.token);
+        this.setData({
+          isLogin: true,
+          username: res.data.username,
+          avatar: res.data.avatar,
+          mobile: res.data.mobile,
+          institution_status: res.data.institution_status,
+          mobile_status: res.data.mobile_status,
+        });
+        setTimeout(() => {
+          app.getUserInfo();
+        }, 1000);
+      }
+    })
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.setData({
-      refresh:true
-    })
-    this.checkUser();
+    if(this.data.isLogin == true){
+      this.setData({
+        refresh: true
+      })
+      this.checkUser();
+    }else{
+      wx.stopPullDownRefresh();
+    }
+    
   },
 
 
