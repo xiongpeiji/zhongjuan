@@ -51,8 +51,6 @@ Page({
                 mobile_status:res.data.mobile_status,
               });
               wx.setStorageSync('user_info', res.data);
-              app_data.mobile_status = res.data.mobile_status;
-              app_data.institution_status = res.institution_status;
             }
         });
     }
@@ -120,6 +118,7 @@ Page({
         }
       http.Post({ url: url, params: params, loading: true, message:'正在登录'}).then((res)=>{
           if(res.code == "success"){
+            wx.setStorageSync('token', res.data.token);
             this.setData({
               isLogin: true,
               username: res.data.username,
@@ -128,7 +127,9 @@ Page({
               institution_status: res.data.institution_status,
               mobile_status: res.data.mobile_status,
             });
-            app.getUserInfo();
+            setTimeout(()=>{
+              app.getUserInfo();
+            },1000);
           }
       })
     }
