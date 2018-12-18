@@ -26,12 +26,11 @@ Page({
     let id = e.currentTarget.dataset.id;
     let token = wx.getStorageSync('token')
     if (!token){
-      app.modal({content: '请登录后再查看！',confirmText: '立即登录'}).then((res) => {
-          if(res.confirm){
-            app.redirectLogin();
-          }
-      });
-      return false;
+      app.alert({ title: '请登录后再查看！', time: 2000 });
+      setTimeout(() => {
+        app.redirectLogin();
+      }, 2000);
+      return;
     }
     wx.navigateTo({
       url: '../donationdetail/donationdetail?token=' + token + '&id=' + id
@@ -191,7 +190,7 @@ Page({
         }
         curItem.active = true;
       }
-      this.getHomeData();
+      this.getData({ refresh: true, is_first: true });
       this.setData({
         arrList: arrList,
         state: false,

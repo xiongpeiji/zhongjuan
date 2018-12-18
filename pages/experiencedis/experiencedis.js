@@ -154,15 +154,27 @@ Page({
   },
 
   /**
-    * 用户点击右上角分享
-    */
+  * 用户点击右上角分享
+  */
   onShareAppMessage: function () {
     let share_img = this.data.info.image;
     let num = new Date().getSeconds() % share_img.length;
     let img = share_img[num];
+    let _this = this;
     return {
       title: this.data.info.title,
-      imageUrl: img
+      imageUrl: img,
+      success: function (res) {
+        let url = app_data.base + 'Experience/experienceShare';
+        let params = { token: app_data.token, id: _this.data.id };
+        http.Post({ url: url, params: params }).then((res) => {
+          if (res.code == 'success') {
+            _this.setData({
+              share_num: +_this.data.share_num + 1,
+            })
+          }
+        });
+      }
     }
   }
 })

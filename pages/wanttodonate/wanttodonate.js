@@ -11,12 +11,11 @@ Page({
     first_click:false,
     images:[],
     id:0,
-    info:[],
     material:[],
     after_material:[],
     mobile:'',
     express_data:[],//快递信息
-    curExp:{}
+    express:{}
   },
 
   /**
@@ -45,11 +44,11 @@ Page({
   },
   //选择快递公司
   bindExpressChange(e){
-    let index = e.detail.value,
-    curExp = this.data.express_data[index];
-    if(curExp){
+    let index = e.detail.value;
+    let express = this.data.express_data[index];
+    if (express){
       this.setData({
-        curExp:curExp
+        express: express
       })
     }
   },
@@ -59,42 +58,36 @@ Page({
     let params = { id: this.data.id, token: app_data.token };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        console.log(res.data.material_data);
-        let curExp ={};
-        this.data.express_data.map(v => { 
-          if (Number(v.id) === Number(res.data.express_data.id)){ 
-            curExp = v; 
-          } 
-        })
         this.setData({
-          info: res.data.material_data,
+          material: res.data.material_data,
           mobile:app_data.mobile,
           express_data:res.data.express_data,
-          curExp:curExp // 当前选择的地域
         })
       }
     });
   },
   //提交我要捐助消息 Donation/saveUserDonation
   submitDonaData(e){
-    console.log(e)
     let url = app_data.base + 'Donation/saveUserDonation';
     let express_num = e.detail.value.express_num;
-    let strMater = JSON.stringify(this.data.materArr);
+    let material = JSON.stringify(this.data.after_material);
     let params = {
+      id:this.data.id,
       token:app_data.token,
       mobile: app_data.mobile, //手机号码
-      material:strMater,//捐助物品
+      material: material,//捐助物品
       express_num:express_num,//快递单号
-      express_id:this.data.curExp.id,//快递id
+      express_id:this.data.express.id,//快递id
       imgs:this.data.images, //图片
     };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        console.log(res.data)
-        this.setData({
-          info: res.data
-        })
+          app.alert({title:res.msg,time:2000});
+          setTimeout(()=>{  
+            wx.navigateTo({
+              url: '/pages/donationmanagement/donationmanagement',
+            })
+          },2000)
       }
     });
   },
@@ -121,38 +114,46 @@ Page({
   submitMaterial(e){
     let value = e.detail.value;
     let newObj=[];
-    let material = this.data.info;
-    material = JSON.stringify(material);
-    material = JSON.parse(material);
-    for (var index in value) {
-      if(value[index]){
-        let name = '';
+    let material = this.data.material;
+    let error_msg = null;
+    for(let key in value){
+      if (value[key] > 0 && !error_msg){
+        let num  = '';
         let icon = '';
-        material.map(v => { 
-          if (Number(v.id) === Number(index)){ 
+        let name = '';
+        material.some((v,k)=>{
+          if (Number(v.material_id) === Number(key)){
+            if (value[key] > v.num){
+              error_msg = v.name+'可捐赠数量不能超过'+v.num;
+              return true;
+            }
             name = v.name;
             icon = v.icon;
           } 
         })
         newObj.push({
-          material_id:index,
+          material_id:key,
           name:name,
-          num:value[index],
+          num:value[key],
           icon:icon
         })
       }
     }
-    if(newObj.length>0){
-      this.setData({
-        materArr:newObj,
-        first_click:false
-      })
+    if (error_msg) {
+      app.alert({title:error_msg,time:2000});
     }else{
-      app.alert({
-        title:'物资数量不能为空！'
-      })
+      if (newObj.length > 0) {
+        this.setData({
+          after_material: newObj,
+          first_click: false
+        })
+      } else {
+        app.alert({
+          title: '捐赠物资数量不能为空！'
+        })
+      }
     }
-    
+   
   },
     // 删除图片
     deleteImg (e) {

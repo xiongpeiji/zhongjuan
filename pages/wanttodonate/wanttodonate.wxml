@@ -5,7 +5,7 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">联系方式</label>
             <view class="title_input_box">
-                <input value="{{mobile}}" disabled="{{true}}" type="number" placeholder="请输入您的电话号码" maxlength="11"/>
+                <input value="{{mobile}}" type="number" placeholder="请输入您的电话号码" maxlength="11"/>
             </view>
         </view>
         <view class="my_menu_list" hover-class="public_hover" bindtap="addGoods">
@@ -15,7 +15,7 @@
             </view>
         </view>
         <view class="information_list">
-            <view class="list_Goods" wx:for="{{materArr}}" wx:key="index">
+            <view class="list_Goods" wx:for="{{after_material}}" wx:key="index">
                 <image class="material_icon" src="{{item.icon}}"></image>
                 <label class="float_left">{{item.name}}</label>
                 <label class="float_right">{{item.num}}</label>
@@ -25,8 +25,8 @@
             <view class="my_menu_list" hover-class="public_hover">
                 <label class="left_text">快递公司</label>
                 <view class="right_btn">
-                    <label class="no_auth">{{curExp.name}}</label>
-                    <view class="no_auth" hidden="{{curExp.id}}">请选择快递公司</view>
+                    <label class="no_auth">{{express.name}}</label>
+                    <view class="no_auth" hidden="{{express.id}}">请选择快递公司</view>
                     <image class="right_icons" src="/images/renzheng_jinru.png"></image>
                 </view>
             </view>
@@ -60,13 +60,13 @@
     <view class="{{first_click?'chose_box':'hide'}}">
         <view class="title_pos">可多选</view>
         <view class="auto_chose_box">
-            <view class="chose_list" style="width:{{info.length*268-90}}rpx;">
+            <view class="chose_list" style="width:{{material.length*268-90}}rpx;">
             
-                <view class="chose_x_auto" wx:for="{{info}}" wx:key="index">
+                <view class="chose_x_auto" wx:for="{{material}}" wx:key="index">
                     <view class="set_number">
                         <image src="{{item.icon}}"></image>
                         <view class="num_input">
-                            <input name="{{item.id}}" type="number" placeholder="最多{{item.num-item.after_num}}" maxlength="5"/>
+                            <input name="{{item.material_id}}" type="number" data-id="{{item.num}}" placeholder="最多{{item.num}}" maxlength="5"/>
                         </view>
                     </view>
                     <text>{{item.name}}</text>

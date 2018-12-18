@@ -117,7 +117,7 @@
   <view class="input_box_fixed">
     <button class="share_cont" hover-class="share_active" bindtap="commentFn">
         <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
-        <view class="img_tit_text">评论{{comment_num}}</view>
+        <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
     </button>
     <button class="share_cont" hover-class="share_active" open-type="share">
         <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
@@ -125,7 +125,7 @@
     </button>
     <button class="share_cont" hover-class="share_active" open-type="share">
         <view class="img_box"><image src="/images/share@2x.png"></image></view>
-        <view class="img_tit_text">分享</view>
+        <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
     </button>
     <view class="want_give">
         <image src="/images/Rectangle9@3x.png"></image>

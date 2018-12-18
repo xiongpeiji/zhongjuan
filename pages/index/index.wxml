@@ -52,7 +52,7 @@
     </view>
   </view>
   <!--没有消息-->
-  <view class="no_messages" hidden="{{qiujuanList.length!='0'}}">
+  <view class="no_messages" hidden="{{list.length!='0'}}">
     <image src="/images/no_dona.jpg"></image>
     <view class="no_msg_text">暂无此类型数据！</view>
   </view>
