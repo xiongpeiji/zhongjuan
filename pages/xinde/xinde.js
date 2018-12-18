@@ -40,7 +40,6 @@ Page({
   getData(obj) {
     let url = app_data.base + 'Index/experience';
     let params = {
-      token: app_data.token,
       page: this.data.page,
     }
     http.Get({ url: url, params: params, loading: obj.refresh }).then((res) => {

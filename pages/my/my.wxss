@@ -177,7 +177,7 @@ page {
 }
 /* 0:"no-auth",1:"auth-ing",2:"auth-pass",3:"auth-fail" */
 .status-text.no-auth{
-    color:#141414;
+    color:#df4334;
 }
 .status-text.auth-ing{
     color:#FF5722;
