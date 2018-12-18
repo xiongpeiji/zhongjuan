@@ -66,7 +66,7 @@
                     <view class="set_number">
                         <image src="{{item.icon}}"></image>
                         <view class="num_input">
-                            <input name="{{item.id}}" type="number" placeholder="最多{{item.num-item.after_num}}" maxlength="5"/>
+                            <input name="{{item.id}}" type="number" placeholder="最多{{item.num}}" maxlength="5"/>
                         </view>
                     </view>
                     <text>{{item.name}}</text>
