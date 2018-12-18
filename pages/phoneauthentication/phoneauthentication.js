@@ -107,7 +107,8 @@ Page({
       if (res.code == 'success') {
         wx.showToast({
           title: res.msg
-        })
+        });
+        app.getUserInfo();
         setTimeout(() => {
           app.redirectLogin();
         }, 2000);
