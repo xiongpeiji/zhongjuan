@@ -41,6 +41,7 @@
         <block wx:for="{{item.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}'></image>
         </block>
+        <image hidden='{{item.user_data.lenght>0}}' src='/images/index_gengduo@2x.png'></image>
       </view>
       <view class='jions_num'>{{item.donation_num}}人已加入</view>
       <view class='slider_bar'>
