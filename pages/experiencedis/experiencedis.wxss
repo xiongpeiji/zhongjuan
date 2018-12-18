@@ -136,7 +136,7 @@ swiper, swiper image {
   width: 38rpx;
   height: 38rpx;
   position: absolute;
-  left: 0;
+  left: 0rpx;
   top:1rpx;
 }
 .zan_num span{
@@ -182,7 +182,7 @@ swiper, swiper image {
 .input_box .section_input{
   border-radius: 20rpx;
   float: left;
-  width: 495rpx;
+  width: 430rpx;
   height: 54rpx;
 }
 .input_box .section_input input{
@@ -194,4 +194,20 @@ swiper, swiper image {
   border-radius: 6rpx;
   font-size: 24rpx;
   line-height: 34rpx;
+}
+.comment_action button{
+  background: none!important;
+}
+.comment_action button::after{
+  border: none;
+}
+.comment_action button span{
+  position: absolute;
+  left: 40rpx;
+  bottom: 0rpx;
+}
+.share_number{
+  font-size: 22rpx;
+  color:#929292;
+  line-height: 22rpx;
 }

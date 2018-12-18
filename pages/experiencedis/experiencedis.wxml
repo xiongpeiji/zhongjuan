@@ -59,15 +59,15 @@
     <view class="section_input">
       <input placeholder="说点什么…" bindconfirm="comment" confirm-type="send" value='{{content}}'/>
     </view>
-    <view class="comment_action" bindtap='experienceUp'>
-      <view class="zan_num">
+    <view class="comment_action">
+      <view class="zan_num" bindtap='experienceUp'>
         <image src="{{is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
         <span>{{up_num}}</span>
       </view>
-      <view class="zan_num">
+      <button class="zan_num" open-type="share">
         <image src="/images/fenxiang.png"></image>
-        <span>{{share_num}}</span>
-      </view>
+      </button>
+      <span class="share_number">{{share_num}}</span>
     </view>
   </view>
   
