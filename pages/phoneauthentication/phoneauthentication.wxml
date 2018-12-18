@@ -11,11 +11,11 @@
             <view class="program_text">为了保证信息安全，请验证您的手机号</view>
             <form bindsubmit='submit'>
                 <view class="phone_number_box">
-                    <input class="input_numbers" name="mobile" type="number" bindblur="mobileInputEvent"  maxlength="{{11}}" placeholder="请输入您的手机号" />
+                    <input class="input_numbers" name="mobile" type="number" bindinput="mobileInputEvent"  maxlength="{{11}}" placeholder="请输入您的手机号" />
                 </view>
                 <view class="phone_number_box">
                     <view class="verification_box">
-                        <input class="input_numbers" bindblur="regCode" name="sms_code" type="number" maxlength="{{6}}" placeholder="请输入验证码" />
+                        <input class="input_numbers" bindinput="regCode" name="sms_code" type="number" maxlength="{{6}}" placeholder="请输入验证码" />
                     </view>
                     <view class="send_button">
                         <button class="send_code" disabled='{{disabled}}' data-id="2"  bindtap="sendPhoneCode" plain="{{true}}">{{timeText}}</button>
