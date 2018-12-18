@@ -144,14 +144,7 @@ Page({
     http.Post({ url: url, params: login_data, loading: true, message: '正在登录' }).then((res) => {
       if (res.code == "success") {
         wx.setStorageSync('token', res.data.token);
-        this.setData({
-          isLogin: true,
-          username: res.data.username,
-          avatar: res.data.avatar,
-          mobile: res.data.mobile,
-          institution_status: res.data.institution_status,
-          mobile_status: res.data.mobile_status,
-        });
+        this.checkUser();
         setTimeout(() => {
           app.getUserInfo();
         }, 1000);
