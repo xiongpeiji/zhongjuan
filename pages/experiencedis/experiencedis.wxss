@@ -210,4 +210,6 @@ swiper, swiper image {
   font-size: 22rpx;
   color:#929292;
   line-height: 22rpx;
+  position:relative;
+  left:-26rpx;
 }
