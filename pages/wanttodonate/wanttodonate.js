@@ -82,6 +82,7 @@ Page({
     let express_num = e.detail.value.express_num;
     let strMater = JSON.stringify(this.data.materArr);
     let params = {
+      id:this.data.id,
       token:app_data.token,
       mobile: app_data.mobile, //手机号码
       material:strMater,//捐助物品
