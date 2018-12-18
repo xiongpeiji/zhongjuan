@@ -71,8 +71,9 @@ Page({
     })
   },
   expressDetail(e){
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../messageDetail/messageDetail'
+      url: '../messageDetail/messageDetail?id='+id
     })
   },
 

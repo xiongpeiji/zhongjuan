@@ -37,7 +37,7 @@
                             </view>
                         </view>
                     </view>
-                    <view class="look_dona" bindtap="expressDetail">{{item.is_get == 0 ? '运输中' : '已签收'}}</view>
+                    <view class="look_dona" bindtap="expressDetail" data-id="{{item.system_info_id}}">{{item.is_get == 0 ? '运输中' : '已签收'}}</view>
                 </view>
             </view>
         </block>
