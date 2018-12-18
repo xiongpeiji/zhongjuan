@@ -222,7 +222,7 @@ swiper, swiper image {
   margin-right: 50rpx;
 }
 .chose_box{
-  min-height: 400rpx;
+  max-height:400rpx;
   overflow-y: auto;
 }
 .chose_box view{

@@ -182,12 +182,12 @@ Page({
             break;
           case 1:
             this.setData({
-              material_id: id
+              type_id: id
             })
             break;
           case 2:
             this.setData({
-              type_id: id
+              material_id: id
             })
             break;
         }
