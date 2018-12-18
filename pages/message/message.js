@@ -21,6 +21,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '消息'
     });
+    this.setData({
+      page: 1
+    })
     this.getData({ refresh: false, is_first: true });
     app.setTabBarMsg()
   },
