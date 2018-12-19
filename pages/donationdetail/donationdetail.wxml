@@ -24,13 +24,13 @@
     </view>
     <!--机构详细信息-->
     <view class='joins'>
-      <view class='left_user_icon' bindtap="showUser">
+      <view class='left_user_icon' bindtap="showUser" hidden="{{info.user_num==0}}">
         <block wx:for="{{info.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}'></image>
         </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num'>{{info.user_num}}人已加入</view>
+      <view class='jions_num' style="margin-left:{{info.user_num==0?'0':'70rpx'}}">{{info.user_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
           <span class='Percentage' style='width:{{info.rate}};'></span>
@@ -53,7 +53,9 @@
         </view>
       </view>
     </view>
-    <view class="jigou_titles">发布机构</view>
+    <view class="jigou_titles send_details_btn">
+      发布机构
+    </view>
     <view class="jigouDetail_btn">
         <span class="jigou_name">{{info.name}}</span>
         <view class="jigou">

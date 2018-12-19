@@ -37,13 +37,13 @@
       </view>
     </view>
     <view class='joins'>
-      <view class='left_user_icon'>
+      <view class='left_user_icon' hidden="{{item.donation_num==0}}">
         <block wx:for="{{item.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}'></image>
         </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num'>{{item.donation_num}}人已加入</view>
+      <view class='jions_num' style="margin-left:{{item.donation_num==0?'0':'70rpx'}}">{{item.donation_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
           <span class='Percentage' style='width:{{item.rate}};'></span>

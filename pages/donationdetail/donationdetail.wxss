@@ -60,7 +60,12 @@ swiper, swiper image {
     font-size: 34rpx;
     color:#343434;
     margin-bottom: 50rpx;
-    line-height: 34rpx;
+  }
+  .send_details_btn{
+    height: 92rpx;
+    line-height: 92rpx;
+    border-top: 5px solid #fafafa;
+    border-bottom: 5px solid #fafafa;
   }
   .jigouDetail_btn {
     height: 34rpx;
@@ -305,6 +310,8 @@ swiper, swiper image {
     position: absolute;
     left: 0;
     top: 0;
+    
+    border-radius: 50rpx;
 }
 .want_give span{
     display: block;
@@ -316,6 +323,8 @@ swiper, swiper image {
     line-height: 78rpx;
     position: relative;
     z-index: 1;
+    
+    border-radius: 50rpx;
 }
 .joins{
   height: 52rpx;
