@@ -99,11 +99,13 @@ function UPLOAD(obj) {
   let upload_promise = new Promise(function (resolve, reject) {
     if(obj.count > 1){
       wx.showLoading({
-        title: obj.num + '张图片正在上传',
+        title: '正在上传...',
+        mask:true
       })
     }else{
       wx.showLoading({
-        title: '正在上传',
+        title: '正在上传...',
+        mask: true
       })
     }
     wx.uploadFile({
@@ -111,7 +113,6 @@ function UPLOAD(obj) {
       filePath: obj.path,
       name: 'photo',
       success(res) {
-        wx.hideLoading();
         if (res.statusCode == 200) {
           let data = JSON.parse(res.data);
           if (data.code == 'success') {
@@ -120,6 +121,7 @@ function UPLOAD(obj) {
             wx.showToast({
               icon: 'none',
               title: '第' + obj.num + '张图片' + data.msg,
+              mask: true
             })
             reject(data);
           }

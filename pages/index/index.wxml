@@ -12,10 +12,9 @@
   <view class='index_sort'>
     <view class='sort_left'>
       <span>求捐信息</span>
-      <image src='/images/sort.png'></image>
     </view>
     <view class='sort_right' bindtap="toggle">
-      智能排序
+      查找捐助信息
       <image src='/images/sort_arr.png'></image>
     </view>
   </view>
@@ -30,7 +29,7 @@
       <view class='list_time'>{{item.add_time}}</view>
     </view>
     <view class='list_img' bindtap="qiujuanDetail" data-id="{{item.id}}">
-      <image src='{{item.image}}'></image>
+      <image mode='aspectFill' src='{{item.image}}'></image>
       <view class='list_img_title'>
         <h4>{{item.title}}</h4>
         <p>{{item.content}}</p>

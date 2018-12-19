@@ -92,16 +92,16 @@ Page({
           interval: init_data.advert_time
         });
         let area = {
-          title: '区域',
+          title: '捐助地区',
           info: init_data.city,
           active: true
         };
         let type = {
-          title: '类型',
+          title: '捐助机构',
           info: init_data.type
         };
         let material = {
-          title: '物资',
+          title: '捐助物品',
           info: init_data.material
         };
         arrList.push(area);
@@ -215,6 +215,7 @@ Page({
     this.getData({ refresh: true, is_first: true });
     app.setTabBarMsg()
   },
+  
 
   /**
    * 页面上拉触底事件的处理函数

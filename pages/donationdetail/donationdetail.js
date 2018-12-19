@@ -109,7 +109,7 @@ Page({
       if (res.code == 'success') {
         this.getData({ refresh: false, is_first: true });
         let comment_num = +this.data.comment_num + 1;
-        this.setData({ content: '', comment_num: comment_num });
+        this.setData({ content: '', comment_num: comment_num, focus:false});
       }
     })
   },
@@ -125,6 +125,12 @@ Page({
     var current = e.detail.current;
     this.setData({
       current: current + 1
+    })
+  },
+  //设置输入框隐藏
+  setFocus(){
+    this.setData({
+      focus:false
     })
   },
   //我想想捐助

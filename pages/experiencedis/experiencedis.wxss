@@ -1,6 +1,6 @@
 /* pages/experiencedis/experiencedis.wxss */
 swiper, swiper image {
-  height: 520rpx;
+  height: 750rpx;
 }
 .promotion-img {
   width: 100%;
@@ -27,7 +27,7 @@ swiper, swiper image {
 .promotion-img image {
   display: block;
   width: 100%;
-  height: 520rpx;
+  height: 750rpx;
 }
 .xindeDetais_text{
   padding:45rpx 20rpx 95rpx;

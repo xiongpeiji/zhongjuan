@@ -101,6 +101,7 @@ Page({
           return http.Upload({ count: 9- this.data.images.length, url: url, path: path, num: num });
         }));
       }).then((res) => {
+        wx.hideLoading()
         if (res.length > 0) {
             let images = this.data.images;
             images = images.concat(res);

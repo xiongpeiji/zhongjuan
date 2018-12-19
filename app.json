@@ -21,7 +21,7 @@
     "pages/myorganization/myorganization"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "众捐",
     "navigationBarTextStyle": "black",

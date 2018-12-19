@@ -1,10 +1,10 @@
 <!--求捐详情-->
 <view class="container">
   <view class='promotion-img'>
-    <swiper autoplay="true" bindchange="swiper">
+    <swiper bindchange="swiper">
       <block wx:for="{{info.image}}" wx:key="{{item.index}}">
         <swiper-item>
-          <image src="{{item}}" class="slide-image" />
+          <image mode='aspectFill' src="{{item}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
@@ -81,10 +81,10 @@
     <view class="comment_wrap">
       <view class="comment_title"> 评论{{comment_num}}</view>
       <!--回复输入框-->
-      <view class="send_input">
-          <image src="{{avatar}}"></image>
+      <view class="send_input" hidden='{{!focus}}'>
+          <!-- <image src="{{avatar}}"></image> -->
           <view class="section_input">
-            <input placeholder="说点什么吧，让大家认识你" bindconfirm="comment"  confirm-type="send" value='{{content}}' focus="{{focus}}"/>
+            <input bindblur='setFocus' placeholder="说点什么吧，让大家认识你" bindconfirm="comment"  confirm-type="send" value='{{content}}' focus="{{focus}}"/>
           </view>
       </view>
            <view class="comment_container">

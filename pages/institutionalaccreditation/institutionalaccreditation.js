@@ -159,7 +159,6 @@ Page({
       prove_info:this.data.prove_info,//机构证明资料【上传图像返回地址组成json格式】
 
     };
-    console.log(this.data.curType)
     http.Post({url:url,params:params}).then((res)=>{
         if(res.code == 'success'){
           app.alert({title:res.msg});
@@ -183,6 +182,7 @@ Page({
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
+      wx.hideLoading()
       this.setData({
         institution: res
       })
@@ -200,6 +200,7 @@ Page({
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
+      wx.hideLoading()
       this.setData({
         cardOne: res
       })
@@ -217,6 +218,7 @@ Page({
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
+      wx.hideLoading()
       this.setData({
         cardTwo: res
       })
@@ -234,6 +236,7 @@ Page({
         return http.Upload({count:1,url:url,path:path,num:num});
       }));
     }).then((res)=>{
+      wx.hideLoading()
       let images = this.data.prove_info;
       images = images.concat(res);
       this.setData({
