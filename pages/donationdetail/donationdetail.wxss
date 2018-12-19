@@ -335,11 +335,14 @@ swiper, swiper image {
 .left_user_icon{
   float: left;
   height: 52rpx;
+  padding-left: 15rpx;
+  max-width:180rpx;
+  overflow:hidden;
 }
 .left_user_icon image{
   width: 52rpx;
   height: 52rpx;
-  margin-right: -15rpx;
+  margin-left: -15rpx;
   float: left;
   border-radius: 50%;
 }
