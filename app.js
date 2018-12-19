@@ -98,7 +98,7 @@ App({
       title: obj.title ? obj.title : 'ok',
       icon: 'none',
       duration: obj.time ? obj.time : 1000,
-      mask: true
+      mask: false
     })
   },
   setTabBarMsg(){
