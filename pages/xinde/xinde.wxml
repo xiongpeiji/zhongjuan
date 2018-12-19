@@ -36,5 +36,7 @@
       <image src="/images/no_dona.jpg"></image>
       <view class="no_msg_text">暂无心得数据！</view>
     </view>
+    <!--暂无更多消息-->
+    <view class='no-more-message'>{{no_msg}}</view>
   </view>
 </view>

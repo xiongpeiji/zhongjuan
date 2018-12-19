@@ -19,4 +19,6 @@
             </view>
         </view>
     </view>
+    <!--暂无更多消息-->
+  <view class='no-more-message'>{{no_msg}}</view>
 </view>

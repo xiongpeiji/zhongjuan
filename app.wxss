@@ -35,3 +35,9 @@ image {
   display: inline-block;
   margin-top: 28rpx;
 }
+.no-more-message{
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color:#666;
+}
