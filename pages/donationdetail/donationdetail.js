@@ -169,7 +169,7 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      app.alert({ title: '暂无更多评论', time: 2000 });
+      app.alert({ title: '暂无更多评论', time: 1000 });
     } else {
       page = page + 1;
       this.setData({
