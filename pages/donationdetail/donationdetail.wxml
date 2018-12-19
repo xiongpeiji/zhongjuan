@@ -80,7 +80,7 @@
       <view class="comment_title"> 评论{{comment_num}}</view>
       <!--回复输入框-->
       <view class="send_input">
-          <image src="/images/user_icon_02.png"></image>
+          <image src="{{avatar}}"></image>
           <view class="section_input">
             <input placeholder="说点什么吧，让大家认识你" bindconfirm="comment"  confirm-type="send" value='{{content}}' focus="{{focus}}"/>
           </view>

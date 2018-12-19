@@ -19,13 +19,17 @@ Page({
     up_num: 0,
     share_num: 0,
     content: '',
+    avatar:'',
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
-    this.data.id = options.id;//获取求捐详情id
     wx.setNavigationBarTitle({
       title: '求捐详情'
     });
+    this.setData({
+        id:options.id,
+        avatar:app_data.user_info.avatar
+    })
     app.checkLogin();
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
@@ -55,7 +59,7 @@ Page({
       app.alert({ title: '您已经点过赞了！' });
       return;
     }
-    let url = app_data.base + '/Comment/experienceCommentUp'
+    let url = app_data.base + '/Comment/donationCommentUp'
     let params = { token: app_data.token, id: comment_id };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
