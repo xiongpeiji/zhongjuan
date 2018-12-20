@@ -12,6 +12,8 @@ Page({
     instStatus:{ // 1 认证中 2 已认证 3 认证失败 
       1:"认证中",2:"已认证",3:"认证失败"
     },
+    current: 1,
+    swiper_all: 0,
   },
 
   /**
@@ -32,8 +34,10 @@ Page({
     }
     http.Get({url: url, params: params}).then((res)=>{
         if(res.code == 'success'){
+          console.log(res)
           this.setData({
-            myOrgInfos:res.data
+            myOrgInfos:res.data,
+            swiper_all: res.data.prove_info.length,
           });
         }
     });
@@ -44,7 +48,12 @@ Page({
       url: '../institutionalaccreditation/institutionalaccreditation'
     })
   },
-
+  swiper(e) {
+    var current = e.detail.current;
+    this.setData({
+      current: current + 1
+    })
+  },
   /**
   * 用户点击右上角分享
   */

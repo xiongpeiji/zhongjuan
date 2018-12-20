@@ -61,11 +61,16 @@ swiper, swiper image {
     color:#343434;
     margin-bottom: 50rpx;
   }
-  .send_details_btn{
+  /* .send_details_btn{
     height: 92rpx;
     line-height: 92rpx;
     border-top: 5px solid #fafafa;
     border-bottom: 5px solid #fafafa;
+  } */
+  .jigouDetail_btn .right_icon{
+    margin-top: 3rpx;
+    margin-left: 15rpx;
+    float: right;
   }
   .jigouDetail_btn {
     height: 34rpx;
@@ -464,4 +469,110 @@ swiper, swiper image {
   width: 22rpx;
   height: 14rpx;
   margin-right: 10rpx;
+}
+
+/**机构详情**/
+.maxing{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index:1000;
+}
+.content_detail{
+  width: 100%;
+  height: 80%;
+  padding-top:120rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 1001;
+  border-top-left-radius: 35rpx;
+  border-top-right-radius: 35rpx;
+}
+.close_btn{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.top_infos{
+  padding-left: 30rpx;
+}
+.top_infos .title{
+  line-height: 56rpx;
+  height: 56rpx;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+.top_infos .title .title_h1{
+  float: left;
+  font-size: 40rpx;
+  max-width:480rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.top_infos .title .inst_type{
+  padding:0 15rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  color:#fff;
+  border-radius: 17rpx;
+  background: #E4572E;
+  text-align: center;
+  float: left;
+  margin-top: 11rpx;
+  margin-left: 25rpx;
+}
+.top_infos .title .inst_type image{
+  width:20rpx;
+  height:16rpx;
+  float:left;
+  vertical-align:middle;
+  margin-top:10rpx;
+  margin-right:10rpx;
+}
+.joins_nums{
+  font-size: 32rpx;
+  line-height: 38rpx;
+  color: #666666;
+  margin-bottom: 48rpx;
+}
+.prove_infos{
+  width: 730rpx;
+  height:264rpx;
+  position: relative;
+  margin-bottom: 50rpx;
+}
+.prove_infos .promotion-img swiper{
+  height: 264rpx;
+}
+.prove_infos .promotion-img swiper image{
+  width: 410rpx;
+  height: 264rpx;
+}
+.prove_infos .promotion-img  .current {
+  right: 330rpx;
+}
+.user_name_phone{
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+}
+.user_name_phone{
+  width: 680rpx;
+  margin: auto;
+  padding-bottom: 50rpx;
+  border-bottom: 1px solid #D9D9D9;
 }

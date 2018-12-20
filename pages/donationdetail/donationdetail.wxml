@@ -56,8 +56,9 @@
     <view class="jigou_titles send_details_btn">
       发布机构
     </view>
-    <view class="jigouDetail_btn">
+    <view class="jigouDetail_btn" bindtap="showMaxing">
         <span class="jigou_name">{{info.name}}</span>
+        <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
         <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
           <span>{{info.type_name}}</span>
@@ -74,9 +75,6 @@
         </view>
       </view>
     </view>
-
-
-
     <!--评论区-->
     <view class="comment_wrap">
       <view class="comment_title"> 评论{{comment_num}}</view>
@@ -112,6 +110,8 @@
             </view>
           </view>
         </view>
+        <!--暂无更多消息-->
+        <view class='no-more-message'>{{no_msg}}</view>
       </view>
     </view>
   </view>
@@ -132,6 +132,60 @@
     <view class="want_give">
         <image src="/images/Rectangle9@3x.png"></image>
         <span bindtap="wantTodo" data-id="{{id}}">我要捐助</span>
+    </view>
+  </view>
+  <!--机构信息弹窗-->
+  <view class="maxing"></view>
+  <view class="content_detail">
+    <image class="close_btn" src="/images/quxiaocopy2@2x.png"></image>
+    <view class="top_infos">
+
+      <view class='title'>
+        <text class='title_h1'>西安爱心捐助站最多13个字</text>
+        <view class='inst_type'>
+          <image class="type_icons" src="/images/shenqingqiyerenzheng.png"></image>
+          <text>希望小学</text>
+        </view>
+      </view>
+      <view class='joins_nums'>
+      10-15人
+      </view>
+
+      <view class="prove_infos">
+        <view class='promotion-img'>
+          <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
+            <block wx:for="{{info.image}}" wx:key="{{index}}">
+              <swiper-item>
+                <image mode='scaleToFill' src="{{item}}" class="slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+          <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+        </view>
+      </view>
+
+      <view class="user_name_phone">
+        <view></view>
+      </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </view>
   </view>
 </view>

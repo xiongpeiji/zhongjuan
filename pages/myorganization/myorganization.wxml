@@ -12,13 +12,25 @@
                     </view>
                 </view>
                 <view class="help_sm_tit">
-                    <image src="/images/renzheng_local@2x.png"></image>
-                    <label class="address_text">{{myOrgInfos.address}}</label>
+                    <label class="address_text">10-15人</label>
                 </view>
             </view>
         </view>
     </view>
     <view class="my_organ_cont">
+        <!--机构轮播图-->
+      <view class="prove_infos">
+      <view class='promotion-img'>
+        <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
+          <block wx:for="{{myOrgInfos.prove_info}}" wx:key="{{index}}">
+            <swiper-item>
+              <image mode='scaleToFill' src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+      </view>
+      </view>
         <view class="my_org_infos">
             <view class="user_name_text">
                 <label class="names">联络人</label>
@@ -35,52 +47,24 @@
                 </view>
                 <view class="name_s">
                     <label>{{myOrgInfos.liaison_tel}}<icon class="phone_satus" type="success" color="#E65E34" size="{{12}}"/></label>
-                    <!-- <image class="call_icon" src="/images/emidianhua1@2.png"></image> -->
                 </view>
             </view>
         </view>
         <view class="jigou_photos">
             <view class="infoFail">
-                机构证明资料<label>共{{myOrgInfos.prove_info.length}}张</label>
+                机构简介
             </view>
             <view class="photos_box">
-                <image class="imgs_01" src="{{myOrgInfos.prove_info[0]}}"></image>
-                <image hidden="{{!myOrgInfos.prove_info[1]}}" class="imgs_02" src="{{myOrgInfos.prove_info[1]}}"></image>
-                <image hidden="{{!myOrgInfos.prove_info[2]}}" class="imgs_02" src="{{myOrgInfos.prove_info[2]}}"></image>
-                <image hidden="{{!myOrgInfos.prove_info[3]}}" class="imgs_02" src="{{myOrgInfos.prove_info[3]}}"></image>
-                <image hidden="{{!myOrgInfos.prove_info[4]}}" class="imgs_02" src="{{myOrgInfos.prove_info[4]}}"></image>
+                <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
             </view>
         </view>
-        <!-- <view class="my_send_box">
-            <view class="my_help_tit">
-                我已经发布了 <label >3</label> 条求捐信息
-                <view class="add_msg">
-                    <image src="/images/add_icon.png"></image>
-                    发布
-                </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                机构地址
             </view>
-            <view class="my_send_content">
-                <view class="my_sned_ul">
-                    <view class="my_help_lis my_help_first">
-                        <em></em>
-                        <label class="my_help_times">2018.11.20</label>
-                        <view class="my_help_dis">将爱心传递给每一位老人</view>
-                    </view>
-
-                    <view class="my_help_lis">
-                        <em></em>
-                        <label class="my_help_times">2018.11.20</label>
-                        <view class="my_help_dis">将爱心传递给每一位老人</view>
-                    </view>
-
-                    <view class="my_help_lis">
-                        <em></em>
-                        <label class="my_help_times">2018.11.20</label>
-                        <view class="my_help_dis">将爱心传递给每一位老人</view>
-                    </view>
-                </view>
+            <view class="photos_box">
+                <text>{{myOrgInfos.address}}</text>
             </view>
-            <image class="share_btn" src="/images/share_btn.png"></image>
-        </view> -->
+        </view>
     </view>
 </view>

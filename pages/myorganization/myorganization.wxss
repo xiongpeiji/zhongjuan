@@ -69,9 +69,33 @@
     border-radius: 8rpx;
     height: 270rpx;
     box-sizing: border-box;
-    margin-top: -140rpx;
     margin-bottom: 25rpx;
     padding:20rpx 30rpx 35rpx;
+}
+.prove_infos{
+  margin-top: -140rpx;
+  width: 730rpx;
+  height:264rpx;
+  position: relative;
+}
+swiper-item image{
+  width: 410rpx;
+  height: 264rpx;
+}
+.promotion-img .current {
+  position: absolute;
+  left: 270rpx;
+  bottom: 20rpx;
+  font-size: 24rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0rpx 30rpx;
+  height: 42rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
+}
+.promotion-img .current span{
+  font-size: 30rpx;
 }
 .user_name_text{
     height: 42rpx;
@@ -155,8 +179,12 @@
     color:#999999;
     margin-left: 30rpx;
 }
-.photos_box{
-    height: 325rpx;
+.photos_box text{
+  display: block;
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
 }
 .imgs_01{
     float: left;

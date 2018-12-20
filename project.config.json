@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -95,7 +95,14 @@
 				{
 					"id": -1,
 					"name": "求捐详情",
-					"pathName": "pages/donationdetail/donationdetail"
+					"pathName": "pages/donationdetail/donationdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的机构认证",
+					"pathName": "pages/myorganization/myorganization",
+					"query": ""
 				}
 			]
 		}

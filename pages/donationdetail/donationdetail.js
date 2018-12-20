@@ -20,6 +20,8 @@ Page({
     share_num: 0,
     content: '',
     avatar:'',
+    maxing:false,
+    no_msg:''
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -175,7 +177,10 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      app.alert({ title: '暂无更多评论', time: 1000 });
+      // app.alert({ title: '暂无更多评论', time: 1000 });
+      this.setData({
+        no_msg: '暂无更多评论~'
+      })
     } else {
       page = page + 1;
       this.setData({
