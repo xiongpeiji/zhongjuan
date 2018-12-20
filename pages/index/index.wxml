@@ -6,7 +6,7 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
-<view class="container {{first_click?'fixedthis':''}}">
+<view class="container {{first_click?'fixedthis':''}}" style="{{is_follow?'padding-bottom:170rpx;':''}}">
 
   <!--banner-->
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" interval="{{interval}}" duration="{{duration}}">

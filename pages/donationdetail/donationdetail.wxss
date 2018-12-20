@@ -492,7 +492,7 @@ swiper, swiper image {
   right: 0;
   bottom: 0;
   background: #fff;
-  z-index: 1001;
+  z-index: 9999;
   border-top-left-radius: 35rpx;
   border-top-right-radius: 35rpx;
 }
@@ -505,6 +505,8 @@ swiper, swiper image {
 }
 .top_infos{
   padding-left: 30rpx;
+  widows: 100%;
+  box-sizing: border-box;
 }
 .top_infos .title{
   line-height: 56rpx;
@@ -550,7 +552,7 @@ swiper, swiper image {
   margin-bottom: 48rpx;
 }
 .prove_infos{
-  width: 730rpx;
+  width: 720rpx;
   height:264rpx;
   position: relative;
   margin-bottom: 50rpx;
@@ -575,4 +577,56 @@ swiper, swiper image {
   margin: auto;
   padding-bottom: 50rpx;
   border-bottom: 1px solid #D9D9D9;
+  overflow: hidden;
+}
+.fz_name{
+  float: left;
+  font-size: 32rpx;
+  color: #666666;
+  line-height: 44rpx;
+}
+.fz_name label{
+  display: inline-block;
+  margin-left: 20rpx;
+  color:#333;
+}
+.fz_name image{
+  width: 21rpx;
+  height: 21rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+.user_mobiles{
+  float: right;
+}
+.jigou_photos{
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding:30rpx 20rpx 20rpx;
+    margin-bottom: 25rpx;
+}
+.infoFail{
+    font-size: 30rpx;
+    color: #030303;
+    line-height:30rpx;
+    margin-bottom: 40rpx;
+}
+.infoFail label{
+    font-size: 28rpx;
+    display: inline-block;
+    color:#999999;
+    margin-left: 30rpx;
+}
+.photos_box text{
+  display: block;
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.auto_y{
+  height: 1080rpx;
+  overflow-y: auto;
+  width: 100%;
 }

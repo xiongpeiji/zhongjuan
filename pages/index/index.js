@@ -20,7 +20,8 @@ Page({
     city_id: '',
     material_id: '',
     isLast:false,
-    no_msg:''
+    no_msg:'',
+    is_follow:true
   },
   //求捐详情页面
   qiujuanDetail(e) {
