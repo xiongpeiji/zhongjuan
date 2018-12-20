@@ -18,7 +18,8 @@
     "pages/institutionalaccreditation/institutionalaccreditation",
     "pages/donationmanagement/donationmanagement",
     "pages/donormanagement/donormanagement",
-    "pages/myorganization/myorganization"
+    "pages/myorganization/myorganization",
+    "pages/dialog/dialog"
   ],
   "window": {
     "backgroundTextStyle": "dark",
