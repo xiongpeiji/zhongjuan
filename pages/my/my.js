@@ -2,6 +2,7 @@
 const app = getApp();
 const app_data = app.globalData;
 const http = require("../../utils/http.js")
+const common = require("../../utils/common.js")
 Page({
 
   /**
@@ -32,7 +33,7 @@ Page({
     app.setTabBarMsg()
   },
   checkUser() {
-    let token = wx.getStorageSync('token');
+    let token = app_data.token;
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};
@@ -106,47 +107,15 @@ Page({
   userLogin(e) {
     let _this = this;
     let wx_user_info = e.detail.userInfo;
-    let open_id = wx.getStorageSync("open_id");
-    if(!open_id){
-      wx.login({
-        success: (res) => {
-          let url = _this.globalData.base + 'Public/getOpenId'
-          let data = { code: res.code }
-          http.Post({ url: url, params: data }).then((res) => {
-            if (res.code == 'success') {
-              wx.setStorageSync('open_id', res.data.open_id);
-              let login_data = {
-                open_id: res.data.open_id,
-                username: wx_user_info.nickName,
-                avatar: wx_user_info.avatarUrl,
-              }
-              _this.login(login_data);
-            }
-          })
-        }
-      })
-    }else{
-        let login_data = {
-          open_id: open_id,
-          username: wx_user_info.nickName,
-          avatar: wx_user_info.avatarUrl,
-        }
-      this.login(login_data);
+    let obj = {
+      username: wx_user_info.nickName,
+      avatar: wx_user_info.avatarUrl
     }
-  },
-
-  login(login_data){
-    let open_id = wx.getStorageSync("open_id");
-    let url = app_data.base + 'Public/login';
-    http.Post({ url: url, params: login_data, loading: true, message: '正在登录' }).then((res) => {
-      if (res.code == "success") {
-        wx.setStorageSync('token', res.data.token);
+    app.wxLogin(obj).then((res)=>{
+      if(res.code == 'success'){
         this.checkUser();
-        setTimeout(() => {
-          app.getUserInfo();
-        }, 1000);
       }
-    })
+    });
   },
 
 

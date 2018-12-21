@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <dialog id='dialog' 
       title='微信授权' 
-      content='小程序需要您的授权才能提供更好的服务哦' 
-      confirmText='知道了'
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>

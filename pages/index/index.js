@@ -213,7 +213,8 @@ Page({
     }
     this.setData({
       page:1
-    })
+    });
+    this.setInit();
     this.getData({ refresh: true, is_first: true });
     app.setTabBarMsg()
   },
