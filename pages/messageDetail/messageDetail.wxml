@@ -1,5 +1,26 @@
 <!--消息详情-->
 <view class="container">
+    <!--物流信息-->
+    <view class='message_cont'>
+      <view class='detail_content'>
+        <view class='express_detail'>
+          <label class='names'>寄件人：</label><label>王二狗</label>
+        </view>
+        <view class='express_detail'>
+          <label class='names'>电话：</label><label>15619087175</label>
+        </view>
+        <view class='express_detail'>
+          <label class='names'>收件单位：</label><label>深圳市博雅游戏网络爱心机构</label>
+        </view>
+        <view class='express_detail'>
+          <label class='names'>物资详情：</label><label>文具</label>4件
+        </view>
+        
+      </view>
+    </view>
+
+
+
     <view class="message_cont" hidden='{{type == 1}}'>
         <view class="detail_title">{{info.express_info.is_get == 1 ? '已签收' : '运输中'}}</view>
         <view class="detail_content">

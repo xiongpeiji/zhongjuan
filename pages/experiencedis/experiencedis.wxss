@@ -113,7 +113,19 @@ swiper, swiper image {
 }
 .comment_text{
   padding-bottom: 15rpx;
-  border-bottom:1px solid #DFDFDF;
+  /* border-bottom:1px solid #DFDFDF; */
+  color:#999;
+}
+.comment_text label{
+  color: #2E2E2E;
+}
+.comment_content{
+  padding:10rpx 20rpx 20rpx;
+  background: #F7F7F7;
+  border-radius: 5rpx;
+  width: 530rpx;
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
 }
 .comment_name{
   height: 40rpx;
@@ -165,8 +177,12 @@ swiper, swiper image {
 .comment_dis{
   font-size: 26rpx;
   line-height: 36rpx;
-  color:#333333;
+  color:#999999;
   margin-bottom: 15rpx;
+}
+.comment_dis label{
+  color:#666;
+  margin-right: 10rpx;
 }
 .comment_time{
   font-size: 24rpx;

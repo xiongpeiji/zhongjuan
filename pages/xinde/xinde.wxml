@@ -18,7 +18,7 @@
       </view>
     </view>
       <view class='article_img images_{{item.image.length}}'>
-        <image wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
+        <image mode='aspectFill' wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
       </view>
       <view class="article_share">
         <view class="fabulous">

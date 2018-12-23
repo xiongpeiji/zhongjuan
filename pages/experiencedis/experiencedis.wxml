@@ -23,7 +23,7 @@
     <view class="artacle_wrap">
       <p class="text_details">{{info.content}}</p>
       <view class='article_img images_{{info.image.length}}'>
-        <image wx:for="{{info.image}}" wx:key="{{index}}" src='{{item}}'></image>
+        <image mode='aspectFill' wx:for="{{info.image}}" wx:key="{{index}}" src='{{item}}'></image>
       </view>
        <view class="article_share">
         <view class="fabulous">
@@ -61,7 +61,10 @@
                 </view> -->
               </view>
             </view>
-            <view class="comment_dis">{{item.content}}</view>
+            <view class='comment_content'>
+              <view class="comment_dis"><label>测试姓名</label>{{item.content}}</view>
+            </view>
+            
             <view class="comment_time">
               <span class="send_time">{{item.add_time}}</span>
               <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>

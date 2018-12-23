@@ -92,3 +92,17 @@
     font-size: 20rpx;
     color:#222222;
 }
+.express_detail{
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+  color:#666666;
+}
+.express_detail label{
+  color:#151515;
+}
+.express_detail .names{
+  display: inline-block;
+  width: 150rpx;
+  color:#666666;
+}

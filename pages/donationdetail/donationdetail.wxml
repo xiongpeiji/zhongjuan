@@ -160,7 +160,7 @@
           <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
             <block wx:for="{{info.image}}" wx:key="{{index}}">
               <swiper-item>
-                <image mode='scaleToFill' src="{{item}}" class="slide-image" />
+                <image  mode='aspectFill' src="{{item}}" class="slide-image" />
               </swiper-item>
             </block>
           </swiper>
