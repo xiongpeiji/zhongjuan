@@ -92,6 +92,7 @@
     bottom: 0;
     color:#fff;
     font-size: 32rpx;
+    z-index: 999;
 }
 .fixed_bottom_btn{
     background: #D7263D;
@@ -116,4 +117,30 @@
 }
 .card-infos{
     display: inline-block;
+}
+.textArea_box{
+    background: #fff;
+    box-sizing: border-box;
+    padding:25rpx;
+    color:#333333;
+    margin-bottom: 12rpx;
+}
+.textArea_box textarea{
+    width: 100%;
+    font-size: 28rpx;
+    color:#999999;
+    line-height: 40rpx;
+    height: 400rpx;
+    min-height: 400rpx;
+    max-height: 400rpx;
+    overflow-y: auto;
+}
+.jianjie_title{
+  height:40rpx;
+  padding:30rpx 25rpx 30rpx 40rpx;
+  line-height:40rpx;
+  background:#fff;
+  margin-top:1px;
+  font-size:28rpx;
+color:#333333;
 }

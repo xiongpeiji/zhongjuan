@@ -26,7 +26,9 @@ Page({
     name:'',//机构名称
     address:"",//详细地址
     userName:"",//用户名
-    mobile:""//手机
+    mobile:"",//手机
+    jigoujianjie:"",//机构简介
+    jigouNumber:''//机构人数
   },
 
   /**

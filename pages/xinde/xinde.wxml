@@ -2,8 +2,12 @@
 <view class='container'>
   <view class='xinde'>
     <!--list-->
+    <view class='creat-btn-xinde'>
+      <button plain="true" data-id="0" bindtap='creatXinde'>+ 创建心得</button>
+    </view>
     <view class='xinde_list' wx:for="{{list}}"  wx:key="{{index}}" data-id="{{item.id}}" bindtap="showDetail">
-      <view class='xinde_title'>
+    <view class='deeail_text_boxs'>
+    <view class='xinde_title'>
         <image src='{{item.avatar}}'></image>
         <span class='user_callname'>{{item.username}}</span>
         <span class='xinde_time'>{{item.add_time}}</span>
@@ -12,7 +16,8 @@
       <view class="article_dis">
         <text>{{item.content}}</text><span>查看全部</span>
       </view>
-      <view class='article_img'>
+    </view>
+      <view class='article_img images_{{item.image.length}}'>
         <image wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
       </view>
       <view class="article_share">

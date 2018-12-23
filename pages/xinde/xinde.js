@@ -37,7 +37,13 @@ Page({
       url: '../experiencedis/experiencedis?id=' + id
     });
   },
-
+  //创建心得
+  creatXinde(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../createexperience/createexperience?id='+id
+    })
+  },
   getData(obj) {
     let url = app_data.base + 'Index/experience';
     let params = {

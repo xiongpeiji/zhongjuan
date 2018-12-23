@@ -485,7 +485,7 @@ swiper, swiper image {
 }
 .content_detail{
   width: 100%;
-  height: 80%;
+  height: 1060rpx;
   padding-top:120rpx;
   position: fixed;
   left: 0;

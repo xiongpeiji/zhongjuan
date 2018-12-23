@@ -30,7 +30,7 @@ swiper, swiper image {
   height: 750rpx;
 }
 .xindeDetais_text{
-  padding:45rpx 20rpx 95rpx;
+  padding:45rpx 0rpx 95rpx;
   background: #fff;
 }
 .xindeDetial_tit{
@@ -38,6 +38,7 @@ swiper, swiper image {
   height: 36rpx;
   line-height: 36rpx;
   margin-bottom: 25rpx;
+  padding:0 20rpx;
 }
 .xindeDetial_tit h2{
   font-size: 36rpx;
@@ -61,6 +62,7 @@ swiper, swiper image {
   line-height: 54rpx;
   overflow: hidden;
   margin-bottom: 20rpx;
+  padding:0 20rpx;
 }
 .artact_user image{
   width: 54rpx;
@@ -84,14 +86,14 @@ swiper, swiper image {
   color: #333333;
   text-indent: 2em;
   line-height: 40rpx;
-  margin-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  padding:0 20rpx;
 }
 .comment_title{
   padding:10rpx 0 20rpx;
   font-size: 28rpx;
   color:#666666;
   line-height: 28rpx;
-  background: #fafafa;
 }
 .comment_container{
   padding-top:24rpx;
@@ -150,6 +152,16 @@ swiper, swiper image {
   color:#929292;
   line-height: 22rpx;
 }
+.article_share {
+  height:38rpx;
+  overflow:hidden;
+  padding-left:12rpx;
+}
+
+.article_share{
+  padding:20rpx;
+  overflow: hidden;
+}
 .comment_dis{
   font-size: 26rpx;
   line-height: 36rpx;
@@ -176,36 +188,48 @@ swiper, swiper image {
   margin-left: 20rpx;
 }
 .input_box{
-  padding:20rpx;
+  padding:9rpx 20rpx 9rpx 9rpx;
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
-  height: 95rpx;
+  height: 98rpx;
   background: #fff;
   box-sizing: border-box;
 }
 .input_box .section_input{
   border-radius: 20rpx;
   float: left;
-  width: 430rpx;
-  height: 54rpx;
+  width: 546rpx;
+  height: 80rpx;
 }
 .input_box .section_input input{
   width:100%;
-  height: 54rpx;
+  height: 80rpx;
   padding:10rpx 40rpx;
   box-sizing: border-box;
   background: #F3F3F3;
-  border-radius: 6rpx;
+  border-radius: 40rpx;
   font-size: 24rpx;
-  line-height: 34rpx;
+  line-height: 40rpx;
+}
+.comment_action {
+  height: 80rpx;
 }
 .comment_action button{
-  background: none!important;
+  /* background: none!important; */
 }
 .comment_action button::after{
   border: none;
+}
+.comment_action .send_msg_btn{
+  width: 145rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #E4572E;
+  color:#fff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
 }
 .comment_action button span{
   position: absolute;
@@ -218,4 +242,130 @@ swiper, swiper image {
   line-height: 22rpx;
   position:relative;
   left:-26rpx;
+}
+.article_img{
+  font-size: 0;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.comment_wrap{
+  padding:0 20rpx;
+}
+.article_img image{
+  display: block;
+  float: left;
+}
+.fabulous{
+  position: relative;
+  padding-left: 50rpx;
+  font-size: 0;
+  float: left;
+  height: 100%;
+  margin-right: 60rpx;
+}
+.fabulous image{
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.fabulous span{
+  font-size: 22rpx;
+  line-height: 22rpx;
+  color:#929292;
+  float: left;
+  margin-top: 16rpx;
+}
+.share_btn{
+  float: right;
+  margin-right: 0;
+}
+.no_messages {
+  padding:100rpx;
+}
+.no_messages image{
+  display: block;
+  width: 192rpx;
+  height: 104rpx;
+  margin:auto;
+  margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+  text-align: center;
+  font-size: 26rpx;
+  color: #747474;
+  margin-bottom: 50rpx;
+}
+.no_messages .go_lists{
+  width: 258rpx;
+  height: 68rpx;
+  border:1px solid #D7273D;
+  border-radius: 35rpx;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #D82A3C;
+  margin: auto;
+}
+.creat-btn-xinde{
+  background: #fff;
+  padding:20rpx;
+}
+.creat-btn-xinde button{
+  width: 446rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: auto;
+  border: 2rpx solid #E4572E;
+  border-radius: 38px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #E65E37
+}
+.images_1 image{
+  width: 750rpx;
+  height: 750rpx;
+}
+.images_2,
+.images_4{
+  margin-right: -.4%;
+}
+.images_2 image,
+.images_4 image{
+  width: 49.6%;
+  height: 368rpx;
+  margin-bottom: 4rpx;
+}
+.images_2 image,
+.images_4 image{
+  margin-right: .4%;
+}
+.images_3,
+.images_5,
+.images_6,
+.images_7,
+.images_8,
+.images_9{
+  margin-right: -.33333333%;
+}
+.images_3 image,
+.images_5 image,
+.images_6 image,
+.images_7 image,
+.images_8 image,
+.images_9 image
+{
+  width:33%;
+  height:234rpx;
+  margin-bottom: 3rpx;
+}
+.images_3 image,
+.images_5 image,
+.images_6 image,
+.images_7 image,
+.images_8 image,
+.images_9 image
+{
+  margin-right: .33333333%;
 }
