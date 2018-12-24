@@ -1,4 +1,11 @@
 <!--求捐详情-->
+<dialog id='dialog' 
+      title='微信授权' 
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <view class="container">
   <view class='promotion-img'>
     <swiper bindchange="swiper">
@@ -135,15 +142,14 @@
     </view>
   </view>
   <!--机构信息弹窗-->
-  <view class="maxing"></view>
-  <view class="content_detail">
+  <view class="maxing" hidden='{{institution_model}}'></view>
+  <view class="content_detail"  hidden='{{institution_model}}'>
     <image class="close_btn" src="/images/quxiaocopy2@2x.png"></image>
 
     <view class='auto_y'>
     
     
     <view class="top_infos">
-
       <view class='title'>
         <text class='title_h1'>西安爱心捐助站最多13个字</text>
         <view class='inst_type'>

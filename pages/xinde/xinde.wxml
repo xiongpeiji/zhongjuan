@@ -1,4 +1,11 @@
 <!--心得-->
+<dialog id='dialog' 
+      title='微信授权' 
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <view class='container'>
   <view class='xinde'>
     <!--list-->
@@ -21,7 +28,7 @@
         <image mode='aspectFill' wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
       </view>
       <view class="article_share">
-        <view class="fabulous">
+        <view class="fabulous" bindtap='experienceUp' data-id="{{item.id}}">
           <image src="/images/dianzan.png"></image>
           <span>{{item.up_num}}</span>
         </view>

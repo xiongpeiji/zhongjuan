@@ -21,8 +21,9 @@ App({
     this.globalData.token = token;
     let open_id = wx.getStorageSync('open_id');
     this.globalData.open_id = open_id;
-    if (open_id){
-      this.getUserInfo();
+    let user_info = wx.getStorageSync('user_info');
+    if (user_info){
+      this.globalData.user_info = user_info;
     }
     this.setShare();
   },
@@ -93,6 +94,7 @@ App({
         if (res.code == 'success' && res.data) {
           wx.setStorageSync('user_info', res.data);
           wx.setStorageSync('token', res.data.token);
+          this.globalData.token = res.data.token;
           this.globalData.user_info = res.data;
           this.globalData.mobile = res.data.mobile;
           this.globalData.mobile_status = res.data.mobile_status;
@@ -176,8 +178,7 @@ App({
       })
     }
   },
-  redirectLogin() {
-    console.log(111111);
+  redirectIndex() {
     wx.switchTab({
       url: '/pages/index/index',
     })
@@ -192,13 +193,10 @@ App({
         imageUrl: img
     }
   },
-  //检测没有登录则跳转至我的页面
-  checkLogin(){
-    let open_id = wx.getStorageSync('token');
-    if(!open_id){
-      wx.switchTab({
-        url: '/pages/my/my',
-      })
-    }
-  }
+
+  getToken(){
+    return new Promise((resolve) => {
+      resolve(this.globalData.token);
+    });
+  },
 })

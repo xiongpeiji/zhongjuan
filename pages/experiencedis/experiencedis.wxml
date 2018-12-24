@@ -1,16 +1,12 @@
 <!--心得详情-->
+<dialog id='dialog' 
+      title='微信授权' 
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <view class="container">
-  <!-- <view class='promotion-img'>
-    <swiper autoplay="true" bindchange="swiper">
-      <block wx:for="{{info.image}}" wx:key="{{index}}">
-        <swiper-item>
-          <image mode='aspectFill' src="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
-    </swiper>
-    <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
-  </view> -->
-
   <view class="xindeDetais_text">
     <view class="xindeDetial_tit">
       <h2>{{info.title}}</h2>

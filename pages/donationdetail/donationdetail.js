@@ -20,8 +20,9 @@ Page({
     share_num: 0,
     content: '',
     avatar:'',
-    maxing:false,
-    no_msg:''
+    no_msg:'',
+    institution_model:false,
+    token:null
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -32,7 +33,6 @@ Page({
         id:options.id,
         avatar:app_data.user_info.avatar
     })
-    app.checkLogin();
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
   },
@@ -188,6 +188,38 @@ Page({
       })
       this.getData({ refresh: true, is_first: false });
     }
+  },
+
+  onReady: function () {
+    //获得dialog组件
+    this.setToken();
+    this.dialog = this.selectComponent("#dialog");
+  },
+
+  setToken() {
+    app.getToken().then((res) => {
+      this.setData({
+        token: res
+      });
+    })
+  },
+
+  showDialog: function () {
+    this.dialog.showDialog();
+  },
+
+  confirmEvent: function () {
+    this.dialog.hideDialog();
+  },
+
+  bindGetUserInfo: function (e) {
+    // 用户点击授权后，这里可以做一些登陆操作
+    app.wxLogin(e.detail).then((res) => {
+      if (res.code == 'success') {
+        this.setToken();
+        app.alert({ title: '授权登录成功' })
+      }
+    });
   },
   /**
    * 用户点击右上角分享

@@ -34,6 +34,7 @@ Page({
   },
   checkUser() {
     let token = app_data.token;
+    console.log(token);
     if(token){
         let url = app_data.base+'User/index';
         let params = {token:token};

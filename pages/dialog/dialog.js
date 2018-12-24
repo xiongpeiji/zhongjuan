@@ -29,7 +29,7 @@ Component({
    */
   data: {
     // 弹窗显示控制
-    isShow: false
+    isShow: true
   },
 
   /**
@@ -56,8 +56,9 @@ Component({
       this.triggerEvent("confirmEvent");
     },
 
-    bindGetUserInfo() {
-      this.triggerEvent("bindGetUserInfo");
+    bindGetUserInfo(e) {
+      let params = { username: e.detail.userInfo.nickName, avatar: e.detail.userInfo.avatarUrl};
+      this.triggerEvent("bindGetUserInfo",params);
     }
 
   }

@@ -11,7 +11,8 @@ Page({
     list:{},
     page:1,
     isLast:false,
-    no_msg:''
+    no_msg:'',
+    token:null,
   },
 
   /**
@@ -25,14 +26,6 @@ Page({
   },
   showDetail(e){
     let id = e.currentTarget.dataset.id;
-    let token = wx.getStorageSync('token')
-    if (!token) {
-      app.alert({ title: '请登录后再查看！', time: 2000 });
-      setTimeout(() => {
-        app.redirectLogin();
-      }, 2000);
-      return;
-    }
     wx.navigateTo({
       url: '../experiencedis/experiencedis?id=' + id
     });
@@ -40,9 +33,13 @@ Page({
   //创建心得
   creatXinde(e){
     let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../createexperience/createexperience?id='+id
-    })
+    if(!this.data.token){
+      this.showDialog();
+    }else{
+      wx.navigateTo({
+        url: '../createexperience/createexperience?id=' + id
+      })
+    }
   },
   getData(obj) {
     let url = app_data.base + 'Index/experience';
@@ -86,7 +83,6 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      // app.alert({ title: '暂无更多数据', time: 1000 });
       this.setData({
         no_msg: "没有更多心得啦~"
       })
@@ -102,6 +98,40 @@ Page({
   onShow(){
     app.setTabBarMsg()
   },
+
+  onReady: function () {
+    //获得dialog组件
+    this.setToken();
+    this.dialog = this.selectComponent("#dialog");
+  },
+
+  setToken() {
+    app.getToken().then((res) => {
+      this.setData({
+        token: res
+      });
+    })
+  },
+
+  showDialog: function () {
+    this.dialog.showDialog();
+  },
+
+  confirmEvent: function () {
+    this.dialog.hideDialog();
+  },
+
+  bindGetUserInfo: function (e) {
+    // 用户点击授权后，这里可以做一些登陆操作
+    app.wxLogin(e.detail).then((res)=>{
+      if (res.code == 'success'){
+        this.setToken();
+        app.alert({title:'授权登录成功'})
+      }
+    });
+  },
+
+ 
 
   /**
   * 用户点击右上角分享

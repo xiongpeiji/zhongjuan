@@ -1,6 +1,3 @@
 {
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "dialog": "../dialog/dialog"
-  }
+  "enablePullDownRefresh": true
 }
