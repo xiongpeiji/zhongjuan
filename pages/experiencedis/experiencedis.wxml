@@ -30,7 +30,7 @@
           <image src="/images/msg_num.png"></image>
           <span>4546</span>
         </view>
-        <view class="fabulous share_btn">
+        <view class="fabulous share_btn" bindtap='sharWeixin'>
           <image src="/images/fenxiang.png"></image>
           <span>4546</span>
         </view>
@@ -67,6 +67,10 @@
             </view>
           </view>
         </view>
+
+        <!--暂无更多消息-->
+        <view class='no-more-message'>{{no_msg}}</view>
+
       </view>
     </view>
   </view>
@@ -86,6 +90,23 @@
       <span class="share_number">{{share_num}}</span> -->
       <button class='send_msg_btn'>发送</button>
     </view>
+  </view>
+
+  <!--分享弹窗-->
+  <view class='maxing' hidden='{{shareMax}}'></view>
+  <view class='share_content' hidden='{{shareMax}}'>
+      <view class='title_shares'>分享到：</view>
+      <view class='share_btns'>
+        <button class='share_button' plain="{{true}}">
+          <image src='/images/share_img/weixin.png'></image>
+          <text>微信好友</text>
+        </button>
+        <button class='share_button' plain="{{true}}">
+          <image src='/images/share_img/pengyouquan.png'></image>
+          <text>朋友圈</text>
+        </button>
+      </view>
+      <button class='cannel_btn' bindtap="quxiaoFn">取消</button>
   </view>
   
 </view>

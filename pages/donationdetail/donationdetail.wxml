@@ -144,7 +144,7 @@
   <!--机构信息弹窗-->
   <view class="maxing" hidden='{{institution_model}}'></view>
   <view class="content_detail"  hidden='{{institution_model}}'>
-    <image class="close_btn" src="/images/quxiaocopy2@2x.png"></image>
+    <image class="close_btn" bindtap='closeModals' src="/images/quxiaocopy2@2x.png"></image>
 
     <view class='auto_y'>
     
@@ -186,16 +186,37 @@
             <view class="infoFail">
                 机构简介
             </view>
-            <view class="photos_box">
+            <view class="photos_box {{moreShow?'show_more':''}}">
                 <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
+                <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
+            <view class='look_mor' hidden='{{moreShow}}' bindtap='showMore'><image src='/images/xiala-copy.png'></image>查看全部</view>
             </view>
         </view>
         <view class="jigou_photos">
             <view class="infoFail">
                 机构地址
             </view>
-            <view class="photos_box">
+            <view class="position_box">
                 <text>陕西省西安市雁塔区高新五路商品格兰1301</text>
+            </view>
+            <view class='qiujuan_sored'>
+              <b>求捐记录</b>3
+            </view>
+            <view class='qiujuan_list'>
+              <text class='juan_time'>2018.11.20</text>
+              <b>爱心传递，融化冬日严寒  </b>
+              <view class='flag_img'>
+                <text>进行中</text>
+                <image src='/images/flag_01.png'></image>
+              </view>
+            </view>
+            <view class='qiujuan_list'>
+              <text class='juan_time'>2018.11.20</text>
+              <b>爱心传递，融化冬日严寒  </b>
+              <view class='flag_img'>
+                <text>已结束</text>
+                <image src='/images/flag_02.png'></image>
+              </view>
             </view>
         </view>
 

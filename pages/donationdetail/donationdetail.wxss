@@ -603,7 +603,7 @@ swiper, swiper image {
     background: #fff;
     width: 100%;
     box-sizing: border-box;
-    padding:30rpx 20rpx 20rpx;
+    padding:30rpx 20rpx 20rpx 0;
     margin-bottom: 25rpx;
 }
 .infoFail{
@@ -618,6 +618,11 @@ swiper, swiper image {
     color:#999999;
     margin-left: 30rpx;
 }
+.photos_box {
+  position: relative;
+  height: 300rpx;
+  overflow: hidden;
+}
 .photos_box text{
   display: block;
   font-size: 28rpx;
@@ -629,4 +634,103 @@ swiper, swiper image {
   height: 1080rpx;
   overflow-y: auto;
   width: 100%;
+}
+.look_mor{
+  width: 100%;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  color:#E4572E;
+  position: absolute;
+  bottom: -20rpx;
+  left: 0;
+  background: #fff;
+  padding:20rpx 0;
+  font-size: 26rpx;
+  box-shadow: 0 -10rpx 2rpx 20rpx rgba(255, 255, 255, .9)
+}
+.look_mor image{
+  display: inline-block;
+  width:30rpx;
+  height: 30rpx;
+  position: relative;
+  top: 5rpx;
+}
+.show_more{
+  height: auto;
+  overflow: auto;
+}
+.position_box{
+  display: block;
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.qiujuan_sored{
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color:#999;
+  margin-bottom: 20rpx;
+}
+.qiujuan_sored b{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.qiujuan_list{
+  height: 165rpx;
+  width: 690rpx;
+  padding: 20rpx 45rpx 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0rpx 0rpx 10rpx 1rpx #eaeaea;
+  position: relative;
+}
+.qiujuan_list text{
+  display: block;
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 42rpx;
+  margin-bottom: 10rpx;
+}
+.qiujuan_list b{
+  display: block;
+  font-size: 34rpx;
+  color:#444444;
+  line-height: 48rpx;
+  width: 430rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.qiujuan_list+.qiujuan_list {
+  margin-top: 50rpx;
+}
+.flag_img{
+  display: block;
+  width: 157rpx;
+  height: 103rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.flag_img image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.flag_img text{
+  color:#fff;
+  position: relative;
+  z-index: 2;
+  /* text-align: center; */
+  /* line-height: 103rpx; */
+  margin-left: 70rpx;
+  margin-top: 10rpx;
+  font-size: 22rpx;
 }

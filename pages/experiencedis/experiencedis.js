@@ -18,7 +18,9 @@ Page({
     share_num:0,
     is_up:0,
     content:'',
-    token:null
+    token:null,
+    shareMax:true,
+    no_msg:''
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -28,6 +30,18 @@ Page({
     });
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
+  },
+  //分享弹窗
+  sharWeixin(e){
+    this.setData({
+      shareMax:false
+    })
+  },
+  //取消弹窗
+  quxiaoFn(e){
+    this.setData({
+      shareMax: true
+    })
   },
   //获取详情信息
   getDetail(){
@@ -143,7 +157,10 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      app.alert({ title: '暂无更多评论', time: 1000 });
+      // app.alert({ title: '暂无更多评论', time: 1000 });
+      this.setData({
+        no_msg: '暂无更多评论了~'
+      })
     } else {
       page = page + 1;
       this.setData({

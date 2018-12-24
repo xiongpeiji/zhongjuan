@@ -21,8 +21,9 @@ Page({
     content: '',
     avatar:'',
     no_msg:'',
-    institution_model:false,
-    token:null
+    institution_model:true,
+    token:null,
+    moreShow:false,//显示更多
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -35,6 +36,24 @@ Page({
     })
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
+  },
+  //展示更多
+  showMore(e){
+    this.setData({
+      moreShow:true,
+    })
+  },
+  //显示机构信息弹窗
+  showMaxing(){
+    this.setData({
+      institution_model:false
+    })
+  },
+  //关闭弹窗
+  closeModals(e){
+    this.setData({
+      institution_model: true
+    })
   },
   //获取详情信息
   getDetail() {
