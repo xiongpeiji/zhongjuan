@@ -80,14 +80,6 @@
       <input placeholder="输入评论…" bindconfirm="comment" confirm-type="send" value='{{content}}'/>
     </view>
     <view class="comment_action">
-      <!-- <view class="zan_num" bindtap='experienceUp'>
-        <image src="{{is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
-        <span>{{up_num}}</span>
-      </view>
-      <button class="zan_num" open-type="share">
-        <image src="/images/fenxiang.png"></image>
-      </button>
-      <span class="share_number">{{share_num}}</span> -->
       <button class='send_msg_btn'>发送</button>
     </view>
   </view>

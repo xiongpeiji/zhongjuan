@@ -24,6 +24,7 @@ Page({
     institution_model:true,
     token:null,
     moreShow:false,//显示更多
+    isTalking:true,//是否可评论
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -185,9 +186,15 @@ Page({
   },
   //评论获取焦点
   commentFn(e) {
-    this.setData({
-      focus: true
-    })
+    let isLogin = true;//
+    if(!isLogin){
+      this.setData({
+        focus: true
+      })
+    }else{
+      app.alert({ title: '请先登录！' })
+    }
+    
   },
 
   /**

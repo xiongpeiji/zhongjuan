@@ -111,10 +111,15 @@
               </view>
             </view>
             <view class="comment_dis">{{item.content}}</view>
+            <view class='comment_content'>
+              <view class="comment_dis"><label>测试姓名</label>{{item.content}}</view>
+            </view>
             <view class="comment_time">
               <span class="send_time">{{item.add_time}}</span>
               <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>
             </view>
+
+
           </view>
         </view>
         <!--暂无更多消息-->
@@ -123,7 +128,7 @@
     </view>
   </view>
   <!--评论输入-->
-  <view class="input_box_fixed">
+  <view class="input_box_fixed" hidden='{{focus}}'>
     <button class="share_cont" hover-class="share_active" bindtap="commentFn">
         <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
         <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
@@ -139,6 +144,14 @@
     <view class="want_give">
         <image src="/images/Rectangle9@3x.png"></image>
         <span bindtap="wantTodo" data-id="{{id}}">我要捐助</span>
+    </view>
+  </view>
+  <view class="input_box" hidden='{{!focus}}'>
+    <view class="section_input">
+      <input placeholder="输入评论…" bindconfirm="comment" confirm-type="send" value='{{content}}'/>
+    </view>
+    <view class="comment_action">
+      <button class='send_msg_btn'>发送</button>
     </view>
   </view>
   <!--机构信息弹窗-->

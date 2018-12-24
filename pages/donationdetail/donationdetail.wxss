@@ -164,7 +164,7 @@ swiper, swiper image {
   }
   .comment_text{
     padding-bottom: 15rpx;
-    border-bottom:1px solid #DFDFDF;
+    /* border-bottom:1px solid #DFDFDF; */
   }
   .comment_name{
     height: 40rpx;
@@ -733,4 +733,71 @@ swiper, swiper image {
   margin-left: 70rpx;
   margin-top: 10rpx;
   font-size: 22rpx;
+}
+
+.input_box{
+  padding:9rpx 20rpx 9rpx 9rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 98rpx;
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.input_box .section_input{
+  border-radius: 20rpx;
+  float: left;
+  width: 546rpx;
+  height: 80rpx;
+  border: none;
+}
+.input_box .section_input input{
+  width:100%;
+  height:80rpx;
+  padding:10rpx 40rpx;
+  box-sizing:border-box;
+  background:#F3F3F3;
+  border-radius:40rpx;
+  font-size:24rpx;
+  line-height:40rpx;
+}
+.comment_action {
+  height: 80rpx;
+}
+.comment_action button::after{
+  border: none;
+}
+.comment_action .send_msg_btn{
+  width: 145rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #E4572E;
+  color:#fff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+}
+.comment_content{
+  padding:10rpx 20rpx 20rpx;
+  background: #F7F7F7;
+  border-radius: 5rpx;
+  width: 530rpx;
+  box-sizing: border-box;
+  margin-bottom: 15rpx;
+}
+.comment_name{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding:10rpx 0;
+}
+.comment_name .left_name{
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color:#333333;
+  float: left;
+}
+.comment_dis label {
+color:#666;
+margin-right:10rpx;
 }
