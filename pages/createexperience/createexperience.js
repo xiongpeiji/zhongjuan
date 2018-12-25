@@ -99,8 +99,8 @@ Page({
       app.alert({ title: '请输入心得内容！' })
       return
     }
-    if (images.length < 3 || images.length > 9) {
-      app.alert({ title: '请上传3-9张心得图片！' })
+    if (images.length < 1 || images.length > 9) {
+      app.alert({ title: '请上传1-9张心得图片！' })
       return
     }
     let params = {

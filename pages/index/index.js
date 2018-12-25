@@ -21,7 +21,7 @@ Page({
     material_id: '',
     isLast:false,
     no_msg:'',
-    is_follow:true
+    is_follow:false
   },
   //求捐详情页面
   qiujuanDetail(e) {
@@ -57,6 +57,11 @@ Page({
     });
   },
   onLoad(options) {
+    if (app_data.public_open_id){
+      this.setData({
+        is_follow:true
+      })
+    }
     this.setInit();
     this.getData({ refresh: false, is_first: true });
   },

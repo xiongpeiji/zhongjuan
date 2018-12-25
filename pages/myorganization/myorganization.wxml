@@ -12,7 +12,7 @@
                     </view>
                 </view>
                 <view class="help_sm_tit">
-                    <label class="address_text">10-15人</label>
+                    <label class="address_text">{{myOrgInfos.number_people}}</label>
                 </view>
             </view>
         </view>
@@ -24,7 +24,7 @@
         <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
           <block wx:for="{{myOrgInfos.prove_info}}" wx:key="{{index}}">
             <swiper-item>
-              <image mode='scaleToFill' src="{{item}}" class="slide-image" />
+              <image mode='aspectFill' src="{{item}}" class="slide-image" />
             </swiper-item>
           </block>
         </swiper>
@@ -55,7 +55,7 @@
                 机构简介
             </view>
             <view class="photos_box">
-                <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
+                <text>{{myOrgInfos.desc}}</text>
             </view>
         </view>
         <view class="jigou_photos">

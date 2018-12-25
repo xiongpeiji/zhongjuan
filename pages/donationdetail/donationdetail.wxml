@@ -172,7 +172,7 @@
           <swiper bindchange="institutionSwiper" next-margin="288rpx" circular="{{true}}">
             <block wx:for="{{institution_info.images}}" wx:key="{{index}}">
               <swiper-item>
-                <image  mode='aspectFill' src="{{item}}" class="slide-image" />
+                <image mode='aspectFill' src="{{item}}" class="slide-image" />
               </swiper-item>
             </block>
           </swiper>

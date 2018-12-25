@@ -1,13 +1,28 @@
 <!--消息详情-->
 <view class="container">
-  <view class="message_cont" hidden='{{type != express}}'>
-      <view class="detail_title">{{info.express_info.is_get == 1 ? '已签收' : '运输中'}}</view>
+  <view class="message_cont" hidden='{{type != "express"}}'>
+      <view class="detail_title">捐赠信息</view>
+      <view  class='detail_content'>
+          <view class='express_detail'>
+              寄件人：{{info.content[0].username}}
+          </view>
+          <view class='express_detail'>
+              电 话：{{info.content[0].mobile}}
+          </view>
+          <view class='express_detail'>
+              收件单位：{{info.content[0].institution}}
+          </view>
+          <view class='express_detail'>
+              物资详情：{{info.content[0].material}}
+          </view>
+        </view>
+      <view class="detail_title">{{info.data.is_get == 1 ? '已签收' : '运输中'}}</view>
       <view class="detail_content">
           <view class="express_title">
-              <image src="{{info.icon}}"></image>{{info.express_info.express_name}}
+              <image src="{{info.icon}}"></image>{{info.data.express_name}}
           </view>
           <view class="express_Order">
-              快递单号：{{info.express_info.express_num}}
+              快递单号：{{info.data.express_num}}
           </view>
       </view>
       <view class="detail_title">运输详情</view>
@@ -47,33 +62,65 @@
               </view>
 
               <!--已完成-->
-              <view class="express_over" hidden='{{info.express_info.is_get == 0}}'>
+              <view class="express_over" hidden='{{info.data.is_get == 0}}'>
                   <view class="over_image"><image src="/images/yunshuche@2x.png"></image></view>
                   <view class="over_text">爱心被签收了哦</view>
               </view>
           </view>
       </view>
   </view>
-  <view class='message_cont' hidden='{{type == express}}'>
-    <view class="detail_title">类型状态</view>
+  <view class='message_cont' hidden='{{type == "express"}}'>
+    <view class="detail_title">{{type_name}}</view>
     <view class='detail_content'>
       <view class='express_detail'>
         <label class='names'>{{info.data.type_name}}：</label><label>{{info.data.name}}</label>
       </view>
       <view class='express_detail'>
-        <label class='names'>审核状态：</label><label style='color:{{info.data.color}}'>审核成功</label>
+        <label class='names'>审核状态：</label><label style='color:{{info.data.color}}'>{{info.data.status_name}}</label>
       </view> 
     </view>
-      <view class="detail_title">消息提醒</view>
+      <view class="detail_title">{{content_name}}</view>
       <view  class='detail_content' wx:for="{{info.content}}" wx:key="index">
-            <view class='express_detail'>
-              时间：{{item.time}}
+        <view wx:if="{{cate=='check'}}">
+         <view class='express_detail'>
+              审核人员：{{item.admin_name}}
           </view>
-            <view class='express_detail'>
-              内容：{{item.content}}
+          <view class='express_detail'>
+              审核时间：{{item.time}}
           </view>
+          <view class='express_detail'>
+              反馈内容：{{item.content}}
+          </view>
+        </view>
+        <view wx:elif="{{cate=='donation'}}">
+         <view class='express_detail'>
+              捐赠人：{{item.username}}
+          </view>
+          <view class='express_detail'>
+              捐赠时间：{{item.time}}
+          </view>
+          <view class='express_detail'>
+              反馈内容：{{item.content}}
+          </view>
+          <view wx:for="{{item.data}}" wx:key="index" wx:for-item="row">
+             <view class='express_detail'>
+                捐赠物资：{{row.name}}*{{row.num}}
+            </view>
+          </view> 
+        </view>
+         <view wx:else>
+          <view class='express_detail'>
+                评论人：{{item.username}}
+            </view>
+            <view class='express_detail'>
+                评论时间：{{item.time}}
+            </view>
+            <view class='express_detail'>
+                评论内容：{{item.content}}
+            </view>
+        </view>        
       </view>
-      <view class='creat-btn-xinde' hidden='{{info.data.status == 3 || info.data.status == 0}}'>
+      <view class='creat-btn-xinde' hidden='{{button_status}}'>
         <button plain="true" data-id="0" bindtap='redirectLink'>{{info.data.button_name}}</button>
       </view>
   </view>

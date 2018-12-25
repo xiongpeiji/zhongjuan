@@ -13,6 +13,7 @@ Page({
     page:1,
     isLast:false,
     no_msg:'',
+    token:null,
   },
 
   /**
@@ -28,6 +29,9 @@ Page({
     if(app_data.token){
       this.getData({ refresh: false, is_first: true });
       app.setTabBarMsg();
+      this.setData({
+        token:app_data.token
+      })
     }
   },
   //消息详情

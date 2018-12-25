@@ -779,7 +779,7 @@ swiper, swiper image {
   font-size: 30rpx;
 }
 .comment_content{
-  padding:10rpx 20rpx 20rpx;
+  padding:20rpx 20rpx;
   background: #F7F7F7;
   border-radius: 5rpx;
   width: 530rpx;
