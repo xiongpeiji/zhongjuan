@@ -45,14 +45,16 @@
             </view>
           </view>
         </view>
-
+         <view class='no-more-message'>{{no_msg}}</view>
       </view>
     </view>
-    <!--输入区-->
-    <view class="conment_input_box">
-        <view class="section_input">
-            <input placeholder="回复{{info.username}}..." bindconfirm="comment" bindinput='setContent' confirm-type="send" value='{{content}}'/>
-        </view>
-        <button type="default" size="mini" plain="{{true}}" bindtap='comment' hover-class="other-button-hover"> 发送 </button>
+       <!--评论输入-->
+  <view class="input_box">
+    <view class="section_input">
+      <input placeholder="回复{{info.username}}..." bindconfirm="comment" confirm-type="send" bindinput='setContent' value='{{content}}'/>
     </view>
+    <view class="comment_action">
+      <button class='send_msg_btn' bindtap='comment'>发送</button>
+    </view>
+  </view>
 </view>

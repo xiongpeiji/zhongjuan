@@ -23,6 +23,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '捐赠管理'
     });
+    app.checkLogin();
     this.setUserInfo();
     this.getData({ refresh: false, is_first: true });
   },

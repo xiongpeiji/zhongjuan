@@ -1,89 +1,81 @@
 <!--消息详情-->
 <view class="container">
-    <!--物流信息-->
-    <view class='message_cont'>
-      <view class='detail_content'>
-        <view class='express_detail'>
-          <label class='names'>寄件人：</label><label>王二狗</label>
-        </view>
-        <view class='express_detail'>
-          <label class='names'>电话：</label><label>15619087175</label>
-        </view>
-        <view class='express_detail'>
-          <label class='names'>收件单位：</label><label>深圳市博雅游戏网络爱心机构</label>
-        </view>
-        <view class='express_detail'>
-          <label class='names'>物资详情：</label><label>文具</label>4件
-        </view>
-        
+  <view class="message_cont" hidden='{{type != express}}'>
+      <view class="detail_title">{{info.express_info.is_get == 1 ? '已签收' : '运输中'}}</view>
+      <view class="detail_content">
+          <view class="express_title">
+              <image src="{{info.icon}}"></image>{{info.express_info.express_name}}
+          </view>
+          <view class="express_Order">
+              快递单号：{{info.express_info.express_num}}
+          </view>
       </view>
+      <view class="detail_title">运输详情</view>
+      <view class="detail_content">
+          <view class="express_step">
+              <view class="step_text express_success">
+                  <em></em>
+                  爱心物资已签收
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达正在派送
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+              <view class="step_text">
+                  <em></em>
+                  爱心物资到达深圳中转站
+              </view>
+
+              <!--已完成-->
+              <view class="express_over" hidden='{{info.express_info.is_get == 0}}'>
+                  <view class="over_image"><image src="/images/yunshuche@2x.png"></image></view>
+                  <view class="over_text">爱心被签收了哦</view>
+              </view>
+          </view>
+      </view>
+  </view>
+  <view class='message_cont' hidden='{{type == express}}'>
+    <view class="detail_title">类型状态</view>
+    <view class='detail_content'>
+      <view class='express_detail'>
+        <label class='names'>{{info.data.type_name}}：</label><label>{{info.data.name}}</label>
+      </view>
+      <view class='express_detail'>
+        <label class='names'>审核状态：</label><label style='color:{{info.data.color}}'>审核成功</label>
+      </view> 
     </view>
+      <view class="detail_title">消息提醒</view>
+      <view  class='detail_content' wx:for="{{info.content}}" wx:key="index">
+            <view class='express_detail'>
+              时间：{{item.time}}
+          </view>
+            <view class='express_detail'>
+              内容：{{item.content}}
+          </view>
+      </view>
+      <view class='creat-btn-xinde' hidden='{{info.data.status == 3 || info.data.status == 0}}'>
+        <button plain="true" data-id="0" bindtap='redirectLink'>{{info.data.button_name}}</button>
+      </view>
+  </view>
 
-
-
-    <view class="message_cont" hidden='{{type == 1}}'>
-        <view class="detail_title">{{info.express_info.is_get == 1 ? '已签收' : '运输中'}}</view>
-        <view class="detail_content">
-            <view class="express_title">
-                <image src="{{info.icon}}"></image>{{info.express_info.express_name}}
-            </view>
-            <view class="express_Order">
-                快递单号：{{info.express_info.express_num}}
-            </view>
-        </view>
-        <view class="detail_title">运输详情</view>
-        <view class="detail_content">
-            <view class="express_step">
-                <view class="step_text express_success">
-                    <em></em>
-                    爱心物资已签收
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达正在派送
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-                <view class="step_text">
-                    <em></em>
-                    爱心物资到达深圳中转站
-                </view>
-
-                <!--已完成-->
-                <view class="express_over" hidden='{{info.express_info.is_get == 0}}'>
-                    <view class="over_image"><image src="/images/yunshuche@2x.png"></image></view>
-                    <view class="over_text">爱心被签收了哦</view>
-                </view>
-            </view>
-        </view>
-    </view>
-    <view class="message_cont" hidden='{{type == 2}}'>
-        <view class="detail_title">系统消息</view>
-        <view class="detail_content">
-            <view class="express_title">
-                <image src="{{info.icon}}"></image>{{info.title}}
-            </view>
-            <view class="express_Order">
-                {{info.content}}
-            </view>
-        </view>
-    </view>
 </view>

@@ -21,6 +21,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得列表'
     });
+    app.checkLogin();
     this.getData({ refresh: false,is_first:true});
   },
 

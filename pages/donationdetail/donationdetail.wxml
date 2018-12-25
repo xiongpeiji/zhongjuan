@@ -64,7 +64,7 @@
       发布机构
     </view>
     <view class="jigouDetail_btn" bindtap="showMaxing">
-        <span class="jigou_name">{{info.name}}</span>
+        <span class="jigou_name">{{institution_info.name}}</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
         <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
@@ -84,15 +84,8 @@
     </view>
     <!--评论区-->
     <view class="comment_wrap">
-      <view class="comment_title"> 评论{{comment_num}}</view>
-      <!--回复输入框-->
-      <view class="send_input" hidden='{{!focus}}'>
-          <!-- <image src="{{avatar}}"></image> -->
-          <view class="section_input">
-            <input bindblur='setFocus' placeholder="说点什么吧，让大家认识你" bindconfirm="comment"  confirm-type="send" value='{{content}}' focus="{{focus}}"/>
-          </view>
-      </view>
-           <view class="comment_container">
+      <view class="comment_title"> 评论 {{comment_num}}</view>
+      <view class="comment_container">
         <!--评论列表-->
         <view class="conment_list" wx:for="{{list}}"  wx:key="index">
           <image class="con_user_icon" src="{{item.avatar}}"></image>
@@ -111,15 +104,15 @@
               </view>
             </view>
             <view class="comment_dis">{{item.content}}</view>
-            <view class='comment_content'>
-              <view class="comment_dis"><label>测试姓名</label>{{item.content}}</view>
+            <view class='comment_content' hidden='{{item.comment_num == 0}}'>
+              <view wx:for="{{item.reply_data}}"  wx:key="index" wx:for-item="row">
+                <view class="comment_dis"><label>{{row.username}}：</label>{{row.content}}</view>
+              </view>
             </view>
             <view class="comment_time">
               <span class="send_time">{{item.add_time}}</span>
               <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>
             </view>
-
-
           </view>
         </view>
         <!--暂无更多消息-->
@@ -129,7 +122,7 @@
   </view>
   <!--评论输入-->
   <view class="input_box_fixed" hidden='{{focus}}'>
-    <button class="share_cont" hover-class="share_active" bindtap="commentFn">
+    <button class="share_cont" hover-class="share_active" bindtap="setFocus">
         <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
         <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
     </button>
@@ -137,7 +130,7 @@
         <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
         <view class="img_tit_text">邀请好友</view>
     </button>
-    <button class="share_cont" hover-class="share_active" open-type="share">
+    <button class="share_cont" hover-class="share_active" bindtap='shareWeixin'>
         <view class="img_box"><image src="/images/share@2x.png"></image></view>
         <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
     </button>
@@ -148,9 +141,9 @@
   </view>
   <view class="input_box" hidden='{{!focus}}'>
     <view class="section_input">
-      <input placeholder="输入评论…" bindconfirm="comment" confirm-type="send" value='{{content}}'/>
+      <input placeholder="输入评论…" focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent'/>
     </view>
-    <view class="comment_action">
+    <view class="comment_action" bindtap='comment'>
       <button class='send_msg_btn'>发送</button>
     </view>
   </view>
@@ -164,35 +157,35 @@
     
     <view class="top_infos">
       <view class='title'>
-        <text class='title_h1'>西安爱心捐助站最多13个字</text>
+        <text class='title_h1'>{{institution_info.name}}</text>
         <view class='inst_type'>
           <image class="type_icons" src="/images/shenqingqiyerenzheng.png"></image>
-          <text>希望小学</text>
+          <text>{{institution_info.type_name}}</text>
         </view>
       </view>
       <view class='joins_nums'>
-      10-15人
+      {{institution_info.number_people}}
       </view>
 
       <view class="prove_infos">
         <view class='promotion-img'>
-          <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
-            <block wx:for="{{info.image}}" wx:key="{{index}}">
+          <swiper bindchange="institutionSwiper" next-margin="288rpx" circular="{{true}}">
+            <block wx:for="{{institution_info.images}}" wx:key="{{index}}">
               <swiper-item>
                 <image  mode='aspectFill' src="{{item}}" class="slide-image" />
               </swiper-item>
             </block>
           </swiper>
-          <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+          <view class="current"><span>{{institution_current}}</span> / {{institution_swiper_all}}</view>
         </view>
       </view>
 
       <view class="user_name_phone">
         <view class="fz_name">
-          负责人<label>王二狗</label>
+          负责人<label>{{institution_info.liaison_person}}</label>
           <image src="/images/nan-2.png"></image>
         </view>
-        <text class='user_mobiles'>15619087175</text>
+        <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
 
       <view class="jigou_photos">
@@ -200,8 +193,7 @@
                 机构简介
             </view>
             <view class="photos_box {{moreShow?'show_more':''}}">
-                <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
-                <text>西安爱心捐助站是陕西省内第一家爱心捐助机构，2018年计入众捐平台呼吁引导社会爱心人士对贫困地区的捐助和帮助，成立于2015年12月15日，机构成立短短的三年之内联合众捐平台捐助衣物，生活用品，学习用具等1564789件，期待你的加入。</text>
+               <text>{{institution_info.desc}}</text>
             <view class='look_mor' hidden='{{moreShow}}' bindtap='showMore'><image src='/images/xiala-copy.png'></image>查看全部</view>
             </view>
         </view>
@@ -210,25 +202,17 @@
                 机构地址
             </view>
             <view class="position_box">
-                <text>陕西省西安市雁塔区高新五路商品格兰1301</text>
+                <text>{{institution_info.address}}</text>
             </view>
             <view class='qiujuan_sored'>
-              <b>求捐记录</b>3
+              <b>求捐记录</b>
             </view>
-            <view class='qiujuan_list'>
-              <text class='juan_time'>2018.11.20</text>
-              <b>爱心传递，融化冬日严寒  </b>
+            <view class='qiujuan_list' wx:for="{{institution_info.list}}" wx:key="index">
+              <text class='juan_time'>{{item.add_time}}</text>
+              <b>{{item.title}}</b>
               <view class='flag_img'>
-                <text>进行中</text>
-                <image src='/images/flag_01.png'></image>
-              </view>
-            </view>
-            <view class='qiujuan_list'>
-              <text class='juan_time'>2018.11.20</text>
-              <b>爱心传递，融化冬日严寒  </b>
-              <view class='flag_img'>
-                <text>已结束</text>
-                <image src='/images/flag_02.png'></image>
+                <text>{{item.status == 1 ? '进行中' : '已结束'}}</text>
+                <image src="{{item.status == 1 ? '/images/flag_01.png' : '/images/flag_02.png'}}"></image>
               </view>
             </view>
         </view>
@@ -256,6 +240,23 @@
 
 
 
+  </view>
+
+   <!--分享弹窗-->
+  <view class='maxing' hidden='{{shareMax}}'></view>
+  <view class='share_content' hidden='{{shareMax}}'>
+      <view class='title_shares'>分享到：</view>
+      <view class='share_btns'>
+        <button class='share_button' open-type='share' plain="{{true}}">
+          <image src='/images/share_img/weixin.png'></image>
+          <text>微信好友</text>
+        </button>
+        <button class='share_button' plain="{{true}}" bindtap='createShareImg'>
+          <image src='/images/share_img/pengyouquan.png'></image>
+          <text>朋友圈</text>
+        </button>
+      </view>
+      <button class='cannel_btn' bindtap="closeShareMax">取消</button>
   </view>
 </view>
 

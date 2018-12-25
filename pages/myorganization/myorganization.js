@@ -23,6 +23,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     });
+    app.checkLogin();
     this.getMyOrgInfo();
   },
   //获取机构认证状态信息

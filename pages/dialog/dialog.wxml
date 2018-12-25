@@ -1,6 +1,6 @@
 <!--pages/dialog/dialog.wxml-->
 <view class='dialog-container' hidden="{{isShow}}">
-    <view class='dialog-mask'></view>
+    <view class='dialog-mask' bindtap='hideDialog'></view>
     <view class='dialog-info'>
         <view class='dialog-title'>{{ title }}</view>
         <view class='dialog-content'>{{ content }}</view>

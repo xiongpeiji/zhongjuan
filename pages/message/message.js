@@ -12,7 +12,7 @@ Page({
     list:{},
     page:1,
     isLast:false,
-    no_msg:''
+    no_msg:'',
   },
 
   /**
@@ -25,8 +25,10 @@ Page({
     this.setData({
       page: 1
     })
-    this.getData({ refresh: false, is_first: true });
-    app.setTabBarMsg()
+    if(app_data.token){
+      this.getData({ refresh: false, is_first: true });
+      app.setTabBarMsg();
+    }
   },
   //消息详情
   msgDetails(e){
@@ -37,16 +39,8 @@ Page({
   },
   //获取消息列表
   getData(obj){
-    let token = wx.getStorageSync("token");
-    if(!token){
-      app.alert({ title: '请登录后再查看！', time: 2000 });
-      setTimeout(() => {
-        app.redirectLogin();
-      }, 2000);
-      return;
-    }
     let url = app_data.base +'SystemInfo/index'
-    let params = {token:token,page:this.data.page};
+    let params = {token:app_data.token,page:this.data.page};
     http.Get({url:url,params:params,loading:obj.refresh}).then((res)=>{
       if (obj.refresh) {
         wx.stopPullDownRefresh();
@@ -66,6 +60,30 @@ Page({
     });
   },
 
+  setToken() {
+    app.getToken();
+  },
+
+  //授权登录
+  userLogin(e) {
+    let obj = {
+      encryptedData: e.detail.encryptedData,
+      iv: e.detail.iv,
+    }
+    app.wxLogin(obj).then((res) => {
+      if (res.code == 'success') {
+        this.setToken();
+        this.getData({ refresh: false, is_first: true });
+        app.setTabBarMsg()
+        wx.showToast({
+          title: '授权登录成功',
+        })
+      }
+    });
+  },
+
+
+
   /**
   * 页面相关事件处理函数--监听用户下拉动作
   */
@@ -83,7 +101,6 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      // app.alert({ title: '暂无更多数据', time: 1000 });
       this.setData({
         no_msg: "没有更多消息啦~"
       })

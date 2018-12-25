@@ -14,15 +14,25 @@ Page({
     currentTime:60,
     timeText: '立即获取',
     fun_id:2,
-    disabled:false
+    disabled:false,
+    tip:"为了保证信息安全，请验证您的手机号"
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.checkLogin();
+    let mobile = app_data.mobile;
+    let title = "手机认证";
+    if(mobile){
+      this.setData({
+        tip: "手机更换之后，众捐小程序内您的联系方式将会变更为您的新号码，当前号码：" + mobile
+      })
+      title = '更换手机号' 
+    }
     wx.setNavigationBarTitle({
-      title: '手机认证'
+      title:title
     });
   },
 
@@ -110,8 +120,8 @@ Page({
         });
         app.getUserInfo();
         setTimeout(() => {
-          app.redirectLogin();
-        }, 2000);
+          app.redirectUser();
+        }, 1000);
       }
     })
   },

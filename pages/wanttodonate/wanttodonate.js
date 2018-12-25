@@ -22,6 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.checkLogin();
     this.data.id = options.id;
     wx.setNavigationBarTitle({
       title: '我要捐助'

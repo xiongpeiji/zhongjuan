@@ -6,11 +6,9 @@ App({
   globalData: {
     app_id:'wxaa31789e58d234c5',
     secret:'ec443912e8488508cee7ee8a584afa70',
-    open_id:null,
-    union_id:null,
+    public_open_id: null,
     user_info: null,
     token: null,
-    mobile_status:null,
     mobile:null,
     base: "https://api.51aizj.com/",
     share_img: ['/images/share_img/1.jpg','/images/share_img/2.jpg'],
@@ -20,70 +18,29 @@ App({
     let token = wx.getStorageSync('token')
     this.globalData.token = token;
     let open_id = wx.getStorageSync('open_id');
-    this.globalData.open_id = open_id;
-    let user_info = wx.getStorageSync('user_info');
-    if (user_info){
-      this.globalData.user_info = user_info;
+    if (open_id) {
+      this.getUserInfo();
     }
     this.setShare();
   },
   wxLogin(obj) {
     let open_id = wx.getStorageSync('open_id');
-    let union_id = wx.getStorageSync('union_id');
-    if(open_id && union_id){
+    if(open_id){
       return new Promise((resolve)=>{
         this.getUserInfo().then((res)=>{
-          if(res.code == 'fail'){
-            if (obj.username && obj.avatar) {
-              return this.register(obj);
-            }else{
-              return { code: 'fail'}
-            }
-          }else{
-            return res;
-          }
-        }).then((res)=>{
           resolve(res);
-        })
+        });
       });  
     }else{
       return new Promise((resolve) => {
         common.wechatLogin().then((res) => {
-          return this.getOpenId(res.code);
-        }).then((res) => {
-          if (res.code == 'success') {
-            return this.getUserInfo();
-          } else {
-            return res;
-          }
+          obj.code = res.code;
+          return this.register(obj);
         }).then((res)=>{
-          if (res.code == 'fail') {
-            return this.register(obj);
-          }else{
-            return res;
-          }
-        }).then((res) => {
             resolve(res);
         });
       });
     }
-  },
-
-  getOpenId(code){
-    return new Promise((resolve) => {
-      let url = this.globalData.base + 'Public/getOpenId'
-      let data = { code: code }
-      return http.Post({ url: url, params: data }).then((res)=>{
-        if (res.code == 'success') {
-          console.log(res);
-          wx.setStorageSync('open_id', res.data.open_id);
-          wx.setStorageSync('union_id', res.data.union_id);
-          resolve({ code: 'success' });
-        }else{
-          resolve({ code: 'fail' });
-        }
-      });
-    });
   },
   getUserInfo() {
     return new Promise((resolve) => {
@@ -91,13 +48,13 @@ App({
       let url = this.globalData.base + 'Public/getUserInfo'
       let data = { open_id: open_id }
       http.Post({ url: url, params: data }).then((res) => {
-        if (res.code == 'success' && res.data) {
+        if (res.code == 'success' && res.data.token) {
           wx.setStorageSync('user_info', res.data);
           wx.setStorageSync('token', res.data.token);
           this.globalData.token = res.data.token;
+          this.globalData.public_open_id = res.data.public_open_id;
           this.globalData.user_info = res.data;
           this.globalData.mobile = res.data.mobile;
-          this.globalData.mobile_status = res.data.mobile_status;
           resolve({ code: 'success' });
         }else{
           resolve({ code: 'fail' });
@@ -109,18 +66,17 @@ App({
   register(obj){
     return new Promise((resolve) => {
       let url = this.globalData.base + 'Public/login';
-      let open_id = wx.getStorageSync('open_id');
-      let union_id = wx.getStorageSync('union_id');
-      let login_data = { open_id: open_id, username: obj.username, avatar: avatar, union_id: union_id }
+      let login_data = { data: obj.encryptedData,iv:obj.iv,code:obj.code}
       return http.Post({
-        url: url, params: login_data, loading: true, message: '正在登录'}).then((res) => {
+        url: url, params: login_data}).then((res) => {
         if (res.code == 'success') {
+          wx.setStorageSync('open_id', res.data.open_id);
           wx.setStorageSync('user_info', res.data);
           wx.setStorageSync('token', res.data.token);
           this.globalData.token = res.data.token;
+          this.globalData.public_open_id = res.data.public_open_id;
           this.globalData.user_info = res.data;
           this.globalData.mobile = res.data.mobile;
-          this.globalData.mobile_status = res.data.mobile_status;
           resolve({ code: 'success' });
         } else {
           resolve({ code: 'fail' });
@@ -183,6 +139,11 @@ App({
       url: '/pages/index/index',
     })
   },
+  redirectUser() {
+    wx.switchTab({
+      url: '/pages/my/my',
+    })
+  },
   setShare(){
     let share_img = this.globalData.share_img;
     let num = new Date().getSeconds() % share_img.length;
@@ -199,4 +160,13 @@ App({
       resolve(this.globalData.token);
     });
   },
+
+  checkLogin(){
+    let token = this.globalData.token;
+    if (!token) {
+      wx.switchTab({
+        url: '/pages/my/my',
+      })
+    }
+  }
 })

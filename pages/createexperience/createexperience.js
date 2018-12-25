@@ -20,6 +20,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '创建心得'
     });
+    app.checkLogin();
     let id = options.id;
     if(id > 0){
       this.setData({

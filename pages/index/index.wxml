@@ -5,7 +5,15 @@
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="{{id}}">
       <swiper-item>
-        <image src="{{item.img_url}}" class="slide-image" width="375" height="300" />
+        <view wx:if="{{item.jump_type=='1'}}">
+        <image src="{{item.img_url}}" mode='aspectFill' class="slide-image" width="375" height="300" />
+        </view>
+         <view wx:if="{{item.jump_type=='2'}}">
+         <navigator url="{{item.location_url}}"><image src="{{item.img_url}}" mode='aspectFill' class="slide-image" width="375" height="300" /></navigator>
+        </view>
+         <view wx:if="{{item.jump_type=='3'}}">
+        <image src="{{item.img_url}}" data-url="{{item.location_url}}" mode='aspectFill' class="slide-image" width="375" height="300" bindtap='redirectLink' />
+        </view>
       </swiper-item>
     </block>
   </swiper>

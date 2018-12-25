@@ -123,10 +123,16 @@ Page({
 
   bindGetUserInfo: function (e) {
     // 用户点击授权后，这里可以做一些登陆操作
-    app.wxLogin(e.detail).then((res)=>{
-      if (res.code == 'success'){
+    let obj = {
+      encryptedData: e.detail.encryptedData,
+      iv: e.detail.iv,
+    }
+    app.wxLogin(obj).then((res) => {
+      if (res.code == 'success') {
         this.setToken();
-        app.alert({title:'授权登录成功'})
+        wx.showToast({
+          title: '授权登录成功',
+        })
       }
     });
   },

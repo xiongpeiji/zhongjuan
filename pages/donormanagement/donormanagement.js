@@ -23,6 +23,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '求捐管理'
     });
+    app.checkLogin();
     this.getData({ refresh: false,is_first:true});
   },
   //去发布求捐

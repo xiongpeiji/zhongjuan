@@ -8,7 +8,7 @@
             <view class="program_title">
                 众捐
             </view>
-            <view class="program_text">为了保证信息安全，请验证您的手机号</view>
+            <view class="program_text">{{tip}}</view>
             <form bindsubmit='submit'>
                 <view class="phone_number_box">
                     <input class="input_numbers" name="mobile" type="number" bindinput="mobileInputEvent"  maxlength="{{11}}" placeholder="请输入您的手机号" />

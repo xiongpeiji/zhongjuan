@@ -481,7 +481,7 @@ swiper, swiper image {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index:1000;
+  z-index:999;
 }
 .content_detail{
   width: 100%;
@@ -800,4 +800,54 @@ swiper, swiper image {
 .comment_dis label {
 color:#666;
 margin-right:10rpx;
+}
+.share_content{
+  width: 100%;
+  height: 380rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 1001;
+  box-sizing: border-box;
+  padding-top:25rpx;
+}
+.title_shares{
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.share_btns{
+  width: 430rpx;
+  height: 136rpx;
+  margin: auto;
+}
+.share_btns .share_button{
+  width: 215rpx;
+  display: inline-block;
+  border:none;
+  padding: 0;
+  text-align: center;
+  font-size: 0;
+}
+.share_btns .share_button image{
+  width: 74rpx;
+  height: 74rpx;
+  display: block;
+  margin: auto;
+}
+.share_btns .share_button text{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color:#666666;
+}
+.cannel_btn{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFFFFF;
 }

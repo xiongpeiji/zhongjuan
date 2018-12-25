@@ -38,24 +38,25 @@
                 </view>
             </view>
         </picker>
+         <view class="creat_xinde_con">
+            <label class="xinde_title">详细地址</label>
+            <view class="title_input_box">
+                <input value="{{address}}" name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
+            </view>
+        </view>
         <view class="creat_xinde_con">
             <label class="xinde_title">机构规模</label>
             <view class="title_input_box">
-                <input value="{{jigouNumber}}" name='jigouNums' type="text" placeholder="请输入机构成员数" maxlength="11"/>
+                <input value="{{number_people}}" name='number_people' type="text" placeholder="请输入机构成员数" maxlength="11"/>
             </view>
         </view>
           <view class="jianjie_title">
                 机构简介 
           </view>
         <view class="textArea_box">
-            <textarea auto-height placeholder="请输机构简介" bindinput='setJigoujianjie' maxlength="10000" value='{{jigoujianjie}}' />
+            <textarea auto-height placeholder="请输机构简介" bindinput='setDesc' maxlength="10000" value='{{desc}}' />
         </view>
-        <view class="creat_xinde_con">
-            <label class="xinde_title">详细地址</label>
-            <view class="title_input_box">
-                <input value="{{address}}" name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
-            </view>
-        </view>
+       
         
         <view class="creat_xinde_con">
             <label class="xinde_title">联络人</label>

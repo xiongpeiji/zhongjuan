@@ -3,6 +3,7 @@
     padding-top:12rpx;
     background: #fff;
     display: block;
+    margin-bottom: 20rpx
 }
 .message_content .msg_list{
     padding:30rpx 20rpx 30rpx;
@@ -59,7 +60,7 @@
 }
 .msg_texts{
     /* width: 500rpx; */
-    padding-right: 100rpx;
+    padding: 15rpx 100rpx 0 0;
     position: relative;
     font-size: 24rpx;
     color:#888888;
@@ -101,4 +102,19 @@
 .no_message .no_msg_text{
     font-size: 26rpx;
     color:#747474;
+}
+
+.creat-btn-xinde{
+  padding:20rpx;
+}
+.creat-btn-xinde button{
+  width: 446rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: auto;
+  border: 2rpx solid #E4572E;
+  border-radius: 38px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #E65E37
 }

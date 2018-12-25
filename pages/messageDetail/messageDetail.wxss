@@ -106,3 +106,18 @@
   width: 150rpx;
   color:#666666;
 }
+
+.creat-btn-xinde{
+  padding:20rpx;
+}
+.creat-btn-xinde button{
+  width: 446rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: auto;
+  border: 2rpx solid #E4572E;
+  border-radius: 38px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #E65E37
+}

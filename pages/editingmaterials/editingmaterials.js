@@ -20,6 +20,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '编辑资料'
     });
+    app.checkLogin();
     this.setUserInfo();
   },
 

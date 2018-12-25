@@ -14,7 +14,8 @@ Page({
     page:1,
     isLast:false,
     up_num:0,
-    comment_num:0
+    comment_num:0,
+    no_msg:'',
   },
 
   /**
@@ -24,6 +25,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得评论回复'
     });
+    app.checkLogin();
     this.data.id = options.id;
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
@@ -98,17 +100,13 @@ Page({
     let comment_id = e.currentTarget.dataset.id;
     let is_up = e.currentTarget.dataset.val;
     let index = e.currentTarget.dataset.index;
-    if (is_up > 0) {
-      app.alert({ title: '您已经点过赞了！' });
-      return;
-    }
     let url = app_data.base + '/Comment/experienceCommentReplyUp'
     let params = { token: app_data.token, id: comment_id };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         let list = this.data.list;
         list[index].is_up = is_up == 0 ? 1 : 0;
-        list[index].up_num = +list[index].up_num + 1;
+        list[index].up_num = is_up == 0 ? +list[index].up_num + 1 : +list[index].up_num - 1;
         this.setData({ list: list });
       }
     })
@@ -131,7 +129,9 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      app.alert({ title: '暂无更多数据', time: 1000 });
+      this.setData({
+        no_msg:'暂无更多回复'
+      })
     } else {
       page = page + 1;
       this.setData({
@@ -144,6 +144,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return app_data.share;
   }
 })

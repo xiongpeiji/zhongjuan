@@ -27,8 +27,8 @@ Page({
     address:"",//详细地址
     userName:"",//用户名
     mobile:"",//手机
-    jigoujianjie:"",//机构简介
-    jigouNumber:''//机构人数
+    desc:"",//机构简介
+    number_people:''//机构人数
   },
 
   /**
@@ -36,7 +36,11 @@ Page({
    */
   onLoad (options) {
     this.getType();//获取机构类型
-    this.getUserinstitutionDetail();
+    app.checkLogin();
+    let status = options.status;
+    if(status > 0){
+      this.getUserinstitutionDetail();
+    }
     wx.setNavigationBarTitle({
       title: '机构认证'
     });
@@ -84,7 +88,9 @@ Page({
           prove_info:instituInfo.prove_info,//机构照片
           curSex:curSex,//设置性别
           curType:curType, // 当前机构类型
-          curCity:curCity // 当前选择的地域
+          curCity:curCity, // 当前选择的地域
+          desc:instituInfo.desc,
+          number_people:instituInfo.number_people
         })
       }
     })
@@ -139,9 +145,15 @@ Page({
     }
   },
 
+  setDesc(e) {
+    this.setData({
+      desc: e.detail.value
+    })
+  },
+
+
   //提交机构认证资料
   submitDataInfo(e){
-    console.log(e);
     let value = e.detail.value;
     let url = app_data.base +'User/saveInstitution';
     let token = app_data.token;
@@ -159,15 +171,14 @@ Page({
       id_card_just:this.data.cardOne,//身份证正面【上传图像返回地址】
       id_card_back:this.data.cardTwo,//身份证反面【上传图像返回地址】
       prove_info:this.data.prove_info,//机构证明资料【上传图像返回地址组成json格式】
-
+      desc:this.data.desc,
+      number_people:value.number_people
     };
     http.Post({url:url,params:params}).then((res)=>{
         if(res.code == 'success'){
           app.alert({title:res.msg});
           setTimeout(()=>{
-            wx.switchTab({
-              url:"../my/my"
-            })
+            app.redirectUser();
           },1000)
         }
     });

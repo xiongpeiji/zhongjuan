@@ -5,7 +5,11 @@
             <view class="no_msg_img">
                 <image src="/images/iconfontxiaoxi@2x.png"></image>
             </view>
-            <view class="no_msg_text">还没有新消息哦</view>
+            <view class="no_msg_text" hidden='{{!token}}'>还没有新消息哦</view>
+            <view class="no_msg_text" hidden='{{token}}'>登录获取更多消息</view>
+             <view class='creat-btn-xinde' hidden='{{token}}'>
+                <button plain="true" bindgetuserinfo='userLogin' open-type='getUserInfo'>授权登录 </button>
+              </view>
         </view>
         <view class="msg_list" wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="msgDetails">
             <view class="msg_discription">

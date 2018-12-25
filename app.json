@@ -19,7 +19,8 @@
     "pages/donationmanagement/donationmanagement",
     "pages/donormanagement/donormanagement",
     "pages/myorganization/myorganization",
-    "pages/dialog/dialog"
+    "pages/dialog/dialog",
+    "pages/webView/webView"
   ],
   "window": {
     "backgroundTextStyle": "dark",

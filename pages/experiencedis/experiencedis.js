@@ -19,8 +19,9 @@ Page({
     is_up:0,
     content:'',
     token:null,
+    no_msg: '',
     shareMax:true,
-    no_msg:''
+    input_status:true,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -30,18 +31,6 @@ Page({
     });
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
-  },
-  //分享弹窗
-  sharWeixin(e){
-    this.setData({
-      shareMax:false
-    })
-  },
-  //取消弹窗
-  quxiaoFn(e){
-    this.setData({
-      shareMax: true
-    })
   },
   //获取详情信息
   getDetail(){
@@ -61,34 +50,35 @@ Page({
     });
   },
   experienceUp(e) {
-    if (this.data.is_up > 0) {
-      app.alert({ title: '您已经点过赞了！' });
+    if (!this.data.token) {
+      this.showDialog();
       return;
     }
     let url = app_data.base + '/Experience/experienceUp'
     let params = { token: app_data.token, id: this.data.id };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        let up_num = +this.data.up_num + 1;
-        this.setData({ up_num: up_num, is_up: 1 });
+        let is_up = this.data.is_up == 1 ? 0 : 1;
+        let up_num = is_up == 1 ? +this.data.up_num + 1 : +this.data.up_num - 1;
+        this.setData({ up_num: up_num, is_up: is_up});
       }
     })
   },
   commentUp(e){
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
     let comment_id = e.currentTarget.dataset.id;
     let is_up = e.currentTarget.dataset.val;
     let index = e.currentTarget.dataset.index;
-    if (is_up > 0) {
-      app.alert({ title: '您已经点过赞了！' });
-      return;
-    }
     let url = app_data.base + '/Comment/experienceCommentUp'
     let params = { token: app_data.token, id: comment_id };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         let list = this.data.list;
         list[index].is_up = is_up == 0 ? 1 : 0;
-        list[index].comment_up_num = +list[index].comment_up_num+1;
+        list[index].comment_up_num = is_up == 0 ? +list[index].comment_up_num + 1 : +list[index].comment_up_num - 1;
         this.setData({list:list});
       }
     })
@@ -120,14 +110,23 @@ Page({
     })
   },
 
+  setContent(e){
+    this.setData({
+      content: e.detail.value
+    })
+  },
+
   comment(e) {
-    let content = e.detail.value;
-    if (!content) {
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
+    if (!this.data.content) {
       app.alert({ title: '请输入评论内容！' });
       return;
     }
     let url = app_data.base + '/Comment/addExperienceComment'
-    let params = { token: app_data.token, experience_id: this.data.id, content: content };
+    let params = { token: app_data.token, experience_id: this.data.id, content: this.data.content };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         this.getData({ refresh: false, is_first: true });
@@ -138,6 +137,10 @@ Page({
   },
   //跳转到评论列表
   goCommentList(e){
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../experiencecomment/experiencecomment?id='+id
@@ -151,15 +154,26 @@ Page({
     })
   },
 
+  shareWeixin(){
+    this.setData({
+      shareMax:false
+    })
+  },
+
+  closeShareMax(){
+    this.setData({
+      shareMax: true
+    })
+  },
+
   /**
   * 页面上拉触底事件的处理函数
   */
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      // app.alert({ title: '暂无更多评论', time: 1000 });
       this.setData({
-        no_msg: '暂无更多评论了~'
+        no_msg: "没有更多评论啦~"
       })
     } else {
       page = page + 1;
@@ -178,10 +192,20 @@ Page({
 
   setToken() {
     app.getToken().then((res) => {
-      this.setData({
-        token: res
-      });
+      if(res){
+        this.setData({
+          token: res,
+          input_status:false,
+        });
+      }
     })
+  },
+  
+  setInputStatus(){
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
   },
 
   showDialog: function () {
@@ -194,10 +218,18 @@ Page({
 
   bindGetUserInfo: function (e) {
     // 用户点击授权后，这里可以做一些登陆操作
-    app.wxLogin(e.detail).then((res) => {
+    let obj = {
+      encryptedData: e.detail.encryptedData,
+      iv: e.detail.iv,
+    }
+    app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
         this.setToken();
-        app.alert({ title: '授权登录成功' })
+        this.getDetail();
+        this.getData({ refresh: false, is_first: true });
+        wx.showToast({
+          title: '授权登录成功',
+        })
       }
     });
   },
@@ -219,6 +251,7 @@ Page({
         http.Post({ url: url, params: params }).then((res) => {
           if (res.code == 'success') {
             _this.setData({
+              shareMax:true,
               share_num: +_this.data.share_num + 1,
             })
           }

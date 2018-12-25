@@ -30,12 +30,12 @@ Page({
       title: '我的'
     });
     this.checkUser();
-    app.setTabBarMsg()
+    app.setTabBarMsg();
   },
   checkUser() {
     let token = app_data.token;
-    console.log(token);
     if(token){
+        app.getUserInfo();
         let url = app_data.base+'User/index';
         let params = {token:token};
         let data = {url:url,params:params};
@@ -78,9 +78,13 @@ Page({
     let institutionType = e.currentTarget.dataset.type;
     switch (Number(institutionType)) {
       case 0:
+        wx.navigateTo({
+          url: '../institutionalaccreditation/institutionalaccreditation?status=0'
+        })
+        break;
       case 3:
         wx.navigateTo({
-          url: '../institutionalaccreditation/institutionalaccreditation'
+          url: '../institutionalaccreditation/institutionalaccreditation?status=3'
         })
         break;
       case 1:
@@ -106,15 +110,16 @@ Page({
   },
   //授权登录
   userLogin(e) {
-    let _this = this;
-    let wx_user_info = e.detail.userInfo;
     let obj = {
-      username: wx_user_info.nickName,
-      avatar: wx_user_info.avatarUrl
+      encryptedData: e.detail.encryptedData,
+      iv:e.detail.iv,
     }
     app.wxLogin(obj).then((res)=>{
       if(res.code == 'success'){
         this.checkUser();
+        wx.showToast({
+          title: '授权登录成功',
+        })
       }
     });
   },
