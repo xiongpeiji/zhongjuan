@@ -449,3 +449,58 @@ swiper, swiper image {
   right: 0;
   background: #FFFFFF;
 }
+
+.modal-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index:1002;
+}
+
+.modal-body {
+    position: relative;
+}
+
+.modal-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 86%;
+    overflow: hidden;
+    background: #fff;
+    padding: 0;
+}
+
+.modal-content canvas {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.close {
+    position: fixed;
+    top: 33px;
+    right: 7%;
+    z-index: 999;
+    width: 40rpx;
+}
+
+.creat-btn-save-img{
+  margin-top: 50rpx;
+  padding:20rpx;
+}
+.creat-btn-save-img button{
+  width: 446rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin: auto;
+  border-radius: 38px;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  background: #E65E37;
+  color:#fff
+}

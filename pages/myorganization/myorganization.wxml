@@ -35,7 +35,7 @@
             <view class="user_name_text">
                 <label class="names">联络人</label>
                 <view class="eidt_right" data-id="{{myOrgInfos.id}}" bindtap="repeatEidetInfo" hidden="{{myOrgInfos.status!='3'}}">
-                    <image src="/images/qianbi.png"></image>
+                    <image mode='aspectFill' src="/images/qianbi.png"></image>
                     <label class="edit_text">重新编辑</label>
                 </view>
             </view>

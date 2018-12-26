@@ -6,7 +6,7 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
-<view class="container">
+<view class="container {{hiddenBody?'hiddenBody':''}}">
   <view class='promotion-img'>
     <swiper bindchange="swiper">
       <block wx:for="{{info.image}}" wx:key="{{item.index}}">
@@ -24,7 +24,7 @@
       <span>{{info.end_time}}</span>
     </view>
     <view class="artact_user">
-      <span class="small_title">{{info.name}}</span>
+      <span class="small_title">{{info.institution_info.name}}</span>
     </view>
     <view class="artacle_wrap">
       <p class="text_details">{{info.content}}</p>
@@ -60,9 +60,7 @@
         </view>
       </view>
     </view>
-    <view class="jigou_titles send_details_btn">
-      发布机构
-    </view>
+    <view class="jigou_titles">发布机构</view>
     <view class="jigouDetail_btn" bindtap="showMaxing">
         <span class="jigou_name">{{institution_info.name}}</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
@@ -78,7 +76,7 @@
         <image src="{{item.icon}}"></image>
         <span class="wuzi_name">{{item.name}}-{{item.num}}</span>
         <view class="juan_nums">
-          已捐<span>{{item.after_num}}</span>
+          已捐<span>{{item.after_num}}</span>件
         </view>
       </view>
     </view>
@@ -141,7 +139,7 @@
   </view>
   <view class="input_box" hidden='{{!focus}}'>
     <view class="section_input">
-      <input placeholder="输入评论…" focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
+      <input placeholder="输入评论…" maxlength='200' focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
     </view>
     <view class="comment_action" bindtap='comment'>
       <button class='send_msg_btn'>发送</button>
@@ -183,7 +181,7 @@
       <view class="user_name_phone">
         <view class="fz_name">
           负责人<label>{{institution_info.liaison_person}}</label>
-          <image src="/images/nan-2.png"></image>
+          <image src="/images/nan-{{institution_info.liaison_sex}}.png"></image>
         </view>
         <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
@@ -236,7 +234,7 @@
       </view>
       <button class='cannel_btn' bindtap="closeShareMax">取消</button>
   </view>
-
+  <!--生成分享图-->
    <view class="modal-box" hidden="{{flag}}" catchtouchmove="{{true}}">
 
         <view class="modal-content" style="height:{{canvasHeight}}px;margin-top:{{modalMarginTop}}">
@@ -244,8 +242,40 @@
         </view>
 
         <view class='creat-btn-xinde'>
-          <button plain="true" bindtap='saveImg'>保存图片</button>
+          <button bindtap='saveShareImg'>保存图片</button>
         </view>
+    </view>
+    <!--点击我要捐助按钮弹窗-->
+    <view class='maxing' hidden='{{warmTips}}'></view>
+    <view class='want_box' hidden='{{warmTips}}'>
+      <icon bindtap='closeWarm' class='close_icon' type="cancel" size="30" color="#fff" />
+      <view class='want_content'>
+        <h2>捐助方信息</h2>
+        <view class='jigou_texts'>
+          <label>捐助机构：</label>
+          {{institution_info.name}}
+        </view>
+        <view class='jigou_texts'>
+          <label>联  系  人：</label>
+          {{institution_info.liaison_person}} 
+        </view>
+        <view class='jigou_texts'>
+          <label>联系电话：</label>
+          {{institution_info.liaison_tel}}
+        </view>
+        <view class='jigou_texts'>
+          <label>机构地址：</label>
+          {{institution_info.address}} 
+        </view>
+      </view>
+      <view class='warm_tips'>
+        <view class='warm_tit'>温馨提示</view>
+        <view class='warm_text'>
+        感谢您的爱心~请确认捐赠快递已发出并已获得单号再完成捐助信息哦〜
+        </view>
+        <button  data-id="{{id}}" bindtap='sendLove'>爱心已寄出</button>
+      </view>
+      
     </view>
 </view>
 

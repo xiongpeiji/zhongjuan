@@ -51,7 +51,7 @@
        <!--评论输入-->
   <view class="input_box">
     <view class="section_input">
-      <input placeholder="回复{{info.username}}..." bindconfirm="comment" confirm-type="send" bindinput='setContent' value='{{content}}'/>
+      <input placeholder="回复{{info.username}}..." maxlength='200' bindconfirm="comment" confirm-type="send" bindinput='setContent' value='{{content}}'/>
     </view>
     <view class="comment_action">
       <button class='send_msg_btn' bindtap='comment'>发送</button>
