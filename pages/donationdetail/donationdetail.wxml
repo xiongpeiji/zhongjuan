@@ -242,7 +242,7 @@
         </view>
 
         <view class='creat-btn-xinde'>
-          <button bindtap='saveShareImg'>保存图片</button>
+          <button bindtap='saveImg'>保存图片</button>
         </view>
     </view>
     <!--点击我要捐助按钮弹窗-->
