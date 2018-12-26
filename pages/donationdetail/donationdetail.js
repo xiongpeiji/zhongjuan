@@ -366,7 +366,7 @@ Page({
       ctx.fillText('"'+this.data.info.title+'"', modal_width * 0.2, modal_height * 0.1);
     }else{
       ctx.font = '16px 微软雅黑';
-      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.03);
+      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.08);
     }
     temp_height = modal_width * 0.15 + 20;
     ctx.drawImage(this.data.share_img, modal_width * 0.1, temp_height, modal_width * 0.8, modal_height * 0.45)
