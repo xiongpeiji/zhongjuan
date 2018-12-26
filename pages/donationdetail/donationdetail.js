@@ -41,6 +41,7 @@ Page({
     avatar:'',
     share_img:'',
     username:'',
+    warmTips:true,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -73,6 +74,12 @@ Page({
       institution_model: true
     })
   },
+  //关闭弹窗
+  closeWarm(e){
+    this.setData({
+      warmTips:true
+    })
+  },
   //获取详情信息
   getDetail() {
     let url = app_data.base + 'Donation/detail';
@@ -89,6 +96,7 @@ Page({
           institution_swiper_all: res.data.institution_info.images.length,
           institution_info:res.data.institution_info,
           share_mini_program:res.data.share_img,
+          
         });
         this.getImgPath(res.data.image[0]).then((res) => {
           this.setData({
@@ -226,6 +234,16 @@ Page({
       },2000);
       return;
     }
+    this.setData({
+      warmTips: false
+    })
+    
+  },
+  //爱心已送出按钮
+  sendLove(e){
+    this.setData({
+      warmTips: true
+    })
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../wanttodonate/wanttodonate?id=' + id

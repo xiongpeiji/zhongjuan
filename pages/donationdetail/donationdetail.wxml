@@ -183,7 +183,7 @@
       <view class="user_name_phone">
         <view class="fz_name">
           负责人<label>{{institution_info.liaison_person}}</label>
-          <image src="/images/nan-2.png"></image>
+          <image src="/images/nan-{{institution_info.liaison_sex}}.png"></image>
         </view>
         <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
@@ -216,30 +216,8 @@
               </view>
             </view>
         </view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </view>
     </view>
-
-
-
   </view>
 
    <!--分享弹窗-->
@@ -258,7 +236,7 @@
       </view>
       <button class='cannel_btn' bindtap="closeShareMax">取消</button>
   </view>
-
+  <!--生成分享图-->
    <view class="modal-box" hidden="{{flag}}" catchtouchmove="{{true}}">
 
         <view class="modal-content" style="height:{{canvasHeight}}px;margin-top:{{modalMarginTop}}">
@@ -268,6 +246,38 @@
         <view class='creat-btn-xinde'>
           <button bindtap='saveImg'>保存图片</button>
         </view>
+    </view>
+    <!--点击我要捐助按钮弹窗-->
+    <view class='maxing' hidden='{{warmTips}}'></view>
+    <view class='want_box' hidden='{{warmTips}}'>
+      <icon bindtap='closeWarm' class='close_icon' type="cancel" size="30" color="#fff" />
+      <view class='want_content'>
+        <h2>捐助方信息</h2>
+        <view class='jigou_texts'>
+          <label>捐助机构：</label>
+          {{institution_info.name}}
+        </view>
+        <view class='jigou_texts'>
+          <label>联  系  人：</label>
+          {{institution_info.liaison_person}} 
+        </view>
+        <view class='jigou_texts'>
+          <label>联系电话：</label>
+          {{institution_info.liaison_tel}}
+        </view>
+        <view class='jigou_texts'>
+          <label>机构地址：</label>
+          {{institution_info.address}} 
+        </view>
+      </view>
+      <view class='warm_tips'>
+        <view class='warm_tit'>温馨提示</view>
+        <view class='warm_text'>
+        感谢您的爱心~请确认捐赠快递已发出并已获得单号再完成捐助信息哦〜
+        </view>
+        <button  data-id="{{id}}" bindtap='sendLove'>爱心已寄出</button>
+      </view>
+      
     </view>
 </view>
 
