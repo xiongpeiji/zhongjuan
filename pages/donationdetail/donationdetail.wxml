@@ -185,6 +185,7 @@
         </view>
         <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
+
       <view class="jigou_photos">
             <view class="infoFail">
                 机构简介
@@ -241,7 +242,7 @@
         </view>
 
         <view class='creat-btn-xinde'>
-          <button bindtap='saveShareImg'>保存图片</button>
+          <button bindtap='saveImg'>保存图片</button>
         </view>
     </view>
     <!--点击我要捐助按钮弹窗-->
