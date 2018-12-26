@@ -101,7 +101,9 @@ Page({
           institution_info:res.data.institution_info,
           share_mini_program:res.data.share_img,
         });
-        this.getImgPath(res.data.image[0]).then((res) => {
+        let num = new Date().getSeconds() % res.data.image.length;
+        let img = res.data.image[num];
+        this.getImgPath(img).then((res) => {
           this.setData({
             share_img: res
           })
@@ -364,58 +366,73 @@ Page({
   },
 
   //生成分享图
-  createShareImg(){
+  createShareImg() {
     this.closeShareMax();
-    if(!this.data.share_img || !this.data.share_mini_program){
-      app.alert({title:'图片转换失败！'});
+    if (!this.data.share_img || !this.data.share_mini_program) {
+      app.alert({ title: '图片转换失败！' });
       return;
     }
     var that = this;
     var modal_width = this.data.width * 0.865;
-    var modal_height = this.data.height * 0.865;
+    var modal_height = this.data.height * 0.9;
     var ctx = wx.createCanvasContext('share-image');
+    //清空画布
+    ctx.clearRect(0, 0, modal_width, modal_height)
+    //绘制背景色
+    ctx.setFillStyle('#fff')
+    ctx.fillRect(0, 0, modal_width, modal_height);
+    //绘制背景色
     var temp_height = 0;
-    if(this.data.avatar){
-      //绘制背景图片
+    if (this.data.avatar) {
+      //绘制背景图
       ctx.save()
       ctx.beginPath()
-      ctx.arc(modal_width*0.1, modal_width*0.1, modal_width*0.05, 0, 2 * Math.PI)
+      ctx.arc(modal_width * 0.1, modal_width * 0.1, modal_width * 0.05, 0, 2 * Math.PI)
       ctx.clip()
       ctx.drawImage(this.data.avatar, modal_width * 0.05, modal_width * 0.05, 0.1 * modal_width, 0.1 * modal_width)
       ctx.restore()
       ctx.setFontSize(14)
-      ctx.fillText(this.data.username, modal_width*0.2, modal_height*0.05);
-      ctx.font = '16px 微软雅黑';
-      ctx.fillText('"'+this.data.info.title+'"', modal_width * 0.2, modal_height * 0.1);
-    }else{
-      ctx.font = '16px 微软雅黑';
-      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.08);
+      ctx.setFillStyle('#5a5a5a')
+      ctx.fillText(this.data.username, modal_width * 0.2, modal_height * 0.05);
+      ctx.setFontSize(18)
+      ctx.setFillStyle('#000')
+      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.2, modal_height * 0.1, modal_width * 0.7);
+    } else {
+      ctx.setFontSize(18)
+      ctx.setFillStyle('#000')
+      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.08, modal_width * 0.7);
     }
+    ctx.save()
     temp_height = modal_width * 0.15 + 20;
     ctx.drawImage(this.data.share_img, modal_width * 0.1, temp_height, modal_width * 0.8, modal_height * 0.45)
     temp_height = temp_height + modal_height * 0.45
     ctx.setFontSize(14)
-    var result = this.breakLinesForCanvas(this.data.info.content, modal_width - modal_width*0.1, ctx)
+    ctx.setFillStyle('#000')
+    var result = this.breakLinesForCanvas(this.data.info.content, modal_width - modal_width * 0.1, ctx)
     for (var i = 0; i < result.length; i++) {
-      if(i<3){
+      if (i < 3) {
         temp_height = temp_height + 20
         ctx.fillText(result[i], modal_width * 0.05, temp_height)
       }
     }
+    ctx.save()
     temp_height = temp_height + 10
     ctx.drawImage(this.data.share_mini_program, modal_width / 3, temp_height, modal_width / 3, modal_width / 3)
-    temp_height = temp_height + modal_width/3 + 20
+    ctx.save()
+    temp_height = temp_height + modal_width / 3 + 20
     ctx.setFontSize(14)
-    ctx.fillText('进入众捐小程序查看详情',modal_width/4 + 10, temp_height);
+    ctx.setFillStyle('#5a5a5a')
+    ctx.fillText('进入众捐小程序查看详情', modal_width / 4 + 10, temp_height);
+    ctx.save()
     ctx.draw()
+    that.setData({
+      flag: false,
+      canvasHeight: modal_height,
+    })
     setTimeout(function () {
-      that.setTempPath({modal_width:modal_width,modal_height:modal_height});
-      that.setData({
-        flag: false,
-        canvasHeight: modal_height,
-      })
+      that.setTempPath({ modal_width: modal_width, modal_height: modal_height });
+      wx.hideLoading()
     }, 1000);
-    wx.hideLoading()
   },
 
   breakLinesForCanvas: function (text, width, ctx) {
@@ -474,6 +491,62 @@ Page({
         }
       })
     })
+  },
+
+  saveShareImg(){
+    let that = this;
+    if(!this.data.tempPath){
+      app.alert({title:'保存失败'});
+    }
+    this.getWechatSetting().then((res)=>{
+      if (!res.authSetting['scope.writePhotosAlbum']) {
+        wx.authorize({
+          scope: 'scope.writePhotosAlbum',
+          success() {
+            that.saveImg();
+          },fail(){
+            app.modal({ content: '将图片保存至相册需要访问相册权限，请设置为允许访问相册', confirmText:'允许'}).then((res)=>{
+              wx.openSetting({
+                success: (res) => {
+                  if (res.authSetting["scope.writePhotosAlbum"]) {
+                    that.saveImg();
+                  }
+                }
+              })      
+            })
+          }
+        });  
+      }else{
+        this.saveImg();
+      }     
+    });
+
+  },
+
+  getWechatSetting(){
+    return new Promise((resolve) => {
+      wx.getSetting({
+        success: function (res) {
+          resolve(res);
+        }
+      });
+    })
+  },
+
+  saveImg(){
+    let that = this;
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.tempPath,
+      success: function (res) {
+        that.setData({
+          flag: true,
+        })
+        wx.showToast({
+          title: '保存成功',
+          icon: "success"
+        })
+      }
+    });
   },
   /**
    * 用户点击右上角分享
