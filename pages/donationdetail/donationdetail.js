@@ -351,6 +351,7 @@ Page({
     var modal_width = this.data.width * 0.865;
     var modal_height = this.data.height * 0.865;
     var ctx = wx.createCanvasContext('share-image');
+    var temp_height = 0;
     if(this.data.avatar){
       //绘制背景图片
       ctx.save()
@@ -361,17 +362,29 @@ Page({
       ctx.restore()
       ctx.setFontSize(14)
       ctx.fillText(this.data.username, modal_width*0.2, modal_height*0.05);
-      ctx.setFontSize(16)
-      ctx.fillText('“'+this.data.info.title+'”', modal_width * 0.2, modal_height * 0.1);
+      ctx.font = '16px 微软雅黑';
+      ctx.fillText('"'+this.data.info.title+'"', modal_width * 0.2, modal_height * 0.1);
     }else{
-      ctx.fillText('“' + this.data.info.title + '”', modal_width * 0.1, modal_height * 0.03);
+      ctx.font = '16px 微软雅黑';
+      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.03);
     }
-    ctx.drawImage(this.data.share_img, modal_width * 0.1, modal_height * 0.12, modal_width * 0.8, modal_height * 0.5)
+    temp_height = modal_width * 0.15 + 20;
+    ctx.drawImage(this.data.share_img, modal_width * 0.1, temp_height, modal_width * 0.8, modal_height * 0.45)
+    temp_height = temp_height + modal_height * 0.45
     ctx.setFontSize(14)
-    ctx.fillText('进入众捐小程序查看详情', modal_width / 4+10, modal_height - 20);
-    ctx.drawImage(this.data.share_mini_program, modal_width / 3, modal_height*0.65, modal_width / 3, modal_width / 3)
+    var result = this.breakLinesForCanvas(this.data.info.content, modal_width - modal_width*0.1, ctx)
+    for (var i = 0; i < result.length; i++) {
+      if(i<3){
+        temp_height = temp_height + 20
+        ctx.fillText(result[i], modal_width * 0.05, temp_height)
+      }
+    }
+    temp_height = temp_height + 10
+    ctx.drawImage(this.data.share_mini_program, modal_width / 3, temp_height, modal_width / 3, modal_width / 3)
+    temp_height = temp_height + modal_width/3 + 20
+    ctx.setFontSize(14)
+    ctx.fillText('进入众捐小程序查看详情',modal_width/4 + 10, temp_height);
     ctx.draw()
-    
     setTimeout(function () {
       that.setTempPath({modal_width:modal_width,modal_height:modal_height});
       that.setData({
@@ -380,6 +393,39 @@ Page({
       })
     }, 1000);
     wx.hideLoading()
+  },
+
+  breakLinesForCanvas: function (text, width, ctx) {
+    var result = [];
+    var breakPoint = 0;
+    while ((breakPoint = this.findBreakPoint(text, width, ctx)) !== -1) {
+      result.push(text.substr(0, breakPoint));
+      text = text.substr(breakPoint);
+    }
+    if (text) {
+      result.push(text);
+    }
+    return result;
+  },
+
+  findBreakPoint: function (text, width, context) {
+    var min = 0;
+    var max = text.length - 1;
+    while (min <= max) {
+      var middle = Math.floor((min + max) / 2);
+      var middleWidth = context.measureText(text.substr(0, middle)).width;
+      var oneCharWiderThanMiddleWidth = context.measureText(text.substr(0, middle + 1)).width;
+      if (middleWidth <= width && oneCharWiderThanMiddleWidth > width) {
+        return middle;
+      }
+      if (middleWidth < width) {
+        min = middle + 1;
+      } else {
+        max = middle - 1;
+      }
+    }
+
+    return -1;
   },
 
   setTempPath(obj){
