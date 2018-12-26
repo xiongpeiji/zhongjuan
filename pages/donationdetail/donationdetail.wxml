@@ -266,7 +266,7 @@
         </view>
 
         <view class='creat-btn-xinde'>
-          <button plain="true" bindtap='saveImg'>保存图片</button>
+          <button bindtap='saveImg'>保存图片</button>
         </view>
     </view>
 </view>
