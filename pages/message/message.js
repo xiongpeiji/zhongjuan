@@ -65,9 +65,12 @@ Page({
   },
 
   setToken() {
-    app.getToken();
+    app.getToken().then((res) => {
+      this.setData({
+        token: res
+      });
+    })
   },
-
   //授权登录
   userLogin(e) {
     let obj = {
@@ -76,6 +79,7 @@ Page({
     }
     app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
+        app.getUserInfo();
         this.setToken();
         this.getData({ refresh: false, is_first: true });
         app.setTabBarMsg()
@@ -104,10 +108,13 @@ Page({
    */
   onReachBottom() {
     let page = this.data.page;
+    
     if (this.data.isLast) {
-      this.setData({
-        no_msg: "没有更多消息啦~"
-      })
+      if (this.data.list.length > 10) {
+        this.setData({
+          no_msg: "没有更多消息啦~"
+        });
+      }
     } else {
       page = page + 1;
       this.setData({

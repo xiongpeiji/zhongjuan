@@ -231,9 +231,11 @@ Page({
     let page = this.data.page;
     if (this.data.isLast) {
       // app.alert({ title: '暂无更多数据', time: 1000 });
-      this.setData({
-        no_msg: "没有更多求捐信息啦~"
-      });
+      if(this.data.list.length > 10){
+        this.setData({
+          no_msg: "没有更多求捐信息啦~"
+        });
+      }
     } else {
       page = page + 1;
       this.setData({

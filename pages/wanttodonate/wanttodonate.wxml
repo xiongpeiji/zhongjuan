@@ -34,7 +34,7 @@
         <view class="creat_xinde_con">
             <label class="xinde_title">快递单号</label>
             <view class="title_input_box">
-                <input name="express_num" type="number" placeholder="请输入您的快递单号" maxlength="30"/>
+                <input name="express_num" type="number" value='{{express_num}}' placeholder="请输入您的快递单号" maxlength="30"/>
             </view>
         </view>
         <view class="imgupload_box">

@@ -116,6 +116,7 @@ Page({
     }
     app.wxLogin(obj).then((res)=>{
       if(res.code == 'success'){
+        app.getUserInfo();
         this.checkUser();
         wx.showToast({
           title: '授权登录成功',

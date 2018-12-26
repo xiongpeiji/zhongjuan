@@ -83,9 +83,11 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      this.setData({
-        no_msg: "没有更多心得啦~"
-      })
+      if (this.data.list.length > 10) {
+        this.setData({
+          no_msg: "没有更多心得啦~"
+        });
+      }
     } else {
       page = page + 1;
       this.setData({
@@ -129,6 +131,7 @@ Page({
     }
     app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
+        app.getUserInfo();
         this.setToken();
         wx.showToast({
           title: '授权登录成功',

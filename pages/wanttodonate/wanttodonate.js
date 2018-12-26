@@ -15,6 +15,7 @@ Page({
     after_material:[],
     mobile:'',
     express_data:[],//快递信息
+    express_num:'',
     express:{}
   },
 
@@ -83,6 +84,12 @@ Page({
     };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
+          this.setData({
+            express_id:'',
+            express_num:'',
+            after_material:[],
+            images:[],
+          })
           app.alert({title:res.msg,time:2000});
           setTimeout(()=>{  
             wx.navigateTo({

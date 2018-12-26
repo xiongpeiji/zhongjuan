@@ -224,6 +224,7 @@ Page({
     }
     app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
+        app.getUserInfo();
         this.setToken();
         this.getDetail();
         this.getData({ refresh: false, is_first: true });

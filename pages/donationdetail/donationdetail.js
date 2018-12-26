@@ -21,7 +21,6 @@ Page({
     up_num: 0,
     share_num: 0,
     content: '',
-    avatar:'',
     no_msg:'',
     institution_info:{},
     institution_model:true,
@@ -38,7 +37,6 @@ Page({
     });
     this.setData({
         id:options.id,
-        avatar:app_data.user_info.avatar
     })
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
@@ -150,6 +148,12 @@ Page({
     this.setData({
       content: e.detail.value
     })
+  },
+
+  setCommentMax(){
+    if(!this.data.content){
+      this.setData({focus: false });
+    }
   },
   //跳转到评论列表
   goCommentList(e) {
@@ -288,6 +292,7 @@ Page({
     }
     app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
+        app.getUserInfo();
         this.setToken();
         this.getData();
         this.getDetail();

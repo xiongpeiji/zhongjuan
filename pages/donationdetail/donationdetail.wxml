@@ -141,7 +141,7 @@
   </view>
   <view class="input_box" hidden='{{!focus}}'>
     <view class="section_input">
-      <input placeholder="输入评论…" focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent'/>
+      <input placeholder="输入评论…" focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
     </view>
     <view class="comment_action" bindtap='comment'>
       <button class='send_msg_btn'>发送</button>
