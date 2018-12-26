@@ -874,7 +874,7 @@ margin-right:10rpx;
     top: 0px;
     background: rgba(0, 0, 0, 0.8);
     overflow: hidden;
-    z-index: 9999,
+    z-index: 9999;
 }
 
 .modal-body {
