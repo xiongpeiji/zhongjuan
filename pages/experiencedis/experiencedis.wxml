@@ -80,7 +80,7 @@
   <!--评论输入-->
   <view class="input_box">
     <view class="section_input" bindtap='setInputStatus'>
-      <input placeholder="输入评论…" disabled='{{input_status}}' bindconfirm="comment" confirm-type="send" bindinput='setContent' value='{{content}}'/>
+      <input placeholder="输入评论…" maxlength='200' disabled='{{input_status}}' bindconfirm="comment" confirm-type="send" bindinput='setContent' value='{{content}}'/>
     </view>
     <view class="comment_action" bindtap='comment'>
       <button class='send_msg_btn'>发送</button>

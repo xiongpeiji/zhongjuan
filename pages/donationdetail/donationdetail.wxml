@@ -6,7 +6,7 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
-<view class="container">
+<view class="container {{hiddenBody?'hiddenBody':''}}">
   <view class='promotion-img'>
     <swiper bindchange="swiper">
       <block wx:for="{{info.image}}" wx:key="{{item.index}}">
@@ -24,7 +24,7 @@
       <span>{{info.end_time}}</span>
     </view>
     <view class="artact_user">
-      <span class="small_title">{{info.name}}</span>
+      <span class="small_title">{{info.institution_info.name}}</span>
     </view>
     <view class="artacle_wrap">
       <p class="text_details">{{info.content}}</p>
@@ -60,9 +60,7 @@
         </view>
       </view>
     </view>
-    <view class="jigou_titles send_details_btn">
-      发布机构
-    </view>
+    <view class="jigou_titles">发布机构</view>
     <view class="jigouDetail_btn" bindtap="showMaxing">
         <span class="jigou_name">{{institution_info.name}}</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
@@ -78,7 +76,7 @@
         <image src="{{item.icon}}"></image>
         <span class="wuzi_name">{{item.name}}-{{item.num}}</span>
         <view class="juan_nums">
-          已捐<span>{{item.after_num}}</span>
+          已捐<span>{{item.after_num}}</span>件
         </view>
       </view>
     </view>
@@ -141,7 +139,7 @@
   </view>
   <view class="input_box" hidden='{{!focus}}'>
     <view class="section_input">
-      <input placeholder="输入评论…" focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
+      <input placeholder="输入评论…" maxlength='200' focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
     </view>
     <view class="comment_action" bindtap='comment'>
       <button class='send_msg_btn'>发送</button>

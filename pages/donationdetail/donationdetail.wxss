@@ -60,6 +60,7 @@ swiper, swiper image {
     font-size: 34rpx;
     color:#343434;
     margin-bottom: 50rpx;
+    width:100%;
   }
   /* .send_details_btn{
     height: 92rpx;
@@ -123,7 +124,7 @@ swiper, swiper image {
     float: left;
     font-size: 24rpx;
     color:24px;
-    margin-left: 15rpx;
+    /* margin-left: 15rpx; */
   }
   .artact_user .small_title{
       font-size: 24rpx;
@@ -419,6 +420,9 @@ swiper, swiper image {
 .wuzi_list .juan_nums span{
   color:#353535;
   margin:0 5rpx;
+  display: inline-block;
+  min-width: 50rpx;
+  text-align: center;
 }
 .user_photos{
   width: 680rpx;
@@ -975,4 +979,8 @@ margin-right:10rpx;
   color:#fff;
   line-height: 74rpx;
   border-radius: 37rpx;
+}
+.hiddenBody{
+  height: 100%;
+  overflow: hidden;
 }

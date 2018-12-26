@@ -29,6 +29,11 @@
     color:#030303;
     margin-bottom: 30rpx;
 }
+.program_title image{
+  display: block;
+  width: 167rpx;
+  height: 167rpx;
+}
 .program_text{
     font-size: 24rpx;
     color: #333333;
