@@ -29,6 +29,18 @@ Page({
     shareMax: true,
     moreShow:false,//显示更多
     isTalking:true,//是否可评论
+    share_mini_program:'',
+    flag: true,
+    width:0,
+    height:0,
+    tempPath: "",
+    show_flag: true,
+    canvasHeight: 0,
+    modalMarginTop: "6%",
+    modal_height: "",
+    avatar:'',
+    share_img:'',
+    username:'',
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -37,6 +49,8 @@ Page({
     });
     this.setData({
         id:options.id,
+        width: app_data.deviceInfo.windowWidth,
+        height: app_data.deviceInfo.windowHeight
     })
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
@@ -73,8 +87,19 @@ Page({
           comment_num: res.data.comment_num,
           id:res.data.id,
           institution_swiper_all: res.data.institution_info.images.length,
-          institution_info:res.data.institution_info
-        })
+          institution_info:res.data.institution_info,
+          share_mini_program:res.data.share_img,
+        });
+        this.getImgPath(res.data.image[0]).then((res) => {
+          this.setData({
+            share_img: res
+          })
+        });
+        this.getImgPath(res.data.share_img).then((res) => {
+          this.setData({
+            share_mini_program: res
+          })
+        });
       }
     });
   },
@@ -264,6 +289,18 @@ Page({
     //获得dialog组件
     this.setToken();
     this.dialog = this.selectComponent("#dialog");
+    if(app_data.token){
+      let user_info = wx.getStorageSync('user_info');
+      if(user_info.avatar){
+        this.getImgPath(user_info.avatar).then((res) => {
+          this.setData({
+            avatar: res,
+            username:user_info.username
+          })
+        });
+      }
+    }
+
   },
 
   setToken() {
@@ -301,6 +338,73 @@ Page({
         })
       }
     });
+  },
+
+  //生成分享图
+  createShareImg(){
+    this.closeShareMax();
+    if(!this.data.share_img || !this.data.share_mini_program){
+      app.alert({title:'图片转换失败！'});
+      return;
+    }
+    var that = this;
+    var modal_width = this.data.width * 0.865;
+    var modal_height = this.data.height * 0.865;
+    var ctx = wx.createCanvasContext('share-image');
+    if(this.data.avatar){
+      //绘制背景图片
+      ctx.save()
+      ctx.beginPath()
+      ctx.arc(modal_width*0.1, modal_width*0.1, modal_width*0.05, 0, 2 * Math.PI)
+      ctx.clip()
+      ctx.drawImage(this.data.avatar, modal_width * 0.05, modal_width * 0.05, 0.1 * modal_width, 0.1 * modal_width)
+      ctx.restore()
+      ctx.setFontSize(14)
+      ctx.fillText(this.data.username, modal_width*0.2, modal_height*0.05);
+      ctx.setFontSize(16)
+      ctx.fillText('“'+this.data.info.title+'”', modal_width * 0.2, modal_height * 0.1);
+    }else{
+      ctx.fillText('“' + this.data.info.title + '”', modal_width * 0.1, modal_height * 0.03);
+    }
+    ctx.drawImage(this.data.share_img, modal_width * 0.1, modal_height * 0.12, modal_width * 0.8, modal_height * 0.5)
+    ctx.setFontSize(14)
+    ctx.fillText('进入众捐小程序查看详情', modal_width / 4+10, modal_height - 20);
+    ctx.drawImage(this.data.share_mini_program, modal_width / 3, modal_height*0.65, modal_width / 3, modal_width / 3)
+    ctx.draw()
+    
+    setTimeout(function () {
+      that.setTempPath({modal_width:modal_width,modal_height:modal_height});
+      that.setData({
+        flag: false,
+        canvasHeight: modal_height,
+      })
+    }, 1000);
+    wx.hideLoading()
+  },
+
+  setTempPath(obj){
+    var that = this;
+    wx.canvasToTempFilePath({
+      canvasId: 'share-image',
+      width: obj.modal_width,
+      height: obj.modal_height,
+      success: function (tempRes) {
+        that.setData({
+          tempPath: tempRes.tempFilePath,
+        })
+      }
+    })
+  },
+
+  getImgPath(img_url){
+    return new Promise((resolve)=>{
+      wx.getImageInfo({
+        src: img_url,
+        success(res) {
+          resolve(res.path);
+        }
+      })
+    })
   },
   /**
    * 用户点击右上角分享

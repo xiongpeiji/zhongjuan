@@ -258,5 +258,16 @@
       </view>
       <button class='cannel_btn' bindtap="closeShareMax">取消</button>
   </view>
+
+   <view class="modal-box" hidden="{{flag}}" catchtouchmove="{{true}}">
+
+        <view class="modal-content" style="height:{{canvasHeight}}px;margin-top:{{modalMarginTop}}">
+            <canvas canvas-id='share-image' disable-scroll="{{true}}" bindtouchmove="touchMove"></canvas>
+        </view>
+
+        <view class='creat-btn-xinde'>
+          <button plain="true" bindtap='saveImg'>保存图片</button>
+        </view>
+    </view>
 </view>
 

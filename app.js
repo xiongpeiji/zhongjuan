@@ -12,9 +12,11 @@ App({
     mobile:null,
     base: "https://api.51aizj.com/",
     share_img: ['/images/share_img/1.jpg','/images/share_img/2.jpg'],
-    share: {}
+    share: {},
+    deviceInfo: {}
   },
   onLaunch: function (options) {
+    this.getDeviceInfo();
     let token = wx.getStorageSync('token')
     this.globalData.token = token;
     let open_id = wx.getStorageSync('open_id');
@@ -23,6 +25,16 @@ App({
     }
     this.setShare();
   },
+
+  //获取设备初始化宽高
+  getDeviceInfo() {
+    var res = wx.getSystemInfoSync();
+    res.rpxR = 750 / res.windowWidth;
+    res.rpxWidth = res.rpxR * res.windowWidth;
+    res.rpxHeight = res.rpxR * res.windowHeight;
+    this.globalData.deviceInfo = res;
+  },
+  
   wxLogin(obj) {
     let open_id = wx.getStorageSync('open_id');
     if(open_id){
