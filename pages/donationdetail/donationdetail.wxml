@@ -185,7 +185,6 @@
         </view>
         <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
-
       <view class="jigou_photos">
             <view class="infoFail">
                 机构简介
