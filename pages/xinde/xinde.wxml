@@ -6,7 +6,7 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
-<view class='container'>
+<view class='container xinde_content'>
   <view class='xinde'>
     <!--list-->
     <view class='creat-btn-xinde'>

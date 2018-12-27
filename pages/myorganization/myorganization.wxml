@@ -10,9 +10,11 @@
                     <view class="right_type">
                         <label>{{instStatus[myOrgInfos.status]}}</label>
                     </view>
+                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=1}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
+                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=2}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
                 </view>
                 <view class="help_sm_tit">
-                    <label class="address_text">{{myOrgInfos.number_people}}</label>
+                    <label class="address_text">{{myOrgInfos.number_people}}人</label>
                 </view>
             </view>
         </view>

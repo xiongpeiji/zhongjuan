@@ -43,6 +43,7 @@ swiper, swiper image {
 }
 .xindeDetial_tit h2{
   font-size: 36rpx;
+  line-height: 50rpx;
   font-weight: bold;
   float: left;
   max-width:390rpx;

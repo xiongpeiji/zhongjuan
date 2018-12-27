@@ -36,7 +36,6 @@ swiper, swiper image {
   }
   .xindeDetial_tit{
     overflow: hidden;
-    height: 36rpx;
     line-height: 36rpx;
     margin-bottom: 25rpx;
   }
@@ -45,11 +44,7 @@ swiper, swiper image {
     font-weight: bold;
     float: left;
     max-width:520rpx;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+    line-height: 50rpx;
   }
   .xindeDetial_tit span{
     font-size: 24rpx;
@@ -612,9 +607,10 @@ swiper, swiper image {
     margin-bottom: 25rpx;
 }
 .infoFail{
-    font-size: 30rpx;
+    font-size: 34rpx;
     color: #030303;
-    line-height:30rpx;
+    line-height:48rpx;
+    font-weight: bold;
     margin-bottom: 40rpx;
 }
 .infoFail label{

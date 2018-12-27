@@ -137,9 +137,18 @@
   color: #D82A3C;
   margin: auto;
 }
+.xinde_content{
+  padding-top: 112rpx;
+  position: relative;
+}
 .creat-btn-xinde{
   background: #fff;
   padding:20rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 99;
 }
 .creat-btn-xinde button{
   width: 446rpx;

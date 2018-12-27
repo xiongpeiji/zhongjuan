@@ -162,7 +162,7 @@
         </view>
       </view>
       <view class='joins_nums'>
-      {{institution_info.number_people}}
+      {{institution_info.number_people}}人
       </view>
 
       <view class="prove_infos">

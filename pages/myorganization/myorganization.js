@@ -45,8 +45,11 @@ Page({
   },
   //重新编辑认证资料
   repeatEidetInfo(e){
+    let status = e.currentTarget.dataset.id;
+    console.log(e)
+    console.log(status)
     wx.navigateTo({
-      url: '../institutionalaccreditation/institutionalaccreditation'
+      url: '../institutionalaccreditation/institutionalaccreditation?status=' + status
     })
   },
   swiper(e) {

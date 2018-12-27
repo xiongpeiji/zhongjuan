@@ -279,3 +279,15 @@ swiper-item image{
     background: #df4334;
     left: -36rpx;
 }
+.editBtn{
+  float: right;
+height:34rpx;
+line-height:34rpx;
+padding:0 15rpx;
+font-size:20rpx;
+color:#666666;
+background:#fff;
+border-radius:17rpx;
+margin-left:25rpx;
+margin-top:8rpx;
+}
