@@ -60,12 +60,12 @@
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
 
-            <view class='us-link-lis row-mb'>
+            <view class='us-link-lis'>
                 <image class='nav-icon' src='../../images/user_icon/us-icon04.png'></image>
                 <button open-type='contact' plain="true" session-from="hello world" class='tit-text-us'>客服中心</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-			<view class='us-link-lis row-mb' hidden="{{!isLogin}}">
+			<view class='us-link-lis' hidden="{{!isLogin}}">
                 <image class='nav-icon' src='../../images/user_icon/us-icon08.png'></image>
                 <button plain="true" bindtap='editUserInfo' class='tit-text-us'>设置</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>

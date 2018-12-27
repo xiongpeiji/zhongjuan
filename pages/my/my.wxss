@@ -124,7 +124,6 @@ page {
 .menu {
     border-radius: 15rpx;
     padding: 10rpx;
-    background-color: #fff;
     width: 100%;
     margin-top: 30rpx;
     position:relative;
@@ -137,6 +136,7 @@ page {
     overflow: hidden;
     position: relative;
     line-height: 86rpx;
+    margin-top: 2rpx;
 }
 
 .nav-icon {
@@ -202,10 +202,6 @@ page {
     color: #ff1849;
     display: block;
     float: right;
-}
-
-.row-mb {
-    margin-bottom: 10rpx;
 }
 
 .versions {
