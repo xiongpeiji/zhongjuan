@@ -19,7 +19,7 @@
     <view class="artacle_wrap">
       <p class="text_details">{{info.content}}</p>
       <view class='article_img images_{{info.image.length}}'>
-        <image mode='aspectFill' wx:for="{{info.image}}" wx:key="{{index}}" src='{{item}}'></image>
+        <image mode='aspectFill' wx:for="{{info.image}}" wx:key="{{index}}" bindtap="showImages" data-img="{{item}}" src='{{item}}'></image>
       </view>
        <view class="article_share">
         <view class="fabulous" bindtap='experienceUp'>

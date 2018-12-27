@@ -305,11 +305,21 @@ Page({
       ctx.fillText(this.data.username, modal_width * 0.2, modal_height * 0.05);
       ctx.setFontSize(18)
       ctx.setFillStyle('#000')
-      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.2, modal_height * 0.1, modal_width * 0.7);
+      var result = this.breakLinesForCanvas(this.data.info.title, modal_width * 0.7, ctx)
+      for (var i = 0; i < result.length; i++) {
+        if (i < 1) {
+          ctx.fillText('"' + result[i] + '"', modal_width * 0.2, modal_height * 0.1)
+        }
+      }
     } else {
       ctx.setFontSize(18)
       ctx.setFillStyle('#000')
-      ctx.fillText('"' + this.data.info.title + '"', modal_width * 0.1, modal_height * 0.08, modal_width * 0.7);
+      var result = this.breakLinesForCanvas(this.data.info.title, modal_width * 0.8, ctx)
+      for (var i = 0; i < result.length; i++) {
+        if (i < 1) {
+          ctx.fillText('"' + result[i] + '"', modal_width * 0.1, modal_height * 0.08)
+        }
+      }
     }
     ctx.save()
     temp_height = modal_width * 0.15 + 20;
@@ -456,6 +466,14 @@ Page({
         })
       }
     });
+  },
+
+  showImages(e){
+    let img = e.currentTarget.dataset.img;
+    wx.previewImage({
+      current: img, // 当前显示图片的http链接
+      urls: this.data.info.image // 需要预览的图片http链接列表
+    })
   },
 
   /**
