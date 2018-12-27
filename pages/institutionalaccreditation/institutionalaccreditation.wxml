@@ -97,11 +97,11 @@
             </view>
             <view class="user_photos_box">
                 <view bindtap="uploadCardOne" class="card-infos">
-                    <image class="user_card_bg" hidden="{{!cardOne}}" src="{{cardOne}}"></image>            
+                    <image class="user_card_bg" mode='aspectFill' hidden="{{!cardOne}}" src="{{cardOne}}"></image>            
                     <image class="user_card_bg" hidden="{{cardOne}}" src="/images/pic_shenzheng.png"></image>
                 </view>
                 <view bindtap="uploadCardTwo" class="card-infos">
-                    <image class="user_card_bg" hidden="{{!cardTwo}}" src="{{cardTwo}}"></image>                
+                    <image class="user_card_bg" mode='aspectFill' hidden="{{!cardTwo}}" src="{{cardTwo}}"></image>                
                     <image class="user_card_bg" hidden="{{cardTwo}}" src="/images/pic_shenfan.png"></image>
                 </view>
             </view>
@@ -113,7 +113,7 @@
                 机构认证 <label>请上传机构相关证件照片</label>
             </view>
             <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{prove_info}}"  wx:key="index" >
-                <image class="img_bg" src="{{item}}"></image>
+                <image class="img_bg" src="{{item}}" mode='aspectFill'></image>
                 <view class="delet-icon">
                     <image src="/images/delete.png"></image>
                 </view>
