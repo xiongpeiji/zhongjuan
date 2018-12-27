@@ -1,12 +1,11 @@
 /* pages/wanttodonate/wanttodonate.wxss */
 .creat_xinde_con{
-    height: 100rpx;
     padding: 30rpx 25rpx 30rpx 40rpx;
     height: 40rpx;
     line-height: 40rpx;
     background: #fff;
     margin-top: 1px;
-    margin-bottom: 12rpx;
+    margin-bottom: 2rpx;
 }
 .padding_bottom{
     padding-bottom: 100rpx;

@@ -929,10 +929,19 @@ margin-right:10rpx;
   z-index: 1;
 }
 .want_content{
-  background:#d3493f;
+  /* background:#d3493f; */
   padding:28rpx;
   box-sizing: border-box;
   position: relative;
+}
+.want_content .bg_color{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .want_content h2{
   font-size: 40rpx;

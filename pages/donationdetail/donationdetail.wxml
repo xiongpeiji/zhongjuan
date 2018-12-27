@@ -250,6 +250,7 @@
     <view class='want_box' hidden='{{warmTips}}'>
       <icon bindtap='closeWarm' class='close_icon' type="cancel" size="30" color="#fff" />
       <view class='want_content'>
+        <image class='bg_color' src='/images/window_bg.png'></image>
         <h2>捐助方信息</h2>
         <view class='jigou_texts'>
           <label>捐助机构：</label>
