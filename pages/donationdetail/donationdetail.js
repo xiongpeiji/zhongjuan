@@ -603,5 +603,13 @@ Page({
         });
       }
     }
+  },
+  //禁止页面下拉
+  onPageScroll: function (e) {
+    if (e.scrollTop < 0) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
   }
 })

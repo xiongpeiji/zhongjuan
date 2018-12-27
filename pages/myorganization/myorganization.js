@@ -60,5 +60,13 @@ Page({
   */
   onShareAppMessage: function () {
     return app_data.share;
+  },
+  //ios下拉问题
+  onPageScroll: function (e) {
+    if (e.scrollTop < 0) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
   }
 })
