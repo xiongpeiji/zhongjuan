@@ -14,7 +14,7 @@
                 <image class="right_icons" src="/images/renzheng_jinru.png"></image>
             </view>
         </view>
-        <view class="information_list" hidden='{{after_material.length==0}}'>
+        <view class="information_list" hidden='{{after_material.length == 0}}'>
             <view class="list_Goods" wx:for="{{after_material}}" wx:key="index">
                 <image class="material_icon" src="{{item.icon}}"></image>
                 <label class="float_left">{{item.name}}</label>

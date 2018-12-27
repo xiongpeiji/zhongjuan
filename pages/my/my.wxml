@@ -5,7 +5,7 @@
         <view class="user-info">
             <view class='user-cont' hidden="{{!isLogin}}">
                 <view class='user-phone'>
-                    <image src='{{avatar}}'></image>
+                    <image src='{{avatar}}' mode='aspectFill'></image>
                 </view>
                 <view class='user-text'>
                     <text class='user-name'>{{username}}</text>

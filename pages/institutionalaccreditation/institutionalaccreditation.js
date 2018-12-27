@@ -242,7 +242,7 @@ Page({
   uploadArrPhoto() {
     let institution = this.data.institution;
     let url = app_data.base +'Public/uploadImg?type=institution';
-    http.Select({count:5}).then((res)=>{
+    http.Select({ count: 9 - this.data.prove_info.length }).then((res)=>{
       return Promise.all(res.map((path, index) => {
         let num = index+1;
         institution = path;

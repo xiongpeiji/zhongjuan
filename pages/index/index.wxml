@@ -48,7 +48,7 @@
     <view class='joins'>
       <view class='left_user_icon' hidden="{{item.donation_num==0}}">
         <block wx:for="{{item.user_data}}" wx:key="{{index}}">
-          <image src='{{item.avatar}}'></image>
+          <image src='{{item.avatar}}' mode='aspectFill'></image>
         </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
