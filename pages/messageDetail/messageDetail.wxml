@@ -28,37 +28,9 @@
       <view class="detail_title">运输详情</view>
       <view class="detail_content">
           <view class="express_step">
-              <view class="step_text express_success">
+              <view class="step_text {{k == 0 ? 'express_success' :''}}" wx:for="{{info.data.express_info}}" wx:key="{{index}}" wx:for-index="k" wx:for-item="express">
                   <em></em>
-                  爱心物资已签收
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达正在派送
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
-              </view>
-              <view class="step_text">
-                  <em></em>
-                  爱心物资到达深圳中转站
+                  {{express.context}}
               </view>
 
               <!--已完成-->

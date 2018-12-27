@@ -44,7 +44,7 @@ Page({
     warmTips:true,
     hiddenBody:false,
     textnum:0,//详情文字数量
-    status:'',
+    status:0,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -245,7 +245,7 @@ Page({
   //我想想捐助
   wantTodo(e){
     if(this.data.status == 3){
-      app.alert({title:'求捐已结束'})
+      app.alert({title:'求捐已结束！'})
       return
     }
     if (!this.data.token) {
@@ -602,6 +602,14 @@ Page({
           }
         });
       }
+    }
+  },
+  //禁止页面下拉
+  onPageScroll: function (e) {
+    if (e.scrollTop < 0) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
     }
   }
 })
