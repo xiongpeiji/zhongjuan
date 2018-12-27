@@ -35,7 +35,7 @@
         <block wx:for="{{info.user_data}}" wx:key="{{index}}">
           <image src='{{item.avatar}}' mode='aspectFill'></image>
         </block>
-        <image src='/images/index_gengduo@2x.png'></image>
+        <image style='z-index:0' src='/images/index_gengduo@2x.png'></image>
       </view>
       <view class='jions_num' style="margin-left:{{info.user_num==0?'0':'70rpx'}}">{{info.user_num}}人已加入</view>
       <view class='slider_bar'>
