@@ -92,7 +92,7 @@ Page({
         break;
       case 'donation':
       case 'donation_comment':
-      case 'donation_replay':
+      case 'donation_reply':
         if (status == 1) {
           wx.navigateTo({
             url: '../donationdetail/donationdetail?id=' + id
