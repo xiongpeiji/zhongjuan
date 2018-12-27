@@ -245,7 +245,7 @@ Page({
   //我想想捐助
   wantTodo(e){
     if(this.data.status == 3){
-      app.alert({title:'求捐已结束'})
+      app.alert({title:'求捐已结束！'})
       return
     }
     if (!this.data.token) {
