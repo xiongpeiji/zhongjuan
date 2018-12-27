@@ -144,11 +144,13 @@ swiper, swiper image {
   overflow: hidden;
 }
 .left_user_icon image{
+  position: relative;
   width: 52rpx;
   height: 52rpx;
   margin-left: -15rpx;
   float: left;
   border-radius: 50%;
+  z-index: 10;
 }
 .jions_num{
   float: left;
