@@ -44,7 +44,7 @@ Page({
     warmTips:true,
     hiddenBody:false,
     textnum:0,//详情文字数量
-    status,
+    status:0,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
