@@ -12,31 +12,31 @@
     <view class='creat-btn-xinde'>
       <button plain="true" data-id="0" bindtap='creatXinde'>+ 创建心得</button>
     </view>
-    <view class='xinde_list' wx:for="{{list}}"  wx:key="{{index}}" data-id="{{item.id}}" bindtap="showDetail">
-    <view class='deeail_text_boxs'>
+    <view class='xinde_list' wx:for="{{list}}"  wx:key="{{index}}" wx:for-index="key" data-key="{{key}}">
+    <view class='deeail_text_boxs' data-id="{{item.id}}" bindtap="showDetail">
     <view class='xinde_title'>
         <image src='{{item.avatar}}'></image>
         <span class='user_callname'>{{item.username}}</span>
         <span class='xinde_time'>{{item.add_time}}</span>
       </view>
       <h2 class="article_title">{{item.title}}</h2>
-      <view class="article_dis">
+      <view class="article_dis" >
         <text>{{item.content}}</text><span>查看全部</span>
       </view>
     </view>
       <view class='article_img images_{{item.image.length}}'>
-        <image mode='aspectFill' wx:for="{{item.image}}" wx:key="{{index}}" src='{{item}}'></image>
+        <image mode='aspectFill' wx:for="{{item.image}}" bindtap="showImages" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>
       </view>
       <view class="article_share">
-        <view class="fabulous" bindtap='experienceUp' data-id="{{item.id}}">
-          <image src="/images/dianzan.png"></image>
+        <view class="fabulous" bindtap='experienceUp' data-key="{{key}}" data-id="{{item.id}}">
+          <image src="{{item.is_up > 0 ? '/images/dianzan_active.png' : '/images/dianzan.png'}}"></image>
           <span>{{item.up_num}}</span>
         </view>
-        <view class="fabulous">
+        <view class="fabulous" data-id="{{item.id}}" bindtap="showDetail">
           <image src="/images/msg_num.png"></image>
           <span>{{item.comment_num}}</span>
         </view>
-        <view class="fabulous share_btn">
+        <view class="fabulous share_btn" data-id="{{item.id}}" bindtap="showDetail">
           <image src="/images/fenxiang.png"></image>
           <span>{{item.share_num}}</span>
         </view>

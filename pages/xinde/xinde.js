@@ -22,6 +22,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得'
     });
+    if(app_data.token){
+      this.setData({
+        token:app_data.token
+      })
+    }
     this.getData({ refresh: false, is_first: true });
   },
   showDetail(e){
@@ -45,6 +50,7 @@ Page({
     let url = app_data.base + 'Index/experience';
     let params = {
       page: this.data.page,
+      token:this.data.token
     }
     http.Get({ url: url, params: params, loading: obj.refresh }).then((res) => {
       if (res.code == 'success') {
@@ -62,6 +68,34 @@ Page({
           list: list,
           isLast: res_list.length < 10 ? true : false,
         })
+      }
+    })
+  },
+
+  showImages(e) {
+    let img = e.currentTarget.dataset.img;
+    let key = e.currentTarget.dataset.key;
+    wx.previewImage({
+      current: img, // 当前显示图片的http链接
+      urls: this.data.list[key].image // 需要预览的图片http链接列表
+    })
+  },
+
+  experienceUp(e){
+    let id = e.currentTarget.dataset.id;
+    let key = e.currentTarget.dataset.key;
+    if (!this.data.token) {
+      this.showDialog();
+      return
+    }
+    let url = app_data.base + '/Experience/experienceUp'
+    let params = { token: this.data.token, id:id };
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        let list = this.data.list;
+        list[key].is_up = list[key].is_up == 1 ? 0 : 1;
+        list[key].up_num = list[key].is_up == 1 ? +list[key].up_num + 1 : +list[key].up_num - 1;
+        this.setData({list:list});
       }
     })
   },
@@ -103,7 +137,9 @@ Page({
 
   onReady: function () {
     //获得dialog组件
-    this.setToken();
+    if(!this.data.token){
+      this.setToken();
+    }
     this.dialog = this.selectComponent("#dialog");
   },
 
@@ -132,6 +168,7 @@ Page({
     app.wxLogin(obj).then((res) => {
       if (res.code == 'success') {
         app.getUserInfo();
+        this.getData({ refresh: false, is_first: true });
         this.setToken();
         wx.showToast({
           title: '授权登录成功',

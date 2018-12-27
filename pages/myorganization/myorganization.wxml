@@ -40,7 +40,7 @@
                 </view>
             </view>
             <view class="user_photo_imgbox">
-                <image class="user_up_img" src="{{myOrgInfos.liaison_avatar}}"></image>
+                <image class="user_up_img" src="{{myOrgInfos.liaison_avatar}}" mode='aspectFill'></image>
                 <view class="name_s">
                     <label>{{myOrgInfos.liaison_person}}</label>
                     <label>{{myOrgInfos.liaison_sex=='1'?'男':'女'}}</label>
