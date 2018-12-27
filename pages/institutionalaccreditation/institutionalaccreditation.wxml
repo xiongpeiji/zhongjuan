@@ -118,7 +118,7 @@
                     <image src="/images/delete.png"></image>
                 </view>
             </view>
-            <image class="img_bg" hidden="{{prove_info.length>=5}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+            <image class="img_bg" hidden="{{prove_info.length>=9}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
         <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">提交</button>
