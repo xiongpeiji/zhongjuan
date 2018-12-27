@@ -251,9 +251,8 @@ Page({
       warmTips: true,
       hiddenBody: false
     })
-    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../wanttodonate/wanttodonate?id=' + id
+      url: '../wanttodonate/wanttodonate?id=' + this.data.id
     });
   },
   //显示捐赠用户列表

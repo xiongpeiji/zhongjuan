@@ -33,7 +33,7 @@
     <view class='joins'>
       <view class='left_user_icon' bindtap="showUser" hidden="{{info.user_num==0}}">
         <block wx:for="{{info.user_data}}" wx:key="{{index}}">
-          <image src='{{item.avatar}}'></image>
+          <image src='{{item.avatar}}' mode='aspectFill'></image>
         </block>
         <image src='/images/index_gengduo@2x.png'></image>
       </view>
@@ -50,7 +50,7 @@
         <view class="user_photo_list">
           <view class="user_photo_name"  wx:for="{{info.user_data}}" wx:key="{{index}}">
             <view class="user_icons">
-              <image src='{{item.avatar}}'></image>
+              <image src='{{item.avatar}}' mode='aspectFill'></image>
             </view>
             <view class="user_names">{{item.username}}</view>
           </view>
@@ -86,7 +86,7 @@
       <view class="comment_container">
         <!--评论列表-->
         <view class="conment_list" wx:for="{{list}}"  wx:key="index">
-          <image class="con_user_icon" src="{{item.avatar}}"></image>
+          <image class="con_user_icon" src="{{item.avatar}}" mode='aspectFill'></image>
           <view class="comment_text">
             <view class="comment_name">
               <span class="left_name">{{item.username}}</span>
@@ -274,7 +274,7 @@
         <view class='warm_text'>
         感谢您的爱心~请确认捐赠快递已发出并已获得单号再完成捐助信息哦〜
         </view>
-        <button  data-id="{{id}}" bindtap='sendLove'>爱心已寄出</button>
+        <button bindtap='sendLove'>爱心已寄出</button>
       </view>
       
     </view>

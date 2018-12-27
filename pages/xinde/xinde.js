@@ -83,7 +83,7 @@ Page({
   onReachBottom() {
     let page = this.data.page;
     if (this.data.isLast) {
-      if (this.data.list.length > 10) {
+      if (this.data.list.length > 0) {
         this.setData({
           no_msg: "没有更多心得啦~"
         });
