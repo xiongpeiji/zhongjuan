@@ -44,6 +44,7 @@ Page({
     warmTips:true,
     hiddenBody:false,
     textnum:0,//详情文字数量
+    status,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -106,7 +107,8 @@ Page({
           institution_swiper_all: res.data.institution_info.images.length,
           institution_info:res.data.institution_info,
           share_mini_program:res.data.share_img,
-          textnum: textLength
+          textnum: textLength,
+          status:res.data.status
         });
         console.log(this.data.textnum)
         if(this.data.textnum>=160){
@@ -242,6 +244,10 @@ Page({
   },
   //我想想捐助
   wantTodo(e){
+    if(this.data.status == 3){
+      app.alert({title:'求捐已结束'})
+      return
+    }
     if (!this.data.token) {
       this.showDialog();
       return;
