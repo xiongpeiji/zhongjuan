@@ -92,16 +92,16 @@ Page({
         });
         let area = {
           title: '捐助地区',
-          info: init_data.city,
+          info: [{ id: '0', name: '全部' }].concat(init_data.city),
           active: true
         };
         let type = {
           title: '捐助机构',
-          info: init_data.type
+          info: [{ id: '0', name: '全部' }].concat(init_data.type)
         };
         let material = {
           title: '捐助物品',
-          info: init_data.material
+          info: [{ id: '0', name: '全部' }].concat(init_data.material)
         };
         arrList.push(area);
         arrList.push(type);
