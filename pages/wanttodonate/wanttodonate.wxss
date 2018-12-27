@@ -79,7 +79,7 @@
     float: right;
 }
 .imgupload_box{
-    padding: 25rpx;
+    padding: 25rpx 25rpx 25rpx 40rpx;
     background: #fff;
     box-sizing: border-box;
 }
