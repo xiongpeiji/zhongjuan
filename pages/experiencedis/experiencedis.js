@@ -501,12 +501,15 @@ Page({
       }
     }
   },
-  //ios下拉问题
-  onPageScroll: function (e) {
-    if (e.scrollTop < 0) {
-      wx.pageScrollTo({
-        scrollTop: 0
-      })
-    }
+
+  /**
+* 页面相关事件处理函数--监听用户下拉动作
+*/
+  onPullDownRefresh: function () {
+    this.setData({
+      page: 1,
+    })
+    this.getDetail();
+    this.getData({ refresh: true, is_first: true });
   }
 })
