@@ -43,7 +43,7 @@ Page({
     username:'',
     warmTips:true,
     hiddenBody:false,
-    status:0,
+    textnum:0,//详情文字数量
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -61,7 +61,7 @@ Page({
   //展示更多
   showMore(e){
     this.setData({
-      moreShow:true,
+      moreShow:false,
     })
   },
   //显示机构信息弹窗
@@ -85,12 +85,17 @@ Page({
       hiddenBody: false
     })
   },
+  //获取机构详情文字长度
+  getTextLength(val){
+    return val.replace(/[\u0391-\uFFE5]/g, "a").length;   //先把中文替换成两个字节的英文，在计算长度
+  },
   //获取详情信息
   getDetail() {
     let url = app_data.base + 'Donation/detail';
     let params = { id: this.data.id, token: app_data.token };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
+        let textLength = this.getTextLength(res.data.institution_info.desc);//获取文字长度
         this.setData({
           info: res.data,
           swiper_all: res.data.image.length,
@@ -101,8 +106,18 @@ Page({
           institution_swiper_all: res.data.institution_info.images.length,
           institution_info:res.data.institution_info,
           share_mini_program:res.data.share_img,
-          status:res.data.status,
+          textnum: textLength
         });
+        console.log(this.data.textnum)
+        if(this.data.textnum>=160){
+          this.setData({
+            moreShow:true
+          })
+        }else{
+          this.setData({
+            moreShow: false
+          })
+        }
         let num = new Date().getSeconds() % res.data.image.length;
         let img = res.data.image[num];
         this.getImgPath(img).then((res) => {
@@ -227,10 +242,6 @@ Page({
   },
   //我想想捐助
   wantTodo(e){
-    if (this.data.status == 3) {
-      app.alert({ title: '求捐已结束' });
-      return
-    }
     if (!this.data.token) {
       this.showDialog();
       return;

@@ -662,6 +662,7 @@ swiper, swiper image {
 .show_more{
   height: auto;
   overflow: auto;
+  max-height: auto;
 }
 .position_box{
   display: block;

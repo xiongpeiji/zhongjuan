@@ -190,9 +190,9 @@
             <view class="infoFail">
                 机构简介
             </view>
-            <view class="photos_box {{moreShow?'show_more':''}}">
+            <view class="photos_box {{!moreShow?'show_more':''}}">
                <text>{{institution_info.desc}}</text>
-            <view class='look_mor' hidden='{{moreShow}}' bindtap='showMore'><image src='/images/xiala-copy.png'></image>查看全部</view>
+            <view class='look_mor' hidden='{{!moreShow}}' bindtap='showMore'><image src='/images/xiala-copy.png'></image>查看全部</view>
             </view>
         </view>
         <view class="jigou_photos">
