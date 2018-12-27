@@ -37,7 +37,9 @@
                     <view class="help_sub_title">
                         <label class="sub_title">{{item.title}}</label>
                         <view class="edit_repeat" hidden="{{item.status!=2}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
+                          <view class="edit_repeat" hidden="{{item.status ==2 || item.status == 0}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goDonationDetail">去查看</view>
                     </view>
+
                 </view>
             </view>
         </view>

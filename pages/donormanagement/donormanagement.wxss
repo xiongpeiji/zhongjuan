@@ -132,7 +132,7 @@
     height: 40rpx;
     border:2rpx solid #6E6E6E;
     border-radius: 20rpx;
-    line-height: 36rpx;
+    line-height: 40rpx;
     font-size: 24rpx;
     text-align: center;
 }

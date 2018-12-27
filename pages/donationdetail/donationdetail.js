@@ -42,7 +42,8 @@ Page({
     share_img:'',
     username:'',
     warmTips:true,
-    hiddenBody:false
+    hiddenBody:false,
+    status:0,
   },
   /**生命周期函数--监听页面加载*/
   onLoad(options) {
@@ -100,6 +101,7 @@ Page({
           institution_swiper_all: res.data.institution_info.images.length,
           institution_info:res.data.institution_info,
           share_mini_program:res.data.share_img,
+          status:res.data.status,
         });
         let num = new Date().getSeconds() % res.data.image.length;
         let img = res.data.image[num];
@@ -225,6 +227,10 @@ Page({
   },
   //我想想捐助
   wantTodo(e){
+    if (this.data.status == 3) {
+      app.alert({ title: '求捐已结束' });
+      return
+    }
     if (!this.data.token) {
       this.showDialog();
       return;

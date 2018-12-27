@@ -43,6 +43,14 @@ Page({
       url: '../editseekinginformation/editseekinginformation?id='+id
     });
   },
+
+  //去发布求捐
+  goDonationDetail(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../donationdetail/donationdetail?id=' + id
+    });
+  },
   //获取我的求捐列表
   getData(obj){
     let url = app_data.base +'User/donation';
