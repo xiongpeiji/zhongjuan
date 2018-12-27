@@ -24,7 +24,7 @@
         <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
           <view class="dona_lis {{index == 0 ? 'ings' : ''}}">
                 <em></em>
-                <view class="dona_box">
+                <view class="dona_box" bindtap="expressDetail" data-id="{{item.system_info_id}}">
                     <view class="dona_title">
                         <view class="boxs">
                             <label class="dona_times">{{item.add_time}}</label>
@@ -37,7 +37,7 @@
                             </view>
                         </view>
                     </view>
-                    <view class="look_dona" bindtap="expressDetail" data-id="{{item.system_info_id}}">{{item.is_get == 0 ? '运输中' : '已签收'}}</view>
+                    <view class="look_dona">{{item.is_get == 0 ? '运输中' : '已签收'}}</view>
                 </view>
             </view>
         </block>
