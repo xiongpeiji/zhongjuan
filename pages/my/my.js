@@ -15,10 +15,10 @@ Page({
     mobile_status:0,
     institution_status:0,
     instStatus:{ ////0 未认证 1 认证中 2 已认证 3 认证失败 
-      0:"未认证",1:"认证中",2:"已认证",3:"认证失败"
+      0:"未认证",1:"认证中",2:"已认证",3:"认证失败",4:"待完善资料"
     },
     statusClass:{
-      0:"no-auth",1:"auth-ing",2:"auth-pass",3:"auth-fail"
+      0: "no-auth", 1: "auth-ing", 2: "auth-pass", 3: "auth-fail", 4: "auth-ing"
     }
   },
 
@@ -83,8 +83,9 @@ Page({
         })
         break;
       case 3:
+      case 4:
         wx.navigateTo({
-          url: '../institutionalaccreditation/institutionalaccreditation?status=3'
+          url: '../institutionalaccreditation/institutionalaccreditation?status=1'
         })
         break;
       case 1:

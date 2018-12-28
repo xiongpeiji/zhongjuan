@@ -56,26 +56,30 @@ Page({
     http.Post({url:url,params:params}).then(res=>{
       if(res.code == 'success'){
         let instituInfo = res.data;
-        let addressInfoArr = instituInfo.address.split("-");
-        let addressInfo = instituInfo.address.split("-")[3];
-        let curCity = {}; 
-        let curType ={};
-        let curSex ={};
-        this.data.city.map(v => { 
-          if (Number(v.id) === Number(instituInfo.city_id)){ 
-            curCity = v; 
-          } 
-        })
-        this.data.type.map(v => { 
-          if (Number(v.id) === Number(instituInfo.type_id)){ 
-            curType = v; 
-          } 
-        })
-        this.data.sex.map(v => { 
-          if (Number(v.id) === Number(instituInfo.liaison_sex)){ 
-            curSex = v; 
-          } 
-        })
+        let curCity = {};
+        let curType = {};
+        let curSex = {};
+        let addressInfo = '';
+        let addressInfoArr = [];
+        if (instituInfo.address){
+          addressInfoArr = instituInfo.address.split("-");
+          addressInfo = instituInfo.address.split("-")[3];
+          this.data.city.map(v => {
+            if (Number(v.id) === Number(instituInfo.city_id)) {
+              curCity = v;
+            }
+          })
+          this.data.type.map(v => {
+            if (Number(v.id) === Number(instituInfo.type_id)) {
+              curType = v;
+            }
+          })
+          this.data.sex.map(v => {
+            if (Number(v.id) === Number(instituInfo.liaison_sex)) {
+              curSex = v;
+            }
+          })
+        }
         this.setData({
           region:addressInfoArr,//设置省市区
           name:instituInfo.name,//设置机构名称

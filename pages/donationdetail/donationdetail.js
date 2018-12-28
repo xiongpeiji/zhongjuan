@@ -2,6 +2,7 @@
 const app = getApp();
 const app_data = app.globalData;
 let http = require("../../utils/http.js")
+let utils = require("../../utils/util.js")
 Page({
   /**
   * 页面的初始数据

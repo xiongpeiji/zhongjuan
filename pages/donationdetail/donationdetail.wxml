@@ -181,7 +181,7 @@
       <view class="user_name_phone">
         <view class="fz_name">
           负责人<label>{{institution_info.liaison_person}}</label>
-          <image src="/images/nan-{{institution_info.liaison_sex}}.png"></image>
+          <image src="{{institution_info.liaison_sex == 1 ? '/images/nan-1.png' : '/images/nan-2.png'}}"></image>
         </view>
         <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
       </view>
