@@ -10,8 +10,7 @@
                     <view class="right_type">
                         <label>{{instStatus[myOrgInfos.status]}}</label>
                     </view>
-                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=1}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
-                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=2}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
+                    <view data-id='{{myOrgInfos.status}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
                 </view>
                 <view class="help_sm_tit">
                     <label class="address_text">{{myOrgInfos.number_people}}人</label>
@@ -26,7 +25,7 @@
         <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
           <block wx:for="{{myOrgInfos.prove_info}}" wx:key="{{index}}">
             <swiper-item>
-              <image mode='aspectFill' src="{{item}}" class="slide-image" />
+              <image mode='aspectFill' src="{{item}}" data-img="{{item}}" bindtap="showImages" class="slide-image" />
             </swiper-item>
           </block>
         </swiper>

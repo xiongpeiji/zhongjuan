@@ -46,8 +46,6 @@ Page({
   //重新编辑认证资料
   repeatEidetInfo(e){
     let status = e.currentTarget.dataset.id;
-    console.log(e)
-    console.log(status)
     wx.navigateTo({
       url: '../institutionalaccreditation/institutionalaccreditation?status=' + status
     })
@@ -56,6 +54,14 @@ Page({
     var current = e.detail.current;
     this.setData({
       current: current + 1
+    })
+  },
+
+  showImages(e) {
+    let img = e.currentTarget.dataset.img;
+    wx.previewImage({
+      current: img, // 当前显示图片的http链接
+      urls: this.data.myOrgInfos.prove_info // 需要预览的图片http链接列表
     })
   },
   /**

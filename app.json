@@ -50,7 +50,7 @@
       },
       {
         "pagePath": "pages/message/message",
-        "text": "消息",
+        "text": "通知",
         "iconPath": "images/xiaoxi.png",
         "selectedIconPath": "images/xiaoxi-active.png"
       },

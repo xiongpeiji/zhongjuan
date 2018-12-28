@@ -283,4 +283,5 @@ swiper, swiper image {
   bottom: 0;
   right: 0;
   height: 175rpx;
+  z-index:9999;
 }
