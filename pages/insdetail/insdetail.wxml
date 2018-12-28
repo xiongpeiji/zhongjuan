@@ -1,6 +1,74 @@
 <!--pages/insdetail/insdetail.wxml-->
-<view class='container'>
-  机构信息
+<view class="container">
+    <view class="dona_infos">
+        <view class="dona_left_cont">
+            <view class="dona_user_info">
+                <view class="dona_name">
+                    <label class="help_title">
+                        {{myOrgInfos.name}}
+                    </label>
+                    <view class="right_type">
+                        <label>{{instStatus[myOrgInfos.status]}}</label>
+                    </view>
+                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=1}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
+                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=2}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
+                </view>
+                <view class="help_sm_tit">
+                    <label class="address_text">{{myOrgInfos.number_people}}人</label>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="my_organ_cont">
+        <!--机构轮播图-->
+      <view class="prove_infos">
+      <view class='promotion-img'>
+        <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
+          <block wx:for="{{myOrgInfos.prove_info}}" wx:key="{{index}}">
+            <swiper-item>
+              <image mode='aspectFill' src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+      </view>
+      </view>
+        <view class="my_org_infos">
+            <view class="user_name_text">
+                <label class="names">联络人</label>
+                <view class="eidt_right" data-id="{{myOrgInfos.id}}" bindtap="repeatEidetInfo" hidden="{{myOrgInfos.status!='3'}}">
+                    <image mode='aspectFill' src="/images/qianbi.png"></image>
+                    <label class="edit_text">重新编辑</label>
+                </view>
+            </view>
+            <view class="user_photo_imgbox">
+                <image class="user_up_img" src="{{myOrgInfos.liaison_avatar}}" mode='aspectFill'></image>
+                <view class="name_s">
+                    <label>{{myOrgInfos.liaison_person}}</label>
+                    <label>{{myOrgInfos.liaison_sex=='1'?'男':'女'}}</label>
+                </view>
+                <view class="name_s">
+                    <label>{{myOrgInfos.liaison_tel}}<icon class="phone_satus" type="success" color="#E65E34" size="{{12}}"/></label>
+                </view>
+            </view>
+        </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                机构简介
+            </view>
+            <view class="photos_box">
+                <text>{{myOrgInfos.desc}}</text>
+            </view>
+        </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                机构地址
+            </view>
+            <view class="photos_box">
+                <text>{{myOrgInfos.address}}</text>
+            </view>
+        </view>
+    </view>
 </view>
 <!-- <view class="maxing" hidden='{{institution_model}}'></view>
   <view class="content_detail"  hidden='{{institution_model}}'>
