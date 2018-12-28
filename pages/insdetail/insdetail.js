@@ -10,6 +10,9 @@ Page({
    */
   data: {
     id:0,
+    current: 1,
+    swiper_all: 0,
+    myOrgInfos:{}
   },
 
   /**
@@ -33,6 +36,10 @@ Page({
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         console.log(res.data)
+        this.setData({
+          myOrgInfos:res.data,
+          swiper_all: res.data.images.length,
+        })
       }
     });
   },
@@ -41,6 +48,12 @@ Page({
    */
   onShareAppMessage: function () {
     return app_data.share;
+  },
+  swiper(e) {
+    var current = e.detail.current;
+    this.setData({
+      current: current + 1
+    })
   },
   //ios下拉问题
   onPageScroll: function (e) {

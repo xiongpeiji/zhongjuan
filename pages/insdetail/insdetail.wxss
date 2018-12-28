@@ -73,7 +73,6 @@
     padding:20rpx 30rpx 35rpx;
 }
 .prove_infos{
-  margin-top: -140rpx;
   width: 730rpx;
   height:264rpx;
   position: relative;

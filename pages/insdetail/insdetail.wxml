@@ -1,6 +1,6 @@
 <!--pages/insdetail/insdetail.wxml-->
 <view class="container">
-    <view class="dona_infos">
+    <!-- <view class="dona_infos">
         <view class="dona_left_cont">
             <view class="dona_user_info">
                 <view class="dona_name">
@@ -18,13 +18,13 @@
                 </view>
             </view>
         </view>
-    </view>
+    </view> -->
     <view class="my_organ_cont">
         <!--机构轮播图-->
       <view class="prove_infos">
       <view class='promotion-img'>
         <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
-          <block wx:for="{{myOrgInfos.prove_info}}" wx:key="{{index}}">
+          <block wx:for="{{myOrgInfos.images}}" wx:key="{{index}}">
             <swiper-item>
               <image mode='aspectFill' src="{{item}}" class="slide-image" />
             </swiper-item>
