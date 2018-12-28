@@ -172,6 +172,11 @@ swiper-item image{
     line-height:30rpx;
     margin-bottom: 40rpx;
 }
+.infoFail b{
+  font-size: 40rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+}
 .infoFail label{
     font-size: 28rpx;
     display: inline-block;
@@ -289,4 +294,81 @@ background:#fff;
 border-radius:17rpx;
 margin-left:25rpx;
 margin-top:8rpx;
+}
+ .inst_type{
+   float: right;
+  padding:0 15rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  color:#fff;
+  border-radius: 17rpx;
+  background: #E4572E;
+  text-align: center;
+  margin-top: 11rpx;
+  margin-left: 25rpx;
+}
+ .inst_type image{
+  width:20rpx;
+  height:16rpx;
+  float:left;
+  vertical-align:middle;
+  margin-top:10rpx;
+  margin-right:10rpx;
+}
+.qiujuan_list{
+  height: 165rpx;
+  width: 660rpx;
+  padding: 20rpx 45rpx 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0rpx 0rpx 10rpx 1rpx #eaeaea;
+  position: relative;
+}
+.qiujuan_list text{
+  display: block;
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 42rpx;
+  margin-bottom: 10rpx;
+}
+.qiujuan_list b{
+  display: block;
+  font-size: 34rpx;
+  color:#444444;
+  line-height: 48rpx;
+  width: 430rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.qiujuan_list+.qiujuan_list {
+  margin-top: 50rpx;
+}
+.flag_img{
+  display: block;
+  width: 157rpx;
+  height: 103rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.flag_img image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.flag_img text{
+  color:#fff;
+  position: relative;
+  z-index: 2;
+  /* text-align: center; */
+  /* line-height: 103rpx; */
+  margin-left: 70rpx;
+  margin-top: 10rpx;
+  font-size: 22rpx;
 }

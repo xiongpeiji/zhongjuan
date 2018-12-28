@@ -1,45 +1,35 @@
 <!--pages/insdetail/insdetail.wxml-->
 <view class="container">
-    <!-- <view class="dona_infos">
-        <view class="dona_left_cont">
-            <view class="dona_user_info">
-                <view class="dona_name">
-                    <label class="help_title">
-                        {{myOrgInfos.name}}
-                    </label>
-                    <view class="right_type">
-                        <label>{{instStatus[myOrgInfos.status]}}</label>
-                    </view>
-                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=1}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
-                    <view data-id='{{myOrgInfos.status}}' hidden='{{myOrgInfos.status!=2}}' class='editBtn' bindtap='repeatEidetInfo'>编辑</view>
-                </view>
-                <view class="help_sm_tit">
-                    <label class="address_text">{{myOrgInfos.number_people}}人</label>
-                </view>
-            </view>
-        </view>
-    </view> -->
     <view class="my_organ_cont">
         <!--机构轮播图-->
       <view class="prove_infos">
-      <view class='promotion-img'>
-        <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
-          <block wx:for="{{myOrgInfos.images}}" wx:key="{{index}}">
-            <swiper-item>
-              <image mode='aspectFill' src="{{item}}" class="slide-image" />
-            </swiper-item>
-          </block>
-        </swiper>
-        <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+        <view class='promotion-img'>
+          <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
+            <block wx:for="{{myOrgInfos.images}}" wx:key="{{index}}">
+              <swiper-item>
+                <image mode='aspectFill' src="{{item}}" class="slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+          <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+        </view>
       </view>
-      </view>
+      <view class="jigou_photos">
+            <view class="infoFail">
+                <b>{{myOrgInfos.name}}</b>
+                <view class='inst_type'>
+          <image class="type_icons" src="/images/shenqingqiyerenzheng.png"></image>
+          <text>{{myOrgInfos.type_name}}</text>
+        </view>
+            </view>
+            <view class="photos_box">
+               <text> 规模：{{myOrgInfos.number_people}}人</text>
+            </view>
+        </view>
+
         <view class="my_org_infos">
             <view class="user_name_text">
                 <label class="names">联络人</label>
-                <view class="eidt_right" data-id="{{myOrgInfos.id}}" bindtap="repeatEidetInfo" hidden="{{myOrgInfos.status!='3'}}">
-                    <image mode='aspectFill' src="/images/qianbi.png"></image>
-                    <label class="edit_text">重新编辑</label>
-                </view>
             </view>
             <view class="user_photo_imgbox">
                 <image class="user_up_img" src="{{myOrgInfos.liaison_avatar}}" mode='aspectFill'></image>
@@ -66,6 +56,19 @@
             </view>
             <view class="photos_box">
                 <text>{{myOrgInfos.address}}</text>
+            </view>
+        </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                求捐记录
+            </view>
+            <view class='qiujuan_list' wx:for="{{myOrgInfos.list}}" wx:key="index">
+              <text class='juan_time'>{{item.add_time}}</text>
+              <b>{{item.title}}</b>
+              <view class='flag_img'>
+                <text>{{item.status == 1 ? '进行中' : '已结束'}}</text>
+                <image src="{{item.status == 1 ? '/images/flag_01.png' : '/images/flag_02.png'}}"></image>
+              </view>
             </view>
         </view>
     </view>

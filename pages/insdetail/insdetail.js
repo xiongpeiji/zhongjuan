@@ -12,7 +12,10 @@ Page({
     id:0,
     current: 1,
     swiper_all: 0,
-    myOrgInfos:{}
+    myOrgInfos:{},
+    instStatus: { // 1 认证中 2 已认证 3 认证失败 
+      1: "认证中", 2: "已认证", 3: "认证失败"
+    },
   },
 
   /**
