@@ -304,10 +304,11 @@ swiper, swiper image {
     background: #fafafa;
 }
 .want_give{
-    float: left;
+    float: right;
     position: relative;
     width:217rpx;
     height: 78rpx;
+    margin-right: 20rpx;
 }
 .want_give image{
     width:217rpx;

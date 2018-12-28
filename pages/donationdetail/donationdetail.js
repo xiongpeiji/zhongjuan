@@ -67,11 +67,11 @@ Page({
     })
   },
   //显示机构信息弹窗
-  showMaxing(){
-    this.setData({
-      institution_model:false,
-      hiddenBody:true
-    })
+  showMaxing(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../insdetail/insdetail?id='+id
+    });
   },
   //关闭弹窗
   closeModals(e){
@@ -111,7 +111,6 @@ Page({
           textnum: textLength,
           status:res.data.status
         });
-        console.log(this.data.textnum)
         if(this.data.textnum>=160){
           this.setData({
             moreShow:true

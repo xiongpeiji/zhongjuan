@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -108,6 +108,12 @@
 					"id": -1,
 					"name": "心得",
 					"pathName": "pages/xinde/xinde",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "机构详细信息",
+					"pathName": "pages/insdetail/insdetail",
 					"query": ""
 				}
 			]

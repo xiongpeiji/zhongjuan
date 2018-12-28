@@ -20,7 +20,8 @@
     "pages/donormanagement/donormanagement",
     "pages/myorganization/myorganization",
     "pages/dialog/dialog",
-    "pages/webView/webView"
+    "pages/webView/webView",
+    "pages/insdetail/insdetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",

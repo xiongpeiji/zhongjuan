@@ -1,0 +1,75 @@
+<!--pages/insdetail/insdetail.wxml-->
+<view class='container'>
+  机构信息
+</view>
+<!-- <view class="maxing" hidden='{{institution_model}}'></view>
+  <view class="content_detail"  hidden='{{institution_model}}'>
+    <image class="close_btn" bindtap='closeModals' src="/images/quxiaocopy2@2x.png"></image>
+
+    <view class='auto_y'>
+    
+    
+    <view class="top_infos">
+      <view class='title'>
+        <text class='title_h1'>{{institution_info.name}}</text>
+        <view class='inst_type'>
+          <image class="type_icons" src="/images/shenqingqiyerenzheng.png"></image>
+          <text>{{institution_info.type_name}}</text>
+        </view>
+      </view>
+      <view class='joins_nums'>
+      {{institution_info.number_people}}人
+      </view>
+
+      <view class="prove_infos">
+        <view class='promotion-img'>
+          <swiper bindchange="institutionSwiper" next-margin="288rpx" circular="{{true}}">
+            <block wx:for="{{institution_info.images}}" wx:key="{{index}}">
+              <swiper-item>
+                <image mode='aspectFill' src="{{item}}" class="slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+          <view class="current"><span>{{institution_current}}</span> / {{institution_swiper_all}}</view>
+        </view>
+      </view>
+
+      <view class="user_name_phone">
+        <view class="fz_name">
+          负责人<label>{{institution_info.liaison_person}}</label>
+          <image src="{{institution_info.liaison_sex == 1 ? '/images/nan-1.png' : '/images/nan-2.png'}}"></image>
+        </view>
+        <text class='user_mobiles'>{{institution_info.liaison_tel}}</text>
+      </view>
+
+      <view class="jigou_photos">
+            <view class="infoFail">
+                机构简介
+            </view>
+            <view class="photos_box {{!moreShow?'show_more':''}}">
+               <text>{{institution_info.desc}}</text>
+            <view class='look_mor' hidden='{{!moreShow}}' bindtap='showMore'><image src='/images/xiala-copy.png'></image>查看全部</view>
+            </view>
+        </view>
+        <view class="jigou_photos">
+            <view class="infoFail">
+                机构地址
+            </view>
+            <view class="position_box">
+                <text>{{institution_info.address}}</text>
+            </view>
+            <view class='qiujuan_sored'>
+              <b>求捐记录</b>
+            </view>
+            <view class='qiujuan_list' wx:for="{{institution_info.list}}" wx:key="index">
+              <text class='juan_time'>{{item.add_time}}</text>
+              <b>{{item.title}}</b>
+              <view class='flag_img'>
+                <text>{{item.status == 1 ? '进行中' : '已结束'}}</text>
+                <image src="{{item.status == 1 ? '/images/flag_01.png' : '/images/flag_02.png'}}"></image>
+              </view>
+            </view>
+        </view>
+    </view>
+    </view>
+  </view> -->
