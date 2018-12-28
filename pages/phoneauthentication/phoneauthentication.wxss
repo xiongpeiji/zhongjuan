@@ -48,13 +48,16 @@
 }
 .phone_number_box .input_numbers{
     font-size: 28rpx;
-    color: #999999;
+    color: #333;
     padding:20rpx 0 20rpx 80rpx;
     height: 80rpx;
     line-height: 40rpx;
     box-sizing: border-box;
     border-radius: 40rpx;
     border: 1px solid #E5E5E5;
+}
+.phone_number_box .isfocusThis{
+  border:1px solid #E4572E;
 }
 .verification_box{
     float: left;

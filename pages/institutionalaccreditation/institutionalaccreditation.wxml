@@ -8,16 +8,6 @@
                 <input value="{{name}}" name="name"  type="text" placeholder="请输入机构名称" maxlength="11"/>
             </view>
         </view>
-        <picker mode="selector" bindchange="bindTypeChange" range-key='name' range="{{type}}">
-            <view class="my_menu_list" hover-class="public_hover">
-                <label class="left_text">机构类型</label>
-                <view class="right_btn">
-                    <view class="no_auth" hidden="{{curType.id}}">请选择机构类型</view>
-                    <label class="no_auth">{{curType.name}}</label>
-                    <image class="right_icons" src="/images/renzheng_jinru.png"></image>
-                </view>
-            </view>
-        </picker>
         <picker mode="selector" bindchange="bindCityChange" range-key='name' range="{{city}}">
             <view class="my_menu_list" hover-class="public_hover">
             <label class="left_text">机构区域</label>
@@ -44,12 +34,37 @@
                 <input value="{{address}}" name='address' type="text" placeholder="请输入详细地址" maxlength="11"/>
             </view>
         </view>
+        <picker mode="selector" bindchange="bindTypeChange" range-key='name' range="{{type}}">
+            <view class="my_menu_list" hover-class="public_hover">
+                <label class="left_text">机构类型</label>
+                <view class="right_btn">
+                    <view class="no_auth" hidden="{{curType.id}}">请选择机构类型</view>
+                    <label class="no_auth">{{curType.name}}</label>
+                    <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+                </view>
+            </view>
+        </picker>
         <view class="creat_xinde_con">
             <label class="xinde_title">机构规模</label>
             <view class="title_input_box">
                 <input value="{{number_people}}" name='number_people' type="text" placeholder="请输入机构成员数" maxlength="11"/>
             </view>
         </view>
+        <view class="imgupload_box">
+            <view class="imguptile">
+                机构认证 <label>请上传机构相关证件照片</label>
+            </view>
+            <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{prove_info}}"  wx:key="index" >
+                <image class="img_bg" src="{{item}}" mode='aspectFill'></image>
+                <view class="delet-icon">
+                    <image src="/images/delete.png"></image>
+                </view>
+            </view>
+            <image class="img_bg" hidden="{{prove_info.length>=9}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
+        
+        
+        
           <view class="jianjie_title">
                 机构简介 
           </view>
@@ -105,20 +120,6 @@
                     <image class="user_card_bg" hidden="{{cardTwo}}" src="/images/pic_shenfan.png"></image>
                 </view>
             </view>
-        </view>
-
-
-        <view class="imgupload_box">
-            <view class="imguptile">
-                机构认证 <label>请上传机构相关证件照片</label>
-            </view>
-            <view class="delete-img" bindtap="deleteImg"  bind-index="{{index}}" wx:for="{{prove_info}}"  wx:key="index" >
-                <image class="img_bg" src="{{item}}" mode='aspectFill'></image>
-                <view class="delet-icon">
-                    <image src="/images/delete.png"></image>
-                </view>
-            </view>
-            <image class="img_bg" hidden="{{prove_info.length>=9}}"  bindtap="uploadArrPhoto" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
     </view>
         <button hover-class="fixed_bottom_btn" form-type="submit" class="bottom_btn">提交</button>

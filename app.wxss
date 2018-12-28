@@ -16,7 +16,7 @@ image {
   display: inline-block;
   width: 100rpx;
   height: 100rpx;
-  margin-right: 40rpx;
+  margin-right: 35rpx;
   position: relative;
 }
 .delete-img .delet-icon{

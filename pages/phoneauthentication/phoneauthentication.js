@@ -15,7 +15,9 @@ Page({
     timeText: '立即获取',
     fun_id:2,
     disabled:false,
-    tip:"为了保证信息安全，请验证您的手机号"
+    tip:"为了保证信息安全，请验证您的手机号",
+    isFocus:false,
+    isFocus1:false,
   },
   
   /**
@@ -47,6 +49,32 @@ Page({
   regCode(e) {
     this.setData({
       code: e.detail.value
+    })
+  },
+  //input获取焦点
+  isfocusThis(e){
+    this.setData({
+      isFocus:true,
+      isFocus1:false
+    })
+  },
+  //input获取焦点
+  isfocusThis1(e) {
+    this.setData({
+      isFocus: false,
+      isFocus1: true
+    })
+  },
+  //去除焦点
+  removeActive(e){
+    this.setData({
+      isFocus: false,
+    })
+  },
+  //去除焦点
+  removeActive1(e) {
+    this.setData({
+      isFocus1: false
     })
   },
   getCode (options){

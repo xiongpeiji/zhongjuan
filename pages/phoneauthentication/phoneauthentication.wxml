@@ -11,11 +11,11 @@
             <view class="program_text">{{tip}}</view>
             <form bindsubmit='submit'>
                 <view class="phone_number_box">
-                    <input class="input_numbers" name="mobile" type="number" bindinput="mobileInputEvent"  maxlength="{{11}}" placeholder="请输入您的手机号" />
+                    <input class="input_numbers {{isFocus?'isfocusThis':''}}" bindfocus='isfocusThis' bindblur='removeActive' name="mobile" type="number" bindinput="mobileInputEvent"  maxlength="{{11}}" placeholder="请输入您的手机号" />
                 </view>
                 <view class="phone_number_box">
                     <view class="verification_box">
-                        <input class="input_numbers" bindinput="regCode" name="sms_code" type="number" maxlength="{{6}}" placeholder="请输入验证码" />
+                        <input class="input_numbers {{isFocus1?'isfocusThis':''}}" bindfocus='isfocusThis1' bindblur='removeActive1'  bindinput="regCode" name="sms_code" type="number" maxlength="{{6}}" placeholder="请输入验证码" />
                     </view>
                     <view class="send_button">
                         <button class="send_code" disabled='{{disabled}}' data-id="2"  bindtap="sendPhoneCode" plain="{{true}}">{{timeText}}</button>
