@@ -83,6 +83,7 @@ Page({
     let url = app_data.base + 'Index/index';
     let params={token:app_data.token};
     http.Get({ url: url,params:params }).then((res) => {
+      console.log(res);
       let init_data = res.data;
       wx.setStorageSync('type', init_data.type);//存储机构类型
       wx.setStorageSync('city', init_data.city);//存储城市名称

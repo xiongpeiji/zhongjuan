@@ -40,6 +40,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '心得详情'
     });
+    if (options.scene) {
+      options.id = options.scene;
+    }  
     this.setData({
       id: options.id,
       width: app_data.deviceInfo.windowWidth,
