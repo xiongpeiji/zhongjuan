@@ -81,7 +81,9 @@ Page({
   setInit: function () {
     let arrList = [];
     let url = app_data.base + 'Index/index';
-    http.Get({ url: url }).then((res) => {
+    let params={token:app_data.token};
+    http.Get({ url: url,params:params }).then((res) => {
+      console.log(res);
       let init_data = res.data;
       wx.setStorageSync('type', init_data.type);//存储机构类型
       wx.setStorageSync('city', init_data.city);//存储城市名称
@@ -107,7 +109,8 @@ Page({
         arrList.push(type);
         arrList.push(material);
         this.setData({
-          arrList: arrList
+          arrList: arrList,
+          is_follow:init_data.is_follow
         });
         if (init_data.advert) {
           this.setData({

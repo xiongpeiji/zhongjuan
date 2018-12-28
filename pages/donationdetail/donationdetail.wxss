@@ -797,7 +797,7 @@ swiper, swiper image {
 .comment_name .left_name{
   line-height: 40rpx;
   font-size: 28rpx;
-  color:#333333;
+  color:#999999;
   float: left;
 }
 .comment_dis label {

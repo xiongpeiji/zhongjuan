@@ -21,7 +21,7 @@ Page({
    */
   onShow: function (options) {
     wx.setNavigationBarTitle({
-      title: '消息'
+      title: '通知'
     });
     this.setData({
       page: 1

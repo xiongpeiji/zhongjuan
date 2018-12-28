@@ -52,6 +52,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '求捐详情'
     });
+    if (options.scene) {
+      options.id = options.scene;
+    }  
     this.setData({
         id:options.id,
         width: app_data.deviceInfo.windowWidth,
