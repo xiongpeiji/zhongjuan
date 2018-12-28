@@ -11,7 +11,7 @@
     <swiper bindchange="swiper">
       <block wx:for="{{info.image}}" wx:key="{{item.index}}">
         <swiper-item>
-          <image mode='aspectFill' src="{{item}}" class="slide-image" />
+          <image mode='aspectFill' src="{{item}}" bindtap='showImages' data-img="{{item}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>

@@ -584,6 +584,14 @@ Page({
     });
   },
 
+  showImages(e) {
+    let img = e.currentTarget.dataset.img;
+    wx.previewImage({
+      current: img, // 当前显示图片的http链接
+      urls: this.data.info.image // 需要预览的图片http链接列表
+    })
+  },
+
   /**
  * 页面相关事件处理函数--监听用户下拉动作
  */
