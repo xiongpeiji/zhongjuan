@@ -54,9 +54,6 @@
       <view class="detail_title">{{content_name}}</view>
       <view  class='detail_content' wx:for="{{info.content}}" wx:key="index">
         <view wx:if="{{cate=='check'}}">
-         <view class='express_detail'>
-              审核人员：{{item.admin_name}}
-          </view>
           <view class='express_detail'>
               审核时间：{{item.time}}
           </view>
