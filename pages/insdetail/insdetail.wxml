@@ -7,7 +7,7 @@
           <swiper bindchange="swiper" next-margin="288rpx" circular="{{true}}">
             <block wx:for="{{myOrgInfos.images}}" wx:key="{{index}}">
               <swiper-item>
-                <image mode='aspectFill' src="{{item}}" class="slide-image" />
+                <image mode='aspectFill' src="{{item}}" bindtap="showImages" data-img="{{item}}" class="slide-image" />
               </swiper-item>
             </block>
           </swiper>

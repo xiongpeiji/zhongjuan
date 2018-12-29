@@ -84,14 +84,14 @@ Page({
     };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-          this.setData({
-            express_id:'',
-            express_num:'',
-            after_material:[],
-            images:[],
-          })
           app.alert({title:res.msg,time:2000});
-          setTimeout(()=>{  
+          setTimeout(()=>{
+            this.setData({
+              express_id: '',
+              express_num: '',
+              after_material: [],
+              images: [],
+            })  
             wx.navigateTo({
               url: '/pages/donationmanagement/donationmanagement',
             })
@@ -164,6 +164,8 @@ Page({
     }
    
   },
+
+
     // 删除图片
     deleteImg (e) {
       var imgs = this.data.images;

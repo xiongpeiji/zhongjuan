@@ -421,7 +421,7 @@ Page({
       ctx.fillText(this.data.username, modal_width * 0.2, modal_height * 0.05);
       ctx.setFontSize(18)
       ctx.setFillStyle('#000')
-      var result = this.breakLinesForCanvas(this.data.info.title, modal_width * 0.7, ctx)
+      var result = this.breakLinesForCanvas(this.data.info.title.replace(/\s/g, ""), modal_width * 0.7, ctx)
       for (var i = 0; i < result.length; i++) {
         if (i < 1) {
           ctx.fillText('"' + result[i] + '"' , modal_width * 0.2, modal_height * 0.1)
@@ -430,7 +430,7 @@ Page({
     } else {
       ctx.setFontSize(18)
       ctx.setFillStyle('#000')
-      var result = this.breakLinesForCanvas(this.data.info.title, modal_width * 0.8, ctx)
+      var result = this.breakLinesForCanvas(this.data.info.title.replace(/\s/g, ""), modal_width * 0.8, ctx)
       for (var i = 0; i < result.length; i++) {
         if (i < 1) {
           ctx.fillText('"' + result[i] + '"', modal_width * 0.1, modal_height * 0.08)
