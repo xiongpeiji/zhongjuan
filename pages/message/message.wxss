@@ -73,8 +73,8 @@
     -webkit-box-orient:vertical;
 }
 .msg_texts span{
-    width:15rpx;
-    height: 15rpx;
+    width:20rpx;
+    height: 20rpx;
     background: #f00;
     position: absolute;
     right: 30rpx;
