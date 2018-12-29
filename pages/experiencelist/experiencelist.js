@@ -62,13 +62,13 @@ Page({
   toPush(e){
     let id = e.currentTarget.dataset.id;
     let status = e.currentTarget.dataset.status;
-    if(status == 2){
+    if(status == 1){
       wx.navigateTo({
-        url: '../createexperience/createexperience?id=' + id
+        url: '../experiencedis/experiencedis?id=' + id
       })
     }else{
       wx.navigateTo({
-        url: '../experiencedis/experiencedis?id=' + id
+        url: '../createexperience/createexperience?id=' + id
       })
     }
    

@@ -2,7 +2,7 @@
 <view class="container">
     <view class="xinde_list_con" hidden='{{count == 0}}'>
         <view class="xinde_numbers">
-            我已发布了{{count}}条心得 <button class="go_push" bindtap="toPush" data-id="0">去发布</button>
+            我已发布了{{count}}条心得 <button class="go_push" bindtap="toPush" data-id="0" data-status="0">去发布</button>
         </view>
         <block wx:for="{{list}}" wx:key="{{index}}">
           <view class="xinde_lists {{item.class}}" >
@@ -28,7 +28,7 @@
                       <view wx:else>
                         <icon class="states_icon" type="warn" size="18"/>
                         <label class="list_state">审核失败</label>
-                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}" data-status="2">重新编辑</view>
+                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}" data-status="0">重新编辑</view>
                       </view>
                   </view>
               </view>
@@ -40,6 +40,6 @@
     <view class="no_messages" hidden='{{count != 0}}'>
         <image src="/images/no_dona.jpg"></image>
         <view class="no_msg_text">还没有发布过心得耶！</view>
-        <view class="go_lists" hover-class="public_hover" bindtap="toPush" data-id="0">去发布</view>
+        <view class="go_lists" hover-class="public_hover" bindtap="toPush" data-status="0" data-id="0">去发布</view>
     </view>
 </view>
