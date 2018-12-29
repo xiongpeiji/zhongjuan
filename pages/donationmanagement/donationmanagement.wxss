@@ -122,8 +122,8 @@
 }
 .dona_lis em{
     display: block;
-    width: 16rpx;
-    height: 16rpx;
+    width: 17rpx;
+    height: 17rpx;
     background: #D8D8D8;
     border-radius: 50%;
     position: absolute;
