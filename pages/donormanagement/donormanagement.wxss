@@ -140,13 +140,13 @@
     display: block;
     background: #D8D8D8;
     box-shadow: 0 2rpx 4rpx 0 rgba(208,208,208,0.50);
-    width: 16rpx;
-    height: 16rpx;
+    width: 17rpx;
+    height: 17rpx;
     border-radius: 8rpx;
     background: #D8D8D8;
     position: absolute;
     top: 40rpx;
-    left:-37rpx;
+    left:-36.5rpx;
 }
 .no_messages{
     padding:100rpx;
