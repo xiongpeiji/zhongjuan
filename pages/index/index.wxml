@@ -63,11 +63,11 @@
   </view>
   <!--没有消息-->
   <view class="no_messages" hidden="{{list.length!='0'}}">
-    <image src="/images/no_dona.jpg"></image>
-    <view class="no_msg_text">暂无此类型数据！</view>
+    <!-- <image src="/images/no_dona.jpg"></image> -->
+    <view class="no-more-message">没有更多求捐信息啦~</view>
   </view>
   <!--暂无更多消息-->
-  <view class='no-more-message'>{{no_msg}}</view>
+  <view class='no-more-message' hidden="{{list.length=='0'}}">{{no_msg}}</view>
   <!--蒙版和筛选-->
   <view class="{{first_click?'marking':'hide'}}" bindtap="hideArea"></view>
   <view class="{{first_click?'area_box':'hide'}}">
