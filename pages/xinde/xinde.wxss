@@ -167,7 +167,7 @@
 }
 .images_2,
 .images_4{
-  margin-right: -.2%;
+  margin-right: -.4%;
 }
 .images_2 image,
 .images_4 image{
@@ -177,7 +177,7 @@
 }
 .images_2 image,
 .images_4 image{
-  margin-right: .2%;
+  margin-right: .4%;
 }
 .images_3,
 .images_5,
