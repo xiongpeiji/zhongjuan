@@ -146,7 +146,7 @@
     background: #D8D8D8;
     position: absolute;
     top: 40rpx;
-    left:-36rpx;
+    left:-37rpx;
 }
 .no_messages{
     padding:100rpx;
