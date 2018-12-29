@@ -61,9 +61,17 @@ Page({
   //没有心得去发布按钮
   toPush(e){
     let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../createexperience/createexperience?id=' + id
-    })
+    let status = e.currentTarget.dataset.status;
+    if(status == 2){
+      wx.navigateTo({
+        url: '../createexperience/createexperience?id=' + id
+      })
+    }else{
+      wx.navigateTo({
+        url: '../experiencedis/experiencedis?id=' + id
+      })
+    }
+   
   },
 
   /**

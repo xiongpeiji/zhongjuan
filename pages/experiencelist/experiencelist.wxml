@@ -23,11 +23,12 @@
                     <view wx:elif="{{item.status==1}}">
                         <icon class="states_icon" type="success" size="18"/>
                         <label class="list_state">审核成功</label>
+                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}" data-status="1">去查看</view>
                       </view>
                       <view wx:else>
                         <icon class="states_icon" type="warn" size="18"/>
                         <label class="list_state">审核失败</label>
-                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}">重新编辑</view>
+                        <view class="re_edit" hover-class="edit_hover" bindtap="toPush" data-id="{{item.id}}" data-status="2">重新编辑</view>
                       </view>
                   </view>
               </view>
