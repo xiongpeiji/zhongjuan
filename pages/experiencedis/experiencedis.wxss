@@ -298,6 +298,11 @@ swiper, swiper image {
 .share_btn{
   float: right;
   margin-right: 0;
+  background: none;
+  border:none;
+}
+.article_share button::after{
+  border: none;
 }
 .no_messages {
   padding:100rpx;
