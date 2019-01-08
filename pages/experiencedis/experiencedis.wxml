@@ -30,11 +30,11 @@
           <image src="/images/msg_num.png"></image>
           <span>{{comment_num}}</span>
         </view>
-        <!-- <view class="fabulous share_btn" bindtap='shareWeixin'>
+        <view class="fabulous share_btn" bindtap='shareWeixin' hidden='{{info.share_status == 0}}'>
           <image src="/images/fenxiang.png"></image>
           <span>{{share_num}}</span>
-        </view> -->
-        <button class="fabulous share_btn"  open-type='share'>
+        </view>
+        <button class="fabulous share_btn"  open-type='share' hidden='{{info.share_status == 1}}'>
           <image src="/images/fenxiang.png"></image>
           <span>{{share_num}}</span>
         </button>

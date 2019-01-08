@@ -4,8 +4,8 @@ const http = require("/utils/http.js")
 const common = require("/utils/common.js")
 App({
   globalData: {
-    app_id:'wxaa31789e58d234c5',
-    secret:'ec443912e8488508cee7ee8a584afa70',
+    app_id:'wx658570b5cb789b91',
+    secret:'5cad1c056ffa74452aa4c43e057d1fc0',
     public_open_id: null,
     user_info: null,
     token: null,
