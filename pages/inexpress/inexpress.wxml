@@ -1,0 +1,88 @@
+<!--pages/inexpress/inexpress.wxml-->
+<view class='container'>
+  <view class='send_love'>
+    <image class='stutas_img' src='/images/love.png'></image>
+    <view class='stutas_text'>爱心发起成功！</view>
+    <view class='tips'>您的物流单号还没有填写哦~</view>
+  </view>
+
+  <view class='juanzhu'>
+    <view class='jz_discript'>
+      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
+      <view class='title_text'>别让冬季阻碍了孩子们的生活质量</view>
+      <view class='jg_name'>深圳爱心机构</view>
+      <view class='jg_type'>
+        <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
+        <label>行政村</label>
+      </view>
+    </view>
+    <view class='jz_stutas'>
+        <label>进行中</label>
+        <image src='/images/icon_fanhui.png'></image>
+      </view>
+  </view>
+
+  <!--捐赠物资详情-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+      <span></span>
+      <label>捐赠物资详情</label>
+    </view>
+    <view class='jsjg'>
+      <view class='pub_con'>
+        <label class='pub_title'>接受机构</label>
+        <view class='pub_text_dis'>深圳市博雅游戏网络爱心机构</view>
+      </view>
+
+      <view class='pub_con'>
+        <label class='pub_title'>图书</label>
+        <view class='pub_text_dis'>
+          <label class='dis_num'>100</label>
+          <label class='Company'>本</label>
+        </view>
+      </view>
+      <view class='pub_con'>
+        <label class='pub_title'>文具</label>
+        <view class='pub_text_dis'>
+          <label class='dis_num'>100</label>
+          <label class='Company'>件</label>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <!--填写物流单号-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+      <span></span>
+      <label>填写物流单号和快递公司</label>
+    </view>
+    <picker mode="selector" bindchange="bindExpressChange" range-key='name' range="{{express_data}}">
+          <view class="my_menu_list" hover-class="public_hover">
+              <label class="left_text">快递公司</label>
+              <view class="right_btn">
+                  <label class="no_auth">中通快递</label>
+                  <view class="no_auth" hidden="{{true}}">请选择快递公司</view>
+                  <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+              </view>
+          </view>
+      </picker>
+      <input class='express_order' type='number' placeholder='请输入您的物流单号'/>
+    <view class="btn_box">
+          <button class="send_data_btn">确定</button>
+    </view>
+  </view>
+
+  
+
+
+
+
+
+
+
+
+
+
+</view>

@@ -1,0 +1,103 @@
+<!--zhongjuan/pages\wanttodonone/wanttodonone.wxml-->
+<view class='container'>
+
+  <view class='juanzhu'>
+    <view class='jz_discript'>
+      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
+      <view class='title_text'>别让冬季阻碍了孩子们的生活质量</view>
+      <view class='jg_name'>深圳爱心机构</view>
+      <view class='jg_type'>
+        <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
+        <label>行政村</label>
+      </view>
+    </view>
+    <view class='jz_stutas'>
+        <label>进行中</label>
+        <image src='/images/icon_fanhui.png'></image>
+      </view>
+  </view>
+
+  <!--受捐机构信息-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+      <span></span>
+      <label>受捐机构信息</label>
+    </view>
+
+    <view class='pub_info'>
+      <view class='pub_tit'>爱心机构</view>
+      <view class='pub_dis'>西安市人民政府爱心捐助中心</view>
+    </view>
+
+    <view class='pub_info'>
+      <view class='pub_tit'>机构负责人</view>
+      <view class='pub_dis'>王二狗</view>
+    </view>
+
+    <view class='pub_info'>
+      <view class='pub_tit'>联系方式</view>
+      <view class='pub_dis'>15619087175</view>
+    </view>
+
+    <view class='pub_info'>
+      <view class='pub_tit'>机构地址</view>
+      <view class='pub_dis'>陕西省西安市雁塔区高新五路尚品格兰</view>
+    </view>
+  </view>
+  <!--捐助物资-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+        <span></span>
+        <label>捐助物资</label>
+    </view>
+    <view class='juwz'>
+
+      <view class='jz_list'>
+        <view class='name flaot'>图书</view>
+        <view class='number flaot'>
+          <label class='zong'>100</label>
+          <label class='sx'>所需</label>
+        </view>
+        <view class='number flaot'>
+          <label class='zong yj_c'>100</label>
+          <label class='sx yj_c'>已捐</label>
+        </view>
+        <view class='num_input flaot'>
+          <input type="number" placeholder="请输入捐助数量" maxlength="5"/>
+        </view>
+      </view>
+
+      <view class='jz_list'>
+        <view class='name flaot'>文具</view>
+        <view class='number flaot'>
+          <label class='zong'>100</label>
+          <label class='sx'>所需</label>
+        </view>
+        <view class='number flaot'>
+          <label class='zong yj_c'>100</label>
+          <label class='sx yj_c'>已捐</label>
+        </view>
+        <view class='num_input flaot'>
+          <input type="number" placeholder="请输入捐助数量" maxlength="5"/>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='jg_info'>
+    <view class='title_jg money_input_box'>
+        <label>物资总估值：</label>
+        <text>物资购买价格的总和</text>
+        <text class='symbol'>￥</text>
+        <view class="money_input {{isFocus?'isfocusThis':''}}">
+            <input type="number" bindfocus='isfocusThis' bindblur='removeActive'  bindinput="moneyNum" placeholder="{{placeholder}}" maxlength="5"/>
+        </view>
+    </view>
+    
+  </view>
+  <view class="btn_box">
+      <button class="send_data_btn" bindtap='nextExpress'>完成</button>
+  </view>
+
+</view>

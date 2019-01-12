@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 12,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -114,6 +114,30 @@
 					"id": -1,
 					"name": "机构详细信息",
 					"pathName": "pages/insdetail/insdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要捐助1",
+					"pathName": "pages/wanttodonone/wanttodonone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我要捐助2",
+					"pathName": "pages/inexpress/inexpress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "状态页",
+					"pathName": "pages/stutaspage/stutaspage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "发起捐助",
+					"pathName": "pages/Initiatedonation/Initiatedonation",
 					"query": ""
 				}
 			]

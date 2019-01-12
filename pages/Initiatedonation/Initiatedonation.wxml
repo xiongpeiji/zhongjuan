@@ -1,0 +1,49 @@
+<!--pages/Initiatedonation/Initiatedonation.wxml-->
+<view class='container'>
+  <view class='send_love success_text'>
+    <view class='remove_data'>取消捐赠</view>
+    <image class='stutas_img' src='/images/success_icon.png'></image>
+    <view class='stutas_text'>您的爱心捐赠已发起！</view>
+    <view class='tips'>订单号要在48小时内填写哦~</view>
+  </view>
+  <!--温馨提示-->
+  <view class='warm_tips'>
+    <view class='tips_box'>
+      <view class='tips_tile'>小提示：</view>
+      <view class='tips_dis'>亲爱的好心人，爱心捐赠发起后将会帮您保留48小时您需 要在有效期限内将捐赠物资清洗干净并消毒待物资发件成 功后返回小程序在<label>我的-我的捐赠</label>当中选择您已发起的爱 心捐赠并完成快递单号的填写。</view>
+    </view>
+  </view>
+
+  <!--物流推荐-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+      <span></span>
+      <label>物流推荐</label>
+      <view class='lookmor' bindtap='moreExpress'>
+        <label>查看更多</label>
+        <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+      </view>
+    </view>
+
+
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+  </view>
+
+
+</view>

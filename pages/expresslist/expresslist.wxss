@@ -1,0 +1,27 @@
+/* pages/expresslist/expresslist.wxss */
+.express_list{
+  padding:21rpx 25rpx 30rpx;
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #E5E5E5;
+}
+.exp_logo{
+  width: 84rpx;
+  height: 84rpx;
+  float: left;
+  border-radius: 50%;
+}
+.exp_name{
+  line-height: 84rpx;
+  float: left;
+  font-size: 30rpx;
+  color:#333333;
+  margin-left: 40rpx;
+}
+.exp_phone{
+  float: right;
+  font-size: 30rpx;
+  color:#666666;
+  font-weight: bold;
+  line-height: 84rpx;
+}

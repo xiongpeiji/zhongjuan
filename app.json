@@ -10,6 +10,7 @@
     "pages/createexperience/createexperience",
     "pages/donationdetail/donationdetail",
     "pages/wanttodonate/wanttodonate",
+    "pages/wanttodonone/wanttodonone",
     "pages/messageDetail/messageDetail",
     "pages/phoneauthentication/phoneauthentication",
     "pages/editingmaterials/editingmaterials",
@@ -21,7 +22,11 @@
     "pages/myorganization/myorganization",
     "pages/dialog/dialog",
     "pages/webView/webView",
-    "pages/insdetail/insdetail"
+    "pages/insdetail/insdetail",
+    "pages/inexpress/inexpress",
+    "pages/stutaspage/stutaspage",
+    "pages/Initiatedonation/Initiatedonation",
+    "pages/expresslist/expresslist"
   ],
   "window": {
     "backgroundTextStyle": "dark",

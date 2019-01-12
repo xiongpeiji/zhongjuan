@@ -1,0 +1,21 @@
+<!--pages/expresslist/expresslist.wxml-->
+<view class='container'>
+ <!--物流推荐-->
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+
+    <view class='express_list' bindtap='callNumber'>
+      <image class='exp_logo' src='/images/express_icon.png'></image>
+      <label class='exp_name'>顺丰快递</label>
+      <label class='exp_phone'>87408760</label>
+    </view>
+</view>

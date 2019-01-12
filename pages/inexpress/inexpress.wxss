@@ -1,0 +1,203 @@
+/* pages/inexpress/inexpress.wxss */
+.juanzhu{
+  padding: 26rpx 26rpx 30rpx 30rpx;
+  background: #fff;
+  margin-bottom: 26rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.jz_discript{
+  padding-left: 248rpx;
+  position: relative;
+  height: 174rpx;
+}
+.jz_discript .img_tit{
+  width: 230rpx;
+  height: 174rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.title_text{
+  width:448rpx;
+  height:90rpx;
+  font-size:32rpx;
+  color:#030303;
+  line-height:45rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 12rpx;
+}
+.jg_name{
+  font-size:24rpx;
+  color:#030303;
+  line-height:33rpx;
+  margin-bottom: 8rpx;
+}
+.jg_type{
+  float: left;
+  height:33rpx;
+  border-radius:17rpx;
+  border:2rpx solid #E65E34;
+  padding:0 15rpx;
+  line-height: 31rpx;
+  box-sizing: border-box;
+  font-size: 0;
+}
+.jg_type .type_icon{
+  width:17rpx;
+  height:20rpx;
+  float: left;
+  margin-top: 5rpx;
+  margin-right: 7rpx;
+}
+.jg_type label{
+  font-size: 20rpx;
+  color:#E65E34;
+}
+.jz_stutas{
+  height:50rpx;
+  background:#D82A3C;
+  box-shadow:1px 2px 6px 0px rgba(251,212,216,1);
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  color:#fff;
+  line-height: 50rpx;
+  padding-left: 26rpx;
+  padding-right: 26rpx;
+  position: absolute;
+  right: 0;
+  bottom: 30rpx;
+}
+.jz_stutas image{
+  /* float: right; */
+  display: inline-block;
+  width: 11rpx;
+  height: 18rpx;
+  margin-left: 14rpx;
+}
+.jg_info{
+  padding:30rpx 24rpx 30rpx 30rpx;
+  background: #fff;
+  margin-bottom: 26rpx;
+  position: relative;
+  overflow: hidden;
+}
+.title_jg{
+  font-size:36rpx;
+  color:#333333;
+  font-weight:600;
+  line-height:50rpx;
+  margin-bottom: 46rpx;
+}
+.title_jg span{
+  width:7rpx;
+  height:35rpx;
+  background:rgba(230,94,52,1);
+  border-radius:4rpx;
+  float: left;
+  margin-top: 8rpx;
+  margin-right: 14rpx;
+}
+/*发起爱心*/
+.send_love{
+  padding: 30rpx 24rpx 30rpx 30rpx;
+  margin-bottom: 26rpx;
+  background: #fff;
+}
+.stutas_img{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+}
+.stutas_text{
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color:#E4572E;
+  margin-bottom: 10rpx;
+}
+.tips{
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color:#A6A6A6;
+}
+.jsjg{
+  padding:0 27rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.pub_con{
+  overflow: hidden;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color:#666666;
+  margin-bottom: 27rpx;
+}
+.pub_title{
+  float: left;
+}
+.pub_text_dis{
+  float: right;
+  color:#444444;
+  max-width: 400rpx;
+}
+.dis_num{
+  font-size: 42rpx;
+  margin-right: 15rpx;
+}
+
+.my_menu_list{
+    position: relative;
+    height: 98rpx;
+    padding:28rpx 25rpx 28rpx 40rpx;
+    background: #fff;
+    line-height: 42rpx;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.left_text{
+    float: left;
+    font-size: 30rpx;
+    color:#333333;
+}
+.right_btn{
+    float: right;
+    overflow: hidden;
+}
+.right_icons{
+    height:25rpx;
+    width:15rpx;
+    margin-left:20rpx;
+    margin-top:15rpx;
+    float:right;
+}
+.express_order{
+  width:605rpx;
+  height:80rpx;
+  margin: auto;
+  border-radius:7rpx;
+  border:2rpx solid #DEDEDE;
+  font-size: 32rpx;
+  color:#979797;
+  padding-left: 20rpx;
+  margin-bottom: 60rpx;
+}
+.btn_box{
+  width:300rpx;
+  height:74rpx;
+  margin: auto;
+}
+.btn_box button{
+  background:rgba(228,87,46,1);
+  box-shadow:0px 2px 4px 0px rgba(252,194,177,1);
+  border-radius:40rpx;
+  color:#fff;
+  font-size: 28rpx;
+  height: 80rpx;
+}

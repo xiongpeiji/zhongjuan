@@ -1,0 +1,132 @@
+/* pages/Initiatedonation/Initiatedonation.wxss */
+.send_love{
+  padding: 30rpx 24rpx 30rpx 30rpx;
+  margin-bottom: 26rpx;
+  background: #fff;
+  position: relative;
+}
+.stutas_img{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+}
+.stutas_text{
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color:#E4572E;
+  margin-bottom: 10rpx;
+}
+.tips{
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color:#A6A6A6;
+}
+.success_text .stutas_text{
+  color:#333333;
+}
+
+.remove_data{
+  font-size:26rpx;
+  color:rgba(153,153,153,1);
+  line-height:37rpx;
+  position: absolute;
+  right: 26rpx;
+  top: 16rpx;
+}
+.warm_tips{
+  background:#fff;
+  box-shadow:0px 4rpx 4rpx 2rpx rgba(240,240,240,1);
+  border-radius:33rpx;
+  padding:13rpx 14rpx 11rpx 21rpx;
+  box-sizing: border-box;
+  margin-bottom: 32rpx;
+}
+.tips_box{
+  border:1px dashed #E4572E;
+  border-radius: 30rpx;
+  padding:15rpx 20rpx;
+}
+.tips_tile{
+  font-size:30rpx;
+  color:rgba(228,87,46,1);
+  line-height:42rpx;
+  margin-bottom: 10rpx;
+}
+.tips_dis{
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color:#6F5D58;
+}
+.tips_dis label{
+  color:#E4572E;
+}
+
+
+.jg_info{
+  padding:30rpx 24rpx 30rpx 30rpx;
+  background: #fff;
+  margin-bottom: 26rpx;
+  position: relative;
+  overflow: hidden;
+}
+.title_jg{
+  font-size:36rpx;
+  color:#333333;
+  font-weight:600;
+  line-height:50rpx;
+  margin-bottom: 46rpx;
+  overflow: hidden;
+}
+.title_jg label{
+  float: left;
+}
+.title_jg span{
+  width:7rpx;
+  height:35rpx;
+  background:rgba(230,94,52,1);
+  border-radius:4rpx;
+  float: left;
+  margin-top: 8rpx;
+  margin-right: 14rpx;
+}
+.lookmor{
+  float: right;
+}
+.lookmor label{
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color:#B1B1B1;
+  margin-right: 14rpx;
+}
+.lookmor image{
+  width: 18rpx;
+  height: 30rpx;
+}
+.express_list{
+  padding:21rpx 25rpx 30rpx;
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #E5E5E5;
+}
+.exp_logo{
+  width: 84rpx;
+  height: 84rpx;
+  float: left;
+  border-radius: 50%;
+}
+.exp_name{
+  line-height: 84rpx;
+  float: left;
+  font-size: 30rpx;
+  color:#333333;
+  margin-left: 40rpx;
+}
+.exp_phone{
+  float: right;
+  font-size: 30rpx;
+  color:#666666;
+  font-weight: bold;
+  line-height: 84rpx;
+}
