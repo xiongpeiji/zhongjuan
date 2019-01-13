@@ -207,7 +207,7 @@ Page({
   redirectLink: function (e) {
     var url = e.currentTarget.dataset.url
     wx.redirectTo({
-      url: url,
+      url: '/pages/webView/webView?url='+url,
     })
   },
   /**
