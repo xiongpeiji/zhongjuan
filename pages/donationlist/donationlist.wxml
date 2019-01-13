@@ -1,0 +1,132 @@
+<!--pages/donationlist/donationlist.wxml-->
+<view class='container'>
+
+  <view class='top_dis'>
+    <view class='user_icon'>
+      <view class='user_img_box'>
+        <image class='user_photo_icon' src='/images/news_shenhe.png'></image>
+        <image class='user_auth_icon' src='/images/icon_yirenzheng.png'></image>
+      </view>
+      <view class='user_name'>萝卜是程序员 </view>
+    </view>
+    <view class='user_data'>
+      <view class='data_text'>截止2019年1月9号前，我已完成</view>
+      <view class='data_text'><label>13</label>次爱心捐助</view>
+      <view class='data_text'><label>41213</label>元总捐助价值</view>
+    </view>
+
+  </view>
+  <!--捐赠列表-->
+  <view class='jz_lists'>
+    <view class='list_box_con'>
+      
+      <view class='my_jz_dis'>
+        <view class='jz_title_data'>
+          <em></em>
+          <view class='data_con'>2018.11.20</view>
+          <view class='count_down'>34小时22分后自动取消</view>
+        </view>
+        <view class='jz_content'>
+          <view class='content_title'>暖暖冬季，爱心传递给每一位小天使</view>
+          <view class='content_pub'>
+            <view class='con_name'>接受机构</view>
+            <view class='con_dis'>深圳市博雅游戏网络爱心机构</view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>图书</view>
+            <view class='con_dis'>
+              <label>100</label>本
+            </view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>文具</view>
+            <view class='con_dis'>
+              <label>100</label>件
+            </view>
+          </view>
+          <view class='content_footer'>
+            <view class='left_num'>
+              总价值 ¥ <label>4499</label>
+            </view>
+            <view class='content_stutas'>
+              已发起
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='my_jz_dis signed'>
+        <view class='jz_title_data'>
+          <em></em>
+          <view class='data_con'>2018.11.20</view>
+          <view class='count_down'>已签收</view>
+        </view>
+        <view class='jz_content'>
+          <view class='content_title'>暖暖冬季，爱心传递给每一位小天使</view>
+          <view class='content_pub'>
+            <view class='con_name'>接受机构</view>
+            <view class='con_dis'>深圳市博雅游戏网络爱心机构</view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>图书</view>
+            <view class='con_dis'>
+              <label>100</label>本
+            </view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>文具</view>
+            <view class='con_dis'>
+              <label>100</label>件
+            </view>
+          </view>
+          <view class='content_footer'>
+            <view class='left_num'>
+              总价值 ¥ <label>4499</label>
+            </view>
+            <view class='content_stutas'>
+              查看详情
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='my_jz_dis ings'>
+        <view class='jz_title_data'>
+          <em></em>
+          <view class='data_con'>2018.11.20</view>
+          <view class='count_down'>运输中</view>
+        </view>
+        <view class='jz_content'>
+          <view class='content_title'>暖暖冬季，爱心传递给每一位小天使</view>
+          <view class='content_pub'>
+            <view class='con_name'>接受机构</view>
+            <view class='con_dis'>深圳市博雅游戏网络爱心机构</view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>图书</view>
+            <view class='con_dis'>
+              <label>100</label>本
+            </view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>文具</view>
+            <view class='con_dis'>
+              <label>100</label>件
+            </view>
+          </view>
+          <view class='content_footer'>
+            <view class='left_num'>
+              总价值 ¥ <label>4499</label>
+            </view>
+            <view class='content_stutas'>
+              查看详情
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+</view>

@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -139,6 +139,17 @@
 					"name": "发起捐助",
 					"pathName": "pages/Initiatedonation/Initiatedonation",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠列表",
+					"pathName": "pages/donationlist/donationlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "查看详情",
+					"pathName": "pages/viewdetails/viewdetails"
 				}
 			]
 		}

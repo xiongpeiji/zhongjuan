@@ -1,0 +1,62 @@
+<!--pages/viewdetails/viewdetails.wxml-->
+<view class='container'>
+
+  <view class='juanzhu'>
+    <view class='jz_discript'>
+      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
+      <view class='title_text'>别让冬季阻碍了孩子们的生活质量</view>
+      <view class='jg_name'>深圳爱心机构</view>
+      <view class='jg_type'>
+        <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
+        <label>行政村</label>
+      </view>
+    </view>
+    <view class='jz_stutas'>
+        <label>进行中</label>
+        <image src='/images/icon_fanhui.png'></image>
+      </view>
+  </view>
+
+  <view class='juanzhu'>
+    <view class='pub_list'>
+      <view class='left_name'>您最近参与过该求捐信息 </view>
+      <view class='right_name'>2019-1-8</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>捐赠物资</view>
+      <view class='right_name'>文具 10</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>捐赠价值</view>
+      <view class='right_name'>100 元</view>
+    </view>
+  </view>
+
+   <view class='juanzhu'>
+    <view class='pub_list'>
+      <view class='left_name'>圆通快递</view>
+      <view class='right_name'>12345678008743221</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>物流状态</view>
+      <view class='right_name'>已签收</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>签收机构</view>
+      <view class='right_name'>深圳爱心机构</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>签收人</view>
+      <view class='right_name'>王二狗</view>
+    </view>
+    <view class='pub_list'>
+      <view class='left_name'>求捐机构 </view>
+      <view class='right_name'>深圳爱心机构</view>
+    </view>
+  </view>
+
+  <view class="btn_box">
+          <button class="send_data_btn">我要捐助</button>
+    </view>
+
+</view>
