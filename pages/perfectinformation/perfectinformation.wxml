@@ -1,0 +1,22 @@
+<!--pages/perfectinformation/perfectinformation.wxml-->
+<view class='container'>
+
+<view class='send_love success_text'>
+    <image class='stutas_img' src='/images/love.png'></image>
+    <view class='tips'>爱心单号已生成：4489</view>
+    <view class='stutas_text'>捐赠已发起！请完善物流信息</view>
+</view>
+
+<view class='to_express' bindtap='perfectLogistics'>
+  <label class='to_tit'>完善物流信息</label>
+  <image class='to_icon' src='/images/renzheng_jinru@2x.png'></image>
+</view>
+
+<view class='btn_rroup'>
+  <button class='lf' bindtap='cancelJz'>取消捐赠</button>
+  <button class='lr' bindtap='waitMoment'>稍后完善</button>
+</view>
+
+
+
+</view>

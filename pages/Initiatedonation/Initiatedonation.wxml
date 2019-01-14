@@ -2,7 +2,7 @@
 <view class='container'>
   <view class='send_love success_text'>
     <view class='remove_data'>取消捐赠</view>
-    <image class='stutas_img' src='/images/success_icon.png'></image>
+    <image class='stutas_img' src='/images/love.png'></image>
     <view class='stutas_text'>您的爱心捐赠已发起！</view>
     <view class='tips'>订单号要在48小时内填写哦~</view>
   </view>

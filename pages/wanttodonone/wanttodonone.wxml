@@ -85,7 +85,7 @@
     </view>
   </view>
 
-  <view class='jg_info'>
+  <view class='jg_info padding_bt'>
     <view class='title_jg money_input_box'>
         <label>物资总估值：</label>
         <text>物资购买价格的总和</text>
@@ -94,8 +94,15 @@
             <input type="number" bindfocus='isfocusThis' bindblur='removeActive'  bindinput="moneyNum" placeholder="{{placeholder}}" maxlength="5"/>
         </view>
     </view>
-    
   </view>
+  <view class='jg_info padding_bt'>
+    <view class='title_jg money_input_box'>
+        <label>联系方式：</label>
+        <input class='phone_number' type='number' maxlength='11' focus='{{editPhone}}' value='13201701538'/>
+        <image bindtap='changeNumber' src='/images/qianbi.png' class='edit_number'></image>
+    </view>
+  </view>
+  
   <view class="btn_box">
       <button class="send_data_btn" bindtap='nextExpress'>完成</button>
   </view>

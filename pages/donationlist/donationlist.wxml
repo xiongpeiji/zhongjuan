@@ -20,7 +20,7 @@
   <view class='jz_lists'>
     <view class='list_box_con'>
       
-      <view class='my_jz_dis'>
+      <view class='my_jz_dis timeing'>
         <view class='jz_title_data'>
           <em></em>
           <view class='data_con'>2018.11.20</view>
@@ -95,6 +95,41 @@
           <em></em>
           <view class='data_con'>2018.11.20</view>
           <view class='count_down'>运输中</view>
+        </view>
+        <view class='jz_content'>
+          <view class='content_title'>暖暖冬季，爱心传递给每一位小天使</view>
+          <view class='content_pub'>
+            <view class='con_name'>接受机构</view>
+            <view class='con_dis'>深圳市博雅游戏网络爱心机构</view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>图书</view>
+            <view class='con_dis'>
+              <label>100</label>本
+            </view>
+          </view>
+          <view class='content_pub'>
+            <view class='con_name'>文具</view>
+            <view class='con_dis'>
+              <label>100</label>件
+            </view>
+          </view>
+          <view class='content_footer'>
+            <view class='left_num'>
+              总价值 ¥ <label>4499</label>
+            </view>
+            <view class='content_stutas'>
+              查看详情
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class='my_jz_dis cancel'>
+        <view class='jz_title_data'>
+          <em></em>
+          <view class='data_con'>2018.11.20</view>
+          <view class='count_down'>已取消</view>
         </view>
         <view class='jz_content'>
           <view class='content_title'>暖暖冬季，爱心传递给每一位小天使</view>

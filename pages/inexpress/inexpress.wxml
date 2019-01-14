@@ -1,10 +1,10 @@
 <!--pages/inexpress/inexpress.wxml-->
 <view class='container'>
-  <view class='send_love'>
+  <!-- <view class='send_love'>
     <image class='stutas_img' src='/images/love.png'></image>
     <view class='stutas_text'>爱心发起成功！</view>
     <view class='tips'>您的物流单号还没有填写哦~</view>
-  </view>
+  </view> -->
 
   <view class='juanzhu'>
     <view class='jz_discript'>
@@ -24,8 +24,19 @@
 
   <!--捐赠物资详情-->
   <view class='jg_info'>
+    <view class='jsjg border_bottom'>
+       <view class='pub_con'>
+        <label class='pub_title'>爱心单号</label>
+        <view class='pub_text_dis'>4499</view>
+      </view>
+
+      <view class='pub_con'>
+        <label class='pub_title'>王文柱</label>
+        <view class='pub_text_dis'>15309241201</view>
+      </view>   
+    </view>
+
     <view class='title_jg'>
-      <span></span>
       <label>捐赠物资详情</label>
     </view>
     <view class='jsjg'>
@@ -53,25 +64,56 @@
   </view>
 
   <!--填写物流单号-->
-  <view class='jg_info'>
-    <view class='title_jg'>
-      <span></span>
-      <label>填写物流单号和快递公司</label>
-    </view>
+  <view class='chose_input'>
     <picker mode="selector" bindchange="bindExpressChange" range-key='name' range="{{express_data}}">
           <view class="my_menu_list" hover-class="public_hover">
-              <label class="left_text">快递公司</label>
+              <label class="left_text">选择快递公司</label>
               <view class="right_btn">
                   <label class="no_auth">中通快递</label>
-                  <view class="no_auth" hidden="{{true}}">请选择快递公司</view>
                   <image class="right_icons" src="/images/renzheng_jinru.png"></image>
               </view>
           </view>
       </picker>
-      <input class='express_order' type='number' placeholder='请输入您的物流单号'/>
-    <view class="btn_box">
-          <button class="send_data_btn">确定</button>
+  </view>
+  <view class='chose_input'>
+    <view class='my_menu_list'>
+        <label class="left_text">选择快递公司</label>
+        <input class='express_order' type='number' placeholder='请输入您的物流单号'/>
     </view>
+  </view>
+
+  <view class='photo_box'>
+    <view class='photo_tit'>
+      <label class='photo_text'>上传照片</label>
+      <label>（可上传您的快递单，物资等）</label>
+    </view>
+
+    <view class="express_box">
+        <view class="express-img">
+            <image class="express_bg" src="/images/plant.jpg" mode='aspectFill'></image>
+            <view class="delet-express">
+                <image src="/images/quxiaocopy2@2x.png"></image>
+            </view>
+        </view>
+        <view class="express-img">
+            <image class="express_bg" src="/images/plant.jpg" mode='aspectFill'></image>
+            <view class="delet-express">
+                <image src="/images/quxiaocopy2@2x.png"></image>
+            </view>
+        </view>
+        
+        <view class="express-img">
+          <image class="img_bg" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
+        
+    </view>
+
+    
+  </view>
+
+
+  <view class="btn_box">
+          <button class="send_data_btn">确定</button>
   </view>
 
   

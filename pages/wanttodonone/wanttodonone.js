@@ -10,7 +10,8 @@ Page({
   data: {
     isFocus:false,
     money:'',
-    placeholder:'请输入物资价值'
+    placeholder:'请输入物资价值',
+    editPhone:false
   },
 
   /**
@@ -20,6 +21,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '我要捐助'
     });
+  },
+  //修改手机号码
+  changeNumber(e){
+    this.setData({
+      editPhone: true
+    })
   },
   //input获取焦点
   isfocusThis(e) {

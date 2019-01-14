@@ -1,0 +1,79 @@
+/* pages/perfectinformation/perfectinformation.wxss */
+.send_love{
+  padding: 30rpx 24rpx 30rpx 30rpx;
+  margin-bottom: 26rpx;
+  background: #fff;
+  position: relative;
+}
+.stutas_img{
+  width: 100rpx;
+  height: 100rpx;
+  margin: auto;
+}
+.stutas_text{
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  color:#E4572E;
+  margin-bottom: 10rpx;
+}
+.tips{
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color:#A6A6A6;
+  margin-bottom: 26rpx;
+}
+.success_text .stutas_text{
+  color:#E4572E;
+}
+
+.remove_data{
+  font-size:26rpx;
+  color:rgba(153,153,153,1);
+  line-height:37rpx;
+  position: absolute;
+  right: 26rpx;
+  top: 16rpx;
+}
+
+.to_express{
+  padding:21rpx 35rpx 21rpx 26rpx;
+  background: #fff;
+  height: 90rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 170rpx;
+}
+.to_express .to_tit{
+  float: left;
+}
+.to_express .to_icon{
+  float: right;
+  width: 18rpx;
+  height: 30rpx;
+  margin-top: 12rpx;
+}
+.btn_rroup{
+  padding: 0 54rpx;
+  overflow: hidden;
+}
+.btn_rroup .lf{
+  float: left;
+  border:1px solid #979797;
+  color: #979797;
+}
+.btn_rroup .lf::after{
+  border:none;
+}
+.btn_rroup .lr{
+  float: right;
+  background: #E4572E;
+  color:#fff;
+}
+.btn_rroup button{
+  width: 227rpx;
+  height: 90rpx;
+  line-height: 88rpx;
+  border-radius: 45rpx;
+}

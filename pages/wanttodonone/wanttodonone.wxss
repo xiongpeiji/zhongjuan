@@ -217,3 +217,24 @@
   font-size: 42rpx;
   color:#D82A3C;
 }
+.padding_bt{
+  padding: 20rpx 20rpx 20rpx 30rpx;
+}
+.padding_bt .title_jg{
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.phone_number{
+  float: left;
+  height: 80rpx;
+}
+.padding_bt .money_input_box label{
+  float: left;
+}
+.edit_number{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+}

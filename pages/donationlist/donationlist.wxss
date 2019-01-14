@@ -156,9 +156,15 @@
   border:none;
   box-shadow:0px 2rpx 2rpx 0rpx rgba(218,218,218,0.5);
 }
-.signed .count_down{
-  background: #F18955;
+.timeing .count_down{
+  background:linear-gradient(225deg,#4A8CF5 0%,#84BDFF 100%);
 }
-.ings  .count_down{
-  background: #666;
+.signed .count_down{
+  background:linear-gradient(225deg,#F18955 0%,#FFB490 100%);
+}
+.ings .count_down{
+  background:linear-gradient(225deg,#7f55f1 0%,#9ea5fb 100%);
+}
+.cancel .count_down{
+  background:linear-gradient(225deg,#413E3E 0%,#666666 100%);
 }
