@@ -47,7 +47,7 @@
                 机构简介
             </view>
             <view class="photos_box">
-                <text>{{myOrgInfos.desc}}</text>
+                <rich-text nodes="{{myOrgInfos.desc}}"></rich-text>
             </view>
         </view>
         <view class="jigou_photos">

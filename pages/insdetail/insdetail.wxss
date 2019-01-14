@@ -190,6 +190,14 @@ swiper-item image{
   line-height: 40rpx;
   margin-bottom: 20rpx;
 }
+.photos_box rich-text{
+  text-indent: 2em;
+  display: block;
+  font-size: 28rpx;
+  color: #555555;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
 .imgs_01{
     float: left;
     width: 325rpx;

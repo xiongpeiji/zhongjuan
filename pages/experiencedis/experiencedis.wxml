@@ -17,7 +17,7 @@
       <span>{{info.username}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">{{info.content}}</p>
+      <rich-text class="text_details" nodes="{{info.content}}"></rich-text>
       <view class='article_img images_{{info.image.length}}'>
         <image mode='aspectFill' wx:for="{{info.image}}" wx:key="{{index}}" bindtap="showImages" data-img="{{item}}" src='{{item}}'></image>
       </view>

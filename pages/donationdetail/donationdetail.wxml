@@ -27,7 +27,7 @@
       <span class="small_title">{{info.institution_info.name}}</span>
     </view>
     <view class="artacle_wrap">
-      <p class="text_details">{{info.content}}</p>
+      <rich-text class="text_details" nodes="{{info.content}}"></rich-text>
     </view>
     <!--机构详细信息-->
     <view class='joins'>
