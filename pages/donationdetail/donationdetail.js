@@ -278,7 +278,7 @@ Page({
       hiddenBody: false
     })
     wx.navigateTo({
-      url: '../wanttodonate/wanttodonate?id=' + this.data.id
+      url: '../wanttodonone/wanttodonone?id=' + this.data.id
     });
   },
   //显示捐赠用户列表
