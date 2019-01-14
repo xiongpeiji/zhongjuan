@@ -168,3 +168,35 @@
 .cancel .count_down{
   background:linear-gradient(225deg,#413E3E 0%,#666666 100%);
 }
+
+
+.no_messages{
+    padding:100rpx;
+}
+.no_messages image{
+    display: block;
+    width: 192rpx;
+    height: 104rpx;
+    margin:auto;
+    margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+    text-align: center;
+    font-size: 26rpx;
+    color: #747474;
+    margin-bottom: 50rpx;
+}
+.no_messages .go_lists{
+    width: 258rpx;
+    height: 68rpx;
+    border:1px solid #D7273D;
+    border-radius: 35rpx;
+    line-height: 68rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #D82A3C;
+    margin: auto;
+}
+.public_hover{
+    background: #f1f1f1;
+}

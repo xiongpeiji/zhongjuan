@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    count:0
   },
 
   /**
@@ -15,6 +15,12 @@ Page({
     wx.setNavigationBarTitle({
       title: '捐赠管理'
     });
+  },
+  //去看看
+  goHome(e) {
+    wx.switchTab({
+      url: '../index/index'
+    })
   },
 
   /**
