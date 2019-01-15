@@ -2,6 +2,7 @@
 <view class='container'>
 
   <view class='top_dis'>
+    <image class='my_bg' src='/images/my_bg.png'></image>
     <view class='user_icon'>
       <view class='user_img_box'>
         <image class='user_photo_icon' src='/images/news_shenhe.png'></image>
