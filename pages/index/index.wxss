@@ -277,11 +277,3 @@ swiper, swiper image {
   color: #747474;
   margin-bottom: 50rpx;
 }
-.user-follow{
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 175rpx;
-  z-index:9999;
-}
