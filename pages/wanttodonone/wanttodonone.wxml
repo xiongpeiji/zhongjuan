@@ -79,8 +79,11 @@
         <label>物资总估值：</label>
         <text>物资购买价格的总和</text>
         <text class='symbol'>￥</text>
-        <view class="money_input {{isFocus?'isfocusThis':''}}">
-            <input type="number" bindfocus='isfocusThis' bindblur='removeActive'  name="money" placeholder="{{placeholder}}" value='{{form_info}}' maxlength="5"/>
+        <view class="money_input" hidden='{{isFocus}}' bindtap='isfocusThisOne'>
+            请输入物资总估值
+        </view>
+        <view class="money_input {{isActive?'isfocusThis':''}}" hidden='{{!isFocus}}'>
+            <input type="number" focus='{{isFocus}}' bindfocus='isfocusThisTwo' bindblur='removeActive'  name="money" value='{{form_info}}' maxlength="5"/>
         </view>
     </view>
   </view>

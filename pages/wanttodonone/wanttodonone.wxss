@@ -194,6 +194,8 @@
   border-radius:40rpx;
   border:1px solid #979797;
   float: right;
+  font-size: 24rpx;
+  text-align: center;
 }
 .money_input input{
   height: 80rpx;

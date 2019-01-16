@@ -9,6 +9,7 @@ Page({
    */
   data: {
     isFocus:false,
+    isActive:false,
     money:'',
     placeholder:'请输入物资价值',
     donation:{},
@@ -127,21 +128,31 @@ Page({
     })
   },
   //input获取焦点
-  isfocusThis(e) {
+  isfocusThisOne(e) {
     this.setData({
       isFocus: true,
-      placeholder:''
+      isActive:true
+    })
+  },
+  isfocusThisTwo(e) {
+    this.setData({
+      isFocus: true,
+      isActive:true
     })
   },
   //去除焦点
   removeActive(e) {
-    if (!this.data.money>=1){
+    if (e.detail.value!=''){
+      this.setData({
+        isActive: true,
+        placeholder: ''
+      })
+    }else{
       this.setData({
         isFocus: false,
-        placeholder:'请输入物资价值'
+        isActive: false
       })
     }
-    
   },
 
 
