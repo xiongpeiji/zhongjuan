@@ -229,6 +229,7 @@
 .jg_info .title_jg .symbol{
   font-size: 42rpx;
   color:#D82A3C;
+  margin-left:160rpx;
 }
 .padding_bt{
   padding: 20rpx 20rpx 20rpx 30rpx;

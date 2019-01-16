@@ -76,8 +76,7 @@
 
   <view class='jg_info padding_bt'>
     <view class='title_jg money_input_box'>
-        <label>物资总估值：</label>
-        <text>物资购买价格的总和</text>
+        <label>捐助物资总价值：</label>
         <text class='symbol'>￥</text>
         <view class="money_input" hidden='{{isFocus}}' bindtap='isfocusThisOne'>
             请输入物资总估值
