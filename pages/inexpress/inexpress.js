@@ -80,16 +80,31 @@ Page({
       disabled: true
     })
     http.Post({ url: url, params: params }).then((res) => {
+      this.setData({
+        disabled: false
+      })
       if (res.code == 'success') {
+          this.setData({
+            express_num: '',
+
+          })
           wx.navigateTo({
             url: '/pages/stutaspage/stutaspage?status=success',
           })
-      }else{
-        this.setData({
-          disabled: false
-        })
       }
     });
+  },
+  //取消捐赠
+  cancelJz(e) {
+    let url = app_data.base + '/Donation/cancelUserDonation'
+    let params = { token: app_data.token, id: this.data.id };
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        wx.navigateTo({
+          url: '../stutaspage/stutaspage?status=fail'
+        })
+      }
+    })
   },
   //相关图片上传
   uploadArrPhoto() {
@@ -111,17 +126,6 @@ Page({
       }
     })
   },
-
-  /**
-  * 生命周期函数--监听页面隐藏
-  */
-  onHide: function () {
-    this.setData({
-      express_num: '',
-      disabled: false
-    })
-  },
-
 
 
   // 删除图片

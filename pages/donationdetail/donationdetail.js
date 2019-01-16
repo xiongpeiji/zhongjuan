@@ -265,10 +265,13 @@ Page({
       },2000);
       return;
     }
-    this.setData({
+    /*this.setData({
       warmTips: false,
       hiddenBody: true
-    })
+    })*/
+    wx.navigateTo({
+      url: '../wanttodonone/wanttodonone?id=' + this.data.id
+    });
     
   },
   //爱心已送出按钮

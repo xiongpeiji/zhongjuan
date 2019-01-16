@@ -71,11 +71,9 @@
           <view class='express_detail'>
               反馈内容：{{item.content}}
           </view>
-          <view wx:for="{{item.data}}" wx:key="index" wx:for-item="row">
-             <view class='express_detail'>
-                捐赠物资：{{row.name}}*{{row.num}}
-            </view>
-          </view> 
+            <view class='express_detail'>
+              捐赠物资：{{item.material}}
+          </view>
         </view>
          <view wx:else>
           <view class='express_detail'>

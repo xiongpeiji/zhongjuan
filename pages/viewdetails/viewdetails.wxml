@@ -3,12 +3,12 @@
 
   <view class='juanzhu'>
     <view class='jz_discript'>
-      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
-      <view class='title_text'>别让冬季阻碍了孩子们的生活质量</view>
-      <view class='jg_name'>深圳爱心机构</view>
+      <image class='img_tit' mode='aspectFill' src='{{donation.image}}'></image>
+      <view class='title_text'>{{donation.title}}</view>
+      <view class='jg_name'>{{institution.name}}</view>
       <view class='jg_type'>
         <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
-        <label>行政村</label>
+        <label>{{donation.type_name}}</label>
       </view>
     </view>
     <view class='jz_stutas'>
@@ -19,23 +19,26 @@
 
   <view class='juanzhu'>
     <view class='pub_list'>
-      <view class='left_name'>您最近参与过该求捐信息 </view>
-      <view class='right_name'>2019-1-8</view>
+      <view class='left_name'>捐赠时间 </view>
+      <view class='right_name'>{{user_donation.add_time}}</view>
     </view>
     <view class='pub_list'>
       <view class='left_name'>捐赠物资</view>
-      <view class='right_name'>文具 10</view>
+    </view>
+    <view class='pub_list' wx:for="{{material}}" wx:key="{{index}}">
+      <view class='left_name'>{{item.name}}</view>
+      <view class='right_name'>{{item.num}} {{item.unit}}</view>
     </view>
     <view class='pub_list'>
       <view class='left_name'>捐赠价值</view>
-      <view class='right_name'>100 元</view>
+      <view class='right_name'>{{user_donation.money}} 元</view>
     </view>
   </view>
 
-   <view class='juanzhu'>
+   <view class='juanzhu' hidden='{{user_donation.status == 4}}'>
     <view class='pub_list'>
-      <view class='left_name'>圆通快递</view>
-      <view class='right_name'>12345678008743221</view>
+      <view class='left_name'>{{user_donation.express_name}}</view>
+      <view class='right_name'>{{user_donation.express_num}}</view>
     </view>
     <view class='pub_list'>
       <view class='left_name'>物流状态</view>
@@ -43,20 +46,15 @@
     </view>
     <view class='pub_list'>
       <view class='left_name'>签收机构</view>
-      <view class='right_name'>深圳爱心机构</view>
+      <view class='right_name'>{{institution.name}}</view>
     </view>
-    <view class='pub_list'>
-      <view class='left_name'>签收人</view>
-      <view class='right_name'>王二狗</view>
-    </view>
-    <view class='pub_list'>
-      <view class='left_name'>求捐机构 </view>
-      <view class='right_name'>深圳爱心机构</view>
-    </view>
+
   </view>
 
-  <view class="btn_box">
-          <button class="send_data_btn">我要捐助</button>
+   <view class='juanzhu' hidden='{{user_donation.status == 3}}'>
+    <view class='pub_list'>
+      <view class='left_name'>捐赠状态</view>
+      <view class='right_name'>已取消</view>
     </view>
-
+  </view>
 </view>

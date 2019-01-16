@@ -97,7 +97,7 @@ Page({
       case 3:
       case 4:
         wx.navigateTo({
-          url: '../messageDetail/messageDetail?id=' + express_id
+          url: '../viewdetails/viewdetails?id=' + id
         })
         break;
     }
