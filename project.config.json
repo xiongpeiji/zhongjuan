@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -157,6 +157,23 @@
 					"name": "完善物流信息",
 					"pathName": "pages/perfectinformation/perfectinformation",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "过渡页面",
+					"pathName": "pages/perfectinformation/perfectinformation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的捐赠",
+					"pathName": "pages/donationlist/donationlist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hahha",
+					"pathName": "pages/viewdetails/viewdetails"
 				}
 			]
 		}

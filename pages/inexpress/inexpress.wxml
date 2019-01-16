@@ -8,12 +8,12 @@
 
   <view class='juanzhu'>
     <view class='jz_discript'>
-      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
-      <view class='title_text'>别让冬季阻碍了孩子们的生活质量</view>
-      <view class='jg_name'>深圳爱心机构</view>
+      <image class='img_tit' mode='aspectFill' src='{{donation.image}}'></image>
+      <view class='title_text'>{{donation.title}}</view>
+      <view class='jg_name'>{{institution.name}}</view>
       <view class='jg_type'>
         <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
-        <label>行政村</label>
+        <label>{{donation.type_name}}</label>
       </view>
     </view>
     <view class='jz_stutas'>
@@ -27,12 +27,12 @@
     <view class='jsjg border_bottom'>
        <view class='pub_con'>
         <label class='pub_title'>爱心单号</label>
-        <view class='pub_text_dis'>4499</view>
+        <view class='pub_text_dis'>{{user_donation.donation_num}}</view>
       </view>
 
       <view class='pub_con'>
-        <label class='pub_title'>王文柱</label>
-        <view class='pub_text_dis'>15309241201</view>
+        <label class='pub_title'>{{username}}</label>
+        <view class='pub_text_dis'>{{user_donation.mobile}}</view>
       </view>   
     </view>
 
@@ -42,24 +42,16 @@
     <view class='jsjg'>
       <view class='pub_con'>
         <label class='pub_title'>接受机构</label>
-        <view class='pub_text_dis'>深圳市博雅游戏网络爱心机构</view>
+        <view class='pub_text_dis'>{{institution.name}}</view>
       </view>
 
-      <view class='pub_con'>
-        <label class='pub_title'>图书</label>
+      <view class='pub_con' wx:for="{{material}}" wx:key="{{index}}">
+        <label class='pub_title'>{{item.name}}</label>
         <view class='pub_text_dis'>
-          <label class='dis_num'>100</label>
-          <label class='Company'>本</label>
+          <label class='dis_num'>{{item.num}}</label>
+          <label class='Company'>{{item.unit}}</label>
         </view>
       </view>
-      <view class='pub_con'>
-        <label class='pub_title'>文具</label>
-        <view class='pub_text_dis'>
-          <label class='dis_num'>100</label>
-          <label class='Company'>件</label>
-        </view>
-      </view>
-
     </view>
   </view>
 
@@ -67,9 +59,10 @@
   <view class='chose_input'>
     <picker mode="selector" bindchange="bindExpressChange" range-key='name' range="{{express_data}}">
           <view class="my_menu_list" hover-class="public_hover">
-              <label class="left_text">选择快递公司</label>
+              <label class="left_text">快递公司</label>
               <view class="right_btn">
-                  <label class="no_auth">中通快递</label>
+                  <label class="no_auth">{{express.name}}</label>
+                  <label class="no_auth" hidden="{{express.id}}">请选择快递公司</label>
                   <image class="right_icons" src="/images/renzheng_jinru.png"></image>
               </view>
           </view>
@@ -77,8 +70,8 @@
   </view>
   <view class='chose_input'>
     <view class='my_menu_list'>
-        <label class="left_text">选择快递公司</label>
-        <input class='express_order' type='number' placeholder='请输入您的物流单号'/>
+        <label class="left_text">物流单号</label>
+        <input class='express_order' type='number' bindinput='setExpressNum' placeholder='请输入您的物流单号'/>
     </view>
   </view>
 
@@ -89,31 +82,20 @@
     </view>
 
     <view class="express_box">
-        <view class="express-img">
-            <image class="express_bg" src="/images/plant.jpg" mode='aspectFill'></image>
-            <view class="delet-express">
-                <image src="/images/quxiaocopy2@2x.png"></image>
+        <view class="express-img" wx:for="{{images}}"  wx:key="index" >
+            <image class="express_bg" src="{{item}}" mode='aspectFill'></image>
+            <view class="delet-express" bindtap="deleteImg">
+                <image src="/images/del-img.png"></image>
             </view>
         </view>
-        <view class="express-img">
-            <image class="express_bg" src="/images/plant.jpg" mode='aspectFill'></image>
-            <view class="delet-express">
-                <image src="/images/quxiaocopy2@2x.png"></image>
-            </view>
-        </view>
-        
-        <view class="express-img">
+        <view class="express-img"  hidden="{{images.length>=9}}"  bindtap="uploadArrPhoto">
           <image class="img_bg" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
         
     </view>
-
-    
   </view>
-
-
   <view class="btn_box">
-          <button class="send_data_btn">确定</button>
+      <button class="send_data_btn" disabled='{{disabled}}' bindtap='submit'>确定</button>
   </view>
 
   

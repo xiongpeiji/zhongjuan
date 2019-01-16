@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    status:'',
   },
 
   /**
@@ -15,6 +15,9 @@ Page({
     wx.setNavigationBarTitle({
       title: '我要捐助'
     });
+    this.setData({
+      status: options.status
+    })
   },
 
   /**

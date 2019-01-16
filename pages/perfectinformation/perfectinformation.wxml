@@ -3,7 +3,7 @@
 
 <view class='send_love success_text'>
     <image class='stutas_img' src='/images/love.png'></image>
-    <view class='tips'>爱心单号已生成：4489</view>
+    <view class='tips'>爱心单号已生成：{{donation_num}}</view>
     <view class='stutas_text'>捐赠已发起！请完善物流信息</view>
 </view>
 

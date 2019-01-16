@@ -138,6 +138,17 @@
   border-radius: 4rpx;
   margin-top: 10rpx;
 }
+
+.jz_list .num_tip{
+  width: 188rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #999;
+  float: right;
+  font-size: 22rpx;
+  text-align: left;
+  margin-top: 10rpx;
+}
 .jz_list .name{
   font-size:30rpx;
   padding-top: 15rpx;

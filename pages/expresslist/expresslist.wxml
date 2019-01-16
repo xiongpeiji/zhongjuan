@@ -1,21 +1,9 @@
 <!--pages/expresslist/expresslist.wxml-->
 <view class='container'>
  <!--物流推荐-->
-    <view class='express_list' bindtap='callNumber'>
-      <image class='exp_logo' src='/images/express_icon.png'></image>
-      <label class='exp_name'>顺丰快递</label>
-      <label class='exp_phone'>87408760</label>
+    <view class='express_list' bindtap='callNumber' data-tel="{{item.tel}}" wx:for="{{express_data}}" wx:key="{{index}}">
+      <image class='exp_logo' src='{{item.icon}}'></image>
+      <label class='exp_name'>{{item.name}}</label>
+      <label class='exp_phone'>{{item.tel}}</label>
     </view>
-
-    <view class='express_list' bindtap='callNumber'>
-      <image class='exp_logo' src='/images/express_icon.png'></image>
-      <label class='exp_name'>顺丰快递</label>
-      <label class='exp_phone'>87408760</label>
-    </view>
-
-    <view class='express_list' bindtap='callNumber'>
-      <image class='exp_logo' src='/images/express_icon.png'></image>
-      <label class='exp_name'>顺丰快递</label>
-      <label class='exp_phone'>87408760</label>
-    </view>
-</view>
+  </view>

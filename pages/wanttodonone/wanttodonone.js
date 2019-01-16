@@ -15,7 +15,9 @@ Page({
     institution:{},
     material:{},
     mobile: '',
-    editPhone:false
+    editPhone:false,
+    form_info:'',
+    disabled:false,
   },
 
   /**
@@ -37,6 +39,7 @@ Page({
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
         this.setData({
+          mobile: app_data.mobile,
           material: res.data.material,
           donation: res.data.donation,
           institution: res.data.institution,
@@ -49,11 +52,12 @@ Page({
   submitMaterial(e) {
     let value = e.detail.value;
     let money = value.money;
+    let mobile = value.mobile;
     let newObj = [];
     let material = this.data.material;
     let error_msg = null;
     for (let key in value) {
-      if (key != "money" && value[key] > 0 && !error_msg) {
+      if (key != "money" && key != 'mobile' && value[key] > 0 && !error_msg) {
         let num = '';
         let icon = '';
         let name = '';
@@ -85,36 +89,34 @@ Page({
       })
       return;
     }
-
-  },
-
-  submitDonaData(e) {
-    let url = app_data.base + 'Donation/saveUserDonation';
-    let express_num = e.detail.value.express_num;
-    let material = JSON.stringify(this.data.after_material);
+    var myreg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+    if (!myreg.test(mobile)) {
+      app.alert({
+        title: '手机号码格式错误'
+      })
+      return;
+    }
+    this.setData({
+      disabled: true
+    })
+    let url = app_data.base + 'Donation/saveUserDonationFirst';
+    let post_material = JSON.stringify(newObj);
     let params = {
       id: this.data.id,
       token: app_data.token,
-      mobile: app_data.mobile, //手机号码
-      material: material,//捐助物品
-      express_num: express_num,//快递单号
-      express_id: this.data.express.id,//快递id
-      imgs: this.data.images, //图片
+      mobile: mobile, //手机号码
+      material: post_material,//捐助物品
+      money:money,
     };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        app.alert({ title: res.msg, time: 2000 });
-        setTimeout(() => {
-          this.setData({
-            express_id: '',
-            express_num: '',
-            after_material: [],
-            images: [],
-          })
-          wx.navigateTo({
-            url: '/pages/donationmanagement/donationmanagement',
-          })
-        }, 2000)
+        wx.navigateTo({
+          url: '/pages/perfectinformation/perfectinformation?id=' + res.data.id + '&donation_num=' + res.data.donation_num,
+        })
+      }else{
+        this.setData({
+          disabled: false
+        })
       }
     });
   },
@@ -129,12 +131,6 @@ Page({
     this.setData({
       isFocus: true,
       placeholder:''
-    })
-  },
-  //完成捐助
-  nextExpress(e){
-    wx.navigateTo({
-      url: '../inexpress/inexpress'
     })
   },
   //去除焦点
@@ -153,7 +149,10 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      form_info:'',
+      disabled:false
+    })
   },
 
 

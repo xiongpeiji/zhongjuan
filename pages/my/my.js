@@ -100,7 +100,7 @@ Page({
   //我的捐赠
   myDona(e) {
     wx.navigateTo({
-      url: '../donationmanagement/donationmanagement'
+      url: '../donationlist/donationlist'
     })
   },
   //求捐信息管理

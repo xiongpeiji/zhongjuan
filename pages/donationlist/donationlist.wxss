@@ -32,6 +32,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  border-radius:50%; 
 }
 .user_auth_icon{
   width: 13rpx;
@@ -49,7 +50,7 @@
   margin-left: 10rpx;
 }
 .user_data{
-  width: 360rpx;
+  width: 500rpx;
   margin: auto;
   position: relative;
 }
@@ -64,7 +65,7 @@
   font-size: 64rpx;
 }
 .jz_lists{
-  padding: 0rpx 14rpx 30rpx 20rpx;
+  padding: 0rpx 14rpx 0rpx 20rpx;
   box-sizing: border-box;
   width: 100%;
 }

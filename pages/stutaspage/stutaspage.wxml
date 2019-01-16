@@ -1,11 +1,15 @@
 <!--pages/stutaspage/stutaspage.wxml-->
 <view class='container'>
-  <view class='send_love success_text'>
+  <view class='send_love success_text' hidden='{{status == "fail"}}'>
     <image class='stutas_img' src='/images/success_icon.png'></image>
-    <image class='stutas_img' src='/images/warning_icon.png'></image>
     <view class='stutas_text'>您的爱心捐赠完成！</view>
-    <view class='stutas_text'>您已取消爱心捐赠！</view>
     <view class='tips'>物流信息详情可在小程序个人中心查看哦~</view>
+    <button class='goHome' bindtap='goHome'>返回首页</button>
+  </view>
+
+  <view class='send_love fail_text' hidden='{{status == "success"}}'>
+    <image class='stutas_img' src='/images/warning_icon.png'></image>
+    <view class='stutas_text'>您已取消爱心捐赠！</view>
     <view class='tips'>赠人玫瑰，手有余香，快去首页里看看别的吧</view>
     <button class='goHome' bindtap='goHome'>返回首页</button>
   </view>
