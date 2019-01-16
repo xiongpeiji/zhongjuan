@@ -143,6 +143,9 @@
   color:#666666;
   margin-bottom: 27rpx;
 }
+.pub_con .quxiao_btn{
+  color:#E4572E;
+}
 .pub_title{
   float: left;
 }

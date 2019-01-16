@@ -52,6 +52,13 @@
           <label class='Company'>{{item.unit}}</label>
         </view>
       </view>
+
+      <view class='pub_con'>
+        <view class='pub_title'>总价值:￥4999</view>
+        <view class='pub_text_dis'>
+          <label class='Company quxiao_btn'>取消捐赠</label>
+        </view>
+      </view>
     </view>
   </view>
 
