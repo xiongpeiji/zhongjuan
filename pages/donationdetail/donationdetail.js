@@ -63,6 +63,12 @@ Page({
     this.getDetail();
     this.getData({ refresh: false, is_first: true });
   },
+  //回首页
+  goHome(e) {
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
   //展示更多
   showMore(e){
     this.setData({
