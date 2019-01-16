@@ -91,4 +91,3 @@
     </view>
   </view>
 </view>
-<view class='user-follow' hidden='{{is_follow}}'><official-account></official-account></view>
