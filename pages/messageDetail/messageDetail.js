@@ -46,7 +46,7 @@ Page({
         let type_name = "类型状态";
         let content_name = "消息信息";
         let cate = 'check';
-        if(res.data.type != 'user_donation' || res.data.type != 'express'){
+        if(res.data.type != 'user_donation'){
           if(res.data.data.status == 1 || res.data.data.status == 2){
             button_status = false;
           }

@@ -330,7 +330,7 @@ Page({
     temp_height = temp_height + modal_height * 0.45
     ctx.setFontSize(14)
     ctx.setFillStyle('#000')
-    var result = this.breakLinesForCanvas(this.data.info.content.replace(/\s/g, ""), modal_width - modal_width * 0.1, ctx)
+    var result = this.breakLinesForCanvas(this.data.info.share_content.replace(/\s/g, ""), modal_width - modal_width * 0.1, ctx)
     for (var i = 0; i < result.length; i++) {
       if (i < 3) {
         temp_height = temp_height + 20
