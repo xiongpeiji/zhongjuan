@@ -4,17 +4,46 @@
 <view class='send_love success_text'>
     <image class='stutas_img' src='/images/love.png'></image>
     <view class='tips'>爱心单号已生成：{{donation_num}}</view>
-    <view class='stutas_text'>捐赠已发起！请完善物流信息</view>
+    <view class='stutas_text'>捐赠已发起！请在72小时内填写物流单号</view>
 </view>
+
+<!--温馨提示-->
+  <view class='warm_tips'>
+    <view class='tips_box'>
+      <view class='tips_tile'>小提示：</view>
+      <view class='tips_dis'>亲爱的好心人，爱心捐赠发起后将会帮您保留48小时您需 要在有效期限内将捐赠物资清洗干净并消毒待物资发件成 功后返回小程序在<label>我的-我的捐赠</label>当中选择您已发起的爱 心捐赠并完成快递单号的填写。</view>
+    </view>
+  </view>
 
 <view class='to_express' bindtap='perfectLogistics'>
   <label class='to_tit'>完善物流信息</label>
   <image class='to_icon' src='/images/renzheng_jinru@2x.png'></image>
 </view>
 
+<!--物流推荐-->
+  <view class='jg_info'>
+    <view class='title_jg'>
+      <span></span>
+      <label>物流推荐</label>
+      <view class='lookmor' bindtap='moreExpress'>
+        <label>查看更多</label>
+        <image class="right_icons" src="/images/renzheng_jinru.png"></image>
+      </view>
+    </view>
+
+
+    <view class='express_list' bindtap='callNumber' data-tel="{{item.tel}}" wx:for="{{express_data}}" wx:key="{{index}}">
+      <image class='exp_logo' src='{{item.icon}}'></image>
+      <label class='exp_name'>{{item.name}}</label>
+      <label class='exp_phone'>{{item.tel}}</label>
+    </view>
+  </view>
+
+
 <view class='btn_rroup'>
-  <button class='lf' bindtap='cancelJz'>取消捐赠</button>
-  <button class='lr' bindtap='waitMoment'>稍后完善</button>
+  <!-- <button class='lf' bindtap='cancelJz'>取消捐赠</button>
+  <button class='lr' bindtap='waitMoment'>稍后完善</button> -->
+  <button class='goHome' bindtap='goHome'>返回首页</button>
 </view>
 
 

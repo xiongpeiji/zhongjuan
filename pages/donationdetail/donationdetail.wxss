@@ -441,7 +441,8 @@ swiper, swiper image {
 .user_photo_list .user_photo_name{
   text-align: center;
   float: left;
-  padding:0 5rpx;
+  width: 60rpx;
+  /* padding:0 5rpx; */
   margin-right: 20rpx;
   margin-bottom: 15rpx;
 }
@@ -458,7 +459,13 @@ swiper, swiper image {
 .user_photo_name .user_names{
   font-size: 20rpx;
   color:#6a6a6a;
+  height: 24rpx;
   line-height: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .hidden_user{
   text-align: center;

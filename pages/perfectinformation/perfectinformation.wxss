@@ -12,7 +12,7 @@
 }
 .stutas_text{
   text-align: center;
-  font-size: 40rpx;
+  font-size: 34rpx;
   line-height: 56rpx;
   color:#E4572E;
   margin-bottom: 10rpx;
@@ -43,7 +43,7 @@
   height: 90rpx;
   box-sizing: border-box;
   overflow: hidden;
-  margin-bottom: 170rpx;
+  margin-bottom: 20rpx;
 }
 .to_express .to_tit{
   float: left;
@@ -55,7 +55,7 @@
   margin-top: 12rpx;
 }
 .btn_rroup{
-  padding: 0 54rpx;
+  padding: 0 54rpx 50rpx;
   overflow: hidden;
 }
 .btn_rroup .lf{
@@ -71,9 +71,120 @@
   background: #E4572E;
   color:#fff;
 }
-.btn_rroup button{
+/* .btn_rroup button{
   width: 227rpx;
   height: 90rpx;
   line-height: 88rpx;
   border-radius: 45rpx;
+} */
+
+
+
+.jg_info{
+  padding:30rpx 24rpx 30rpx 30rpx;
+  background: #fff;
+  margin-bottom: 26rpx;
+  position: relative;
+  overflow: hidden;
+}
+.title_jg{
+  font-size:36rpx;
+  color:#333333;
+  font-weight:600;
+  line-height:50rpx;
+  margin-bottom: 46rpx;
+  overflow: hidden;
+}
+.title_jg label{
+  float: left;
+}
+.title_jg span{
+  width:7rpx;
+  height:35rpx;
+  background:rgba(230,94,52,1);
+  border-radius:4rpx;
+  float: left;
+  margin-top: 8rpx;
+  margin-right: 14rpx;
+}
+.lookmor{
+  float: right;
+}
+.lookmor label{
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color:#B1B1B1;
+  margin-right: 14rpx;
+}
+.lookmor image{
+  width: 18rpx;
+  height: 30rpx;
+}
+.express_list{
+  padding:21rpx 25rpx 30rpx;
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #E5E5E5;
+}
+.exp_logo{
+  width: 84rpx;
+  height: 84rpx;
+  float: left;
+  border-radius: 50%;
+}
+.exp_name{
+  line-height: 84rpx;
+  float: left;
+  font-size: 30rpx;
+  color:#333333;
+  margin-left: 40rpx;
+}
+.exp_phone{
+  float: right;
+  font-size: 30rpx;
+  color:#666666;
+  font-weight: bold;
+  line-height: 84rpx;
+}
+
+
+.warm_tips{
+  background:#fff;
+  box-shadow:0px 4rpx 4rpx 2rpx rgba(240,240,240,1);
+  border-radius:33rpx;
+  padding:13rpx 14rpx 11rpx 21rpx;
+  box-sizing: border-box;
+  margin-bottom: 32rpx;
+}
+.tips_box{
+  border:1px dashed #E4572E;
+  border-radius: 30rpx;
+  padding:15rpx 20rpx;
+}
+.tips_tile{
+  font-size:30rpx;
+  color:rgba(228,87,46,1);
+  line-height:42rpx;
+  margin-bottom: 10rpx;
+}
+.tips_dis{
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color:#6F5D58;
+}
+.tips_dis label{
+  color:#E4572E;
+}
+
+.goHome{
+  margin: auto;
+  margin-top: 98rpx;
+  width:457rpx;
+  height:74rpx;
+  background:rgba(228,87,46,1);
+  box-shadow:0px 2px 4px 0px rgba(252,194,177,1);
+  border-radius:40rpx;
+  line-height: 74rpx;
+  color:#fff;
+  font-size: 32rpx;
 }
