@@ -1005,10 +1005,13 @@ margin-right:10rpx;
 
 
 .promotion-img .goIndex{
-  width: 80rpx;
-  height: 80rpx;
+  padding:0 10rpx;
+  background: rgba(0, 0, 0, 0.3);
+  color:#fff;
+  border-radius: 25rpx;
   position: absolute;
-  left: 30rpx;
-  top: 30rpx;
-  z-index: 100;
+  right: 20rpx;
+  top: 50rpx;
+  font-size: 28rpx;
+  line-height:50rpx;
 }

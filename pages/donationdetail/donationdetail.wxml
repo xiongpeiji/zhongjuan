@@ -15,7 +15,8 @@
         </swiper-item>
       </block>
     </swiper>
-    <image class='goIndex' bindtap='goHome' src='/images/index.png'></image>
+    <!-- <image class='goIndex'src='/images/index.png'></image> -->
+    <view class='goIndex' bindtap='goHome'>返回首页</view>
     <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
   </view>
 

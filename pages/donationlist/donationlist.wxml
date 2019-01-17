@@ -29,6 +29,10 @@
         <view class='jz_content' bindtap="redirectLink" data-express="{{item.system_info_id}}" data-id="{{item.id}}" data-status="{{item.status}}">
           <view class='content_title'>{{item.title}}</view>
           <view class='content_pub'>
+            <view class='con_name'>爱心单号</view>
+            <view class='con_dis'>{{item.donation_num}}</view>
+          </view>
+          <view class='content_pub'>
             <view class='con_name'>接受机构</view>
             <view class='con_dis'>{{item.institution_name}}</view>
           </view>
@@ -38,6 +42,7 @@
               <label>{{row.num}}</label>{{row.material_unit}}
             </view>
           </view>
+          
           <view class='content_footer'>
             <view class='left_num'>
               总价值 ¥ <label>{{item.money}}</label>
