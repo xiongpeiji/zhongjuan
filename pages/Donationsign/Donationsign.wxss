@@ -1,0 +1,134 @@
+/* pages/Donationsign/Donationsign.wxss */
+.fed_detai_con{
+  padding:20rpx 30rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.name_times{
+  height: 80rpx;
+  padding-left: 105rpx;
+  position: relative;
+  margin-bottom: 40rpx;
+}
+.name_times .user_img{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.name_times .names{
+  font-size: 32rpx;
+  color:#483C38;
+  line-height: 80rpx;
+  float: left;
+}
+.name_times .times{
+  float: right;
+  font-size: 28rpx;
+  color:#999999;
+  line-height: 80rpx;
+}
+.jz_wz{
+  font-weight: bold;
+  font-size: 32rpx;
+  color:#333333;
+  line-height: 44rpx;
+  margin-bottom: 30rpx;
+}
+.wz_content{
+  padding-left: 15rpx;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 40rpx;
+}
+.wz_details{
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color:#444444;
+  margin-bottom: 20rpx;
+}
+.wz_names{
+  float: left;
+}
+.wz_num{
+  float: right;
+}
+.wz_num label{
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #523838;
+  margin-right: 20rpx;
+}
+.love_cont{
+  overflow: hidden;
+  color: #666666;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+.order_stutas{
+  overflow: hidden;
+  line-height: 44rpx;
+}
+.order_color{
+  float: left;
+  font-size: 32rpx;
+  color:#E14A32;
+  font-weight: bold;
+}
+.money_cont{
+  float: right;
+  font-size: 28rpx;
+  color:#666666;
+}
+.money_cont label{
+  margin-right: 10rpx;
+  color:#444444;
+  font-weight: bold;
+}
+
+.love_cont .money_text{
+  font-weight: bold;
+  color:#444444;
+}
+.ju_stutas_text{
+  color:#E14A32;
+}
+.love_cont .stutas_text{
+  font-weight: bold;
+  color:#E14A32;
+}
+
+.love_cont .stutas_end{
+  font-weight: bold;
+  color:#666666;
+}
+
+.detail_btns{
+  width: 640rpx;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 90rpx;
+}
+.detai_left{
+  float: left;
+}
+
+.detail_btns button{
+  border:1px solid #999999;
+  height: 76rpx;
+  line-height: 74rpx;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+  color:#999999;
+}
+.detail_btns .detai_right{
+  float: right;
+  color: #E4572E;
+  border:1px solid #E4572E;
+}
+.detai_center{
+  width: 225rpx;
+  margin: auto;
+}

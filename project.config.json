@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 32,
 			"list": [
 				{
 					"id": -1,
@@ -173,7 +173,68 @@
 				{
 					"id": -1,
 					"name": "hahha",
-					"pathName": "pages/viewdetails/viewdetails"
+					"pathName": "pages/viewdetails/viewdetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "受捐反馈",
+					"pathName": "pages/Donationfeedback/Donationfeedback",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "最新记录",
+					"pathName": "pages/Latestcontributions/Latestcontributions",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠反馈-去看看-详情",
+					"pathName": "pages/Feedbackdetails/Feedbackdetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠反馈-去看看-捐助成功",
+					"pathName": "pages/Signforgoods/Signforgoods",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠反馈-去看看-已签收",
+					"pathName": "pages/Donationsign/Donationsign",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠反馈-去看看-编辑反馈内容",
+					"pathName": "pages/EditorialContent/EditorialContent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐赠反馈成功提示",
+					"pathName": "pages/Feedbacksuccess/Feedbacksuccess",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐详情导航2",
+					"pathName": "pages/DonationdetailsNew/DonationdetailsNew",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test页面",
+					"pathName": "pages/test/test",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "动态",
+					"pathName": "pages/Dynamic/Dynamic",
+					"query": ""
 				}
 			]
 		}

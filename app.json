@@ -29,7 +29,17 @@
     "pages/expresslist/expresslist",
     "pages/donationlist/donationlist",
     "pages/viewdetails/viewdetails",
-    "pages/perfectinformation/perfectinformation"
+    "pages/perfectinformation/perfectinformation",
+    "pages/Donationfeedback/Donationfeedback",
+    "pages/Latestcontributions/Latestcontributions",
+    "pages/Feedbackdetails/Feedbackdetails",
+    "pages/Signforgoods/Signforgoods",
+    "pages/Donationsign/Donationsign",
+    "pages/EditorialContent/EditorialContent",
+    "pages/Feedbacksuccess/Feedbacksuccess",
+    "pages/DonationdetailsNew/DonationdetailsNew",
+    "pages/test/test",
+    "pages/Dynamic/Dynamic"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -47,26 +57,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/index-active.png"
+        "iconPath": "images/tabBar/index.png",
+        "selectedIconPath": "images/tabBar/index_act.png"
       },
       {
         "pagePath": "pages/xinde/xinde",
-        "text": "心得",
-        "iconPath": "images/xinde.png",
-        "selectedIconPath": "images/xinde-active.png"
+        "text": "筛选",
+        "iconPath": "images/tabBar/chose.png",
+        "selectedIconPath": "images/tabBar/chose_act.png"
       },
       {
-        "pagePath": "pages/message/message",
-        "text": "通知",
-        "iconPath": "images/xiaoxi.png",
-        "selectedIconPath": "images/xiaoxi-active.png"
+        "pagePath": "pages/Dynamic/Dynamic",
+        "text": "动态",
+        "iconPath": "images/tabBar/dynamic.png",
+        "selectedIconPath": "images/tabBar/dynamic_act.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "images/wode.png",
-        "selectedIconPath": "images/wode-active.png"
+        "iconPath": "images/tabBar/my.png",
+        "selectedIconPath": "images/tabBar/my_act.png"
       }
     ]
   }

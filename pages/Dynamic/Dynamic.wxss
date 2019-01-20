@@ -1,0 +1,162 @@
+/* pages/Dynamic/Dynamic.wxss */
+.done_cont{
+  padding:35rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.user_cont{
+  padding-left: 94rpx;
+  padding-bottom: 18rpx;
+  position: relative;
+  height: 80rpx;
+  border-bottom: 1px solid #DADADA;
+}
+.center_stutas{
+  font-size: 26rpx;
+  color:#483C38;
+  line-height: 80rpx;
+}
+.user_cont .user_photo{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.name_time{
+  float: left;
+  font-size: 0;
+}
+.name_time view{
+  font-size: 26rpx;
+  color:#483C38;
+  line-height: 80rpx;
+}
+.name_time label{
+  font-size: 22rpx;
+  color:#999999;
+}
+.user_cont{
+  text-align: center;
+}
+.user_cont .look_more_btn{
+  float: right;
+  font-size: 26rpx;
+  color:#483C38;
+  line-height: 80rpx;
+}
+
+.feedback_content{
+  padding: 30rpx 20rpx 1rpx;
+  background: #fff;
+}
+.feedback_ul{
+  background: #fff;
+  position: relative;
+}
+.moreJuanzhu{
+  height: 2500rpx;
+  overflow: hidden;
+}
+.feedback_ul .user_cont{
+  border-bottom: none;
+}
+.feedback_ul .done_cont{
+  padding-top: 10rpx;
+}
+.feed_text_dis{
+  padding: 0 30rpx 30rpx;
+}
+.feed_text_dis .rich_text{
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color:#373737;
+  display: block;
+  margin-bottom: 60rpx;
+}
+
+
+
+.imgs_content{
+  overflow: hidden;
+  margin-bottom: 25rpx;
+}
+.img_lis{
+  width: 220rpx;
+  height: 220rpx;
+  float: left;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+.article_share{
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.fabulous{
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.float_left{
+  float: left;
+}
+.float_right{
+  float: right;
+}
+.times span{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color:#474747;
+}
+.fabulous image{
+  width: 34rpx;
+  height: 34rpx;
+  display: inline-block;
+}
+.fabulous span{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color:#826F6A;
+}
+.fk_title{
+  font-size: 24rpx;
+  line-height: 28rpx;
+  color:#9A9A9A;
+  margin-bottom: 22rpx;
+}
+
+
+
+.Comment_area{
+  position: relative;
+  background: #F3F3F3;
+  padding: 35rpx 10rpx 90rpx 25rpx;
+}
+.comment_lis{
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color:#4D4D4D;
+  margin-bottom: 20rpx;
+}
+.comment_lis label{
+  color:#E4572E;
+  font-weight: 600;
+}
+.comment_lis .com_text{
+  color: #929292;
+}
+.look_more_com{
+  width: 100%;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color:#B6B6B6;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 17rpx;
+  right: 0;
+}
+.feedback_li{
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,85 @@
+/* pages/Donationfeedback/Latestcontributions.wxss */
+.look_more_btn{
+  float: right;
+  font-size: 24rpx;
+  color:#B1B1B1;
+  line-height: 50rpx;
+}
+.look_more_btn image{
+  float: right;
+  width: 18rpx;
+  height: 30rpx;
+  margin-top: 8rpx;
+  margin-left: 10rpx;
+}
+.done_cont{
+  padding:35rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 36rpx;
+}
+.user_cont{
+  padding-left: 94rpx;
+  padding-bottom: 18rpx;
+  position: relative;
+  height: 80rpx;
+  border-bottom: 1px solid #DADADA;
+}
+
+.user_cont .user_photo{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.name_time{
+  float: left;
+  font-size: 0;
+}
+.name_time view{
+  font-size: 26rpx;
+  color:#483C38;
+  line-height: 36rpx;
+  margin-top: 10rpx;
+}
+.name_time label{
+  font-size: 22rpx;
+  color:#999999;
+}
+.user_cont .look_more_btn{
+  margin-top: 20rpx;
+}
+.wp_content{
+  padding-top: 20rpx;
+  overflow: hidden;
+}
+.wp_list{
+  width: 50%;
+  text-align: center;
+  float: left;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color:#4D4D4D;
+  line-height: 44rpx;
+}
+.look_more_btn .isSuccess{
+  color: #E65E34;
+}
+
+.new_detail{
+  width: 480rpx;
+  margin: auto;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  color:#4D4D4D;
+}
+.left_n{
+  float: left;
+}
+.right_n{
+  float: right;
+}

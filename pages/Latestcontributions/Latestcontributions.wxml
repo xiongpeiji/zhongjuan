@@ -1,0 +1,86 @@
+<!--pages/Donationfeedback/Latestcontributions.wxml-->
+<view class='container'>
+
+  <!--捐助列表-->
+  <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label>发起爱心</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+       <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+    </view>
+
+  </view>
+
+   <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label>进行中</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+       <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label class='isSuccess'>已签收</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+       <view class='new_detail'>
+        <label class='left_n'>图书</label>
+        <label class='right_n'>10 本</label>
+      </view>
+    </view>
+
+  </view>
+<!--暂无更多消息-->
+    <view class='no-more-message'>{{no_msg}}</view>
+
+
+</view>

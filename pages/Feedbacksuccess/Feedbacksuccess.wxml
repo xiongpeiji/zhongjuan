@@ -1,0 +1,13 @@
+<!--pages/Feedbacksuccess/Feedbacksuccess.wxml-->
+<view class='container'>
+  <view class='send_love success_text' hidden='{{status == "fail"}}'>
+    <image class='stutas_img' src='/images/success_icon.png'></image>
+    <view class='stutas_text'>爱心反馈成功了呦！</view>
+    <view class='tips'>爱心反馈可以在捐助详情中查看哦~</view>
+    
+    <view class='success_btnbox'>
+      <button plain='{{true}}' class='no_btn'>不了</button>
+      <button plain='{{true}}' class='go_look'>去看看</button>
+    </view>
+  </view>
+</view>

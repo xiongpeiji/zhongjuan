@@ -1,0 +1,479 @@
+<!--pages/DonationdetailsNew/DonationdetailsNew.wxml-->
+<scroll-view scroll-y scroll-top="{{scrollTop}}">
+  <view class='container'>
+    <!--顶部导航-->
+    <view class='top_nav' hidden='{{true}}'>
+
+      <view class='nav_list'>
+        <view class='active nav_bar'>
+          <label>详情</label>
+          <b></b>
+        </view>
+      </view>
+
+      <view class='nav_list'>
+        <view class='nav_bar'>
+          <label>捐赠反馈</label>
+          <b></b>
+        </view>
+      </view>
+
+      <view class='nav_list'>
+        <view class='nav_bar'>
+          <label>评论</label>
+          <b></b>
+        </view>
+      </view>
+
+
+    </view>
+
+    <!--------------------详情开始------------------------>
+    <view class='detais_content'>
+      <view class='promotion-img'>
+        <swiper bindchange="swiper">
+          <block>
+            <swiper-item>
+              <image mode='aspectFill' src="/images/plant.jpg" bindtap='showImages' data-img="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+          <block>
+            <swiper-item>
+              <image mode='aspectFill' src="/images/plant.jpg" bindtap='showImages' data-img="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='goIndex' bindtap='goHome'>返回首页</view>
+        <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+      </view>
+    
+    </view>
+
+    <view class='xindeDetais_text'>
+      <view class='title_p'>暖暖冬季，爱心传递</view>
+      <view class='time_tit'>09:25 俺们村的希</view>
+
+      <view class='Percentage'>
+        <view class='Percentage_bg'>
+          <view class='Percentage_len' style='width:90%'></view>
+          <view class='Percentage_text'>90%</view>
+        </view>
+      </view>
+
+      <rich-text class='rich_text'>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤，希望社会爱心人士能够伸出援助手帮助这些小可爱们暖暖得过冬</rich-text>
+
+      
+      <!--机构详细信息-->
+    <view class='joins'>
+      <view class='left_user_icon' bindtap="showUser" hidden="{{info.user_num==0}}">
+        <block wx:for="{{info.user_data}}" wx:key="{{index}}">
+          <image src='{{item.avatar}}' mode='aspectFill'></image>
+        </block>
+        <image style='z-index:0' src='/images/index_gengduo@2x.png'></image>
+      </view>
+      <view class='jions_num' style="margin-left:{{info.user_num==0?'0':'70rpx'}}">{{info.user_num}}人已加入</view>
+
+      <!--头像列表-->
+      <view class="user_photos" hidden="{{usersShow}}">
+        <view class="user_photo_list">
+          <view class="user_photo_name"  wx:for="{{info.user_data}}" wx:key="{{index}}">
+            <view class="user_icons">
+              <image src='{{item.avatar}}' mode='aspectFill'></image>
+            </view>
+            <view class="user_names">{{item.username}}</view>
+          </view>
+        </view>
+        <view class="hidden_user" bindtap="hideUsers">
+          <image src="/images/up_arr.png"></image>收起
+        </view>
+      </view>
+    </view>
+
+    <view class="jigou_titles">求捐物资</view>
+    <!--物资详情-->
+    <view class="wuzi_details">
+      <view class="wuzi_list">
+        <image src="/images/qianbi_xuanzhong.png"></image>
+        <span class="wuzi_name">学习用品100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+      <view class="wuzi_list">
+        <image src="/images/qianbi_xuanzhong.png"></image>
+        <span class="wuzi_name">学习用品100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+      <view class="wuzi_list">
+        <image src="/images/qianbi_xuanzhong.png"></image>
+        <span class="wuzi_name">学习用品100件</span>
+        <view class="juan_nums">
+          已捐<span>40</span>件
+        </view>
+      </view>
+    </view>
+
+
+    </view>
+    
+    <view class='Caringpeople {{moreShow?"":"moreShow"}}'>
+     <!--捐助列表-->
+        <view class='done_cont'>
+          <view class='user_cont'>
+            <image class='user_photo' src='/images/express_icon.png'></image>
+            <view class='name_time'>
+              <view>安娜</view>
+            </view>
+            <label class='center_stutas'>爱心运输中</label>
+            <view class='look_more_btn'>
+              <label>14 秒前 </label>
+            </view>
+          </view>
+
+          <view class='wp_content'>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>打印机 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+          </view>
+
+        </view>
+
+        <view class='done_cont'>
+          <view class='user_cont'>
+            <image class='user_photo' src='/images/express_icon.png'></image>
+            <view class='name_time'>
+              <view>安娜</view>
+            </view>
+            <label class='center_stutas'>爱心运输中</label>
+            <view class='look_more_btn'>
+              <label>14 秒前 </label>
+            </view>
+          </view>
+
+          <view class='wp_content'>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>打印机 X 10 本</view>
+          </view>
+
+        </view>
+
+        <view class='done_cont'>
+          <view class='user_cont'>
+            <image class='user_photo' src='/images/express_icon.png'></image>
+            <view class='name_time'>
+              <view>安娜</view>
+            </view>
+            <label class='center_stutas signed_stutas'>爱心已被签收</label>
+            <view class='look_more_btn'>
+              <label>14 秒前 </label>
+            </view>
+          </view>
+
+          <view class='wp_content'>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+          </view>
+
+        </view>
+
+        <view class='done_cont'>
+          <view class='user_cont'>
+            <image class='user_photo' src='/images/express_icon.png'></image>
+            <view class='name_time'>
+              <view>安娜</view>
+            </view>
+            <label class='center_stutas signed_stutas'>爱心已被签收</label>
+            <view class='look_more_btn'>
+              <label>14 秒前 </label>
+            </view>
+          </view>
+
+          <view class='wp_content'>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+            <view class='wp_list'>图书 X 10 本</view>
+          </view>
+
+        </view>
+        <!--显示更多-->
+        <view class='show_more_list' hidden='{{moreShow}}' bindtap='showMore'>
+          <label>展开更多</label>
+          <image src='/images/sort_arr.png'></image>
+        </view>
+
+        
+    </view>
+    <!--发布机构-->
+    <view class='send_donas'>
+      <view class='send_title'>发布机构</view>
+      <view class="jigouDetail_btn">
+        <span class="jigou_name">西安爱心捐助站</span>
+        <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
+        <view class="jigou">
+          <image src='/images/shenqingqiyerenzheng.png'></image>
+          <span>希望小学</span>
+        </view>
+    </view>
+
+    </view>
+
+    <!--------------------详情结束------------------------>
+
+
+    <!---------------------机构反馈开始---------------------->
+
+    <view class='feedback_content'>
+      <view class='send_title'>机构反馈</view>
+    </view>
+    <view class='feedback_ul  {{moreJuanzhu?"":"moreJuanzhu"}}'>
+
+      <view class='feedback_li'>
+          <view class='done_cont'>
+            <view class='user_cont'>
+              <image class='user_photo' src='/images/express_icon.png'></image>
+              <view class='name_time'>
+                <view>安娜</view>
+              </view>
+              <label class='center_stutas'>爱心已帮助 67 人</label>
+            </view>
+        </view>
+        <view class='feed_text_dis'>
+          <rich-text class='rich_text'>真的非常感谢寒冰先生在天寒地冻的时节给我们机构的学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</rich-text>
+
+          <view class='imgs_content'>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+          </view>
+          <!---->
+          <view class="article_share">
+            <view class="times float_left">
+              <span>2019-1-10</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/xiaoxi.png"></image>
+              <span>567</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/dianzan.png"></image>
+              <span>567</span>
+            </view>
+          </view>
+          <view class='fk_title'>由深圳博雅游戏网络爱心机构反馈</view>
+          <view class='Comment_area'>
+              <view class='comment_lis'>
+                <label>圈圈：</label>哇，看着捐的东西还挺多的！
+              </view>
+              <view class='comment_lis'>
+                <label>圈圈：</label><label class='com_text'>回复</label><label>小可爱：</label>
+                哇，看着捐的东西还挺多的！机构负责人的微信，沟通起来更方便
+              </view>
+
+              <view class='look_more_com'>查看更多评论</view>
+          </view>
+
+
+        </view>
+      </view>
+
+      <view class='feedback_li'>
+          <view class='done_cont'>
+            <view class='user_cont'>
+              <image class='user_photo' src='/images/express_icon.png'></image>
+              <view class='name_time'>
+                <view>安娜</view>
+              </view>
+              <label class='center_stutas'>爱心已帮助 67 人</label>
+            </view>
+        </view>
+        <view class='feed_text_dis'>
+          <rich-text class='rich_text'>真的非常感谢寒冰先生在天寒地冻的时节给我们机构的学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</rich-text>
+
+          <view class='imgs_content'>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+          </view>
+          <!---->
+          <view class="article_share">
+            <view class="times float_left">
+              <span>2019-1-10</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/xiaoxi.png"></image>
+              <span>567</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/dianzan.png"></image>
+              <span>567</span>
+            </view>
+          </view>
+          <view class='fk_title'>由深圳博雅游戏网络爱心机构反馈</view>
+          <view class='Comment_area'>
+              <view class='comment_lis'>
+                <label>圈圈：</label>哇，看着捐的东西还挺多的！
+              </view>
+              <view class='comment_lis'>
+                <label>圈圈：</label><label class='com_text'>回复</label><label>小可爱：</label>
+                哇，看着捐的东西还挺多的！机构负责人的微信，沟通起来更方便
+              </view>
+
+              <view class='look_more_com'>查看更多评论</view>
+          </view>
+
+
+        </view>
+      </view>
+
+      <view class='feedback_li'>
+          <view class='done_cont'>
+            <view class='user_cont'>
+              <image class='user_photo' src='/images/express_icon.png'></image>
+              <view class='name_time'>
+                <view>安娜</view>
+              </view>
+              <label class='center_stutas'>爱心已帮助 67 人</label>
+            </view>
+        </view>
+        <view class='feed_text_dis'>
+          <rich-text class='rich_text'>真的非常感谢寒冰先生在天寒地冻的时节给我们机构的学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</rich-text>
+
+          <view class='imgs_content'>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+            <image class='img_lis' src='/images/plant.jpg'></image>
+          </view>
+          <!---->
+          <view class="article_share">
+            <view class="times float_left">
+              <span>2019-1-10</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/xiaoxi.png"></image>
+              <span>567</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/dianzan.png"></image>
+              <span>567</span>
+            </view>
+          </view>
+          <view class='fk_title'>由深圳博雅游戏网络爱心机构反馈</view>
+          <view class='Comment_area'>
+              <view class='comment_lis'>
+                <label>圈圈：</label>哇，看着捐的东西还挺多的！
+              </view>
+              <view class='comment_lis'>
+                <label>圈圈：</label><label class='com_text'>回复</label><label>小可爱：</label>
+                哇，看着捐的东西还挺多的！机构负责人的微信，沟通起来更方便
+              </view>
+
+              <view class='look_more_com'>查看更多评论</view>
+          </view>
+
+
+        </view>
+      </view>
+      <!--显示更多-->
+      <view class='show_more_list' hidden='{{moreJuanzhu}}' bindtap='showJuanzhu'>
+        <label>展开更多</label>
+        <image src='/images/sort_arr.png'></image>
+      </view>
+      
+
+
+
+    </view>
+
+    <!---------------------机构反馈结束---------------------->
+
+    <!-----------------------评论 开始-------------------------->
+    
+    <view class='Comment_content'>
+        <view class="jigou_titles">评论 <label>263</label></view>
+        <view class='comment_ul'>
+          <view class='comment_img'>
+            <image class='ucer_icons' src='/images/express_icon.png'></image>
+            <view class='com_names'>Amani </view>
+            <label class='com_times'>昨天19：30 </label>
+          </view>
+
+          <view class='com_datial_text'>
+            <view class='com_text_t'>这些孩子们真的是太可爱了，大家应该献出爱心帮助他们过冬才对呀</view>
+            <view class='com_setting'>
+              <view class="fabulous float_right">
+                <image src="/images/xiaoxi.png"></image>
+                <span>567</span>
+              </view>
+              <view class="fabulous float_right">
+                <image src="/images/dianzan.png"></image>
+                <span>567</span>
+              </view>
+            </view>
+          </view>
+        </view>
+    </view>
+
+
+
+    <!-----------------------评论 结束-------------------------->
+
+
+
+
+
+
+
+
+    
+    
+    <!--底部-->
+    <view class="input_box_fixed" hidden='{{focus}}'>
+      <button class="share_cont" hover-class="share_active" bindtap="setFocus">
+          <view class="img_box"><image src="/images/message_new.png"></image></view>
+          <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" open-type="share">
+          <view class="img_box"><image src="/images/share_01.png"></image></view>
+          <view class="img_tit_text">邀请好友</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" open-type='share' hidden='{{info.share_status == 1}}'>
+          <view class="img_box"><image src="/images/share_new.png"></image></view>
+          <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" bindtap='shareWeixin' hidden='{{true}}'>
+          <view class="img_box"><image src="/images/share_new.png"></image></view>
+          <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
+      </button>
+      <view class="want_give">
+          <image src="/images/Rectangle9@3x.png"></image>
+          <span bindtap="wantTodo" data-id="{{id}}">我要捐助</span>
+      </view>
+    </view>
+
+    <view class="input_box" hidden='{{!focus}}'>
+    <view class="section_input">
+      <input placeholder="输入评论…" maxlength='200' focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
+    </view>
+    <view class="comment_action" bindtap='comment'>
+      <button class='send_msg_btn'>发送</button>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+  </view>
+</scroll-view>

@@ -1,0 +1,43 @@
+<!--pages/Feedbackdetails/Feedbackdetails.wxml-->
+<view class='container'>
+  <!--捐赠反馈-去看看-详情-->
+  <view class='fed_detai_con'>
+    <view class='name_times'>
+      <image class='user_img' src='/images/icon_xindeshene.png'></image>
+      <label class='names'>安娜</label>
+      <label class='times'>今天13:20</label>
+    </view>
+    <view class='jz_wz'>捐助物资：</view>
+
+    <view class='wz_content'>
+
+      <view class='wz_details'>
+        <view class='wz_names'>图书</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+      <view class='wz_details'>
+        <view class='wz_names'>文具</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+      <view class='wz_details'>
+        <view class='wz_names'>图书</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+
+    </view>
+
+    <view class='love_cont'>
+      <view class='wz_names'>爱心单号</view>
+      <view class='wz_num'>4489</view>
+    </view>
+
+    <view class='order_stutas'>
+      <view class='order_color'>已发起</view>
+      <view class='money_cont'>
+        总价值<label>¥4499</label>
+      </view>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,55 @@
+<!--pages/EditorialContent/EditorialContent.wxml-->
+<view class='container'>
+  <view class='edit_content'>
+
+    <view class='edit_img'>
+      <image class='user_img' src='/images/express_icon.png'></image>
+      <label>寒冰</label>
+
+      <view class='right_btn_text'>
+        <label>爱心物资您已签收！</label>
+        <image class='right_arr' src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+    
+    <view class='love_input'>
+      <image class='love_bg' src='/images/love_bg.png'></image>
+      <label class='left_t'>●已有</label>
+      <input type='number' placeholder='请输入分发人数'></input>
+      <label class='right_t'>人收到爱心</label>
+    </view>
+  </view>
+
+  <!--编辑反馈信息…-->
+  <view class='edit_input' bindtap="showTextArea">
+    <view class='etit_input_cot' hidden='{{true}}'>
+      <image src='/images/qianbi.png'></image>
+      <label>编辑反馈信息…</label>
+    </view>
+    <textarea placeholder='编辑反馈信息…' auto-height  maxlength="10000" value='' />
+  </view>
+
+  <view class='photo_box'>
+
+    <view class="express_box">
+        <view class="express-img" hidden='{{true}}'>
+            <image class="express_bg" src="/images/renzheng_shangchuan@2x.png" mode='aspectFill'></image>
+            <view class="delet-express">
+                <image src="/images/del-img.png"></image>
+            </view>
+        </view>
+        <view class="express-img">
+          <image class="img_bg" src="/images/renzheng_shangchuan@2x.png"></image>
+        </view>
+        
+    </view>
+  </view>
+
+  <view class='fabu_btn'>
+    <button>发布</button>
+  </view>
+
+
+
+
+</view>

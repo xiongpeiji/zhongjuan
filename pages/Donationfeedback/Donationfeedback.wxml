@@ -1,0 +1,125 @@
+<!--pages/Donationfeedback/Donationfeedback.wxml-->
+<view class='container'>
+  <view class='juanzhu'>
+    <view class='jz_discript'>
+      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
+      <view class='title_text'>别让冬季阻碍了孩子们的生活质 量</view>
+      <view class='jg_name'>深圳爱心机构</view>
+      <view class='jg_type'>
+        <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
+        <label>行政村</label>
+      </view>
+    </view>
+    <!---------已结束添加class  the_end --------->
+    <view class='jz_stutas'>
+        <label>进行中</label>
+        <image src='/images/icon_fanhui.png'></image>
+      </view>
+  </view>
+
+  <!--最新捐助-->
+  <view class='new_jilu'>
+    <view class='new_tit'>
+      最新捐助<label>(5)</label>
+    </view>
+    <view class='look_more_btn' bindtap='lookAll'>
+      查看全部<image src='/images/renzheng_jinru@2x.png'></image>
+    </view>
+  </view>
+
+
+  <!--捐助列表-->
+  <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label>发起爱心</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+      <view class='wp_list'>图书 X 10 本</view>
+    </view>
+
+  </view>
+
+   <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label>进行中</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+    </view>
+
+  </view>
+
+  <view class='done_cont'>
+    <view class='user_cont'>
+      <image class='user_photo' src='/images/express_icon.png'></image>
+      <view class='name_time'>
+        <view>安娜</view>
+        <label>今天13:20</label>
+      </view>
+
+      <view class='look_more_btn'>
+        <label class='isSuccess'>已签收</label><image src='/images/renzheng_jinru@2x.png'></image>
+      </view>
+    </view>
+
+    <view class='wp_content'>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+      <view class='wp_list'>打印机 X 10 本</view>
+    </view>
+
+  </view>
+
+
+  <!--没有消息-->
+    <view class="no_messages">
+      <image src="/images/no_dona.jpg"></image>
+      <view class="no_msg_text">暂无受捐记录！</view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
