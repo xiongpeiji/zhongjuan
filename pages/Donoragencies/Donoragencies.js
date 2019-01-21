@@ -1,11 +1,11 @@
-// pages/Dynamic/Dynamic.js
+// pages/Donoragencies/Donoragencies.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isHide:false,
+
   },
 
   /**
@@ -13,21 +13,10 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '动态'
+      title: '捐助机构'
     });
   },
-  //显示输入框
-  showInput(e){
-    this.setData({
-      isHide: true
-    })
-  },
-  //隐藏输入框
-  hideInput(e){
-    this.setData({
-      isHide:false
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -46,9 +35,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    this.setData({
-      isHide: false
-    })
+
   },
 
   /**

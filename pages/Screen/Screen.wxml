@@ -1,0 +1,109 @@
+<!--pages/Screen/Screen.wxml-->
+<view class='container'>
+  <view class='choodeArea'>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      <view class='name_box {{active?"active":""}}'>{{region[0]}}<em></em></view>
+      <view class='name_box {{active?"active":""}}'>{{region[1]}}<em></em></view>
+      <view class='name_box {{active?"active":""}}'>{{region[2]}}<em></em></view>
+    </view>
+  </picker>
+  </view>
+
+
+  <view class='screen_con'>
+
+      <view class='love_list'>
+        <view class='love_title'>
+          <label>西安秦岭小天使爱心</label>
+          <image src='/images/renzheng_jinru@2x.png'></image>
+        </view>
+        <view class='love_jg'>
+          <view class='love_text'>
+            <image src='/images/shenqingqiyerenzheng.png'></image>
+            <label>希望小学</label>
+          </view>
+        </view>
+        <view class='img_box'>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+        </view>
+        <view class='jg_area'>
+          <image src='/images/area_icon.png'></image>
+          <label>陕西省西安市雁塔区高新五路</label>
+        </view>
+      </view>
+
+      <view class='love_list'>
+        <view class='love_title'>
+          <label>西安秦岭小天使爱心</label>
+          <image src='/images/renzheng_jinru@2x.png'></image>
+        </view>
+        <view class='love_jg'>
+          <view class='love_text'>
+            <image src='/images/shenqingqiyerenzheng.png'></image>
+            <label>希望小学</label>
+          </view>
+        </view>
+        <view class='img_box'>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+        </view>
+        <view class='jg_area'>
+          <image src='/images/area_icon.png'></image>
+          <label>陕西省西安市雁塔区高新五路</label>
+        </view>
+      </view>
+
+      <view class='love_list'>
+        <view class='love_title'>
+          <label>西安秦岭小天使爱心</label>
+          <image src='/images/renzheng_jinru@2x.png'></image>
+        </view>
+        <view class='love_jg'>
+          <view class='love_text'>
+            <image src='/images/shenqingqiyerenzheng.png'></image>
+            <label>希望小学</label>
+          </view>
+        </view>
+        <view class='img_box'>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+        </view>
+        <view class='jg_area'>
+          <image src='/images/area_icon.png'></image>
+          <label>陕西省西安市雁塔区高新五路</label>
+        </view>
+      </view>
+
+      <view class='love_list'>
+        <view class='love_title'>
+          <label>西安秦岭小天使爱心</label>
+          <image src='/images/renzheng_jinru@2x.png'></image>
+        </view>
+        <view class='love_jg'>
+          <view class='love_text'>
+            <image src='/images/shenqingqiyerenzheng.png'></image>
+            <label>希望小学</label>
+          </view>
+        </view>
+        <view class='img_box'>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+          <image src='/images/plant.jpg'></image>
+        </view>
+        <view class='jg_area'>
+          <image src='/images/area_icon.png'></image>
+          <label>陕西省西安市雁塔区高新五路</label>
+        </view>
+      </view>
+
+  </view>
+
+
+
+
+</view>

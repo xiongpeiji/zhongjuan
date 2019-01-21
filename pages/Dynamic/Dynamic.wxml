@@ -28,7 +28,7 @@
             <view class="times float_left">
               <span>2019-1-10</span>
             </view>
-            <view class="fabulous float_right">
+            <view class="fabulous float_right" bindtap='showInput'>
               <image src="/images/xiaoxi.png"></image>
               <span>567</span>
             </view>
@@ -53,5 +53,12 @@
 
         </view>
       </view>
+    </view>
+
+
+    <view class='maxing' hidden='{{!isHide}}' bindtap='hideInput'></view>
+    <view class='input_boxs' hidden='{{!isHide}}'>
+      <input type='text' focus='{{isHide}}' cursor-spacing="40rpx" placeholder='输入评论…'></input>
+      <button>发送</button>
     </view>
 </view>

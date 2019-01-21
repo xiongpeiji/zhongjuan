@@ -39,7 +39,9 @@
     "pages/Feedbacksuccess/Feedbacksuccess",
     "pages/DonationdetailsNew/DonationdetailsNew",
     "pages/test/test",
-    "pages/Dynamic/Dynamic"
+    "pages/Dynamic/Dynamic",
+    "pages/Screen/Screen",
+    "pages/Donoragencies/Donoragencies"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -61,7 +63,7 @@
         "selectedIconPath": "images/tabBar/index_act.png"
       },
       {
-        "pagePath": "pages/xinde/xinde",
+        "pagePath": "pages/Screen/Screen",
         "text": "筛选",
         "iconPath": "images/tabBar/chose.png",
         "selectedIconPath": "images/tabBar/chose_act.png"

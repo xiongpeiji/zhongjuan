@@ -72,4 +72,5 @@
             </view>
         </view>
     </view>
+    <button class='fixed_button' bindtap='Tohelp'>我要捐助</button>
 </view>

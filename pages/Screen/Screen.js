@@ -1,11 +1,13 @@
-// pages/Dynamic/Dynamic.js
+// pages/Screen/Screen.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isHide:false,
+    region: ['全国', '请选择市', '请选择区/县'],
+    customItem: '全部',
+    active:true,
   },
 
   /**
@@ -13,19 +15,14 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '动态'
+      title: '筛选'
     });
   },
-  //显示输入框
-  showInput(e){
+  //省市区选择
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      isHide: true
-    })
-  },
-  //隐藏输入框
-  hideInput(e){
-    this.setData({
-      isHide:false
+      region: e.detail.value
     })
   },
   /**
@@ -46,9 +43,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    this.setData({
-      isHide: false
-    })
+
   },
 
   /**

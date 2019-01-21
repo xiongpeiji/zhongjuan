@@ -160,3 +160,46 @@
 .feedback_li{
   margin-bottom: 20rpx;
 }
+
+
+.maxing{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .2);
+  z-index: 1000;
+}
+.input_boxs{
+  padding: 35rpx 25rpx 35rpx 12rpx;
+  height: 80rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+.input_boxs input{
+  float: left;
+  padding-left: 30rpx;
+  height: 80rpx;
+  box-sizing: border-box;
+  width: 546rpx;
+  background: #F7F7F7;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color:#999;
+}
+.input_boxs button{
+  width: 145rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  color:#fff;
+  background: #E4572E;
+  font-size: 30rpx;
+  float: right;
+}

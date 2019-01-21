@@ -73,5 +73,11 @@ Page({
         scrollTop: 0
       })
     }
+  },
+  //去捐助按钮
+  Tohelp(e){
+    wx.navigateTo({
+      url: '../Donoragencies/Donoragencies',
+    })
   }
 })

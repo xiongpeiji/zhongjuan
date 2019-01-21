@@ -1,0 +1,133 @@
+/* pages/Screen/Screen.wxss */
+.choodeArea{
+  width: 100%;
+  padding: 15rpx 24rpx;
+  height: 108rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+.choodeArea picker{
+  width: 100%;
+  padding:0 15rpx;
+  box-sizing: border-box;
+  height: 86rpx;
+  border:1rpx solid #E9E9E9;
+  border-radius: 44rpx;
+  line-height: 80rpx;
+  box-shadow:0px 2px 8px 0px rgba(255,239,234,1);
+  font-size: 32rpx;
+  color:#A6A6A6;
+  overflow: hidden;
+}
+.choodeArea picker .picker .name_box{
+  float: left;
+  padding-right: 25rpx;
+  width: 198rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+.name_box em{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 5rpx;
+  vertical-align: middle;
+  border-top: 10rpx solid;
+  border-right: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  position: absolute;
+  right: 0rpx;
+  top: 50%;
+  margin-top: -4rpx;
+}
+.choodeArea picker .picker .active{
+  color:#E4572E;
+}
+
+
+.screen_con{
+  padding: 158rpx 30rpx 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+.love_list{
+  padding-bottom: 10rpx;
+}
+.love_list+.love_list{
+  margin-top: 70rpx;
+}
+.love_title{
+  overflow: hidden;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color:#333333;
+  margin-bottom: 18rpx;
+}
+.love_title image{
+  float: right;
+  width: 16rpx;
+  height: 27rpx;
+  margin-top: 7rpx;
+}
+
+
+.love_text{
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 15rpx;
+  background: #4F4F4F;
+  line-height: 36rpx;
+  border-radius: 18rpx;
+  font-size: 22rpx;
+  color:#fff;
+}
+.love_text{
+  margin-bottom: 22rpx;
+}
+.love_text image{
+  width: 20rpx;
+  height: 16rpx;
+  float: left;
+  margin-top: 10rpx;
+  margin-right: 5rpx;
+}
+
+
+.img_box{
+  overflow: hidden;
+  margin-right: -17rpx;
+  display: block;
+}
+.img_box image{
+  width: 216rpx;
+  height: 216rpx;
+  float: left;
+  margin-right: 17rpx;
+  margin-bottom: 17rpx;
+  border-radius: 6rpx;
+}
+.jg_area{
+  display: block;
+  padding-left: 28rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color:#808080;
+  position: relative;
+}
+.jg_area image{
+  width: 21rpx;
+  height: 27rpx;
+  position: absolute;
+  left: 0;
+  top: 4rpx;
+}
