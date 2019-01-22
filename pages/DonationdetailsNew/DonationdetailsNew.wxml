@@ -1,25 +1,25 @@
 <!--pages/DonationdetailsNew/DonationdetailsNew.wxml-->
-<scroll-view scroll-y scroll-top="{{scrollTop}}">
+<scroll-view scroll-y scroll-top="{{curScrollTop}}" bindscroll="scrollTop" scroll-into-view="{{toView}}">
   <view class='container'>
     <!--顶部导航-->
-    <view class='top_nav' hidden='{{true}}'>
+    <view class='top_nav {{showBar}}'>
 
-      <view class='nav_list'>
-        <view class='active nav_bar'>
+      <view class='nav_list' data-id="detail"  bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "detail" ?"active": ""}}' >
           <label>详情</label>
           <b></b>
         </view>
       </view>
 
-      <view class='nav_list'>
-        <view class='nav_bar'>
+      <view class='nav_list' data-id="union" bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "union" ?"active": ""}}'>
           <label>捐赠反馈</label>
           <b></b>
         </view>
       </view>
 
-      <view class='nav_list'>
-        <view class='nav_bar'>
+      <view class='nav_list' data-id="comment"  bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "comment" ?"active": ""}}'>
           <label>评论</label>
           <b></b>
         </view>
@@ -49,7 +49,7 @@
     
     </view>
 
-    <view class='xindeDetais_text'>
+    <view class='xindeDetais_text'  id='detail'>
       <view class='title_p'>暖暖冬季，爱心传递</view>
       <view class='time_tit'>09:25 俺们村的希</view>
 
@@ -229,7 +229,7 @@
 
     <!---------------------机构反馈开始---------------------->
 
-    <view class='feedback_content'>
+    <view class='feedback_content' id='union'>
       <view class='send_title'>机构反馈</view>
     </view>
     <view class='feedback_ul  {{moreJuanzhu?"":"moreJuanzhu"}}'>
@@ -395,7 +395,7 @@
 
     <!-----------------------评论 开始-------------------------->
     
-    <view class='Comment_content'>
+    <view class='Comment_content' id='comment'>
         <view class="jigou_titles">评论 <label>263</label></view>
         <view class='comment_ul'>
           <view class='comment_img'>

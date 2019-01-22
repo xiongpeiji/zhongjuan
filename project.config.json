@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 34,
+			"current": 35,
 			"list": [
 				{
 					"id": -1,
@@ -246,6 +246,12 @@
 					"id": -1,
 					"name": "机构捐助",
 					"pathName": "pages/Donoragencies/Donoragencies",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐信息管理",
+					"pathName": "pages/donormanagement/donormanagement",
 					"query": ""
 				}
 			]

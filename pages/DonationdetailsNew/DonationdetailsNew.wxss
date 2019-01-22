@@ -1,4 +1,7 @@
 /* pages/DonationdetailsNew/DonationdetailsNew.wxss */
+scroll-view {
+  height: 100%;
+}
 .container{
   padding-bottom: 100rpx;
 }
@@ -6,11 +9,16 @@
   overflow: hidden;
   position: fixed;
   left: 0;
-  top: 0;
+  top: -96rpx;
   right: 0;
   background:#fff;
   z-index: 999;
   padding-top: 15rpx;
+  transition: .3s;
+}
+
+.top_nav.show {
+  top: 0;
 }
 .nav_list{
   width: 33.33%;

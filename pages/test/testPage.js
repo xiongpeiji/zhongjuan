@@ -1,31 +1,20 @@
-// pages/Donoragencies/Donoragencies.js
+// pages/test/testPage.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isFocus:false,
-    sourceList: [{
-      name: '',
-      count: ''
-    }]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '捐助机构'
-    });
+
   },
-  //手机获得焦点
-  phoneFocus(e){
-    this.setData({
-      isFocus: true,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

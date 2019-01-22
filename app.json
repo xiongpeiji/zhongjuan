@@ -41,7 +41,8 @@
     "pages/test/test",
     "pages/Dynamic/Dynamic",
     "pages/Screen/Screen",
-    "pages/Donoragencies/Donoragencies"
+    "pages/Donoragencies/Donoragencies",
+    "pages/test/testPage"
   ],
   "window": {
     "backgroundTextStyle": "dark",

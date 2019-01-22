@@ -1,1 +1,146 @@
 /* pages/Donoragencies/Donoragencies.wxss */
+.public_view{
+  padding: 0 22rpx 0 32rpx;
+  height: 90rpx;
+  background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #D7D6D6;
+}
+.public_view .title{
+  float: left;
+  line-height: 90rpx;
+  padding-left: 20rpx;
+  font-size: 36rpx;
+  color:#333333;
+  font-weight: bold;
+  position: relative;
+}
+.public_view .title em{
+  display: inline-block;
+  width: 7rpx;
+  height: 35rpx;
+  position: absolute;
+  background: #E65E34;
+  border-radius: 4rpx;
+  left: 0;
+  top: 50%;
+  margin-top: -17rpx;
+}
+.public_view .right_btn{
+  float: right;
+  line-height: 91rpx;
+  font-size: 26rpx;
+  color:#E65E34;
+}
+.public_view input{
+  height: 91rpx;
+  font-size: 32rpx;
+  color:#A4A4A4;
+}
+.title_text{
+  float: left;
+  font-size: 32rpx;
+  color:#4D4D4D;
+  line-height: 91rpx;
+}
+.wz_moneys{
+  float: right;
+}
+.money_box{
+  margin-bottom: 20rpx;
+}
+
+
+.add_box{
+  position: relative;
+  z-index: 1;
+}
+.delate_data{
+  position: absolute;
+  background: #fff;
+  padding: 71rpx 40rpx;
+  right: 0;
+  top: 0rpx;
+  z-index: 10;
+  background: #D7D6D6;
+  font-size: 0;
+}
+.delate_data image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.Contact_box{
+  padding:30rpx 30rpx 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+}
+.phone_box{
+  overflow: hidden;
+  margin-bottom: 50rpx;
+}
+.phone_box .phone_text{
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color:#333333;
+  float: left;
+}
+.phone_box input{
+  float: left;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color:#333333;
+}
+.phone_box image{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top:10rpx;
+}
+.bz_tit{
+  font-size: 32rpx;
+  line-height: 44rpx;
+  color:#333333;
+  margin-bottom: 30rpx;
+}
+.bz_textArea{
+  padding: 25rpx;
+  border:1rpx solid #DDD8D8;
+  width: 100%;
+  box-sizing: border-box;
+  height: 182rpx;
+  font-size: 26rpx;
+  color:#A4A4A4;
+}
+
+.jg_info{
+  padding: 20rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.jg_info .public_view{
+  padding: 0;
+  border: none;
+}
+.pulic_text{
+  overflow: hidden;
+  font-size: 30rpx;
+  color:#666666;
+  line-height: 42rpx;
+  margin-bottom: 40rpx;
+}
+.text_tit{
+  float: left;
+}
+.text_content{
+  float: right;
+  max-width: 420rpx;
+}
+.last_btn{
+  width: 526rpx;
+  margin: auto;
+}
+.last_btn button{
+  background: #E65E34;
+  color:#fff;
+  border-radius: 40rpx;
+}
