@@ -1,0 +1,214 @@
+/* pages/Electionrecord/Electionrecord.wxss */
+/* pages/Donationrecord/Donationrecord.wxss */
+.dona_infos{
+    height: 320rpx;
+    padding:60rpx 20rpx 55rpx 20rpx;
+    background: #df4334;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+.list_content{
+  padding-top: 340rpx;
+}
+.nav_tab_con{
+  width: 100%;
+  height: 130rpx;
+  background: #b22430;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.pub_nav_btn{
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  position: relative;
+  color:#fff;
+  padding: 18rpx 0 30rpx;
+}
+.pub_nav_btn .nums{
+  font-size: 40rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.pub_nav_btn .titles{
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+.pub_nav_btn .nums image{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+}
+.pub_nav_btn .add_icons{
+  margin-bottom: 15rpx;
+}
+.pub_nav_btn em{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom:17rpx solid;
+  border-right:50rpx solid transparent;
+  border-left:50rpx solid transparent;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+.dona_name{
+    height: 48rpx;
+    font-size: 34rpx;
+    margin-bottom: 12rpx;
+}
+.help_title{
+    float: left;
+    line-height: 48rpx;
+    color:#fff;
+    font-weight: bold;
+}
+.right_type{
+    float: left;
+    height: 34rpx;
+    line-height: 34rpx;
+    padding:0 15rpx;
+    font-size: 20rpx;
+    color:#666666;
+    background: #fff;
+    border-radius: 17rpx;
+    margin-left: 25rpx;
+    margin-top: 8rpx;
+}
+.right_type image{
+    width: 17rpx;
+    height: 20rpx;
+    float: left;
+    margin-top: 8rpx;
+    margin-right: 5rrpx;
+}
+.help_sm_tit{
+    height: 34rpx;
+    line-height: 34rpx;
+}
+.help_sm_tit image{
+    float: left;
+    width: 24rpx;
+    height: 30rpx;
+}
+.address_text{
+    float: left;
+    font-size: 24rpx;
+    color:#F5F5F5;
+}
+
+
+
+.look_more_btn{
+  float: right;
+  font-size: 24rpx;
+  color:#B1B1B1;
+  line-height: 50rpx;
+}
+.look_more_btn image{
+  float: right;
+  width: 18rpx;
+  height: 30rpx;
+  margin-top: 8rpx;
+  margin-left: 10rpx;
+}
+.done_cont{
+  padding:35rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  margin-bottom: 36rpx;
+}
+.user_cont{
+  padding-left: 94rpx;
+  padding-bottom: 18rpx;
+  position: relative;
+  height: 80rpx;
+  border-bottom: 1px solid #DADADA;
+}
+
+.user_cont .user_photo{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+.name_time{
+  float: left;
+  font-size: 0;
+}
+.name_time view{
+  font-size: 26rpx;
+  color:#483C38;
+  line-height: 36rpx;
+  margin-top: 10rpx;
+}
+.name_time label{
+  font-size: 22rpx;
+  color:#999999;
+}
+.user_cont .look_more_btn{
+  margin-top: 20rpx;
+}
+.wp_content{
+  padding-top: 20rpx;
+  overflow: hidden;
+}
+.wp_list{
+  width: 50%;
+  text-align: center;
+  float: left;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color:#4D4D4D;
+  line-height: 44rpx;
+}
+
+.no_messages {
+  padding:100rpx;
+}
+.no_messages image{
+  display: block;
+  width: 192rpx;
+  height: 104rpx;
+  margin:auto;
+  margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+  text-align: center;
+  font-size: 26rpx;
+  color: #747474;
+  margin-bottom: 50rpx;
+}
+
+
+.look_more_btn .isSuccess{
+  color: #E65E34;
+}
+.the_end{
+  background:#E0E0E0;
+  box-shadow: none;
+}

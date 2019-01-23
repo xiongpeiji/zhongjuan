@@ -1,0 +1,87 @@
+<!--pages/Donationrecord/Donationrecord.wxml-->
+<view class='container'>
+    <view class="dona_infos">
+        <view class="dona_left_cont">
+            <view class="dona_user_info">
+                <view class="dona_name">
+                    <label class="help_title">
+                        陕西省西安市
+                    </label>
+                    <view class="right_type">
+                        <image src="/images/yirenzheng@2x.png"></image>
+                        <label>希望小学</label>
+                    </view>
+                </view>
+                <view class="help_sm_tit">
+                    <image src="/images/renzheng_local@2x.png"></image>
+                    <label class="address_text">雁塔区天谷六路</label>
+                </view>
+            </view>
+        </view>
+
+        <view class='nav_tab_con'>
+          <view class='pub_nav_btn'>
+            <view class='nums'>13</view>
+            <view class='titles'>求捐记录</view>
+            <em></em>
+          </view>
+          <view class='pub_nav_btn' bindtap='ToXuanJuan'>
+            <view class='nums'>5</view>
+            <view class='titles'>选捐记录</view>
+          </view>
+          <view class='pub_nav_btn' bindtap='InitiateHelp'>
+            <view class='nums add_icons'>
+              <image src='/images/icon_tianjia.png'></image>
+            </view>
+            <view class='titles'>发起求捐</view>
+          </view>
+        </view>
+    </view>
+
+
+<view class='list_content'>
+       <!--捐助列表-->
+  <view class="help_content" hidden="{{count==0}}">
+        <view class="help_ul">
+            <view class="help_list">
+                <view class="my_help_list" hover-class="public_hover">
+                    我已经发布了{{count}}条求捐信息
+                </view>
+                <view class="help_discription" wx:for="{{list}}" wx:key="index">
+                    <em></em>
+                    <view class="help_date">
+                        <label>{{item.add_time}}</label>
+                        <view class="help_satus">
+                            <icon class="phone_satus" type="{{item.icon_type}}" size="{{12}}"/>
+                            <span style="color:{{item.color_name}}">{{item.status_name}}</span>
+                        </view>
+                    </view>
+                    <view class="help_sub_title">
+                        <label class="sub_title">{{item.title}}</label>
+                        <view class="edit_repeat" hidden="{{item.status!=2}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
+                          <view class="edit_repeat" hidden="{{item.status ==2 || item.status == 0}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goDonationDetail">去查看</view>
+                    </view>
+
+                </view>
+                
+            </view>
+        </view>
+    </view>
+
+
+  <!--没有消息-->
+    <view class="no_messages">
+      <image src="/images/no_dona.jpg"></image>
+      <view class="no_msg_text">暂无受捐记录！</view>
+    </view>
+
+</view>
+
+
+
+
+
+
+
+
+</view>

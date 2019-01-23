@@ -116,6 +116,7 @@
   box-shadow:0rpx 4rpx 6rpx 0rpx rgba(255,246,241,1);
 }
 .content_title{
+  position: relative;
   height: 72rpx;
   line-height: 72rpx;
   border-bottom: 1rpx solid #E9E9E9;
@@ -123,11 +124,28 @@
   color:#413E3E;
   margin: 0 30rpx;
   margin-bottom: 20rpx;
+}
+.content_title .item_tit{
+  width: 550rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+.item-flag{
+  position: absolute;
+  width: 90rpx;
+  height: 38rpx;
+  text-align: center;
+  line-height: 38rpx;
+  color:#fff;
+  font-size: 24rpx;
+  top: 0;
+  right: 0;
+  background: #FC6D57;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .content_pub{
   padding:0 30rpx;

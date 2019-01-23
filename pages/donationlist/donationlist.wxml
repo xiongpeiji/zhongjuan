@@ -27,7 +27,10 @@
           <view class='count_down'>{{item.status_name}}</view>
         </view>
         <view class='jz_content' bindtap="redirectLink" data-express="{{item.system_info_id}}" data-id="{{item.id}}" data-status="{{item.status}}">
-          <view class='content_title'>{{item.title}}</view>
+          <view class='content_title'>
+            <view class='item_tit'>{{item.title}}</view>
+            <view class='item-flag'>选捐</view>
+          </view>
           <view class='content_pub'>
             <view class='con_name'>爱心单号</view>
             <view class='con_dis'>{{item.donation_num}}</view>

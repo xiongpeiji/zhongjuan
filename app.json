@@ -42,7 +42,11 @@
     "pages/Dynamic/Dynamic",
     "pages/Screen/Screen",
     "pages/Donoragencies/Donoragencies",
-    "pages/test/testPage"
+    "pages/test/testPage",
+    "pages/Donationrecord/Donationrecord",
+    "pages/Electionrecord/Electionrecord",
+    "pages/Detailsofdonation/Detailsofdonation",
+    "pages/Finishsigning/Finishsigning"
   ],
   "window": {
     "backgroundTextStyle": "dark",

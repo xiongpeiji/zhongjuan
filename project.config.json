@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 35,
+			"current": 39,
 			"list": [
 				{
 					"id": -1,
@@ -252,6 +252,30 @@
 					"id": -1,
 					"name": "求捐信息管理",
 					"pathName": "pages/donormanagement/donormanagement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求捐记录",
+					"pathName": "pages/Donationrecord/Donationrecord",
+					"query": ""
+				},
+				{
+					"id": 37,
+					"name": "选捐记录",
+					"pathName": "pages/Electionrecord/Electionrecord",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选捐详情",
+					"pathName": "pages/Detailsofdonation/Detailsofdonation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选捐详情--完成签收",
+					"pathName": "pages/Finishsigning/Finishsigning",
 					"query": ""
 				}
 			]

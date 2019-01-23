@@ -66,10 +66,10 @@ Page({
       url: '../phoneauthentication/phoneauthentication'
     })
   },
-  //心得列表
+  //通知
   xindeList(e) {
     wx.navigateTo({
-      url: '../experiencelist/experiencelist'
+      url: '../message/message'
     })
   },
   //机构认证

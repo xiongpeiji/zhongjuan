@@ -1,0 +1,68 @@
+<!--pages/Finishsigning/Finishsigning.wxml-->
+<view class='container'>
+  <!--选捐物资-->
+  <view class='fed_detai_con'>
+    <view class='name_times'>
+      <image class='user_img' src='/images/icon_xindeshene.png'></image>
+      <label class='names'>安娜</label>
+      <label class='times'>今天13:20</label>
+    </view>
+    <view class='jz_wz'>选捐物资：</view>
+
+    <view class='wz_content'>
+
+      <view class='wz_details'>
+        <view class='wz_names'>图书</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+      <view class='wz_details'>
+        <view class='wz_names'>文具</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+      <view class='wz_details'>
+        <view class='wz_names'>图书</view>
+        <view class='wz_num'><label>100</label>本</view>
+      </view>
+
+    </view>
+
+    <!-- <view class='love_cont'>
+      <view class='ju_stutas_text'>捐赠成功</view>
+    </view> -->
+
+    <view class='love_cont'>
+      <view class='wz_names'>选捐机构</view>
+      <view class='wz_num'>选捐机构选捐机构选捐机构</view>
+    </view>
+
+    <view class='love_cont'>
+      <view class='wz_names'>总价值：<label class='money_text'>¥4489</label></view>
+      <!---已签收添加 stutas_end--->
+      <view class='wz_num stutas_text'>运输中</view>
+    </view>
+
+    <view class='love_cont'>
+      <view class='wz_names'>爱心单号</view>
+      <view class='wz_num'>4489</view>
+    </view>
+
+    <view class='love_cont'>
+      <view class='wz_names'>圆通快递</view>
+      <view class='wz_num'>123456789012345678</view>
+    </view>
+
+    <view class='detail_btns'>
+      <button class='detai_left' plain='{{true}}'>查看求捐详情</button>
+      <button class='detai_right' plain='{{true}}'>去反馈</button>
+    </view>
+
+    <!-- <view class='detail_btns'>
+      <button class='detai_center' plain='{{true}}'>查看反馈</button>
+    </view> -->
+
+  </view>
+
+
+
+</view>
+
