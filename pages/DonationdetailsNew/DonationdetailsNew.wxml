@@ -204,7 +204,7 @@
         </view>
         <!--显示更多-->
         <view class='show_more_list' hidden='{{moreShow}}' bindtap='showMore'>
-          <label>展开更多</label>
+          <label>查看更多</label>
           <image src='/images/sort_arr.png'></image>
         </view>
 
@@ -382,7 +382,7 @@
       </view>
       <!--显示更多-->
       <view class='show_more_list' hidden='{{moreJuanzhu}}' bindtap='showJuanzhu'>
-        <label>展开更多</label>
+        <label>查看更多</label>
         <image src='/images/sort_arr.png'></image>
       </view>
       

@@ -59,15 +59,17 @@ Page({
   },
   //展示更多
   showMore(e) {
-    this.setData({
-      moreShow: true,
-    })
+    //跳转到新页面
+    // this.setData({
+    //   moreShow: true,
+    // })
   },
   //展示更多二
   showJuanzhu() {
-    this.setData({
-      moreJuanzhu: true,
-    })
+    //跳转到新页面
+    // this.setData({
+    //   moreJuanzhu: true,
+    // })
   },
   //scrollTop
   scrollTop(e) {
