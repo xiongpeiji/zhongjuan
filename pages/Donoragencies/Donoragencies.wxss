@@ -58,7 +58,7 @@
 .delate_data{
   position: absolute;
   background: #fff;
-  padding: 71rpx 40rpx;
+  padding: 114rpx 40rpx;
   right: 0;
   top: 0rpx;
   z-index: 10;
@@ -119,6 +119,12 @@
 }
 .jg_info .public_view{
   padding: 0;
+  border: none;
+}
+.public_view button{
+  border:none;
+}
+.public_view button::after{
   border: none;
 }
 .pulic_text{

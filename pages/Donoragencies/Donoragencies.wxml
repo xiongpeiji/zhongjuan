@@ -1,10 +1,11 @@
 <!--pages/Donoragencies/Donoragencies.wxml-->
 <view class='container'>
+<form bindsubmit='saveData'>
   <view class='public_view'>
     <view class='title'><em></em>本次捐助</view>
-    <view class='right_btn' bindtap='addList'>㊉继续添加</view>
+    <button plain='{{true}}' class='right_btn' form-type='submit'>㊉继续添加</button>
   </view>
-  <block wx:for='{{sourceList}}'>
+  <block wx:for='{{sourceList}}' wx:key="{{index}}">
     <view class='add_box'>
       <view class='public_view'>
         <input type='text' maxlength='10' name='source_{{index}}' placeholder='请输入物资名称'></input>
@@ -12,7 +13,10 @@
       <view class='public_view'>
         <input type='number' maxlength='10' name='count_{{index}}' placeholder='请输入物资数量'></input>
       </view>
-      <view class='delate_data'>
+      <view class='public_view'>
+        <input type='text' maxlength='2' name='company_{{index}}' placeholder='请输入物资单位'></input>
+      </view>
+      <view class='delate_data' data-index="{{index}}" bindtap='delateArr'>
         <image src='/images/delete.png'></image>
       </view>
     </view>
@@ -57,5 +61,5 @@
       <button>完成</button>
     </view>
   </view>
-  
+  </form>
 </view>
