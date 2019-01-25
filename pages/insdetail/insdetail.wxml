@@ -58,7 +58,7 @@
                 <text>{{myOrgInfos.address}}</text>
             </view>
         </view>
-        <view class="jigou_photos" hidden='{{myOrgInfos.list==0}}'>
+        <view class="jigou_photos" hidden='{{type=="institution"}}'>
             <view class="infoFail">
                 求捐记录
             </view>

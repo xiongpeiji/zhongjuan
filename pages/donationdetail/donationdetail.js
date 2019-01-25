@@ -79,7 +79,7 @@ Page({
   showMaxing(e){
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../insdetail/insdetail?id='+id
+      url: '../insdetail/insdetail?id=' + id + '&type=donation'
     });
   },
   //关闭弹窗

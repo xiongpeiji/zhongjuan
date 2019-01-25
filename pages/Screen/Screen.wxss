@@ -59,6 +59,7 @@
   padding: 158rpx 30rpx 0;
   background: #fff;
   box-sizing: border-box;
+  margin-bottom: 20rpx;
 }
 .love_list{
   padding-bottom: 10rpx;

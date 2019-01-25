@@ -16,6 +16,7 @@ Page({
     instStatus: { // 1 认证中 2 已认证 3 认证失败 
       1: "认证中", 2: "已认证", 3: "认证失败"
     },
+    type:'donation',
   },
 
   /**
@@ -29,6 +30,7 @@ Page({
     });
     this.setData({
       id: options.id,
+      type:options.type
     })
     this.getData();
   },
@@ -38,9 +40,8 @@ Page({
     let params = { id: this.data.id};
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        console.log(res.data)
         this.setData({
-          myOrgInfos:res.data,
+          myOrgInfos: res.data,
           swiper_all: res.data.images.length,
         })
       }
