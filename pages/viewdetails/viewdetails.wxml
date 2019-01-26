@@ -57,4 +57,37 @@
       <view class='right_name'>已取消</view>
     </view>
   </view>
+
+  <!--物流信息-->
+  <view class="detail_content">
+  <view class='jz_wz'>物流详情：</view>
+        <view class="express_step">
+              <view class="step_text {{k == 0 ? 'express_success' :''}}">
+                  <em></em>
+                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
+              </view>
+
+              <view class="step_text">
+                  <em></em>
+                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
+              </view>
+
+              <view class="step_text">
+                  <em></em>
+                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
+              </view>
+
+              <view class="step_text">
+                  <em></em>
+                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
+              </view>
+        </view>
+
+        <view class='qs_btn'>
+          <button bindtap='singFn' plain="{{true}}">签收</button>
+        </view>
+  </view>
+
+
+
 </view>

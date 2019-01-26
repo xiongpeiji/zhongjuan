@@ -111,3 +111,80 @@
   height: 90rpx;
   line-height: 90rpx;
 }
+
+.detail_content{
+  background: #fff;
+  padding:25rpx;
+}
+.express_title{
+    padding-left: 75rpx;
+    height:50rpx;
+    position: relative;
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color:#181818;
+    margin-bottom: 30rpx;
+}
+.express_title image{
+    display: block;
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 50rpx;
+    height: 50rpx;
+}
+.express_Order{
+    line-height: 50rpx;
+    font-size: 24rpx;
+    color:#181818;
+}
+.express_step{
+    padding:20rpx 20rpx 30rpx 0;
+    border-left: 1px solid #d8d8d8;
+    margin-left: 20rpx;
+    position: relative;
+}
+.step_text{
+    font-size: 24rpx;
+    line-height: 30rpx;
+    /* height: 30rpx; */
+    margin-bottom: 40rpx;
+    padding-left: 30rpx;
+    color:#7a7a7a;
+    position: relative;
+}
+.step_text em{
+    display: block;
+    width: 15rpx;
+    height: 15rpx;
+    background: #d8d8d8;
+    border-radius: 50%;
+    position: absolute;
+    top:8rpx;
+    left: -7rpx;
+}
+.express_success{
+    color: #0e0e0e;
+}
+.express_success em{
+    width: 26rpx;
+    height: 26rpx;
+    background: #e86539;
+    left: -13rpx;
+    top: 2rpx;
+}
+
+.qs_btn{
+  width: 430rpx;
+  margin: auto;
+}
+.qs_btn button{
+  height: 76rpx;
+  border-radius:38rpx; 
+  line-height: 74rpx;
+  font-size: 32rpx;
+  border:1px solid #ccc;
+}
+.qs_btn button::after{
+  border: none;
+}
