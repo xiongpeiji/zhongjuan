@@ -49,6 +49,7 @@
 
   <!--物流信息-->
   <view class="detail_content">
+  <view class='jz_wz'>物流详情：</view>
         <view class="express_step">
               <view class="step_text {{k == 0 ? 'express_success' :''}}">
                   <em></em>
