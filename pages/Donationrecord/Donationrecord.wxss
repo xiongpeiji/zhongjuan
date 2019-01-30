@@ -57,8 +57,9 @@
   border-right:50rpx solid transparent;
   border-left:50rpx solid transparent;
   position: absolute;
-  bottom: 0;
+  bottom: -1rpx;
   left: 50%;
+  margin:0;
   margin-left: -50rpx;
 }
 
