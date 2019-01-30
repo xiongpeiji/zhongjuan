@@ -101,13 +101,13 @@ Page({
     let params = { token: app_data.token, feedback_id: this.data.id, from_user_id:this.data.from_user_id,content: this.data.content };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
+        this.getDetail();
         this.setData({
           content:'',
           from_user_id:0,
           placeholder: '输入评论…',
           inputFocus: false,
         })
-        this.getDetail({ refresh: false, is_first: true });
       }
     })
   },
