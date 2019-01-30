@@ -2,103 +2,56 @@
 <view class='container'>
   <view class='juanzhu'>
     <view class='jz_discript'>
-      <image class='img_tit' mode='aspectFill' src='/images/plant.jpg'></image>
-      <view class='title_text'>别让冬季阻碍了孩子们的生活质 量</view>
-      <view class='jg_name'>深圳爱心机构</view>
+      <image class='img_tit' mode='aspectFill' src='{{donation.image}}'></image>
+      <view class='title_text'>{{donation.title}}</view>
+      <view class='jg_name'>{{donation.institution_name}}</view>
       <view class='jg_type'>
         <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
-        <label>行政村</label>
+        <label>{{donation.type_name}}</label>
       </view>
     </view>
     <!---------已结束添加class  the_end --------->
-    <view class='jz_stutas'>
+    <!--<view class='jz_stutas'>
         <label>进行中</label>
         <image src='/images/icon_fanhui.png'></image>
-      </view>
+      </view>-->
   </view>
 
   <!--最新捐助-->
   <view class='new_jilu'>
     <view class='new_tit'>
-      最新捐助<label>(5)</label>
+      捐助记录<label>{{user_donation.length}}</label>
     </view>
-    <view class='look_more_btn' bindtap='lookAll'>
+    <!--<view class='look_more_btn' bindtap='lookAll'>
       查看全部<image src='/images/renzheng_jinru@2x.png'></image>
-    </view>
+    </view>-->
   </view>
 
 
-  <!--捐助列表-->
-  <view class='done_cont'>
+<view class='list_content'>
+       <!--捐助列表-->
+  <view class='done_cont' wx:for="{{user_donation}}" wx:key="{{index}}" bindtap='redirectLink' data-id="{{item.id}}">
     <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
+      <image class='user_photo' src='{{item.avatar}}'></image>
       <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
+        <view>{{item.username}}</view>
+        <label>{{item.time}}</label>
       </view>
 
       <view class='look_more_btn'>
-        <label>发起爱心</label><image src='/images/renzheng_jinru@2x.png'></image>
+        <label>{{item.status_name}}</label><image src='/images/renzheng_jinru@2x.png'></image>
       </view>
     </view>
 
     <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list' wx:for="{{item.material}}" wx:key="{{index}}" wx:for-item="row">{{row.name}} X {{row.num}} {{row.unit}}</view>
     </view>
 
   </view>
+</view>
 
-   <view class='done_cont'>
-    <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
-      <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
-      </view>
-
-      <view class='look_more_btn'>
-        <label>进行中</label><image src='/images/renzheng_jinru@2x.png'></image>
-      </view>
-    </view>
-
-    <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-    </view>
-
-  </view>
-
-  <view class='done_cont'>
-    <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
-      <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
-      </view>
-
-      <view class='look_more_btn'>
-        <label class='isSuccess'>已签收</label><image src='/images/renzheng_jinru@2x.png'></image>
-      </view>
-    </view>
-
-    <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-    </view>
-
-  </view>
-
-
-  <!--没有消息-->
-    <view class="no_messages">
+ <!--没有消息-->
+    <view class="no_messages"  hidden="{{user_donation.length > 0}}">
       <image src="/images/no_dona.jpg"></image>
       <view class="no_msg_text">暂无受捐记录！</view>
     </view>

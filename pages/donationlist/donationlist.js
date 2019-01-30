@@ -16,7 +16,8 @@ Page({
     date:'',
     list: {},
     isLast: false,
-    class_name: [ '','timeing','signed','ings','cancel'],
+    class_name: ['', 'timeing', 'ings', 'signed', 'cancel','feedback'],
+    status_name: ['', '已发起', '查看物流', '查看详情', '查看详情','查看详情'],
     no_msg:'',
   },
   /**
@@ -81,23 +82,19 @@ Page({
 
   redirectLink(e){
     let id = e.currentTarget.dataset.id;
-    let express_id = e.currentTarget.dataset.express;
     let status = e.currentTarget.dataset.status;
     switch (Number(status)){
       case 1:
         wx.navigateTo({
           url: '../inexpress/inexpress?id=' + id
         })
-      break;
-      case 2:
-        wx.navigateTo({
-          url: '../messageDetail/messageDetail?id=' + express_id
-        })
         break;
+      case 2:
       case 3:
       case 4:
+      case 5:
         wx.navigateTo({
-          url: '../viewdetails/viewdetails?id=' + id
+          url: '../Detailsofdonation/Detailsofdonation?id=' + id + '&type=user'
         })
         break;
     }

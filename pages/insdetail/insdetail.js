@@ -24,7 +24,6 @@ Page({
    */
   onLoad: function (options) {
     let id =options.id;
-    console.log(id)
     wx.setNavigationBarTitle({
       title: '机构资料'
     });
@@ -32,6 +31,11 @@ Page({
       id: options.id,
       type:options.type
     })
+    if (app_data.token) {
+      this.setData({
+        token: app_data.token
+      })
+    }
     this.getData();
   },
   //获取机构信息详情
@@ -77,8 +81,64 @@ Page({
   },
   //去捐助按钮
   Tohelp(e){
+    if (!this.data.token) {
+      this.showDialog();
+      return
+    }
+    let mobile_status = app_data.mobile;
+    if (!mobile_status) {
+      app.alert({ title: '请先进行手机认证！', time: 2000 });
+      setTimeout(() => {
+        wx.navigateTo({
+          url: '../phoneauthentication/phoneauthentication',
+        })
+      }, 2000);
+      return;
+    }
     wx.navigateTo({
-      url: '../Donoragencies/Donoragencies',
+      url: '../Donoragencies/Donoragencies?id='+this.data.id,
     })
-  }
+  },
+
+  onReady: function () {
+    //获得dialog组件
+    if (!this.data.token) {
+      this.setToken();
+    }
+    this.dialog = this.selectComponent("#dialog");
+  },
+
+  setToken() {
+    app.getToken().then((res) => {
+      this.setData({
+        token: res
+      });
+    })
+  },
+
+  showDialog: function () {
+    this.dialog.showDialog();
+  },
+
+  confirmEvent: function () {
+    this.dialog.hideDialog();
+  },
+
+  bindGetUserInfo: function (e) {
+    // 用户点击授权后，这里可以做一些登陆操作
+    let obj = {
+      encryptedData: e.detail.encryptedData,
+      iv: e.detail.iv,
+    }
+    app.wxLogin(obj).then((res) => {
+      if (res.code == 'success') {
+        app.getUserInfo();
+        this.setToken();
+        wx.showToast({
+          title: '授权登录成功',
+        })
+      }
+    });
+  },
+
 })

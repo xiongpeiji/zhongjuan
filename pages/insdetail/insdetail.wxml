@@ -1,4 +1,11 @@
 <!--pages/insdetail/insdetail.wxml-->
+<dialog id='dialog' 
+      title='微信授权' 
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <view class="container">
     <view class="my_organ_cont">
         <!--机构轮播图-->
@@ -72,5 +79,5 @@
             </view>
         </view>
     </view>
-    <button class='fixed_button' bindtap='Tohelp'>我要捐助</button>
+    <button class='fixed_button' bindtap='Tohelp'  hidden='{{type=="donation"}}'>我要捐助</button>
 </view>

@@ -1,64 +1,51 @@
 <!--pages/Dynamic/Dynamic.wxml-->
 <view class='container'>
-
-  <view class='feedback_content'>
-    </view>
-    <view class='feedback_ul'>
-
+    <view class='feedback_ul' wx:for="{{list}}" wx:key="index">
       <view class='feedback_li'>
           <view class='done_cont'>
             <view class='user_cont'>
-              <image class='user_photo' src='/images/express_icon.png'></image>
+              <image class='user_photo' src='{{item.avatar}}'></image>
               <view class='name_time'>
-                <view>安娜</view>
+                <view>{{item.username}}</view>
               </view>
-              <label class='center_stutas'>爱心已帮助 67 人</label>
+              <label class='center_stutas'>爱心已帮助 {{item.num}} 人</label>
             </view>
         </view>
-        <view class='feed_text_dis'>
-          <rich-text class='rich_text'>真的非常感谢寒冰先生在天寒地冻的时节给我们机构的学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</rich-text>
+        <view class='feed_text_dis' data-id="{{item.id}}" bindtap="showDetail">
+          <rich-text class='rich_text'>{{item.content}}</rich-text>
 
           <view class='imgs_content'>
-            <image class='img_lis' src='/images/plant.jpg'></image>
-            <image class='img_lis' src='/images/plant.jpg'></image>
-            <image class='img_lis' src='/images/plant.jpg'></image>
+             <image class='img_lis' mode='aspectFill' wx:for="{{item.image}}" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>
           </view>
           <!---->
           <view class="article_share">
             <view class="times float_left">
-              <span>2019-1-10</span>
+              <span>{{item.time}}</span>
             </view>
-            <view class="fabulous float_right" bindtap='showInput'>
+            <view class="fabulous float_right">
               <image src="/images/xiaoxi.png"></image>
-              <span>567</span>
+              <span>{{item.comment_num}}</span>
             </view>
             <view class="fabulous float_right">
               <image src="/images/dianzan.png"></image>
-              <span>567</span>
+              <span>{{item.up_num}}</span>
             </view>
           </view>
-          <view class='fk_title'>由深圳博雅游戏网络爱心机构反馈</view>
-          <view class='Comment_area'>
-              <view class='comment_lis'>
-                <label>圈圈：</label>哇，看着捐的东西还挺多的！
+          <view class='fk_title'>{{item.institution_name}}</view>
+          <view class='Comment_area' hidden='{{item.comment_list.length == 0}}'>
+              <view class='comment_lis' wx:for="{{item.comment_list}}" wx:key="index" wx:for-item="row">
+                <view hidden='{{row.from_user_id > 0}}' ><label>{{row.to_user_name}}：</label>{{row.content}}</view>
+                <view hidden='{{row.from_user_id == 0}}'><label>{{row.to_user_name}}：</label><label class='com_text'>回复</label><label>{{row.from_user_name}}：</label>{{row.content}}</view>
               </view>
-              <view class='comment_lis'>
-                <label>圈圈：</label><label class='com_text'>回复</label><label>小可爱：</label>
-                哇，看着捐的东西还挺多的！机构负责人的微信，沟通起来更方便
-              </view>
-
-              <view class='look_more_com'>查看更多评论</view>
           </view>
-
-
         </view>
       </view>
     </view>
-
-
-    <view class='maxing' hidden='{{!isHide}}' bindtap='hideInput'></view>
-    <view class='input_boxs' hidden='{{!isHide}}'>
-      <input type='text' focus='{{isHide}}' cursor-spacing="40rpx" placeholder='输入评论…'></input>
-      <button>发送</button>
+     <!--没有消息-->
+    <view class="no_messages" hidden="{{list.length > 0}}">
+      <image src="/images/no_dona.jpg"></image>
+      <view class="no_msg_text">暂无动态数据！</view>
     </view>
+    <!--暂无更多消息-->
+    <view class='no-more-message' hidden="{{list.length == 0}}">{{no_msg}}</view>
 </view>

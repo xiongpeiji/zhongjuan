@@ -1,81 +1,76 @@
 <!--pages/Detailsofdonation/Detailsofdonation.wxml-->
 <view class='container'>
+  <view class='juanzhu' hidden='{{user_donation.type == "institution"}}'>
+    <view class='jz_discript'>
+      <image class='img_tit' mode='aspectFill' src='{{donation.image}}'></image>
+      <view class='title_text'>{{donation.title}}</view>
+      <view class='jg_name'>{{institution.name}}</view>
+      <view class='jg_type'>
+        <image class='type_icon' src='/images/icon_yirenzheng.png'></image>
+        <label>{{donation.type_name}}</label>
+      </view>
+    </view>
+    <!--<view class='jz_stutas'>
+        <label>进行中</label>
+        <image src='/images/icon_fanhui.png'></image>
+      </view>-->
+  </view>
   <!--选捐详情-->
   <view class='fed_detai_con'>
     <view class='name_times'>
-      <image class='user_img' src='/images/icon_xindeshene.png'></image>
-      <label class='names'>安娜</label>
-      <label class='times'>今天13:20</label>
+      <image class='user_img' src='{{user_donation.avatar}}'></image>
+      <label class='names'>{{user_donation.username}}</label>
+      <label class='times'>{{user_donation.time}}</label>
     </view>
-    <view class='jz_wz'>选捐物资：</view>
+    <view class='jz_wz'>捐赠物资：</view>
 
     <view class='wz_content'>
      
-      <view class='wz_details'>
-        <view class='wz_names'>图书</view>
-        <view class='wz_num'><label>100</label>本</view>
+      <view class='wz_details'  wx:for="{{material}}" wx:key="{{index}}" >
+        <view class='wz_names'>{{item.name}}</view>
+        <view class='wz_num'><label>{{item.num}}</label>{{item.unit}}</view>
       </view>
-      <view class='wz_details'>
-        <view class='wz_names'>文具</view>
-        <view class='wz_num'><label>100</label>本</view>
-      </view>
-      <view class='wz_details'>
-        <view class='wz_names'>图书</view>
-        <view class='wz_num'><label>100</label>本</view>
-      </view>
-
     </view>
     
     <view class='love_cont'>
-      <view class='wz_names'>选捐机构</view>
-      <view class='wz_num'>西安市人民政府</view>
+      <view class='wz_names'>求捐机构</view>
+      <view class='wz_num'>{{institution.name}}</view>
     </view>
     <view class='love_cont'>
-      <view class='wz_names'>总价值：<label class='money_text'>¥4489</label></view>
-      <view class='wz_num stutas_text'>运输中</view>
+      <view class='wz_names'>总价值：<label class='money_text'>¥{{user_donation.money}}</label></view>
+      <view class='wz_num stutas_text'>{{status_name[user_donation.status]}}</view>
     </view>
 
     <view class='love_cont'>
       <view class='wz_names'>爱心单号</view>
-      <view class='wz_num'>4489</view>
+      <view class='wz_num'>{{user_donation.donation_num}}</view>
     </view>
 
-    <view class='love_cont'>
-      <view class='wz_names'>圆通快递</view>
-      <view class='wz_num'>123456789012345678</view>
+    <view class='love_cont' hidden='{{user_donation.status == 1 || user_donation.status == 4}}'>
+      <view class='wz_names'>{{user_donation.express_name}}</view>
+      <view class='wz_num'>{{user_donation.express_num}}</view>
     </view>
 
   </view>
 
   <!--物流信息-->
-  <view class="detail_content">
+  <view class="detail_content" hidden='{{user_donation.status != 2}}'>
   <view class='jz_wz'>物流详情：</view>
         <view class="express_step">
-              <view class="step_text {{k == 0 ? 'express_success' :''}}">
+            <view class="step_text {{k == 0 ? 'express_success' :''}}" wx:for="{{user_donation.express_info}}" wx:key="{{index}}" wx:for-index="k" wx:for-item="express">
                   <em></em>
-                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
+                  {{express.context}}
               </view>
-
-              <view class="step_text">
-                  <em></em>
-                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
-              </view>
-
-              <view class="step_text">
-                  <em></em>
-                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
-              </view>
-
-              <view class="step_text">
-                  <em></em>
-                  [菜鸟驿站]您已在西安软件公寓店完成取件，感谢使用菜鸟驿站，期待再次为您服务。
-              </view>
-        </view>
-
-        <view class='qs_btn'>
-          <button bindtap='singFn' plain="{{true}}">签收</button>
         </view>
   </view>
-
+  <view hidden='{{type == "user"}}'>
+    <view class='qs_btn' hidden='{{user_donation.status != 3}}'>
+      <button bindtap='feedback' plain="{{true}}" data-id="{{user_donation.id}}">去反馈</button>
+    </view>
+    <view class='qs_btn' hidden='{{user_donation.status != 5}}'>
+      <button bindtap='toFeedback' plain="{{true}}" data-id="{{user_donation.id}}">查看反馈</button>
+    </view>
+  </view>
+  
 
 </view>

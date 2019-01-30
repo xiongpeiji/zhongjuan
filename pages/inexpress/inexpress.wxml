@@ -1,12 +1,12 @@
 <!--pages/inexpress/inexpress.wxml-->
 <view class='container'>
-  <!-- <view class='send_love'>
+  <view class='send_love' hidden='{{user_donation.type == "donation"}}'>
     <image class='stutas_img' src='/images/love.png'></image>
     <view class='stutas_text'>爱心发起成功！</view>
     <view class='tips'>您的物流单号还没有填写哦~</view>
-  </view> -->
+  </view>
 
-  <view class='juanzhu'>
+  <view class='juanzhu'  hidden='{{user_donation.type == "institution"}}'>
     <view class='jz_discript'>
       <image class='img_tit' mode='aspectFill' src='{{donation.image}}'></image>
       <view class='title_text'>{{donation.title}}</view>
@@ -16,10 +16,10 @@
         <label>{{donation.type_name}}</label>
       </view>
     </view>
-    <view class='jz_stutas'>
+    <!--<view class='jz_stutas'>
         <label>进行中</label>
         <image src='/images/icon_fanhui.png'></image>
-      </view>
+      </view>-->
   </view>
 
   <!--捐赠物资详情-->
@@ -104,16 +104,4 @@
   <view class="btn_box">
       <button class="send_data_btn" disabled='{{disabled}}' bindtap='submit'>确定</button>
   </view>
-
-  
-
-
-
-
-
-
-
-
-
-
 </view>

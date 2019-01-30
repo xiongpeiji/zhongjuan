@@ -14,6 +14,7 @@ Page({
     avatar: '',
     mobile_status:0,
     institution_status:0,
+    msg_count:0,
     instStatus:{ ////0 未认证 1 认证中 2 已认证 3 认证失败 
       0:"未认证",1:"认证中",2:"已认证",3:"认证失败",4:"待完善资料"
     },
@@ -30,7 +31,6 @@ Page({
       title: '我的'
     });
     this.checkUser();
-    app.setTabBarMsg();
   },
   checkUser() {
     let token = app_data.token;
@@ -48,6 +48,7 @@ Page({
                 mobile:res.data.mobile,
                 institution_status:res.data.institution_status,
                 mobile_status:res.data.mobile_status,
+                msg_count:res.data.msg_count
               });
               wx.setStorageSync('user_info', res.data);
             }
@@ -106,7 +107,7 @@ Page({
   //求捐信息管理
   helpMsgDetal(e) {
     wx.navigateTo({
-      url: '../donormanagement/donormanagement'
+      url: '../Donationrecord/Donationrecord'
     })
   },
   //授权登录

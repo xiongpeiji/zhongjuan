@@ -1,43 +1,55 @@
-<!--pages/Feedbackdetails/Feedbackdetails.wxml-->
+<!--pages/Dynamic/Dynamic.wxml-->
+<dialog id='dialog' 
+      title='微信授权' 
+      content='小程序需要您授权才能提供更好的服务' 
+      confirmText='立即授权'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>
 <view class='container'>
-  <!--捐赠反馈-去看看-详情-->
-  <view class='fed_detai_con'>
-    <view class='name_times'>
-      <image class='user_img' src='/images/icon_xindeshene.png'></image>
-      <label class='names'>安娜</label>
-      <label class='times'>今天13:20</label>
-    </view>
-    <view class='jz_wz'>捐助物资：</view>
+    <view class='feedback_ul'>
+      <view class='feedback_li'>
+          <view class='done_cont'>
+            <view class='user_cont'>
+              <image class='user_photo' src='{{info.avatar}}'></image>
+              <view class='name_time'>
+                <view>{{info.username}}</view>
+              </view>
+              <label class='center_stutas'>爱心已帮助 {{info.num}} 人</label>
+            </view>
+        </view>
+        <view class='feed_text_dis'>
+          <rich-text class='rich_text'>{{info.content}}</rich-text>
 
-    <view class='wz_content'>
-
-      <view class='wz_details'>
-        <view class='wz_names'>图书</view>
-        <view class='wz_num'><label>100</label>本</view>
+          <view class='imgs_content'>
+            <image class='img_lis' mode='aspectFill' wx:for="{{info.image}}" bindtap="showImages" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>
+          </view>
+          <!---->
+          <view class="article_share">
+            <view class="times float_left">
+              <span>{{info.time}}</span>
+            </view>
+            <view class="fabulous float_right" bindtap="setFrom" data-id="0" data-name="输入评论…">
+              <image src="/images/xiaoxi.png"></image>
+              <span>{{info.comment_num}}</span>
+            </view>
+            <view class="fabulous float_right" bindtap='feedbackUp'>
+              <image src="{{is_up > 0 ? '/images/dianzan_active.png' : '/images/dianzan.png'}}"></image>
+              <span>{{up_num}}</span>
+            </view>
+          </view>
+          <view class='fk_title'>{{info.institution_name}}</view>
+          <view class='Comment_area' hidden='{{info.comment_list.length == 0}}'>
+              <view class='comment_lis' wx:for="{{info.comment_list}}" wx:key="{{index}}">
+                <view hidden='{{item.from_user_id > 0}}' bindtap="setFrom" data-id="{{item.to_user_id}}" data-name="回复{{item.to_user_name}}…"><label>{{item.to_user_name}}：</label>{{item.content}}</view>
+                <view hidden='{{item.from_user_id == 0}}' bindtap="setFrom" data-id="{{item.to_user_id}}" data-name="回复{{item.to_user_name}}…"><label>{{item.to_user_name}}：</label><label class='com_text'>回复</label><label>{{item.from_user_name}}：</label>{{item.content}}</view>
+              </view>
+          </view>
+        </view>
       </view>
-      <view class='wz_details'>
-        <view class='wz_names'>文具</view>
-        <view class='wz_num'><label>100</label>本</view>
-      </view>
-      <view class='wz_details'>
-        <view class='wz_names'>图书</view>
-        <view class='wz_num'><label>100</label>本</view>
-      </view>
-
     </view>
-
-    <view class='love_cont'>
-      <view class='wz_names'>爱心单号</view>
-      <view class='wz_num'>4489</view>
+    <view class='input_boxs'>
+      <input type='text' cursor-spacing="40rpx" placeholder='{{placeholder}}' bindinput='setContent' focus='{{inputFocus}}' value='{{content}}'></input>
+      <button bindtap='comment'>发送</button>
     </view>
-
-    <view class='order_stutas'>
-      <view class='order_color'>已发起</view>
-      <view class='money_cont'>
-        总价值<label>¥4499</label>
-      </view>
-    </view>
-
-  </view>
-
 </view>

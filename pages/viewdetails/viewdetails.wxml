@@ -11,10 +11,10 @@
         <label>{{donation.type_name}}</label>
       </view>
     </view>
-    <view class='jz_stutas'>
+    <!--<view class='jz_stutas'>
         <label>进行中</label>
         <image src='/images/icon_fanhui.png'></image>
-      </view>
+      </view>-->
   </view>
 
   <view class='juanzhu'>
@@ -48,7 +48,6 @@
       <view class='left_name'>签收机构</view>
       <view class='right_name'>{{institution.name}}</view>
     </view>
-
   </view>
 
    <view class='juanzhu' hidden='{{user_donation.status == 3}}'>

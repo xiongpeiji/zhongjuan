@@ -1,16 +1,23 @@
 // pages/Donoragencies/Donoragencies.js
+const app = getApp();
+const app_data = app.globalData;
+let http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    id:0,
+    info:{},
     isFocus: false,
     sourceList: [{
       name: '',
-      count: '',
-      company: ''
-    }]
+      num: '',
+      unit: ''
+    }],
+    money:'',
+    remark:'',
   },
 
   /**
@@ -19,6 +26,25 @@ Page({
   onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: '捐助机构'
+    });
+    app.checkLogin();
+    this.setData({
+      id: options.id,
+      mobile:app_data.mobile
+    })
+    this.getData();
+  },
+
+  //获取机构信息详情
+  getData() {
+    let url = app_data.base + 'Index/institutionDetail';
+    let params = { id: this.data.id };
+    http.Get({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        this.setData({
+          info: res.data,
+        })
+      }
     });
   },
   //手机获得焦点
@@ -31,34 +57,69 @@ Page({
   addList() {
     let sourceList = this.data.sourceList;
     let lastArr = sourceList.length;
-    if (!sourceList[lastArr - 1].name || !sourceList[lastArr - 1].count || !sourceList[lastArr - 1].company) {
+    if (!sourceList[lastArr - 1].name || !sourceList[lastArr - 1].num || !sourceList[lastArr - 1].unit) {
       return;
     }
     sourceList.push({
       name: '',
-      count: '',
-      company: ''
+      num: '',
+      unit: ''
     })
     this.setData({
       sourceList: sourceList
     })
   },
-  //保存数据
-  saveData(e) {
-    let value = e.detail.value,
-      sourceList = this.data.sourceList,
-      len = sourceList.length,
-      maxIndex = len - 1;
-    if (value[`company_${maxIndex}`] && value[`count_${maxIndex}`] && value[`source_${maxIndex}`]) {
-      sourceList.push({
-        name: '',
-        count: '',
-        company: ''
-      });
-      this.setData({
-        sourceList: sourceList
-      })
+
+  setValue(e){
+    let value = e.detail.value;
+    let key = e.target.dataset.key;
+    let index = e.target.dataset.index;
+    let list = this.data.sourceList;
+    if(key == '1'){
+      list[index].num = value;
+    }else if(key =='2'){
+      list[index].unit = value;
+    }else{
+      list[index].name = value;
     }
+    this.setData({
+      sourceList:list
+    })
+  },
+  saveData(e){
+    let value = e.detail.value;
+    let url = app_data.base + 'Donation/saveSelectUserDonationFirst';
+    let material = JSON.stringify(this.data.sourceList);
+    let params = {
+      id: this.data.id,
+      token: app_data.token,
+      material_content: material,
+      mobile: value.mobile, //手机号码
+      money:value.money,
+      remark:value.remark,
+    };
+    http.Post({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        wx.navigateTo({
+          url: '/pages/perfectinformation/perfectinformation?id=' + res.data.id + '&donation_num=' + res.data.donation_num,
+        })
+      }
+    });
+  },
+
+  /**
+  * 生命周期函数--监听页面隐藏
+  */
+  onHide: function () {
+    this.setData({
+      money: '',
+      remark: '',
+      sourceList: [{
+        name: '',
+        num: '',
+        unit: ''
+      }],
+    })
   },
   //删除当前
   delateArr(e) {
@@ -72,52 +133,11 @@ Page({
       sourceList: sourceList
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
 
   /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+ * 用户点击右上角分享
+ */
+  onShareAppMessage: function () {
+    return app_data.share;
   }
 })

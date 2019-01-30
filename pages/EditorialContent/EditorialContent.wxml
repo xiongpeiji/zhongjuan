@@ -3,8 +3,8 @@
   <view class='edit_content'>
 
     <view class='edit_img'>
-      <image class='user_img' src='/images/express_icon.png'></image>
-      <label>寒冰</label>
+      <image class='user_img' src='{{user_info.avatar}}'></image>
+      <label>{{user_info.username}}</label>
 
       <view class='right_btn_text'>
         <label>爱心物资您已签收！</label>
@@ -15,7 +15,7 @@
     <view class='love_input'>
       <image class='love_bg' src='/images/love_bg.png'></image>
       <label class='left_t'>●已有</label>
-      <input type='number' placeholder='请输入分发人数'></input>
+      <input type='number' placeholder='请输入分发人数' bindinput='setNum' value='{{num}}'></input>
       <label class='right_t'>人收到爱心</label>
     </view>
   </view>
@@ -26,19 +26,19 @@
       <image src='/images/qianbi.png'></image>
       <label>编辑反馈信息…</label>
     </view>
-    <textarea placeholder='编辑反馈信息…' auto-height  maxlength="10000" value='' />
+    <textarea placeholder='编辑反馈信息…' auto-height  maxlength="10000" bindinput='setContent' value='{{content}}' />
   </view>
 
   <view class='photo_box'>
 
     <view class="express_box">
-        <view class="express-img" hidden='{{true}}'>
-            <image class="express_bg" src="/images/renzheng_shangchuan@2x.png" mode='aspectFill'></image>
-            <view class="delet-express">
+        <view class="express-img" wx:for="{{images}}"  wx:key="{{index}}" >
+            <image class="express_bg" src="{{item}}" mode='aspectFill'></image>
+            <view class="delet-express"  bindtap="deleteImg"  data-index="{{index}}">
                 <image src="/images/del-img.png"></image>
             </view>
         </view>
-        <view class="express-img">
+        <view class="express-img" hidden="{{images.length>=9}}" bindtap="uploadImg">
           <image class="img_bg" src="/images/renzheng_shangchuan@2x.png"></image>
         </view>
         
@@ -46,7 +46,7 @@
   </view>
 
   <view class='fabu_btn'>
-    <button>发布</button>
+    <button bindtap='sendData'>发布</button>
   </view>
 
 

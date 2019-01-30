@@ -65,9 +65,6 @@ Page({
     this.setInit();
     this.getData({ refresh: false, is_first: true });
   },
-  onShow(){
-    app.setTabBarMsg()
-  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -223,7 +220,6 @@ Page({
     });
     this.setInit();
     this.getData({ refresh: true, is_first: true });
-    app.setTabBarMsg()
   },
   
 

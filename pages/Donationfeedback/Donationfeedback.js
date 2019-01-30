@@ -1,11 +1,16 @@
-// pages/Donationfeedback/Donationfeedback.js
+// pages/Donationrecord/Donationrecord.js
+const app = getApp();
+const app_data = app.globalData;
+const http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    donation_id:0,
+    user_donation: {},
+    donation: {}
   },
 
   /**
@@ -15,59 +20,39 @@ Page({
     wx.setNavigationBarTitle({
       title: '受捐反馈'
     });
-  },
-  //查看全部
-  lookAll(e){
-    wx.navigateTo({
-      url: '../Latestcontributions/Latestcontributions'
+    this.setData({
+      donation_id: options.id,
     });
+    app.checkLogin();
+    this.getData();
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //获取我的求捐列表
+  getData(obj) {
+    let url = app_data.base + 'User/getDonationDetail';
+    let params = {
+      token: app_data.token,
+      id:this.data.donation_id,
+    }
+    http.Get({ url: url, params: params}).then((res) => {
+      if (res.code == 'success') {
+        this.setData({
+          donation: res.data.donation,
+          user_donation: res.data.user_donation
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  redirectLink(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../Detailsofdonation/Detailsofdonation?id=' + id + '&type=donation'
+    })
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return app_data.share;
   }
 })

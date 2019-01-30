@@ -136,7 +136,7 @@ Page({
           app.alert({title:res.msg});
           setTimeout(()=>{
             wx.navigateTo({
-              url: '../donormanagement/donormanagement'
+              url: '../Donationrecord/Donationrecord'
             })
             this.setData({
               images: [],

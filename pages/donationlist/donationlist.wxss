@@ -199,6 +199,10 @@
 .cancel .count_down{
   background:linear-gradient(225deg,#413E3E 0%,#666666 100%);
 }
+.feedback .count_down{
+  background:linear-gradient(225deg,#333333 0%,#999999 100%);
+}
+
 
 
 .no_messages{

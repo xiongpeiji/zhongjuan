@@ -1,11 +1,20 @@
 // pages/Detailsofdonation/Detailsofdonation.js
+const app = getApp();
+const app_data = app.globalData;
+const http = require("../../utils/http.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id:0,
+    type:'user',
+    institution: {},
+    donation: {},
+    user_donation: {},
+    material: {},
+    status_name: ['', '已发起', '运输中', '已签收', '已取消','已反馈'],
   },
 
   /**
@@ -13,56 +22,58 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '选捐详情'
+      title: '捐赠详情'
+    });
+    app.checkLogin();
+    this.setData({
+      id: options.id,
+      type:options.type
+    });
+    this.getData();
+  },
+  //获取我要求捐信息
+  getData(e) {
+    let url = app_data.base + 'Donation/getUserDonationDetail';
+    let params = { id: this.data.id, token: app_data.token };
+    http.Get({ url: url, params: params }).then((res) => {
+      if (res.code == 'success') {
+        this.setData({
+          institution: res.data.institution,
+          donation: res.data.donation,
+          user_donation: res.data.user_donation,
+          material: res.data.material,
+        })
+      }
     });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  feedback(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../EditorialContent/EditorialContent?user_donation_id=' + id
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  toFeedback(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../Feedbackdetails/Feedbackdetails?user_donation_id=' + id
+    })
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return app_data.share;
+  },
+  //ios下拉问题
+  onPageScroll: function (e) {
+    if (e.scrollTop < 0) {
+      wx.pageScrollTo({
+        scrollTop: 0
+      })
+    }
+  }  
 
-  }
 })

@@ -46,13 +46,17 @@ Page({
         let type_name = "类型状态";
         let content_name = "消息信息";
         let cate = 'check';
-        if(res.data.type != 'user_donation'){
+        if(res.data.type != 'user_donation' && res.data.type != 'user_select_institution'){
           if(res.data.data.status == 1 || res.data.data.status == 2){
             button_status = false;
           }
         }
-        if(res.data.type == 'user_donation'){
-          type_name = "求捐信息";
+        if (res.data.type == 'user_select_institution') {
+          type_name = "用户选捐";
+          content_name = "捐赠信息";
+          cate = 'donation';
+        }else if(res.data.type == 'user_donation'){
+          type_name = "用户捐赠";
           content_name = "捐赠信息";
           cate = 'donation';
         }else if(res.data.type.search('comment') != -1){

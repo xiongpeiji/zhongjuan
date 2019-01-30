@@ -13,8 +13,8 @@
 
   <view class='screen_con'>
 
-      <view class='love_list'  wx:for="{{list}}"  wx:key="{{index}}" wx:for-index="key" data-key="{{key}}" data-id="{{item.id}}" bindtap="showDetail">
-        <view class='love_title'>
+      <view class='love_list'  wx:for="{{list}}"  wx:key="{{index}}" wx:for-index="key" >
+        <view class='love_title' data-key="{{key}}" data-id="{{item.id}}" bindtap="showDetail">
           <label>{{item.name}}</label>
           <image src='/images/renzheng_jinru@2x.png'></image>
         </view>
@@ -40,6 +40,7 @@
       <image src="/images/no_dona.jpg"></image>
       <view class="no_msg_text">暂无更多数据！</view>
     </view>
-
+    <!--暂无更多消息-->
+    <view class='no-more-message' hidden="{{list.length==0}}">{{no_msg}}</view>
 
 </view>

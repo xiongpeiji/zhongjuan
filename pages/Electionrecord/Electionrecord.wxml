@@ -3,34 +3,34 @@
 <view class='container'>
     <view class="dona_infos">
         <view class="dona_left_cont">
-            <view class="dona_user_info">
+           <view class="dona_user_info">
                 <view class="dona_name">
                     <label class="help_title">
-                        陕西省西安市
+                        {{institution.name}}
                     </label>
                     <view class="right_type">
                         <image src="/images/yirenzheng@2x.png"></image>
-                        <label>希望小学</label>
+                        <label>{{institution.type_name}}</label>
                     </view>
                 </view>
                 <view class="help_sm_tit">
                     <image src="/images/renzheng_local@2x.png"></image>
-                    <label class="address_text">雁塔区天谷六路</label>
+                    <label class="address_text">{{institution.address}}</label>
                 </view>
             </view>
         </view>
 
         <view class='nav_tab_con'>
           <view class='pub_nav_btn' bindtap="ToQiuJuan">
-            <view class='nums'>13</view>
+            <view class='nums'>{{donation_count}}</view>
             <view class='titles'>求捐记录</view>
           </view>
           <view class='pub_nav_btn'>
-            <view class='nums'>5</view>
+            <view class='nums'>{{institution_count}}</view>
             <view class='titles'>选捐记录</view>
             <em></em>
           </view>
-          <view class='pub_nav_btn' bindtap='InitiateHelp'>
+          <view class='pub_nav_btn' data-id="0" bindtap='InitiateHelp'>
             <view class='nums add_icons'>
               <image src='/images/icon_tianjia.png'></image>
             </view>
@@ -42,83 +42,32 @@
 
 <view class='list_content'>
        <!--捐助列表-->
-  <view class='done_cont'>
+  <view class='done_cont' wx:for="{{list}}" wx:key="{{index}}" bindtap='redirectLink' data-id="{{item.id}}">
     <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
+      <image class='user_photo' src='{{item.avatar}}'></image>
       <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
+        <view>{{item.username}}</view>
+        <label>{{item.time}}</label>
       </view>
 
       <view class='look_more_btn'>
-        <label>发起爱心</label><image src='/images/renzheng_jinru@2x.png'></image>
+        <label>{{item.status_name}}</label><image src='/images/renzheng_jinru@2x.png'></image>
       </view>
     </view>
 
     <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
+      <view class='wp_list' wx:for="{{item.material}}" wx:key="{{index}}" wx:for-item="row">{{row.name}} X {{row.num}} {{row.unit}}</view>
     </view>
 
   </view>
+</view>
 
-   <view class='done_cont'>
-    <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
-      <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
-      </view>
-
-      <view class='look_more_btn'>
-        <label>进行中</label><image src='/images/renzheng_jinru@2x.png'></image>
-      </view>
-    </view>
-
-    <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-    </view>
-
-  </view>
-
-  <view class='done_cont'>
-    <view class='user_cont'>
-      <image class='user_photo' src='/images/express_icon.png'></image>
-      <view class='name_time'>
-        <view>安娜</view>
-        <label>今天13:20</label>
-      </view>
-
-      <view class='look_more_btn'>
-        <label class='isSuccess'>已签收</label><image src='/images/renzheng_jinru@2x.png'></image>
-      </view>
-    </view>
-
-    <view class='wp_content'>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>图书 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-      <view class='wp_list'>打印机 X 10 本</view>
-    </view>
-
-  </view>
-
-
-  <!--没有消息-->
-    <view class="no_messages">
+ <!--没有消息-->
+    <view class="no_messages"  hidden="{{institution_count > 0}}">
       <image src="/images/no_dona.jpg"></image>
       <view class="no_msg_text">暂无受捐记录！</view>
     </view>
-
-</view>
-
-
+    <view class='no-more-message' hidden="{{institution_count==0}}">{{no_msg}}</view>
 
 
 

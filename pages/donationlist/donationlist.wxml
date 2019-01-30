@@ -26,18 +26,21 @@
           <view class='data_con'>{{item.time}}</view>
           <view class='count_down'>{{item.status_name}}</view>
         </view>
-        <view class='jz_content' bindtap="redirectLink" data-express="{{item.system_info_id}}" data-id="{{item.id}}" data-status="{{item.status}}">
+        <view class='jz_content' bindtap="redirectLink" data-express="{{item.system_info_id}}" data-id="{{item.id}}" data-type="{{item.type}}" data-status="{{item.status}}">
           <view class='content_title'>
             <view class='item_tit'>{{item.title}}</view>
-            <view class='item-flag'>选捐</view>
+            <view class='item-flag' hidden='{{item.type == "donation"}}'>选捐</view>
           </view>
           <view class='content_pub'>
             <view class='con_name'>爱心单号</view>
             <view class='con_dis'>{{item.donation_num}}</view>
           </view>
-          <view class='content_pub'>
+          <view class='content_pub' hidden='{{item.type == "institution"}}'>
             <view class='con_name'>接受机构</view>
             <view class='con_dis'>{{item.institution_name}}</view>
+          </view>
+           <view class='content_pub' hidden='{{item.type == "donation"}}'>
+            <view class='con_name'>选捐物资：</view>
           </view>
           <view class='content_pub'wx:for="{{item.material_data}}" wx:key="index" wx:for-item="row">
             <view class='con_name'>{{row.material_name}}</view>
@@ -51,7 +54,7 @@
               总价值 ¥ <label>{{item.money}}</label>
             </view>
             <view class='content_stutas'>
-              查看详情
+               {{status_name[item.status]}}
             </view>
           </view>
         </view>

@@ -131,7 +131,7 @@
 .Comment_area{
   position: relative;
   background: #F3F3F3;
-  padding: 35rpx 10rpx 90rpx 25rpx;
+  padding: 35rpx 10rpx 35rpx 25rpx;
 }
 .comment_lis{
   font-size: 26rpx;
@@ -202,4 +202,32 @@
   background: #E4572E;
   font-size: 30rpx;
   float: right;
+}
+
+.no_messages {
+  padding:100rpx;
+}
+.no_messages image{
+  display: block;
+  width: 192rpx;
+  height: 104rpx;
+  margin:auto;
+  margin-bottom: 40rpx;
+}
+.no_messages .no_msg_text{
+  text-align: center;
+  font-size: 26rpx;
+  color: #747474;
+  margin-bottom: 50rpx;
+}
+.no_messages .go_lists{
+  width: 258rpx;
+  height: 68rpx;
+  border:1px solid #D7273D;
+  border-radius: 35rpx;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #D82A3C;
+  margin: auto;
 }

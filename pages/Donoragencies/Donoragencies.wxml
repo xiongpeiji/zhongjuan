@@ -3,18 +3,18 @@
 <form bindsubmit='saveData'>
   <view class='public_view'>
     <view class='title'><em></em>本次捐助</view>
-    <button plain='{{true}}' class='right_btn' form-type='submit'>㊉继续添加</button>
+    <button plain='{{true}}' class='right_btn' bindtap='addList'>㊉继续添加</button>
   </view>
   <block wx:for='{{sourceList}}' wx:key="{{index}}">
     <view class='add_box'>
       <view class='public_view'>
-        <input type='text' maxlength='10' name='source_{{index}}' placeholder='请输入物资名称'></input>
+        <input type='text' maxlength='10' name='name_{{index}}' value='{{item.name}}' bindinput='setValue' data-key="0" data-index="{{index}}" placeholder='请输入物资名称'></input>
       </view>
       <view class='public_view'>
-        <input type='number' maxlength='10' name='count_{{index}}' placeholder='请输入物资数量'></input>
+        <input type='number' maxlength='5' name='num_{{index}}' value='{{item.num}}' bindinput='setValue' data-key="1" data-index="{{index}}" placeholder='请输入物资数量'></input>
       </view>
       <view class='public_view'>
-        <input type='text' maxlength='2' name='company_{{index}}' placeholder='请输入物资单位'></input>
+        <input type='text' maxlength='2' name='unit_{{index}}' value='{{item.unit}}' bindinput='setValue' data-key="2" data-index="{{index}}" placeholder='请输入物资单位'></input>
       </view>
       <view class='delate_data' data-index="{{index}}" bindtap='delateArr'>
         <image src='/images/delete.png'></image>
@@ -23,17 +23,17 @@
   </block>
   <view class='public_view money_box'>
       <view class='title_text'>捐助物资总价值</view>
-      <input class='wz_moneys' type='number' maxlength='5' placeholder='请输入物资数估值'></input>
+      <input class='wz_moneys' type='number'name="money" value='{{money}}' maxlength='5' placeholder='请输入物资数估值'></input>
   </view>
 
   <view class='Contact_box'>
     <view class='phone_box'>
       <view class='phone_text'>联系方式：</view>
-      <input type='number' focus='{{isFocus}}' value='13201701538'></input>
+      <input type='number' focus='{{isFocus}}' name="mobile" value='{{mobile}}'></input>
       <image src='/images/qianbi.png' bindtap='phoneFocus'></image>
     </view>
     <view class='bz_tit'>备注</view>
-    <textarea class='bz_textArea' maxlength='1000' placeholder='您可以在这里输入物资详细信息哦'></textarea>
+    <textarea class='bz_textArea' name="remark" value='{{remark}}' maxlength='1000' placeholder='您可以在这里输入物资详细信息哦'></textarea>
   </view>
 
   <view class='jg_info'>
@@ -42,23 +42,23 @@
     </view>
     <view class='pulic_text'>
       <view class='text_tit'>爱心机构</view>
-      <view class='text_content'>西安市人民政府爱心捐助中心</view>
+      <view class='text_content'>{{info.name}}</view>
     </view>
     <view class='pulic_text'>
       <view class='text_tit'>机构负责人</view>
-      <view class='text_content'>王二狗</view>
+      <view class='text_content'>{{info.liaison_person}}</view>
     </view>
     <view class='pulic_text'>
       <view class='text_tit'>联系方式</view>
-      <view class='text_content'>15619087175</view>
+      <view class='text_content'>{{info.liaison_tel}}</view>
     </view>
     <view class='pulic_text'>
       <view class='text_tit'>机构地址</view>
-      <view class='text_content'>陕西省西安市雁塔区高新五路尚品格兰</view>
+      <view class='text_content'>{{info.address}}</view>
     </view>
 
     <view class='last_btn'>
-      <button>完成</button>
+      <button form-type='submit'>完成</button>
     </view>
   </view>
   </form>

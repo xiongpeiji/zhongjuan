@@ -2,5 +2,5 @@
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#df4334",
   "navigationBarTextStyle": "white",
-  "enablePullDownRefresh": false
+  "enablePullDownRefresh": true
 }

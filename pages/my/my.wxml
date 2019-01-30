@@ -52,20 +52,20 @@
              <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="xindeList">
                 <image class='nav-icon' src='../../images/user_icon/nav_icon_05.png'></image>
                 <text class='tit-text-us'>通知</text>
-                <em>10</em>
+                <view hidden='{{msg_count == 0}}'><em>{{msg_count}}</em></view>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-            <!-- <view class='us-link-lis'>
+            <view class='us-link-lis'>
                 <image class='nav-icon' src='../../images/user_icon/us-icon03.png'></image>
                 <button open-type='share' plain="true" class='tit-text-us'>分享小程序</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
-            </view> -->
+            </view>
 
-            <!-- <view class='us-link-lis'>
+            <view class='us-link-lis'>
                 <image class='nav-icon' src='../../images/user_icon/us-icon04.png'></image>
                 <button open-type='contact' plain="true" session-from="hello world" class='tit-text-us'>客服中心</button>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
-            </view> -->
+            </view>
 			<view class='us-link-lis' hidden="{{!isLogin}}">
                 <image class='nav-icon' src='../../images/user_icon/nav_icon_06.png'></image>
                 <button plain="true" bindtap='editUserInfo' class='tit-text-us'>设置</button>

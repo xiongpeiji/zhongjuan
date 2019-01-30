@@ -10,7 +10,7 @@ App({
     user_info: null,
     token: null,
     mobile:null,
-    base: "https://api.51aizj.com/",
+    base: "https://api.qibu131.cn/",
     share_img: ['/images/share_img/1.jpg','/images/share_img/2.jpg'],
     share: {},
     deviceInfo: {}

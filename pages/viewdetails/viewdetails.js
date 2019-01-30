@@ -12,6 +12,7 @@ Page({
     institution: {},
     user_donation: {},
     donation: {},
+    material:{}
   },
 
   /**

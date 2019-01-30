@@ -5,31 +5,31 @@
             <view class="dona_user_info">
                 <view class="dona_name">
                     <label class="help_title">
-                        陕西省西安市
+                        {{institution.name}}
                     </label>
                     <view class="right_type">
                         <image src="/images/yirenzheng@2x.png"></image>
-                        <label>希望小学</label>
+                        <label>{{institution.type_name}}</label>
                     </view>
                 </view>
                 <view class="help_sm_tit">
                     <image src="/images/renzheng_local@2x.png"></image>
-                    <label class="address_text">雁塔区天谷六路</label>
+                    <label class="address_text">{{institution.address}}</label>
                 </view>
             </view>
         </view>
 
         <view class='nav_tab_con'>
           <view class='pub_nav_btn'>
-            <view class='nums'>13</view>
+            <view class='nums'>{{donation_count}}</view>
             <view class='titles'>求捐记录</view>
             <em></em>
           </view>
           <view class='pub_nav_btn' bindtap='ToXuanJuan'>
-            <view class='nums'>5</view>
+            <view class='nums'>{{institution_count}}</view>
             <view class='titles'>选捐记录</view>
           </view>
-          <view class='pub_nav_btn' bindtap='InitiateHelp'>
+          <view class='pub_nav_btn' data-id="0" bindtap='InitiateHelp'>
             <view class='nums add_icons'>
               <image src='/images/icon_tianjia.png'></image>
             </view>
@@ -41,11 +41,11 @@
 
 <view class='list_content'>
        <!--捐助列表-->
-  <view class="help_content" hidden="{{count==0}}">
+  <view class="help_content" hidden="{{donation_count==0}}">
         <view class="help_ul">
             <view class="help_list">
                 <view class="my_help_list" hover-class="public_hover">
-                    我已经发布了{{count}}条求捐信息
+                    我已经发布了{{donation_count}}条求捐信息
                 </view>
                 <view class="help_discription" wx:for="{{list}}" wx:key="index">
                     <em></em>
@@ -58,7 +58,7 @@
                     </view>
                     <view class="help_sub_title">
                         <label class="sub_title">{{item.title}}</label>
-                        <view class="edit_repeat" hidden="{{item.status!=2}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goCreat">重新编辑</view>
+                        <view class="edit_repeat" hidden="{{item.status!=2}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="InitiateHelp">重新编辑</view>
                           <view class="edit_repeat" hidden="{{item.status ==2 || item.status == 0}}" data-id="{{item.id}}" hover-class="public_hover" bindtap="goDonationDetail">去查看</view>
                     </view>
 
@@ -70,18 +70,10 @@
 
 
   <!--没有消息-->
-    <view class="no_messages">
+    <view class="no_messages"  hidden="{{donation_count > 0}}">
       <image src="/images/no_dona.jpg"></image>
       <view class="no_msg_text">暂无受捐记录！</view>
     </view>
-
+    <view class='no-more-message' hidden="{{donation_count==0}}">{{no_msg}}</view>
 </view>
-
-
-
-
-
-
-
-
 </view>
