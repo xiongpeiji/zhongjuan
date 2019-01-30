@@ -53,9 +53,10 @@
   width: 500rpx;
   margin: auto;
   position: relative;
+  text-align: center;
 }
 .data_text{
-  text-align: right;
+  /* text-align: right; */
   font-size: 24rpx;
   line-height: 34rpx;
   color:#fff;
@@ -110,10 +111,13 @@
   top: 8rpx;
 }
 .jz_content{
-  border:1rpx solid #FDD4BF;
+  border:1rpx solid #E9E9E9;
   border-radius: 10rpx;
   background: #fff;
   box-shadow:0rpx 4rpx 6rpx 0rpx rgba(255,246,241,1);
+}
+.ings .jz_content{
+  border:1rpx solid #FDD4BF;
 }
 .content_title{
   position: relative;
