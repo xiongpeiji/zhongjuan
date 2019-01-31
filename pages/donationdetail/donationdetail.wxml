@@ -135,10 +135,10 @@
     <!--发布机构-->
     <view class='send_donas'>
       <view class='send_title'>发布机构</view>
-      <view class="jigouDetail_btn">
+      <view class="jigouDetail_btn" bindtap='goInstitution' data-id="{{info.institution_id}}">
         <span class="jigou_name">由{{item.institution_name}}机构反馈</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
-        <view class="jigou" bindtap='goInstitution' data-id="{{info.institution_id}}">
+        <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
           <span>{{info.type_name}}</span>
         </view>

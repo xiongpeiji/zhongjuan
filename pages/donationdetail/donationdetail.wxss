@@ -357,7 +357,7 @@ swiper, swiper image {
     width:100%;
   }
   .jigou_titles label{
-    font-size: 24rpx;
+    font-size: 30rpx;
     color:#999999;
   }
 
@@ -394,7 +394,7 @@ swiper, swiper image {
   color:#353535;
   margin:0 5rpx;
   display: inline-block;
-  min-width: 50rpx;
+  min-width: 100rpx;
   text-align: center;
 }
 
@@ -660,6 +660,7 @@ swiper, swiper image {
   width: 34rpx;
   height: 34rpx;
   display: inline-block;
+  margin-right: 8rpx;
 }
 .fabulous span{
   font-size: 26rpx;

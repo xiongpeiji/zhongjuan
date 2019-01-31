@@ -113,6 +113,7 @@
   width: 34rpx;
   height: 34rpx;
   display: inline-block;
+  margin-right: 8rpx;
 }
 .fabulous span{
   font-size: 26rpx;
@@ -122,7 +123,7 @@
 .fk_title{
   font-size: 24rpx;
   line-height: 28rpx;
-  color:#9A9A9A;
+  color:#474747;
   margin-bottom: 22rpx;
 }
 
