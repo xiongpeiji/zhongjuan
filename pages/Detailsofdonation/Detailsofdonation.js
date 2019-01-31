@@ -46,6 +46,19 @@ Page({
       }
     });
   },
+  sign(e){
+    app.modal({title:'确认收货',content:'爱心物资物资已经到达，确定收到爱心物资吗？'}).then((res)=>{
+      let id = e.currentTarget.dataset.id;
+      let url = app_data.base + 'Donation/userDonationSign';
+      let params = { id: id, token: app_data.token };
+      http.Post({ url: url, params: params }).then((res) => {
+        if (res.code == 'success') {
+          this.getData();
+        }
+      });
+    })
+    
+  },
 
   feedback(e){
     let id = e.currentTarget.dataset.id;

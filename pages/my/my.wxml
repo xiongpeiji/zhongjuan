@@ -41,7 +41,12 @@
             </view>
            <view class='us-link-lis' hidden="{{institution_status < 1}}" bindtap="helpMsgDetal">
                 <image class='nav-icon' src='../../images/user_icon/nav_icon_03.png'></image>
-                <text class='tit-text-us'>求捐信息管理</text>
+                <text class='tit-text-us'>求捐管理</text>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+             <view class='us-link-lis' hidden="{{institution_status < 1}}" bindtap="selectDonation">
+                <image class='nav-icon' src='../../images/user_icon/us-icon09.png'></image>
+                <text class='tit-text-us'>选捐管理</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
            <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="myDona">
@@ -49,12 +54,7 @@
                 <text class='tit-text-us'>我的捐赠</text>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
-             <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="xindeList">
-                <image class='nav-icon' src='../../images/user_icon/nav_icon_05.png'></image>
-                <text class='tit-text-us'>通知</text>
-                <view hidden='{{msg_count == 0}}'><em>{{msg_count}}</em></view>
-                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
-            </view>
+            
             <view class='us-link-lis'>
                 <image class='nav-icon' src='../../images/user_icon/us-icon03.png'></image>
                 <button open-type='share' plain="true" class='tit-text-us'>分享小程序</button>
@@ -64,6 +64,12 @@
             <view class='us-link-lis'>
                 <image class='nav-icon' src='../../images/user_icon/us-icon04.png'></image>
                 <button open-type='contact' plain="true" session-from="hello world" class='tit-text-us'>客服中心</button>
+                <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
+            </view>
+             <view class='us-link-lis' hidden="{{mobile_status == 0}}" bindtap="xindeList">
+                <image class='nav-icon' src='../../images/user_icon/nav_icon_05.png'></image>
+                <text class='tit-text-us'>通知</text>
+                <view hidden='{{msg_count == 0}}'><em>{{msg_count}}</em></view>
                 <image class='right-icon' src='../../images/user_icon/us-iconlink.png'></image>
             </view>
 			<view class='us-link-lis' hidden="{{!isLogin}}">

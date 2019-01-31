@@ -110,6 +110,13 @@ Page({
       url: '../Donationrecord/Donationrecord'
     })
   },
+
+  //求捐信息管理
+  selectDonation(e) {
+    wx.navigateTo({
+      url: '../Electionrecord/Electionrecord'
+    })
+  },
   //授权登录
   userLogin(e) {
     let obj = {

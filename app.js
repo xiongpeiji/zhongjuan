@@ -161,7 +161,7 @@ App({
     let num = new Date().getSeconds() % share_img.length;
     let img = share_img[num];
     this.globalData.share = {
-        title: '折翼天使的救助站',
+        title: '富余捐助贫困',
         path: '/pages/index/index',
         imageUrl: img
     }

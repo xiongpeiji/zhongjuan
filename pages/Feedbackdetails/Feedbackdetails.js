@@ -39,14 +39,17 @@ Page({
         user_donation_id: options.user_donation_id,
       })
     }
-    this.getDetail();
+    this.getDetail({ refresh:false});
   },
   //获取详情信息
-  getDetail() {
+  getDetail(obj) {
     let url = app_data.base + 'Feedback/detail';
     let params = { id: this.data.id, user_donation_id: this.data.user_donation_id, token: app_data.token };
-    http.Get({ url: url, params: params }).then((res) => {
+    http.Get({ url: url, params: params, loading: obj.refresh}).then((res) => {
       if (res.code == 'success') {
+        if (obj.refresh) {
+          wx.stopPullDownRefresh();
+        }
         this.setData({
           id:res.data.id,
           user_donation_id:res.data.user_donation_id,
@@ -175,6 +178,6 @@ Page({
 * 页面相关事件处理函数--监听用户下拉动作
 */
   onPullDownRefresh: function () {
-    this.getDetail();
+    this.getDetail({refresh:true});
   }
 })

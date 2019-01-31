@@ -1,4 +1,4 @@
-<!--求捐详情-->
+<!--pages/DonationdetailsNew/DonationdetailsNew.wxml-->
 <dialog id='dialog' 
       title='微信授权' 
       content='小程序需要您授权才能提供更好的服务' 
@@ -6,51 +6,79 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
-<view class="container {{hiddenBody?'hiddenBody':''}}">
-  <view class='promotion-img'>
-    <swiper bindchange="swiper">
-      <block wx:for="{{info.image}}" wx:key="{{item.index}}">
-        <swiper-item>
-          <image mode='aspectFill' src="{{item}}" bindtap='showImages' data-img="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
-    </swiper>
-    <!-- <image class='goIndex'src='/images/index.png'></image> -->
-    <view class='goIndex' bindtap='goHome'>返回首页</view>
-    <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
-  </view>
+<scroll-view scroll-y scroll-top="{{curScrollTop}}" bindscroll="scrollTop" scroll-into-view="{{toView}}">
+  <view class='container'>
+    <!--顶部导航-->
+    <view class='top_nav {{showBar}}'>
 
-  <view class="xindeDetais_text">
-    <view class="xindeDetial_tit">
-      <h2>{{info.title}}</h2>
-      <span>{{info.end_time}}</span>
+      <view class='nav_list' data-id="detail"  bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "detail" ?"active": ""}}' >
+          <label>详情</label>
+          <b></b>
+        </view>
+      </view>
+
+      <view class='nav_list' data-id="union" bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "union" ?"active": ""}}'>
+          <label>捐赠反馈</label>
+          <b></b>
+        </view>
+      </view>
+
+      <view class='nav_list' data-id="comment"  bindtap='toViewAction'>
+        <view class='nav_bar {{nav_bar === "comment" ?"active": ""}}'>
+          <label>评论</label>
+          <b></b>
+        </view>
+      </view>
+
+
     </view>
-    <view class="artact_user">
-      <span class="small_title">{{info.institution_info.name}}</span>
+
+    <!--------------------详情开始------------------------>
+    <view class='detais_content'>
+      <view class='promotion-img'>
+        <swiper bindchange="swiper">
+            <block wx:for="{{info.image}}" wx:key="info">
+            <swiper-item>
+              <image mode='aspectFill' src="{{item}}" bindtap='showImages' data-img="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='goIndex' bindtap='goHome'>返回首页</view>
+        <view class="current"><span>{{current}}</span> / {{swiper_all}}</view>
+      </view>
+    
     </view>
-    <view class="artacle_wrap">
-      <rich-text class="text_details" nodes="{{info.content}}"></rich-text>
-    </view>
-    <!--机构详细信息-->
+
+    <view class='xindeDetais_text'  id='detail'>
+      <view class='title_p'>{{info.title}}</view>
+      <view class='time_tit'>{{info.time}} {{info.institution_name}}</view>
+
+      <view class='Percentage'>
+        <view class='Percentage_bg'>
+          <view class='Percentage_len' style='width:{{info.rate}}'></view>
+          <view class='Percentage_text'>{{info.rate}}</view>
+        </view>
+      </view>
+
+      <rich-text class='rich_text'>{{info.content}}</rich-text>
+
+      
+      <!--机构详细信息-->
     <view class='joins'>
-      <view class='left_user_icon' bindtap="showUser" hidden="{{info.user_num==0}}">
-        <block wx:for="{{info.user_data}}" wx:key="{{index}}">
+      <view class='left_user_icon' bindtap="showUser" hidden="{{info.donation_num==0}}">
+        <block wx:for="{{info.user_donation}}" wx:key="{{index}}">
           <image src='{{item.avatar}}' mode='aspectFill'></image>
         </block>
         <image style='z-index:0' src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num' style="margin-left:{{info.user_num==0?'0':'70rpx'}}">{{info.user_num}}人已加入</view>
-      <view class='slider_bar'>
-        <view class='bar_bg'>
-          <span class='Percentage' style='width:{{info.rate}};'></span>
-        </view>
-        <view class='Completion'>完成度{{info.rate}}</view>
-      </view>
+      <view class='jions_num' style="margin-left:{{info.user_num==0?'0':'70rpx'}}">{{info.donation_num}}人已加入</view>
 
       <!--头像列表-->
       <view class="user_photos" hidden="{{usersShow}}">
         <view class="user_photo_list">
-          <view class="user_photo_name"  wx:for="{{info.user_data}}" wx:key="{{index}}">
+          <view class="user_photo_name"  wx:for="{{user_donation}}" wx:key="{{index}}">
             <view class="user_icons">
               <image src='{{item.avatar}}' mode='aspectFill'></image>
             </view>
@@ -62,88 +90,182 @@
         </view>
       </view>
     </view>
-    <view class="jigou_titles">发布机构</view>
-    <view class="jigouDetail_btn" data-id="{{institution_info.id}}" bindtap="showMaxing">
-        <span class="jigou_name">{{institution_info.name}}</span>
-        <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
-        <view class="jigou">
-          <image src='/images/shenqingqiyerenzheng.png'></image>
-          <span>{{info.type_name}}</span>
-        </view>
-    </view>
+
     <view class="jigou_titles">求捐物资</view>
     <!--物资详情-->
     <view class="wuzi_details">
       <view class="wuzi_list" wx:for="{{info.material_data}}" wx:key="{{index}}">
         <image src="{{item.icon}}"></image>
-        <span class="wuzi_name">{{item.name}}-{{item.num}}</span>
+        <span class="wuzi_name">{{item.name}}-{{item.num}}{{item.unit}}</span>
         <view class="juan_nums">
-          已捐<span>{{item.after_num}}</span>件
+          已捐<span>{{item.after_num}}</span>{{item.unit}}
         </view>
       </view>
     </view>
-    <!--评论区-->
-    <view class="comment_wrap">
-      <view class="comment_title"> 评论 {{comment_num}}</view>
-      <view class="comment_container">
-        <!--评论列表-->
-        <view class="conment_list" wx:for="{{list}}"  wx:key="index">
-          <image class="con_user_icon" src="{{item.avatar}}" mode='aspectFill'></image>
-          <view class="comment_text">
-            <view class="comment_name">
-              <span class="left_name">{{item.username}}</span>
-              <view class="comment_action">
-                <view class="zan_num" bindtap="commentUp" data-id="{{item.id}}" data-index="{{index}}" data-val="{{item.is_up}}">
-                  <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
-                  <span>{{item.comment_up_num}}</span>
-                </view>
-                <view class="zan_num" bindtap="goCommentList" data-id="{{item.id}}">
-                  <image src="/images/msg_num.png"></image>
-                  <span>{{item.comment_num}}</span>
-                </view>
-              </view>
+
+
+    </view>
+    
+    <view class='Caringpeople {{moreShow?"":"moreShow"}}'>
+     <!--捐助列表-->
+        <view class='done_cont' wx:for="{{user_donation}}" wx:key="{{index}}">
+          <view class='user_cont'>
+            <image class='user_photo' src='{{item.avatar}}'></image>
+            <view class='name_time'>
+              <view>{{item.username}}</view>
             </view>
-            <view class="comment_dis">{{item.content}}</view>
-            <view class='comment_content' hidden='{{item.comment_num == 0}}'>
-              <view wx:for="{{item.reply_data}}"  wx:key="index" wx:for-item="row">
-                <view class="comment_dis"><label>{{row.username}}：</label>{{row.content}}</view>
-              </view>
+            <label class='center_stutas'>{{item.status_name}}</label>
+            <view class='look_more_btn'>
+              <label>{{item.time}} </label>
             </view>
-            <view class="comment_time">
-              <span class="send_time">{{item.add_time}}</span>
-              <view class="send_num" bindtap="goCommentList" data-id="{{item.id}}" hidden="{{item.comment_num == 0}}">{{item.comment_num}}条回复</view>
+          </view>
+
+          <view class='wp_content' >
+            <view class='wp_list' wx:for="{{item.material}}" wx:key="{{index}}" wx:for-item="row">{{row.name}} X {{row.num}} {{row.unit}}</view>
+          </view>
+        </view>
+        <!--显示更多-->
+        <view class='show_more_list' hidden='{{moreShow}}' bindtap='showMore'>
+          <label>查看更多</label>
+          <image src='/images/sort_arr.png'></image>
+        </view>
+
+        
+    </view>
+    <!--发布机构-->
+    <view class='send_donas'>
+      <view class='send_title'>发布机构</view>
+      <view class="jigouDetail_btn">
+        <span class="jigou_name">{{info.institution_name}}</span>
+        <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
+        <view class="jigou" bindtap='goInstitution' data-id="{{info.institution_id}}">
+          <image src='/images/shenqingqiyerenzheng.png'></image>
+          <span>{{info.type_name}}</span>
+        </view>
+    </view>
+
+    </view>
+
+    <!--------------------详情结束------------------------>
+
+
+    <!---------------------机构反馈开始---------------------->
+
+    <view class='feedback_content' id='union'>
+      <view class='send_title'>机构反馈</view>
+    </view>
+    <view class='feedback_ul  {{moreJuanzhu?"":"moreJuanzhu"}}'>
+
+      <view class='feedback_li' wx:for="{{feedback}}" wx:key="index">
+          <view class='done_cont'>
+            <view class='user_cont'>
+              <image class='user_photo' src='{{item.avatar}}'></image>
+              <view class='name_time'>
+                <view>{{item.username}}</view>
+              </view>
+              <label class='center_stutas'>爱心已帮助 {{item.num}} 人</label>
+            </view>
+        </view>
+        <view class='feed_text_dis'>
+          <rich-text class='rich_text'>{{item.content}}</rich-text>
+
+          <view class='imgs_content'>
+             <image class='img_lis' mode='aspectFill' wx:for="{{item.image}}" bindtap="showImages" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>
+          </view>
+          <!---->
+          <view class="article_share">
+            <view class="times float_left">
+              <span>{{item.time}}</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/xiaoxi.png"></image>
+              <span>{{item.comment_num}}</span>
+            </view>
+            <view class="fabulous float_right">
+              <image src="/images/dianzan.png"></image>
+              <span>{{item.up_num}}</span>
+            </view>
+          </view>
+          <view class='fk_title'>{{item.institution_name}}</view>
+        </view>
+      </view>
+      <!--显示更多-->
+      <view class='show_more_list' hidden='{{moreJuanzhu}}' bindtap='showJuanzhu'>
+        <label>查看更多</label>
+        <image src='/images/sort_arr.png'></image>
+      </view>
+      
+
+
+
+    </view>
+
+    <!---------------------机构反馈结束---------------------->
+
+    <!-----------------------评论 开始-------------------------->
+    
+    <view class='Comment_content' id='comment'>
+        <view class="jigou_titles">评论 <label>{{info.comment_num}}</label></view>
+        <view class='comment_ul'wx:for="{{comment}}" wx:key="index">
+          <view class='comment_img' >
+            <image class='ucer_icons' src='{{item.avatar}}'></image>
+            <view class='com_names'>{{item.username}}</view>
+            <label class='com_times'>{{item.time}} </label>
+          </view>
+          <view class='com_datial_text'>
+            <view class='com_text_t'>{{item.content}}</view>
+            <view class='com_setting'>
+              <view class="fabulous float_right">
+                <image src="/images/msg_num.png"></image>
+                <span>{{item.comment_up_num}}</span>
+              </view>
+              <view class="fabulous float_right">
+                <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+                <span>{{item.comment_num}}</span>
+              </view>
             </view>
           </view>
         </view>
-        <!--暂无更多消息-->
-        <view class='no-more-message'>{{no_msg}}</view>
+    </view>
+
+
+
+    <!-----------------------评论 结束-------------------------->
+
+
+
+
+
+
+
+
+    
+    
+    <!--底部-->
+    <view class="input_box_fixed" hidden='{{focus}}'>
+      <button class="share_cont" hover-class="share_active" bindtap="setFocus">
+          <view class="img_box"><image src="/images/message_new.png"></image></view>
+          <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" open-type="share">
+          <view class="img_box"><image src="/images/share_01.png"></image></view>
+          <view class="img_tit_text">邀请好友</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" open-type='share' hidden='{{info.share_status == 1}}'>
+          <view class="img_box"><image src="/images/share_new.png"></image></view>
+          <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
+      </button>
+      <button class="share_cont" hover-class="share_active" bindtap='shareWeixin' hidden='{{info.share_status == 0}}'>
+          <view class="img_box"><image src="/images/share_new.png"></image></view>
+          <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
+      </button>
+      <view class="want_give">
+          <image src="/images/Rectangle9@3x.png"></image>
+          <span bindtap="wantTodo" data-id="{{id}}">我要捐助</span>
       </view>
     </view>
-  </view>
-  <!--评论输入-->
-  <view class="input_box_fixed" hidden='{{focus}}'>
-    <button class="share_cont" hover-class="share_active" bindtap="setFocus">
-        <view class="img_box"><image src="/images/pinglun@2x.png"></image></view>
-        <view class="img_tit_text">评论{{comment_num == 0 ? '' : comment_num}}</view>
-    </button>
-    <button class="share_cont" hover-class="share_active" open-type="share">
-        <view class="img_box"><image src="/images/yaoqinghaoyou@2x.png"></image></view>
-        <view class="img_tit_text">邀请好友</view>
-    </button>
-    <button class="share_cont" hover-class="share_active" open-type='share' hidden='{{info.share_status == 1}}'>
-        <view class="img_box"><image src="/images/share@2x.png"></image></view>
-        <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
-    </button>
-    <button class="share_cont" hover-class="share_active" bindtap='shareWeixin' hidden='{{info.share_status == 0}}'>
-        <view class="img_box"><image src="/images/share@2x.png"></image></view>
-        <view class="img_tit_text">分享{{share_num == 0 ? '' : share_num}}</view>
-    </button>
-    <view class="want_give">
-        <image src="/images/Rectangle9@3x.png"></image>
-        <span bindtap="wantTodo" data-id="{{id}}">我要捐助</span>
-    </view>
-  </view>
-  <view class="input_box" hidden='{{!focus}}'>
+
+    <view class="input_box" hidden='{{!focus}}'>
     <view class="section_input">
       <input placeholder="输入评论…" maxlength='200' focus="{{focus}}" bindconfirm="comment" confirm-type="send" value='{{content}}' bindinput='setContent' bindblur='setCommentMax'/>
     </view>
@@ -151,6 +273,8 @@
       <button class='send_msg_btn'>发送</button>
     </view>
   </view>
+
+
 
    <!--分享弹窗-->
   <view class='maxing' hidden='{{shareMax}}'></view>
@@ -179,38 +303,12 @@
           <button bindtap='saveShareImg'>保存图片</button>
         </view>
     </view>
-    <!--点击我要捐助按钮弹窗-->
-    <view class='maxing' hidden='{{warmTips}}'></view>
-    <view class='want_box' hidden='{{warmTips}}'>
-      <icon bindtap='closeWarm' class='close_icon' type="cancel" size="30" color="#fff" />
-      <view class='want_content'>
-        <image class='bg_color' src='/images/window_bg.png'></image>
-        <h2>捐助方信息</h2>
-        <view class='jigou_texts'>
-          <label>捐助机构：</label>
-          {{institution_info.name}}
-        </view>
-        <view class='jigou_texts'>
-          <label>联  系  人：</label>
-          {{institution_info.liaison_person}} 
-        </view>
-        <view class='jigou_texts'>
-          <label>联系电话：</label>
-          {{institution_info.liaison_tel}}
-        </view>
-        <view class='jigou_texts'>
-          <label>机构地址：</label>
-          {{institution_info.address}} 
-        </view>
-      </view>
-      <view class='warm_tips'>
-        <view class='warm_tit'>温馨提示</view>
-        <view class='warm_text'>
-        感谢您的爱心~请确认捐赠快递已发出并已获得单号再完成捐助信息哦〜
-        </view>
-        <button bindtap='sendLove'>爱心已寄出</button>
-      </view>
-      
-    </view>
-</view>
 
+
+
+
+
+
+
+  </view>
+</scroll-view>

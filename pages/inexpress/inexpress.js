@@ -69,8 +69,8 @@ Page({
   //提交我要捐助消息 Donation/saveUserDonation
   submit() {
     let url = app_data.base + 'Donation/saveUserDonationLast';
-    if(this.data.user_donation.type != 'donation'){
-      let url = app_data.base + 'Donation/saveUserSelectDonationLast';
+    if (this.data.user_donation.type == 'institution'){
+      url = app_data.base + 'Donation/saveUserSelectDonationLast';
     }
     let params = {
       id: this.data.id,

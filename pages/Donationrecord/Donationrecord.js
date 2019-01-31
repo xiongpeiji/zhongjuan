@@ -23,7 +23,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '求捐记录'
+      title: '求捐管理'
     });
     app.checkLogin();
     this.getData({ refresh: false, is_first: true });

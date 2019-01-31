@@ -23,11 +23,6 @@
           <view class='pub_nav_btn'>
             <view class='nums'>{{donation_count}}</view>
             <view class='titles'>求捐记录</view>
-            <em></em>
-          </view>
-          <view class='pub_nav_btn' bindtap='ToXuanJuan'>
-            <view class='nums'>{{institution_count}}</view>
-            <view class='titles'>选捐记录</view>
           </view>
           <view class='pub_nav_btn' data-id="0" bindtap='InitiateHelp'>
             <view class='nums add_icons'>

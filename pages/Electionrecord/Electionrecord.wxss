@@ -25,7 +25,7 @@
 }
 
 .pub_nav_btn{
-  width: 33.33%;
+  width: 50%;
   float: left;
   text-align: center;
   position: relative;
@@ -58,9 +58,8 @@
   border-right:50rpx solid transparent;
   border-left:50rpx solid transparent;
   position: absolute;
-  bottom: -1rpx;
+  bottom: 0;
   left: 50%;
-  margin:0;
   margin-left: -50rpx;
 }
 
