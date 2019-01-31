@@ -133,10 +133,10 @@
         
     </view>
     <!--发布机构-->
-    <view class='send_donas'>
+    <view class='send_donas' bindtap='goInstitution' data-id="{{info.institution_id}}">
       <view class='send_title'>发布机构</view>
       <view class="jigouDetail_btn" bindtap='goInstitution' data-id="{{info.institution_id}}">
-        <span class="jigou_name">由{{item.institution_name}}机构反馈</span>
+        <span class="jigou_name">{{info.institution_name}}</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
         <view class="jigou">
           <image src='/images/shenqingqiyerenzheng.png'></image>
@@ -186,7 +186,7 @@
               <span>{{item.up_num}}</span>
             </view>
           </view>
-          <view class='fk_title'>{{item.institution_name}}</view>
+          <view class='fk_title'>由{{item.institution_name}}机构反馈</view>
         </view>
       </view>
       <!--显示更多-->

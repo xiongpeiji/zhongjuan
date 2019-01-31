@@ -456,8 +456,9 @@ swiper, swiper image {
   overflow: hidden;
 }
 .wp_list{
-  width: 50%;
-  text-align: center;
+  width: 40%;
+  text-align: left;
+  margin-left: 10%;
   float: left;
   margin-bottom: 20rpx;
   font-size: 32rpx;

@@ -52,7 +52,7 @@
         </block>
         <image style='z-index:0' src='/images/index_gengduo@2x.png'></image>
       </view>
-      <view class='jions_num' style="margin-left:{{item.donation_num==0?'0':'70rpx'}}">{{item.donation_num}}人已加入</view>
+      <view class='jions_num' style="margin-left:{{item.user_num==0?'0':'70rpx'}}">{{item.user_num}}人已加入</view>
       <view class='slider_bar'>
         <view class='bar_bg'>
           <span class='Percentage' style='width:{{item.rate}};'></span>

@@ -178,7 +178,7 @@ Page({
     let params = { token: app_data.token, donation_id: this.data.id, content: this.data.content }
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        this.getDetail();
+        this.getDetail({ refresh: false });
         this.setData({
           content:'',
           focus:false,
@@ -400,7 +400,7 @@ Page({
       if (res.code == 'success') {
         app.getUserInfo();
         this.setToken();
-        this.getDetail();
+        this.getDetail({ refresh: false });
         wx.showToast({
           title: '授权登录成功',
         })
