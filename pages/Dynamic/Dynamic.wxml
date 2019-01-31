@@ -23,7 +23,7 @@
               <span>{{item.time}}</span>
             </view>
             <view class="fabulous float_right">
-              <image src="/images/xiaoxi.png"></image>
+              <image src="/images/msg_num.png"></image>
               <span>{{item.comment_num}}</span>
             </view>
             <view class="fabulous float_right">

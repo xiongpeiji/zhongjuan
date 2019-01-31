@@ -11,7 +11,7 @@
   <view class='warm_tips'>
     <view class='tips_box'>
       <view class='tips_tile'>小提示：</view>
-      <view class='tips_dis'>亲爱的好心人，爱心捐赠发起后将会帮您保留48小时您需 要在有效期限内将捐赠物资清洗干净并消毒待物资发件成 功后返回小程序在<label>我的-我的捐赠</label>当中选择您已发起的爱 心捐赠并完成快递单号的填写。</view>
+      <view class='tips_dis'>亲爱的好心人，爱心捐赠发起后将会帮您保留72小时，您需要在有效期限内将捐赠物资清洗干净并消毒，待物资发件成功后返回小程序在<label>我的-我的捐赠</label>，选择您已发起的爱心捐赠并完成快递单号的填写。</view>
     </view>
   </view>
 

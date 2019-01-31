@@ -30,7 +30,7 @@
               <span>{{info.time}}</span>
             </view>
             <view class="fabulous float_right" bindtap="setFrom" data-id="0" data-name="输入评论…">
-              <image src="/images/xiaoxi.png"></image>
+              <image src="/images/msg_num.png"></image>
               <span>{{info.comment_num}}</span>
             </view>
             <view class="fabulous float_right" bindtap='feedbackUp'>
