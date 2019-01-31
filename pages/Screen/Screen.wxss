@@ -86,11 +86,16 @@
   overflow: hidden;
   display: inline-block;
   padding: 0 15rpx;
-  background: #4F4F4F;
+  background: #E4572E;
   line-height: 36rpx;
   border-radius: 18rpx;
   font-size: 22rpx;
   color:#fff;
+}
+.love_text label{
+  height: 36rpx;
+  line-height: 36rpx;
+  float: left;
 }
 .love_text{
   margin-bottom: 22rpx;
@@ -99,7 +104,7 @@
   width: 20rpx;
   height: 16rpx;
   float: left;
-  margin-top: 10rpx;
+  margin-top: 12rpx;
   margin-right: 5rpx;
 }
 

@@ -62,6 +62,10 @@ Page({
     });
   },
   setFrom(e){
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
     let from_user_id = e.currentTarget.dataset.id;
     let name = e.currentTarget.dataset.name;
     this.setData({
@@ -104,7 +108,7 @@ Page({
     let params = { token: app_data.token, feedback_id: this.data.id, from_user_id:this.data.from_user_id,content: this.data.content };
     http.Post({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        this.getDetail();
+        this.getDetail({ refresh: false });
         this.setData({
           content:'',
           from_user_id:0,
@@ -151,7 +155,6 @@ Page({
         app.getUserInfo();
         this.setToken();
         this.getDetail();
-        this.getData({ refresh: false, is_first: true });
         wx.showToast({
           title: '授权登录成功',
         })

@@ -19,7 +19,7 @@
             </view>
         </view>
         <view class='feed_text_dis'>
-          <rich-text class='rich_text'>{{info.content}}</rich-text>
+          <rich-text class='rich_text' nodes="{{info.content}}"></rich-text>
 
           <view class='imgs_content'>
             <image class='img_lis' mode='aspectFill' wx:for="{{info.image}}" bindtap="showImages" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>

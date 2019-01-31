@@ -12,7 +12,7 @@
             </view>
         </view>
         <view class='feed_text_dis' data-id="{{item.id}}" bindtap="showDetail">
-          <rich-text class='rich_text'>{{item.content}}</rich-text>
+          <rich-text class='rich_text' nodes="{{item.content}}"></rich-text>
 
           <view class='imgs_content'>
              <image class='img_lis' mode='aspectFill' wx:for="{{item.image}}" data-img="{{item}}" wx:key="{{index}}" src='{{item}}' data-key="{{key}}"></image>

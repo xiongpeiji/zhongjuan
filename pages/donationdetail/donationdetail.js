@@ -88,6 +88,26 @@ Page({
       url: '../insdetail/insdetail?id=' + id + '&type=donation'
     });
   },
+
+  //显示机构信息弹窗
+  goFeedback(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../Feedbackdetails/Feedbackdetails?id=' + id
+    });
+  },
+
+  //跳转到评论列表
+  goCommentList(e) {
+    if (!this.data.token) {
+      this.showDialog();
+      return;
+    }
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../donationcomment/donationcomment?id=' + id
+    });
+  },
   //获取详情信息
   getDetail(obj) {
     let url = app_data.base + 'Donation/donationDetail';
@@ -137,10 +157,10 @@ Page({
     let params = { token: app_data.token, id: comment_id };
     http.Get({ url: url, params: params }).then((res) => {
       if (res.code == 'success') {
-        let list = this.data.list;
+        let list = this.data.comment;
         list[index].is_up = is_up == 0 ? 1 : 0;
         list[index].comment_up_num = is_up == 0 ? +list[index].comment_up_num + 1 : +list[index].comment_up_num - 1;
-        this.setData({ list: list });
+        this.setData({ comment: list });
       }
     })
   },
@@ -380,7 +400,6 @@ Page({
       if (res.code == 'success') {
         app.getUserInfo();
         this.setToken();
-        this.getData();
         this.getDetail();
         wx.showToast({
           title: '授权登录成功',

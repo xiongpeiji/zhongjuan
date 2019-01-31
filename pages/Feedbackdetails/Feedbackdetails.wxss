@@ -132,6 +132,7 @@
   position: relative;
   background: #F3F3F3;
   padding: 35rpx 10rpx 35rpx 25rpx;
+  margin-bottom: 90rpx;
 }
 .comment_lis{
   font-size: 26rpx;

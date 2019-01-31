@@ -61,7 +61,7 @@ swiper, swiper image {
   color:#333;
   margin-bottom: 22rpx;
   float: left;
-  max-width:390rpx;
+  max-width:370rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

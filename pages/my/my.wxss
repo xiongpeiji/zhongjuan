@@ -131,11 +131,11 @@ page {
 
 .us-link-lis {
     width: 100%;
-    height: 86rpx;
+    height: 80rpx;
     background: #fff;
     overflow: hidden;
     position: relative;
-    line-height: 86rpx;
+    line-height: 80rpx;
     margin-top: 2rpx;
 }
 
