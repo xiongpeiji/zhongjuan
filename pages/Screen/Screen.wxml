@@ -13,8 +13,8 @@
 
   <view class='screen_con'>
 
-      <view class='love_list'  wx:for="{{list}}"  wx:key="{{index}}" wx:for-index="key" >
-        <view class='love_title' data-key="{{key}}" data-id="{{item.id}}" bindtap="showDetail">
+      <view class='love_list'  wx:for="{{list}}"  wx:key="{{index}}" wx:for-index="key"  data-key="{{key}}" data-id="{{item.id}}" bindtap="showDetail" >
+        <view class='love_title'>
           <label>{{item.name}}</label>
           <image src='/images/renzheng_jinru@2x.png'></image>
         </view>
@@ -25,7 +25,7 @@
           </view>
         </view>
         <view class='img_box'>
-          <image mode='aspectFill' wx:for="{{item.image}}" bindtap="showImages" data-img="{{item}}" wx:key="{{index}}" src='{{row}}' data-key="{{key}}" wx:for-item="row"></image>
+          <image mode='aspectFill' wx:for="{{item.image}}" data-img="{{item}}" wx:key="{{index}}" src='{{row}}' data-key="{{key}}" wx:for-item="row"></image>
         </view>
         <view class='jg_area'>
           <image src='/images/area_icon.png'></image>

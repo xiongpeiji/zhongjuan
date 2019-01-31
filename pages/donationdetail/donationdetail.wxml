@@ -110,7 +110,7 @@
      <!--捐助列表-->
         <view class='done_cont' wx:for="{{user_donation}}" wx:key="{{index}}">
           <view class='user_cont'>
-            <image class='user_photo' src='{{item.avatar}}'></image>
+            <image class='user_photo' mode='aspectFill' src='{{item.avatar}}'></image>
             <view class='name_time'>
               <view>{{item.username}}</view>
             </view>
@@ -136,7 +136,7 @@
     <view class='send_donas'>
       <view class='send_title'>发布机构</view>
       <view class="jigouDetail_btn">
-        <span class="jigou_name">{{info.institution_name}}</span>
+        <span class="jigou_name">由{{item.institution_name}}机构反馈</span>
         <image class='right_icon' src="/images/renzheng_jinru@2x.png"></image>
         <view class="jigou" bindtap='goInstitution' data-id="{{info.institution_id}}">
           <image src='/images/shenqingqiyerenzheng.png'></image>
@@ -159,7 +159,7 @@
       <view class='feedback_li' wx:for="{{feedback}}" wx:key="index">
           <view class='done_cont'>
             <view class='user_cont'>
-              <image class='user_photo' src='{{item.avatar}}'></image>
+              <image class='user_photo' mode='aspectFill' src='{{item.avatar}}'></image>
               <view class='name_time'>
                 <view>{{item.username}}</view>
               </view>
@@ -208,7 +208,7 @@
         <view class="jigou_titles">评论 <label>{{info.comment_num}}</label></view>
         <view class='comment_ul'wx:for="{{comment}}" wx:key="index">
           <view class='comment_img' >
-            <image class='ucer_icons' src='{{item.avatar}}'></image>
+            <image class='ucer_icons' mode='aspectFill' src='{{item.avatar}}'></image>
             <view class='com_names'>{{item.username}}</view>
             <label class='com_times'>{{item.time}} </label>
             <view class="fabulous float_right" bindtap="goCommentList" data-id="{{item.id}}" >

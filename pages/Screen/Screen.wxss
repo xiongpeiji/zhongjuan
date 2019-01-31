@@ -92,13 +92,13 @@
   font-size: 22rpx;
   color:#fff;
 }
-.love_text label{
-  height: 36rpx;
-  line-height: 36rpx;
-  float: left;
-}
 .love_text{
   margin-bottom: 22rpx;
+}
+.love_text label{
+  float: left;
+  height: 36rpx;
+  line-height: 36rpx;
 }
 .love_text image{
   width: 20rpx;

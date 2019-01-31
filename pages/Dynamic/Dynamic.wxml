@@ -4,7 +4,7 @@
       <view class='feedback_li'>
           <view class='done_cont'>
             <view class='user_cont'>
-              <image class='user_photo' src='{{item.avatar}}'></image>
+              <image class='user_photo' mode='aspectFill' src='{{item.avatar}}'></image>
               <view class='name_time'>
                 <view>{{item.username}}</view>
               </view>
@@ -31,7 +31,7 @@
               <span>{{item.up_num}}</span>
             </view>
           </view>
-          <view class='fk_title'>{{item.institution_name}}</view>
+          <view class='fk_title'>由{{item.institution_name}}机构反馈</view>
           <view class='Comment_area' hidden='{{item.comment_list.length == 0}}'>
               <view class='comment_lis' wx:for="{{item.comment_list}}" wx:key="index" wx:for-item="row">
                 <view hidden='{{row.from_user_id > 0}}' ><label>{{row.to_user_name}}：</label>{{row.content}}</view>
