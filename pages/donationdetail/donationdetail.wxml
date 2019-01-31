@@ -62,7 +62,7 @@
         </view>
       </view>
 
-      <rich-text class='rich_text'>{{info.content}}</rich-text>
+      <rich-text class='rich_text' nodes="{{info.content}}"></rich-text>
 
       
       <!--机构详细信息-->

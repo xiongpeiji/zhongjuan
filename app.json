@@ -46,7 +46,8 @@
     "pages/Donationrecord/Donationrecord",
     "pages/Electionrecord/Electionrecord",
     "pages/Detailsofdonation/Detailsofdonation",
-    "pages/Finishsigning/Finishsigning"
+    "pages/Finishsigning/Finishsigning",
+    "pages/DonationdetailsNew/DonationdetailsNew"
   ],
   "window": {
     "backgroundTextStyle": "dark",
