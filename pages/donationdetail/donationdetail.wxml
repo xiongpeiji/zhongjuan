@@ -211,10 +211,19 @@
             <image class='ucer_icons' src='{{item.avatar}}'></image>
             <view class='com_names'>{{item.username}}</view>
             <label class='com_times'>{{item.time}} </label>
+            <view class="fabulous float_right">
+                <image src="/images/msg_num.png"></image>
+                <span>{{item.comment_up_num}}</span>
+              </view>
+              <view class="fabulous float_right">
+                <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
+                <span>{{item.comment_num}}</span>
+              </view>
           </view>
           <view class='com_datial_text'>
-            <view class='com_text_t'>{{item.content}}</view>
-            <view class='com_setting'>
+          <!--{{item.content}}-->
+            <view class='com_text_t'>测试数据测试数据</view>
+            <!-- <view class='com_setting'>
               <view class="fabulous float_right">
                 <image src="/images/msg_num.png"></image>
                 <span>{{item.comment_up_num}}</span>
@@ -223,6 +232,14 @@
                 <image src="{{item.is_up == 0 ? '/images/dianzan.png' : '/images/dianzan_active.png'}}"></image>
                 <span>{{item.comment_num}}</span>
               </view>
+            </view> -->
+            <view class='over_content_container'>
+              <view class='com_lists'>
+                  <label>姓名: </label><text>测试数据测试数据测试数据测试数据测试数据测试数据</text>
+              </view>
+            </view>
+            <view class='data_times'>
+              <view class='left_data'>2018-12-12</view><view class='right_num'>1条回复</view>
             </view>
           </view>
         </view>

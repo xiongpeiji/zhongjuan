@@ -752,13 +752,57 @@ swiper, swiper image {
 }
 
 .com_datial_text{
-  border-bottom:1rpx solid #DFDFDF;
+  /* border-bottom:1rpx solid #DFDFDF; */
   margin-left: 60rpx;
   padding-bottom: 25rpx;
 }
 .com_setting{
   overflow: hidden;
 }
+.over_content_container{
+  background: #F3F3F3;
+  padding:15rpx 15rpx 30rpx;
+  border-radius: 4rpx;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  color:#373737;
+}
+
+
+.over_content_container .com_lists label{
+  color:#826F6A;
+}
+.data_times{
+  font-size: 24rpx;
+  color: #999999;
+  overflow: hidden;
+  margin-bottom: 15rpx;
+  padding: 10rpx;
+}
+.left_data{
+  float: left;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.right_num{
+  background: #F3F3F3;
+  padding:0 10rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: left;
+  margin-left: 20rpx;
+  color:#E4572E;
+}
+
+
+
+
+
+
+
+
 
 .maxing{
   width: 100%;
