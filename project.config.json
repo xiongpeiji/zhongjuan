@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 39,
+			"current": 40,
 			"list": [
 				{
 					"id": -1,
@@ -276,6 +276,12 @@
 					"id": -1,
 					"name": "选捐详情--完成签收",
 					"pathName": "pages/Finishsigning/Finishsigning",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新首页",
+					"pathName": "pages/NexIndex/NexIndex",
 					"query": ""
 				}
 			]

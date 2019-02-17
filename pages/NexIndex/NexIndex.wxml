@@ -1,0 +1,221 @@
+<!--pages/NexIndex/NexIndex.wxml-->
+<view class='container'>
+  <!--顶部搜索框-->
+  <view class='top_search'>
+    <view class='top_left_btn'>
+      <label>西安汉神…</label>
+      <image src='/images/sort_arr.png'></image>
+    </view>
+    <view class='top_right_box'>
+      <image src='/images/new_icon/sousuo.png'></image>
+      <input type='text' placeholder='请输入关键词'></input>
+    </view>
+  </view>
+  <!--轮播图-->
+  <view class="swiper-content">
+    <swiper
+      indicator-dots="{{true}}"
+      autoplay="{{true}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicator-color="rgba(238,238,238,.6)"
+      indicator-active-color="#fff"
+    >
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--品类-->
+  <view class="type-lists">
+    <view class='list-wrap'>
+      <image src='/images/new_icon/type-01.png'></image>
+      <view>学习用品</view>
+    </view>
+    <view class='list-wrap'>
+      <image src='/images/new_icon/type-02.png'></image>
+      <view>生活用品</view>
+    </view>
+    <view class='list-wrap'>
+      <image src='/images/new_icon/type-03.png'></image>
+      <view>衣服鞋帽</view>
+    </view>
+    <view class='list-wrap'>
+      <image src='/images/new_icon/type-04.png'></image>
+      <view>玩具</view>
+    </view>
+  </view>
+
+
+  <!--精选推荐-->
+  <view class='recommend'>
+    <view class='pub-tit-text'>
+    / 精选推荐 /
+    </view>
+    <view class='recom-box'>
+      <view class='recom-content' style='width:{{recomLength*322}}rpx'>
+        <view class='recom-list'>
+          <view class='recom-flag'>
+            <image src='/images/new_icon/flag.png'></image>
+            <view>进行中</view>
+          </view>
+          <image class='recom-img' src='/images/new_icon/tuijian-01.jpg'></image>
+          <view class='recom_title'>想要学习的心从来都没有停止过</view>
+          <view class='recom_jd'>
+            <view class='jd_bg' style="width:{{50}}%"></view>
+          </view>
+          <view class='ju_numbers'><text>32</text>人已捐助</view>
+          <view class='tojuzhuan_btn'>我要捐助</view>
+        </view>
+
+        <view class='recom-list'>
+          <view class='recom-flag'>
+            <image src='/images/new_icon/flag.png'></image>
+            <view>进行中</view>
+          </view>
+          <image class='recom-img' src='/images/new_icon/tuijian-01.jpg'></image>
+          <view class='recom_title'>想要学习的心从来都没有停止过</view>
+          <view class='recom_jd'>
+            <view class='jd_bg' style="width:{{50}}%"></view>
+          </view>
+          <view class='ju_numbers'><text>32</text>人已捐助</view>
+          <view class='tojuzhuan_btn'>我要捐助</view>
+        </view>
+
+        <view class='recom-list'>
+          <view class='recom-flag'>
+            <image src='/images/new_icon/flag.png'></image>
+            <view>进行中</view>
+          </view>
+          <image class='recom-img' src='/images/new_icon/tuijian-01.jpg'></image>
+          <view class='recom_title'>想要学习的心从来都没有停止过</view>
+          <view class='recom_jd'>
+            <view class='jd_bg' style="width:{{50}}%"></view>
+          </view>
+          <view class='ju_numbers'><text>32</text>人已捐助</view>
+          <view class='tojuzhuan_btn'>我要捐助</view>
+        </view>
+
+        <view class='recom-list'>
+          <view class='recom-flag'>
+            <image src='/images/new_icon/flag.png'></image>
+            <view>进行中</view>
+          </view>
+          <image class='recom-img' src='/images/new_icon/tuijian-01.jpg'></image>
+          <view class='recom_title'>想要学习的心从来都没有停止过</view>
+          <view class='recom_jd'>
+            <view class='jd_bg' style="width:{{50}}%"></view>
+          </view>
+          <view class='ju_numbers'><text>32</text>人已捐助</view>
+          <view class='tojuzhuan_btn'>我要捐助</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
+  <!--求捐信息-->
+  <view class='qj_message'>
+    <view class='pub-tit-text'>
+    / 求捐信息 /
+    </view>
+
+    <view class='qj_content'>
+      <view class='qj_list'>
+        <image class='qj_img' src='/images/new_icon/recom-01.jpg'></image>
+        <view class='qj_left_cont'>
+          <view class='qj_title'>暖暖冬季，爱心传递</view>
+          <view class='data_time'>
+            <view class='data_box'>2018年12月20</view>
+            <view class='school_box'>江西丰镇小学</view>
+            <image class='rz_img' src='/images/new_icon/renzheng-35.png'></image>
+          </view>
+          <view class='rz_discript'>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望更多…</view>
+          <view class='rz_jd_box'>
+            <view class='jd_content'>
+              <view class='jd_con_bg' style="width:{{50}}%"></view>
+            </view>
+            <view class='bfb'>50%</view>
+          </view>
+          <view class='rz_jz_num'>
+            <label>35</label>人已捐助
+          </view>
+        </view>
+      </view>
+
+      <view class='qj_list'>
+        <image class='qj_img' src='/images/new_icon/recom-01.jpg'></image>
+        <view class='qj_left_cont'>
+          <view class='qj_title'>暖暖冬季，爱心传递</view>
+          <view class='data_time'>
+            <view class='data_box'>2018年12月20</view>
+            <view class='school_box'>江西丰镇小学</view>
+            <image class='rz_img' src='/images/new_icon/renzheng-35.png'></image>
+          </view>
+          <view class='rz_discript'>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望更多…</view>
+          <view class='rz_jd_box'>
+            <view class='jd_content'>
+              <view class='jd_con_bg' style="width:{{50}}%"></view>
+            </view>
+            <view class='bfb'>50%</view>
+          </view>
+          <view class='rz_jz_num'>
+            <label>35</label>人已捐助
+          </view>
+        </view>
+      </view>
+
+      <view class='qj_list'>
+        <image class='qj_img' src='/images/new_icon/recom-01.jpg'></image>
+        <view class='qj_left_cont'>
+          <view class='qj_title'>暖暖冬季，爱心传递</view>
+          <view class='data_time'>
+            <view class='data_box'>2018年12月20</view>
+            <view class='school_box'>江西丰镇小学</view>
+            <image class='rz_img' src='/images/new_icon/renzheng-35.png'></image>
+          </view>
+          <view class='rz_discript'>今年冬天又要来临啦，这些可爱的小天使们缺少棉衣棉裤希望更多…</view>
+          <view class='rz_jd_box'>
+            <view class='jd_content'>
+              <view class='jd_con_bg' style="width:{{50}}%"></view>
+            </view>
+            <view class='bfb'>50%</view>
+          </view>
+          <view class='rz_jz_num'>
+            <label>35</label>人已捐助
+          </view>
+        </view>
+      </view>
+
+      <!--查看更多-->
+      <view class='look_more'>
+        <label>查看更多</label>
+        <image src='/images/sort_arr.png'></image>
+      </view>
+    </view>
+
+
+  </view>
+  
+
+  <!--底部统计-->
+  <view class='static_box'>
+    <view class='static_content'>
+      <image class='ft_bg' src='/images/new_icon/ft_bg.jpg'></image>
+    </view>
+    <view class='static_content_dis'>
+      <view class='sta_title'>截止2019年1月22号前，已有</view>
+      <view class='sta_one'><label>1000</label> 次爱心捐助</view>
+      <view class='sta_one'><label>1000</label> 元爱心总估值</view>
+    </view>
+  </view>
+
+
+
+
+<image src='/images/new_icon/huidingbu.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+
+</view>

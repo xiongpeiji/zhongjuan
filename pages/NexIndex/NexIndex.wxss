@@ -1,0 +1,388 @@
+/* pages/NexIndex/NexIndex.wxss */
+.container{
+  padding-top: 96rpx;
+}
+swiper, swiper image {
+  height: 380rpx;
+}
+.slide-image{
+  display: block;
+  width:750rpx;
+  height: 380rpx;
+}
+.top_search{
+  height: 96rpx;
+  padding:16rpx 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #666666;
+  overflow: hidden;
+  z-index: 9;
+}
+.top_left_btn {
+  width: 164rpx;
+  float: left;
+}
+.top_left_btn label{
+  width: 140rpx;
+  overflow: hidden;
+  line-height: 64rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.top_left_btn image{
+  display:inline-block;
+  width: 24rpx;
+  height: 16rpx;
+
+}
+.top_right_box{
+  float: left;
+  height: 64rpx;
+  width: 500rpx;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+  padding-left: 80rpx;
+  background: #EFEEEE;
+  border-radius: 32rpx;
+  position: relative;
+}
+.top_right_box image{
+  display: inline-block;
+  width: 29rpx;
+  height: 28rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 20rpx;
+}
+.top_right_box input{
+  height: 64rpx;
+}
+.swiper-content{
+  margin-bottom: 20rpx;
+}
+
+
+
+.type-lists{
+  overflow: hidden;
+  background: #fff;
+  padding-bottom: 50rpx;
+}
+.list-wrap{
+  width: 187.5rpx;
+  float: left;
+  text-align: center;
+  padding: 40rpx 0 15rpx;
+}
+.list-wrap image{
+  display: inline-block;
+  width: 66rpx;
+  height: 66rpx;
+  margin-bottom: 30rpx;
+}
+.list-wrap view{
+  font-size: 28rpx;
+  color: #6A6A6A;
+  line-height: 40rpx;
+}
+
+
+.recommend{
+  background: #fff;
+  padding-left: 35rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.recom-box{
+  height: 100%;
+  overflow-x: auto;
+  padding-bottom: 22rpx;
+}
+.recom-content{
+  height: 416rpx;
+}
+.pub-tit-text{
+  font-size: 34rpx;
+  color: #E4572E;
+  font-weight: bold;
+  line-height: 48rpx;
+  margin-bottom: 50rpx;
+}
+
+
+
+.recom-list{
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 4rpx 0 rgba(228,228,228,0.50);
+  border-radius: 8rpx;
+  width: 272rpx;
+  height: 416rpx;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  margin-right: 44rpx;
+}
+.recom-flag{
+  width: 118rpx;
+  height: 32rpx;
+  font-size: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -59rpx;
+}
+.recom-flag image{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.recom-flag view{
+  text-align: center;
+  line-height: 32rpx;
+  z-index: 2;
+  font-size: 16rpx;
+  color: #FBFBFB;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.recom-img{
+  width: 100%;
+  height: 180rpx;
+}
+.recom_title{
+  padding:14rpx;
+  font-size: 24rpx;
+  color: #313131;
+  line-height: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.recom_jd{
+  width: 237rpx;
+  margin: auto;
+  height: 8rpx;
+  background: #E6E6E6;
+  border-radius: 7rpx;
+  font-size: 0;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.jd_bg{
+  background: #E4572E;
+  border-radius: 7rpx;
+  height: 100%;
+}
+.ju_numbers{
+  font-size: 22rpx;
+  color:#000;
+  line-height: 30rpx;
+  margin-bottom: 28rpx;
+}
+.ju_numbers text{
+  color:#E4572E;
+}
+.tojuzhuan_btn{
+  border: 2rpx solid #E4572E;
+  border-radius: 17rpx;
+  height: 34rpx;
+  box-sizing: border-box;
+  line-height: 30rpx;
+  text-align: center;
+  width: 145rpx;
+  margin: auto;
+  font-size: 20rpx;
+  color: #E4572E;
+}
+
+
+
+.qj_message{
+  padding: 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.qj_list{
+  padding-right: 236rpx;
+  position: relative;
+  height: 258rpx;
+  margin-bottom: 20rpx;
+}
+.qj_img{
+  width: 236rpx;
+  height: 224rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.qj_left_cont{
+  padding-right: 15rpx;
+}
+.qj_title{
+  font-size: 32rpx;
+  color: #585858;
+  line-height: 45rpx;
+  font-weight: bold;
+  margin-bottom: 4rpx;
+}
+.data_time{
+  overflow: hidden;
+  font-size: 0;
+  margin-bottom: 20rpx;
+}
+.data_box{
+  margin-right: 10rpx;
+}
+.data_box,.school_box{
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 34rpx;
+  float: left;
+}
+.school_box{
+  max-width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.rz_img{
+  float: left;
+  width: 22rpx;
+  height: 22rpx;
+  margin-left: 5rpx;
+  margin-top: 5rpx;
+}
+.rz_discript{
+  font-size: 28rpx;
+  color: #6A6A6A;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20rpx;
+}
+
+
+.rz_jd_box{
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.jd_content{
+  width: 350rpx;
+  height: 8rpx;
+  font-size: 0;
+  background: #E6E6E6;
+  border-radius: 7rpx;
+}
+.jd_con_bg{
+  height: 100%;
+  background: #E4572E;
+  border-radius: 7rpx;
+}
+.bfb{
+  position: absolute;
+  right: 0;
+  top: -12rpx;
+  font-size: 24rpx;
+  color: #E4572E;
+  line-height: 24rpx;
+}
+.rz_jz_num{
+  font-size: 24rpx;
+  color: #000000;
+  line-height: 34rpx;
+}
+.rz_jz_num label{
+  color: #E4572E;
+}
+.qj_content{
+  padding-bottom: 50rpx;
+  position: relative;
+}
+.look_more{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+.look_more image{
+  display: inline-block;
+  width: 24rpx;
+  height: 14rpx;
+}
+
+/* 返回顶部 */
+.goTop{
+  position: fixed;
+  height: 80rpx;
+  width: 80rpx;
+  bottom: 50rpx;
+  right: 30rpx;
+  z-index: 100;
+}
+
+
+.static_box{
+  padding: 30rpx 20rpx 40rpx;
+  background: #fff;
+  box-sizing: border-box;
+  height: 270rpx;
+  position: relative;
+}
+.static_content{
+  width: 710rpx;
+  height: 200rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 30rpx;
+  z-index: 1;
+}
+.static_content image{
+  width: 100%;
+  height: 100%;
+}
+.static_content_dis{
+  padding-left: 34rpx;
+  padding-top: 18rpx;
+  position: relative;
+  z-index: 2;
+}
+.sta_title{
+  font-size: 28rpx;
+  color: #635151;
+  line-height: 40rpx;
+}
+.sta_one{
+  font-size: 26rpx;
+  color: #000000;
+  line-height: 46rpx;
+}
+.sta_one label{
+  font-size: 38rpx;
+  color: #FF6C69;
+}

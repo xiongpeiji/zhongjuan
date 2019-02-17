@@ -47,7 +47,8 @@
     "pages/Electionrecord/Electionrecord",
     "pages/Detailsofdonation/Detailsofdonation",
     "pages/Finishsigning/Finishsigning",
-    "pages/DonationdetailsNew/DonationdetailsNew"
+    "pages/DonationdetailsNew/DonationdetailsNew",
+    "pages/NexIndex/NexIndex"
   ],
   "window": {
     "backgroundTextStyle": "dark",
