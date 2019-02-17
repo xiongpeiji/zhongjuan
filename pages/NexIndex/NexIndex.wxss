@@ -33,6 +33,7 @@ swiper, swiper image {
   width: 140rpx;
   overflow: hidden;
   line-height: 64rpx;
+  float: left;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
