@@ -48,7 +48,11 @@
     "pages/Detailsofdonation/Detailsofdonation",
     "pages/Finishsigning/Finishsigning",
     "pages/DonationdetailsNew/DonationdetailsNew",
-    "pages/NexIndex/NexIndex"
+    "pages/NexIndex/NexIndex",
+    "pages/SearchPage/SearchPage",
+    "pages/NewList/NewList",
+    "pages/NewDynamic/NewDynamic",
+    "pages/NewCompany/NewCompany"
   ],
   "window": {
     "backgroundTextStyle": "dark",

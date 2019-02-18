@@ -1,0 +1,162 @@
+<!--pages/NewCompany/NewCompany.wxml-->
+<view class='container'>
+  <view class='choodeArea'>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        <view class='name_box {{active?"active":""}}'>{{region[0]}}<em></em></view>
+        <view class='name_box {{active?"active":""}}'>{{region[1]}}<em></em></view>
+        <view class='name_box {{active?"active":""}}'>{{region[2]}}<em></em></view>
+      </view>
+    </picker>
+  </view>
+
+  <view class='screen_con'>
+      <view class='compa_list'>
+          <view class='compa_title'>
+            <image class='compa_photo' src='/images/new_icon/jg_img.jpg'></image>
+            <view class='compa_name'>西安秦岭小天使爱心站</view>
+            <view class='compa_zr'>
+              <image src='/images/new_icon/renzheng-35.png'></image>
+              <label>中小学校</label>
+            </view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_fuzeren.png'></image>
+              <label>负责人</label>
+            </view>
+            <view class='compa_text'>曹兰若冰</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dianhua.png'></image>
+              <label>联系电话</label>
+            </view>
+            <view class='compa_text'>18309291535</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dingwei.png'></image>
+              <label>机构地址</label>
+            </view>
+            <view class='compa_text'>陕西省西安市雁塔区昆明路黄金家园2栋20406</view>
+          </view>
+
+      </view>
+
+      <view class='compa_list'>
+          <view class='compa_title'>
+            <image class='compa_photo' src='/images/new_icon/jg_img.jpg'></image>
+            <view class='compa_name'>西安秦岭小天使爱心站</view>
+            <view class='compa_zr'>
+              <image src='/images/new_icon/renzheng-35.png'></image>
+              <label>中小学校</label>
+            </view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_fuzeren.png'></image>
+              <label>负责人</label>
+            </view>
+            <view class='compa_text'>曹兰若冰</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dianhua.png'></image>
+              <label>联系电话</label>
+            </view>
+            <view class='compa_text'>18309291535</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dingwei.png'></image>
+              <label>机构地址</label>
+            </view>
+            <view class='compa_text'>陕西省西安市雁塔区昆明路黄金家园2栋20406</view>
+          </view>
+
+      </view>
+
+      <view class='compa_list'>
+          <view class='compa_title'>
+            <image class='compa_photo' src='/images/new_icon/jg_img.jpg'></image>
+            <view class='compa_name'>西安秦岭小天使爱心站</view>
+            <view class='compa_zr'>
+              <image src='/images/new_icon/renzheng-35.png'></image>
+              <label>中小学校</label>
+            </view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_fuzeren.png'></image>
+              <label>负责人</label>
+            </view>
+            <view class='compa_text'>曹兰若冰</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dianhua.png'></image>
+              <label>联系电话</label>
+            </view>
+            <view class='compa_text'>18309291535</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dingwei.png'></image>
+              <label>机构地址</label>
+            </view>
+            <view class='compa_text'>陕西省西安市雁塔区昆明路黄金家园2栋20406</view>
+          </view>
+
+      </view>
+
+      <view class='compa_list'>
+          <view class='compa_title'>
+            <image class='compa_photo' src='/images/new_icon/jg_img.jpg'></image>
+            <view class='compa_name'>西安秦岭小天使爱心站</view>
+            <view class='compa_zr'>
+              <image src='/images/new_icon/renzheng-35.png'></image>
+              <label>中小学校</label>
+            </view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_fuzeren.png'></image>
+              <label>负责人</label>
+            </view>
+            <view class='compa_text'>曹兰若冰</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dianhua.png'></image>
+              <label>联系电话</label>
+            </view>
+            <view class='compa_text'>18309291535</view>
+          </view>
+
+          <view class='compa_discri_list'>
+            <view class='compa_name_user'>
+              <image src='/images/new_icon/icon_dingwei.png'></image>
+              <label>机构地址</label>
+            </view>
+            <view class='compa_text'>陕西省西安市雁塔区昆明路黄金家园2栋20406</view>
+          </view>
+
+      </view>
+
+  </view>
+
+
+  <image src='/images/new_icon/huidingbu.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>

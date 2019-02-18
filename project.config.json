@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 40,
+			"current": 44,
 			"list": [
 				{
 					"id": -1,
@@ -283,6 +283,33 @@
 					"name": "新首页",
 					"pathName": "pages/NexIndex/NexIndex",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索页",
+					"pathName": "pages/SearchPage/SearchPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "助学接力贫困关爱日行一善",
+					"pathName": "pages/NewList/NewList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新版动态",
+					"pathName": "pages/NewDynamic/NewDynamic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "单位",
+					"pathName": "pages/NewCompany/NewCompany",
+					"scene": null
 				}
 			]
 		}

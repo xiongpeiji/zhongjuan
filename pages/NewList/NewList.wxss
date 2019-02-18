@@ -1,0 +1,127 @@
+/* pages/NewList/NewList.wxss */
+.top_nav{
+  overflow: hidden;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: fixed;
+  left: 0;
+  top:0;
+  right:0;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(224,224,224,0.50);
+  z-index: 10;
+}
+.nav_list{
+  width: 33.33%;
+  text-align: center;
+  float: left;
+  font-size: 28rpx;
+  color: #888888;
+  position: relative;
+}
+.nav_list.acitve{
+  font-size: 32rpx;
+  color: #E4572E;
+  font-weight: bold;
+}
+.nav_list.acitve label{
+  display: block;
+  width: 44rpx;
+  height: 11rpx;
+  border-radius: 5rpx;
+  background: #E4572E;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -22rpx;
+}
+
+.nav_container{
+  padding-top: 90rpx;
+}
+.nav_list_con{
+  padding: 22rpx 30rpx 28rpx 300rpx;
+  height: 274rpx;
+  box-sizing: border-box;
+  position: relative;
+  background: #fff;
+  margin-bottom: 8rpx;
+}
+.nav_list_img{
+  width: 236rpx;
+  height: 224rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 22rpx;
+  border-radius: 15rpx;
+}
+.nav_list_title{
+  font-size: 32rpx;
+  color: #585858;
+  line-height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 4rpx;
+}
+.nav_list_school{
+  overflow: hidden;
+  margin-bottom: 12rpx;
+}
+.nav_list_school label{
+  float: left;
+  font-size: 22rpx;
+  color: #999999;
+  line-height: 30rpx;
+}
+.nav_list_school image{
+  width: 22rpx;
+  height: 22rpx;
+  float: left;
+  margin-left: 5rpx;
+  margin-top: 4rpx;
+}
+.nav_list_name{
+  font-size: 28rpx;
+  color: #6A6A6A;
+  line-height: 40rpx;
+  margin-bottom: 16rpx;
+}
+.nav_name_type{
+  margin-right: 20rpx;
+}
+.rz_jd_box{
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.jd_content{
+  width: 350rpx;
+  height: 12rpx;
+  font-size: 0;
+  background: #E6E6E6;
+  border-radius: 7rpx;
+}
+.jd_con_bg{
+  height: 100%;
+  background: #E4572E;
+  border-radius: 7rpx;
+}
+.bfb{
+  position: absolute;
+  right: 0;
+  top: -12rpx;
+  font-size: 24rpx;
+  color: #E4572E;
+  line-height: 24rpx;
+}
+
+.ju_numbers{
+  font-size: 22rpx;
+  color: #3F3F3F;
+  line-height: 30rpx;
+}
+.ju_numbers text{
+  color: #E4572E;
+}

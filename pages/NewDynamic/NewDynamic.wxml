@@ -1,0 +1,118 @@
+<!--pages/NewDynamic/NewDynamic.wxml-->
+<view class='container'>
+  <image class='top_imgs' src='/images/new_icon/banner.jpg'></image>
+  <view class='dyna_content'>
+      <view class='dyna_list'>
+          <view class='dyna_user'>
+            <view class='user_img_icon'>
+              <image src='/images/share_img/weixin.png'></image>
+              <view class='user_name'>买了佛冷</view>
+              <view class='user_type'>爱心人士</view>
+            </view>
+            <view class='jz_numbers'>爱心已帮助<label>77</label>人</view>
+          </view>
+
+          <view class='dyna_discription'>
+            <view class='dis_title'>由深圳博雅爱心机构反馈</view>
+            <view class='dis_date'>2019年2月2日</view>
+          </view>
+
+          <rich-text class='dis_text' nodes="{{'<p>真的非常感谢寒冰先生在天寒地冻的时节给我们机构学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</p>'}}"></rich-text>
+          <view class='dis_imgs'>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+          </view>
+
+          <view class='dyna_dianzan'>
+            <view class='dis_zan active'>
+              <image src='/images/dianzan.png' hidden='{{true}}'></image>
+              <image src='/images/dianzan_active.png'></image>
+              <label>35</label>
+            </view>
+            <view class='dis_zan'>
+              <image src='/images/message_new.png'></image>
+              <label>35</label>
+            </view>
+          </view>
+      </view>
+
+      <view class='dyna_list'>
+          <view class='dyna_user'>
+            <view class='user_img_icon'>
+              <image src='/images/share_img/weixin.png'></image>
+              <view class='user_name'>买了佛冷</view>
+              <view class='user_type'>爱心人士</view>
+            </view>
+            <view class='jz_numbers'>爱心已帮助<label>77</label>人</view>
+          </view>
+
+          <view class='dyna_discription'>
+            <view class='dis_title'>由深圳博雅爱心机构反馈</view>
+            <view class='dis_date'>2019年2月2日</view>
+          </view>
+
+          <rich-text class='dis_text' nodes="{{'<p>真的非常感谢寒冰先生在天寒地冻的时节给我们机构学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</p>'}}"></rich-text>
+          <view class='dis_imgs'>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+          </view>
+
+          <view class='dyna_dianzan'>
+            <view class='dis_zan active'>
+              <image src='/images/dianzan.png' hidden='{{true}}'></image>
+              <image src='/images/dianzan_active.png'></image>
+              <label>35</label>
+            </view>
+            <view class='dis_zan'>
+              <image src='/images/message_new.png'></image>
+              <label>35</label>
+            </view>
+          </view>
+      </view>
+
+      <view class='dyna_list'>
+          <view class='dyna_user'>
+            <view class='user_img_icon'>
+              <image src='/images/share_img/weixin.png'></image>
+              <view class='user_name'>买了佛冷</view>
+              <view class='user_type'>爱心人士</view>
+            </view>
+            <view class='jz_numbers'>爱心已帮助<label>77</label>人</view>
+          </view>
+
+          <view class='dyna_discription'>
+            <view class='dis_title'>由深圳博雅爱心机构反馈</view>
+            <view class='dis_date'>2019年2月2日</view>
+          </view>
+
+          <rich-text class='dis_text' nodes="{{'<p>真的非常感谢寒冰先生在天寒地冻的时节给我们机构学生寄来的棉衣，书包和取暖物资，孩子们拿到之后都很开心。谢谢你的爱心！</p>'}}"></rich-text>
+          <view class='dis_imgs'>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+            <image src='/images/new_icon/recom-01.jpg'></image>
+          </view>
+
+          <view class='dyna_dianzan'>
+            <view class='dis_zan active'>
+              <image src='/images/dianzan.png' hidden='{{true}}'></image>
+              <image src='/images/dianzan_active.png'></image>
+              <label>35</label>
+            </view>
+            <view class='dis_zan'>
+              <image src='/images/message_new.png'></image>
+              <label>35</label>
+            </view>
+          </view>
+      </view>
+    
+
+  </view>
+
+
+
+
+
+  <image src='/images/new_icon/huidingbu.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>

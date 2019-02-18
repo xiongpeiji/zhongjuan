@@ -1,0 +1,94 @@
+<!--pages/NewList/NewList.wxml-->
+<view class='container'>
+  <view class='top_nav'>
+    <view class='nav_list {{curIndex==0?"acitve":""}}' bindtap='navChose' data-id='0'>助学接力<label></label></view>
+    <view class='nav_list {{curIndex==1?"acitve":""}}' bindtap='navChose' data-id='1'>贫困关爱<label></label></view>
+    <view class='nav_list {{curIndex==2?"acitve":""}}' bindtap='navChose' data-id='2'>日行一善<label></label></view>
+  </view>
+
+  <view class='nav_container'>
+
+    <view class='nav_list_con'>
+      <image class='nav_list_img' src='/images/new_icon/recom-01.jpg'></image>
+      <view class='nav_list_title'>暖暖冬季，爱心传递十二个字</view>
+      <view class='nav_list_school'>
+        <label>江西省宜昌市丰镇小学</label>
+        <image src="/images/new_icon/renzheng-35.png"></image>
+      </view>
+      <view class='nav_list_name'>
+        <label class='nav_name_type'>学习用品：图书</label>
+        <label>1000本</label>
+      </view>
+      <view class='rz_jd_box'>
+        <view class='jd_content'>
+          <view class='jd_con_bg' style="width:{{50}}%"></view>
+        </view>
+        <view class='bfb'>50%</view>
+      </view>
+      <view class='ju_numbers'><text>32</text>人已捐助</view>
+    </view>
+
+    <view class='nav_list_con'>
+      <image class='nav_list_img' src='/images/new_icon/recom-01.jpg'></image>
+      <view class='nav_list_title'>暖暖冬季，爱心传递十二个字</view>
+      <view class='nav_list_school'>
+        <label>江西省宜昌市丰镇小学</label>
+        <image src="/images/new_icon/renzheng-35.png"></image>
+      </view>
+      <view class='nav_list_name'>
+        <label class='nav_name_type'>学习用品：图书</label>
+        <label>1000本</label>
+      </view>
+      <view class='rz_jd_box'>
+        <view class='jd_content'>
+          <view class='jd_con_bg' style="width:{{50}}%"></view>
+        </view>
+        <view class='bfb'>50%</view>
+      </view>
+      <view class='ju_numbers'><text>32</text>人已捐助</view>
+    </view>
+
+    <view class='nav_list_con'>
+      <image class='nav_list_img' src='/images/new_icon/recom-01.jpg'></image>
+      <view class='nav_list_title'>暖暖冬季，爱心传递十二个字</view>
+      <view class='nav_list_school'>
+        <label>江西省宜昌市丰镇小学</label>
+        <image src="/images/new_icon/renzheng-35.png"></image>
+      </view>
+      <view class='nav_list_name'>
+        <label class='nav_name_type'>学习用品：图书</label>
+        <label>1000本</label>
+      </view>
+      <view class='rz_jd_box'>
+        <view class='jd_content'>
+          <view class='jd_con_bg' style="width:{{50}}%"></view>
+        </view>
+        <view class='bfb'>50%</view>
+      </view>
+      <view class='ju_numbers'><text>32</text>人已捐助</view>
+    </view>
+
+    <view class='nav_list_con'>
+      <image class='nav_list_img' src='/images/new_icon/recom-01.jpg'></image>
+      <view class='nav_list_title'>暖暖冬季，爱心传递十二个字</view>
+      <view class='nav_list_school'>
+        <label>江西省宜昌市丰镇小学</label>
+        <image src="/images/new_icon/renzheng-35.png"></image>
+      </view>
+      <view class='nav_list_name'>
+        <label class='nav_name_type'>学习用品：图书</label>
+        <label>1000本</label>
+      </view>
+      <view class='rz_jd_box'>
+        <view class='jd_content'>
+          <view class='jd_con_bg' style="width:{{50}}%"></view>
+        </view>
+        <view class='bfb'>100%</view>
+      </view>
+      <view class='ju_numbers'><text>32</text>人已捐助</view>
+    </view>
+
+  </view>
+
+
+</view>

@@ -8,7 +8,7 @@
     </view>
     <view class='top_right_box'>
       <image src='/images/new_icon/sousuo.png'></image>
-      <input type='text' placeholder='请输入关键词'></input>
+      <input type='text' focus="{{false}}" placeholder='请输入关键词'></input>
     </view>
   </view>
   <!--轮播图-->

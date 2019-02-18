@@ -1,0 +1,46 @@
+<!--pages/SearchPage/SearchPage.wxml-->
+<view class='container'>
+    
+    <view class='search_box'>
+        <view class='top_right_box'>
+          <image src='/images/new_icon/sousuo.png'></image>
+          <input type='text' focus="{{false}}" placeholder='请输入关键词'></input>
+        </view>
+        <view class='search_btn'>确定</view>
+    </view>
+
+    <view class='search_container'>
+        <!--搜索历史-->
+        <view class='history_cont'>
+            <view class='search_hot'>
+              <view class='search_title'>搜索历史</view>
+              <view class='srarch_remove'>清空</view>
+            </view>
+
+            <view class='search_list'>
+              <view class='search_name'>机构</view>
+              <image class='search_img' src='/images/new_icon/shanchu-2 copy.png'></image>
+            </view>
+
+            <view class='search_list'>
+              <view class='search_name'>机构</view>
+              <image class='search_img' src='/images/new_icon/shanchu-2 copy.png'></image>
+            </view>
+        </view>
+        <!--搜索热词-->
+        <view class='history_cont'>
+            <view class='search_hot'>
+              <view class='search_title'>搜索热词</view>
+              <view class='srarch_remove'>清空</view>
+            </view>
+
+            <view class='search_list'>
+                <view class='hot_words'>机构</view>
+                <view class='hot_words'>衣服</view>
+            </view>
+        </view>
+
+
+    </view>
+  
+</view>
