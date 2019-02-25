@@ -1,0 +1,75 @@
+<!--pages/SearchResult/SearchResult.wxml-->
+<view class='container'>
+    
+    <view class='search_box'>
+        <view class='top_right_box'>
+          <image src='/images/new_icon/sousuo.png'></image>
+          <input type='text' focus="{{false}}" placeholder='请输入关键词'></input>
+        </view>
+        <view class='search_btn'>确定</view>
+    </view>
+
+    <view class='search_container'>
+        <view class='search_numbers'>查找到<label>2</label>条相关搜索</view>
+
+
+        <view class='nav_list_con'>
+          <image class='nav_list_img' src='/images/new_icon/recom-01.jpg'></image>
+          <view class='nav_list_title'>暖暖冬季，爱心传递十二个字</view>
+          <view class='nav_list_school'>
+            <label>江西省宜昌市丰镇小学</label>
+            <image src="/images/new_icon/renzheng-35.png"></image>
+          </view>
+          <view class='nav_list_name'>
+            <label class='nav_name_type'>学习用品：图书</label>
+            <label>1000本</label>
+          </view>
+          <view class='rz_jd_box'>
+            <view class='jd_content'>
+              <view class='jd_con_bg' style="width:{{50}}%"></view>
+            </view>
+            <view class='bfb'>50%</view>
+          </view>
+          <view class='ju_numbers'><text>32</text>人已捐助</view>
+        </view>
+
+
+        <view class='compa_list'>
+            <view class='compa_title'>
+              <image class='compa_photo' src='/images/new_icon/jg_img.jpg'></image>
+              <view class='compa_name'>西安秦岭小天使爱心站</view>
+              <view class='compa_zr'>
+                <image src='/images/new_icon/renzheng-35.png'></image>
+                <label>中小学校</label>
+              </view>
+            </view>
+
+            <view class='compa_discri_list'>
+              <view class='compa_name_user'>
+                <image src='/images/new_icon/icon_fuzeren.png'></image>
+                <label>负责人</label>
+              </view>
+              <view class='compa_text'>曹兰若冰</view>
+            </view>
+
+            <view class='compa_discri_list'>
+              <view class='compa_name_user'>
+                <image src='/images/new_icon/icon_dianhua.png'></image>
+                <label>联系电话</label>
+              </view>
+              <view class='compa_text'>18309291535</view>
+            </view>
+
+            <view class='compa_discri_list'>
+              <view class='compa_name_user'>
+                <image src='/images/new_icon/icon_dingwei.png'></image>
+                <label>机构地址</label>
+              </view>
+              <view class='compa_text'>陕西省西安市雁塔区昆明路黄金家园2栋20406</view>
+            </view>
+
+        </view>
+
+    </view>
+  
+</view>

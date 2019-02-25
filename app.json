@@ -52,7 +52,8 @@
     "pages/SearchPage/SearchPage",
     "pages/NewList/NewList",
     "pages/NewDynamic/NewDynamic",
-    "pages/NewCompany/NewCompany"
+    "pages/NewCompany/NewCompany",
+    "pages/SearchResult/SearchResult"
   ],
   "window": {
     "backgroundTextStyle": "dark",

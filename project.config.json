@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 44,
+			"current": 45,
 			"list": [
 				{
 					"id": -1,
@@ -309,6 +309,13 @@
 					"id": -1,
 					"name": "单位",
 					"pathName": "pages/NewCompany/NewCompany",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索结果页",
+					"pathName": "pages/SearchResult/SearchResult",
 					"scene": null
 				}
 			]
